@@ -35,4 +35,5 @@ vignettes/*.pdf
 data_mutations_extended*
 *.seg
 SigMutations/P-*/
+/CNA/
 #grand_case_type.txt#
