@@ -24,18 +24,22 @@ source("drawSigMutDotplotByMMRd.R")
 
 ##### 1. Generate mutation signature Dotplot for essential COSMIC **SBS** Signatures only!  
 
+
 ```{r}
 sigs <- c("SBS1","SBS5","SBS6","SBS10b","SBS14","SBS15","SBS20","SBS21","SBS26","SBS44")
 drawSigMutDotplotByMMRd('Decomposed_Solution_Activities_SBS96.txt', sigs, 'SBS')
 
 ```
+
 ##### 2. Generate mutation signature Dotplot for essential COSMIC **INDEL** Signatures only!  
+
 
 ```{r}
 sigs <- c("ID1","ID2","ID7","ID14","ID15","ID16")
 drawSigMutDotplotByMMRd('Decomposed_Solution_Activities_SBSINDEL.txt', sigs, 'INDEL')
 
 ```
+
 ##### 3. Plot SBS signature composition by MMRd types  
 
 ```{r}
