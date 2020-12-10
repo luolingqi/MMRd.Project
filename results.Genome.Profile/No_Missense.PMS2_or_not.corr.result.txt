@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Missense	PMS2	Not_PMS2	7.77328889426251e-11	7.8e-11	7.8e-11	****	Wilcoxon

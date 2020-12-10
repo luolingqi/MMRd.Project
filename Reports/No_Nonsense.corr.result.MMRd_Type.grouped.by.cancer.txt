@@ -1,0 +1,65 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_Nonsense	MSH2_MSH6	MSH6	0.111287009409088	1	0.1113	ns	Wilcoxon
+2	Bladder	No_Nonsense	MSH2_MSH6	PMS2	0.227799993988229	1	0.2278	ns	Wilcoxon
+3	Bladder	No_Nonsense	MSH6	PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+4	Colon	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.00164238071838687	0.1	0.0016	**	Wilcoxon
+5	Colon	No_Nonsense	MSH2_MSH6	Complex	0.261071009009268	1	0.2611	ns	Wilcoxon
+6	Colon	No_Nonsense	MSH2_MSH6	NORMAL	0.860948105589389	1	0.8609	ns	Wilcoxon
+7	Colon	No_Nonsense	MSH2_MSH6	MSH6	0.00424397916984838	0.26	0.0042	**	Wilcoxon
+8	Colon	No_Nonsense	MSH2_MSH6	PMS2	0.0444114297808139	1	0.0444	*	Wilcoxon
+9	Colon	No_Nonsense	MLH1_PMS2	Complex	0.27134553598401	1	0.2713	ns	Wilcoxon
+10	Colon	No_Nonsense	MLH1_PMS2	NORMAL	0.0964394283346112	1	0.0964	ns	Wilcoxon
+11	Colon	No_Nonsense	MLH1_PMS2	MSH6	0.00060306535318443	0.039	0.0006	***	Wilcoxon
+12	Colon	No_Nonsense	MLH1_PMS2	PMS2	0.35562367493671	1	0.3556	ns	Wilcoxon
+13	Colon	No_Nonsense	Complex	NORMAL	0.627700744162621	1	0.6277	ns	Wilcoxon
+14	Colon	No_Nonsense	Complex	MSH6	0.0093184849111469	0.56	0.0093	**	Wilcoxon
+15	Colon	No_Nonsense	Complex	PMS2	0.196840089999316	1	0.1968	ns	Wilcoxon
+16	Colon	No_Nonsense	NORMAL	MSH6	0.0462182047260626	1	0.0462	*	Wilcoxon
+17	Colon	No_Nonsense	NORMAL	PMS2	0.12264536479032	1	0.1226	ns	Wilcoxon
+18	Colon	No_Nonsense	MSH6	PMS2	0.0284295359987965	1	0.0284	*	Wilcoxon
+19	Esophagogastric	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.16797519235138	1	0.1680	ns	Wilcoxon
+20	Esophagogastric	No_Nonsense	MSH2_MSH6	Complex	0.69263278404196	1	0.6926	ns	Wilcoxon
+21	Esophagogastric	No_Nonsense	MSH2_MSH6	NORMAL	0.481120001127239	1	0.4811	ns	Wilcoxon
+22	Esophagogastric	No_Nonsense	MLH1_PMS2	Complex	0.117204679248412	1	0.1172	ns	Wilcoxon
+23	Esophagogastric	No_Nonsense	MLH1_PMS2	NORMAL	0.770847723051902	1	0.7708	ns	Wilcoxon
+24	Esophagogastric	No_Nonsense	Complex	NORMAL	0.666666666666667	1	0.6667	ns	Wilcoxon
+25	Pancreas	No_Nonsense	MSH2_MSH6	MLH1_PMS2	1	1	1.0000	ns	Wilcoxon
+26	Pancreas	No_Nonsense	MSH2_MSH6	MSH6	1	1	1.0000	ns	Wilcoxon
+27	Pancreas	No_Nonsense	MLH1_PMS2	MSH6	1	1	1.0000	ns	Wilcoxon
+28	Colorectal	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.318836004743411	1	0.3188	ns	Wilcoxon
+29	Colorectal	No_Nonsense	MSH2_MSH6	NORMAL	0.0397734471272971	1	0.0398	*	Wilcoxon
+30	Colorectal	No_Nonsense	MSH2_MSH6	MSH6	0.877833454828831	1	0.8778	ns	Wilcoxon
+31	Colorectal	No_Nonsense	MSH2_MSH6	PMS2	0.234763662827669	1	0.2348	ns	Wilcoxon
+32	Colorectal	No_Nonsense	MLH1_PMS2	NORMAL	0.0495412352532055	1	0.0495	*	Wilcoxon
+33	Colorectal	No_Nonsense	MLH1_PMS2	MSH6	0.196705602458947	1	0.1967	ns	Wilcoxon
+34	Colorectal	No_Nonsense	MLH1_PMS2	PMS2	0.149066677491367	1	0.1491	ns	Wilcoxon
+35	Colorectal	No_Nonsense	NORMAL	MSH6	0.0435966448855414	1	0.0436	*	Wilcoxon
+36	Colorectal	No_Nonsense	NORMAL	PMS2	0.235679913429038	1	0.2357	ns	Wilcoxon
+37	Colorectal	No_Nonsense	MSH6	PMS2	0.5	1	0.5000	ns	Wilcoxon
+38	Biliary	No_Nonsense	MLH1_PMS2	PMS2	0.234763662827669	1	0.2348	ns	Wilcoxon
+39	Prostate	No_Nonsense	MSH2_MSH6	MLH1_PMS2	1	1	1.0000	ns	Wilcoxon
+40	Prostate	No_Nonsense	MSH2_MSH6	MSH6	1	1	1.0000	ns	Wilcoxon
+41	Prostate	No_Nonsense	MLH1_PMS2	MSH6	1	1	1.0000	ns	Wilcoxon
+42	Small Bowel	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.15266138035243	1	0.1527	ns	Wilcoxon
+43	Small Bowel	No_Nonsense	MSH2_MSH6	NORMAL	1	1	1.0000	ns	Wilcoxon
+44	Small Bowel	No_Nonsense	MSH2_MSH6	PMS2	0.347558036741169	1	0.3476	ns	Wilcoxon
+45	Small Bowel	No_Nonsense	MLH1_PMS2	NORMAL	0.456056540250256	1	0.4561	ns	Wilcoxon
+46	Small Bowel	No_Nonsense	MLH1_PMS2	PMS2	0.551615850514144	1	0.5516	ns	Wilcoxon
+47	Small Bowel	No_Nonsense	NORMAL	PMS2	1	1	1.0000	ns	Wilcoxon
+48	Endometrial	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.0113536425616551	0.67	0.0114	*	Wilcoxon
+49	Endometrial	No_Nonsense	MSH2_MSH6	Complex	0.406336736240609	1	0.4063	ns	Wilcoxon
+50	Endometrial	No_Nonsense	MSH2_MSH6	NORMAL	0.211794221386654	1	0.2118	ns	Wilcoxon
+51	Endometrial	No_Nonsense	MSH2_MSH6	MSH6	0.193193217091441	1	0.1932	ns	Wilcoxon
+52	Endometrial	No_Nonsense	MLH1_PMS2	Complex	0.977543780253802	1	0.9775	ns	Wilcoxon
+53	Endometrial	No_Nonsense	MLH1_PMS2	NORMAL	0.417111104339182	1	0.4171	ns	Wilcoxon
+54	Endometrial	No_Nonsense	MLH1_PMS2	MSH6	0.109372460492486	1	0.1094	ns	Wilcoxon
+55	Endometrial	No_Nonsense	Complex	NORMAL	0.683091398309609	1	0.6831	ns	Wilcoxon
+56	Endometrial	No_Nonsense	Complex	MSH6	1	1	1.0000	ns	Wilcoxon
+57	Endometrial	No_Nonsense	NORMAL	MSH6	0.263552477282973	1	0.2636	ns	Wilcoxon
+58	Rectal	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.00171344104094271	0.11	0.0017	**	Wilcoxon
+59	Rectal	No_Nonsense	MSH2_MSH6	PMS2	0.419520250410178	1	0.4195	ns	Wilcoxon
+60	Rectal	No_Nonsense	MLH1_PMS2	PMS2	0.201242620957724	1	0.2012	ns	Wilcoxon
+61	CUP	No_Nonsense	MLH1_PMS2	NORMAL	0.234763662827669	1	0.2348	ns	Wilcoxon
+62	Other	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.550398489580591	1	0.5504	ns	Wilcoxon
+63	Ovarian	No_Nonsense	MSH2_MSH6	MLH1_PMS2	0.479500122186953	1	0.4795	ns	Wilcoxon
+64	Ovarian	No_Nonsense	MSH2_MSH6	PMS2	0.479500122186953	1	0.4795	ns	Wilcoxon

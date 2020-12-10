@@ -1,0 +1,7 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Impact_TMB_Score	Singleton	?	0.504224045873188	1	0.50	ns	Wilcoxon
+2	Impact_TMB_Score	Singleton	Multiplex	0.769963539962375	1	0.77	ns	Wilcoxon
+3	Impact_TMB_Score	Singleton	NORMAL	0.749033913476295	1	0.75	ns	Wilcoxon
+4	Impact_TMB_Score	?	Multiplex	0.361005459036513	1	0.36	ns	Wilcoxon
+5	Impact_TMB_Score	?	NORMAL	0.499406060934034	1	0.50	ns	Wilcoxon
+6	Impact_TMB_Score	Multiplex	NORMAL	0.74744891256616	1	0.75	ns	Wilcoxon

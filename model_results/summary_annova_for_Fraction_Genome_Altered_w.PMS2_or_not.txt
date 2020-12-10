@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: Fraction_Genome_Altered
+             Df  Sum Sq   Mean Sq F value Pr(>F)
+PMS2_or_not   1 0.01108 0.0110805  1.4623 0.2273
+Residuals   379 2.87178 0.0075773               

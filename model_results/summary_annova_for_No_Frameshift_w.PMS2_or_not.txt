@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: No_Frameshift
+             Df Sum Sq Mean Sq F value Pr(>F)
+PMS2_or_not   1      4   4.405    0.05 0.8232
+Residuals   379  33404  88.136               

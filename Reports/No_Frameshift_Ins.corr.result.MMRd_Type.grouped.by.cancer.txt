@@ -1,0 +1,65 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_Frameshift_Ins	MSH2_MSH6	MSH6	0.468716582446207	1	0.469	ns	Wilcoxon
+2	Bladder	No_Frameshift_Ins	MSH2_MSH6	PMS2	0.213373707093118	1	0.213	ns	Wilcoxon
+3	Bladder	No_Frameshift_Ins	MSH6	PMS2	0.479500122186953	1	0.480	ns	Wilcoxon
+4	Colon	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.535739846195724	1	0.536	ns	Wilcoxon
+5	Colon	No_Frameshift_Ins	MSH2_MSH6	Complex	0.0725904415104572	1	0.073	ns	Wilcoxon
+6	Colon	No_Frameshift_Ins	MSH2_MSH6	NORMAL	0.396369585991695	1	0.396	ns	Wilcoxon
+7	Colon	No_Frameshift_Ins	MSH2_MSH6	MSH6	0.38967608972288	1	0.390	ns	Wilcoxon
+8	Colon	No_Frameshift_Ins	MSH2_MSH6	PMS2	0.234163402200228	1	0.234	ns	Wilcoxon
+9	Colon	No_Frameshift_Ins	MLH1_PMS2	Complex	0.0161541179751669	1	0.016	*	Wilcoxon
+10	Colon	No_Frameshift_Ins	MLH1_PMS2	NORMAL	0.356708116735522	1	0.357	ns	Wilcoxon
+11	Colon	No_Frameshift_Ins	MLH1_PMS2	MSH6	0.295735005051914	1	0.296	ns	Wilcoxon
+12	Colon	No_Frameshift_Ins	MLH1_PMS2	PMS2	0.176815896905473	1	0.177	ns	Wilcoxon
+13	Colon	No_Frameshift_Ins	Complex	NORMAL	0.0872576462470211	1	0.087	ns	Wilcoxon
+14	Colon	No_Frameshift_Ins	Complex	MSH6	0.185993827262745	1	0.186	ns	Wilcoxon
+15	Colon	No_Frameshift_Ins	Complex	PMS2	0.753993395075781	1	0.754	ns	Wilcoxon
+16	Colon	No_Frameshift_Ins	NORMAL	MSH6	1	1	1.000	ns	Wilcoxon
+17	Colon	No_Frameshift_Ins	NORMAL	PMS2	0.216144064539285	1	0.216	ns	Wilcoxon
+18	Colon	No_Frameshift_Ins	MSH6	PMS2	0.380745743264856	1	0.381	ns	Wilcoxon
+19	Esophagogastric	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.506399364289725	1	0.506	ns	Wilcoxon
+20	Esophagogastric	No_Frameshift_Ins	MSH2_MSH6	Complex	0.468159909854428	1	0.468	ns	Wilcoxon
+21	Esophagogastric	No_Frameshift_Ins	MSH2_MSH6	NORMAL	0.481120001127239	1	0.481	ns	Wilcoxon
+22	Esophagogastric	No_Frameshift_Ins	MLH1_PMS2	Complex	0.281207414825737	1	0.281	ns	Wilcoxon
+23	Esophagogastric	No_Frameshift_Ins	MLH1_PMS2	NORMAL	0.747697989694239	1	0.748	ns	Wilcoxon
+24	Esophagogastric	No_Frameshift_Ins	Complex	NORMAL	0.479500122186953	1	0.480	ns	Wilcoxon
+25	Pancreas	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+26	Pancreas	No_Frameshift_Ins	MSH2_MSH6	MSH6	1	1	1.000	ns	Wilcoxon
+27	Pancreas	No_Frameshift_Ins	MLH1_PMS2	MSH6	1	1	1.000	ns	Wilcoxon
+28	Colorectal	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.353993219283519	1	0.354	ns	Wilcoxon
+29	Colorectal	No_Frameshift_Ins	MSH2_MSH6	NORMAL	0.385261241090317	1	0.385	ns	Wilcoxon
+30	Colorectal	No_Frameshift_Ins	MSH2_MSH6	MSH6	0.174494245463354	1	0.174	ns	Wilcoxon
+31	Colorectal	No_Frameshift_Ins	MSH2_MSH6	PMS2	0.234763662827669	1	0.235	ns	Wilcoxon
+32	Colorectal	No_Frameshift_Ins	MLH1_PMS2	NORMAL	0.318447410251518	1	0.318	ns	Wilcoxon
+33	Colorectal	No_Frameshift_Ins	MLH1_PMS2	MSH6	0.301699582478348	1	0.302	ns	Wilcoxon
+34	Colorectal	No_Frameshift_Ins	MLH1_PMS2	PMS2	0.149066677491367	1	0.149	ns	Wilcoxon
+35	Colorectal	No_Frameshift_Ins	NORMAL	MSH6	0.228571428571429	1	0.229	ns	Wilcoxon
+36	Colorectal	No_Frameshift_Ins	NORMAL	PMS2	0.4	1	0.400	ns	Wilcoxon
+37	Colorectal	No_Frameshift_Ins	MSH6	PMS2	0.5	1	0.500	ns	Wilcoxon
+38	Biliary	No_Frameshift_Ins	MLH1_PMS2	PMS2	0.234763662827669	1	0.235	ns	Wilcoxon
+39	Prostate	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+40	Prostate	No_Frameshift_Ins	MSH2_MSH6	MSH6	1	1	1.000	ns	Wilcoxon
+41	Prostate	No_Frameshift_Ins	MLH1_PMS2	MSH6	1	1	1.000	ns	Wilcoxon
+42	Small Bowel	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.15266138035243	1	0.153	ns	Wilcoxon
+43	Small Bowel	No_Frameshift_Ins	MSH2_MSH6	NORMAL	1	1	1.000	ns	Wilcoxon
+44	Small Bowel	No_Frameshift_Ins	MSH2_MSH6	PMS2	0.133333333333333	1	0.133	ns	Wilcoxon
+45	Small Bowel	No_Frameshift_Ins	MLH1_PMS2	NORMAL	0.276500480083433	1	0.277	ns	Wilcoxon
+46	Small Bowel	No_Frameshift_Ins	MLH1_PMS2	PMS2	0.191266986878869	1	0.191	ns	Wilcoxon
+47	Small Bowel	No_Frameshift_Ins	NORMAL	PMS2	0.4	1	0.400	ns	Wilcoxon
+48	Endometrial	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.536975483519627	1	0.537	ns	Wilcoxon
+49	Endometrial	No_Frameshift_Ins	MSH2_MSH6	Complex	0.412408595532314	1	0.412	ns	Wilcoxon
+50	Endometrial	No_Frameshift_Ins	MSH2_MSH6	NORMAL	0.554836971223026	1	0.555	ns	Wilcoxon
+51	Endometrial	No_Frameshift_Ins	MSH2_MSH6	MSH6	0.412408595532314	1	0.412	ns	Wilcoxon
+52	Endometrial	No_Frameshift_Ins	MLH1_PMS2	Complex	0.419002504962469	1	0.419	ns	Wilcoxon
+53	Endometrial	No_Frameshift_Ins	MLH1_PMS2	NORMAL	0.643689849810188	1	0.644	ns	Wilcoxon
+54	Endometrial	No_Frameshift_Ins	MLH1_PMS2	MSH6	0.419002504962469	1	0.419	ns	Wilcoxon
+55	Endometrial	No_Frameshift_Ins	Complex	NORMAL	0.235679913429038	1	0.236	ns	Wilcoxon
+56	Endometrial	No_Frameshift_Ins	NORMAL	MSH6	0.235679913429038	1	0.236	ns	Wilcoxon
+57	Rectal	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.965387338426457	1	0.965	ns	Wilcoxon
+58	Rectal	No_Frameshift_Ins	MSH2_MSH6	PMS2	0.133614402537716	1	0.134	ns	Wilcoxon
+59	Rectal	No_Frameshift_Ins	MLH1_PMS2	PMS2	0.205718061264228	1	0.206	ns	Wilcoxon
+60	CUP	No_Frameshift_Ins	MLH1_PMS2	NORMAL	0.527089256865538	1	0.527	ns	Wilcoxon
+61	Other	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.310296867263819	1	0.310	ns	Wilcoxon
+62	Ovarian	No_Frameshift_Ins	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+63	Ovarian	No_Frameshift_Ins	MSH2_MSH6	PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+64	Ovarian	No_Frameshift_Ins	MLH1_PMS2	PMS2	1	1	1.000	ns	Wilcoxon

@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Fraction_Genome_Altered	MSH6	Not_MSH6	0.102938670134592	0.1	0.1	ns	Wilcoxon

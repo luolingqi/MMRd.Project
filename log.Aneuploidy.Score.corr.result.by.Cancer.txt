@@ -1,0 +1,79 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	log.Aneuploidy.Score	Bladder	Colon	0.0866869455184102	1	0.0867	ns	Wilcoxon
+2	log.Aneuploidy.Score	Bladder	Esophagogastric	0.482266720976073	1	0.4823	ns	Wilcoxon
+3	log.Aneuploidy.Score	Bladder	Pancreas	0.413986013986014	1	0.4140	ns	Wilcoxon
+4	log.Aneuploidy.Score	Bladder	Colorectal	0.375136259621385	1	0.3751	ns	Wilcoxon
+5	log.Aneuploidy.Score	Bladder	Biliary	0.699300699300699	1	0.6993	ns	Wilcoxon
+6	log.Aneuploidy.Score	Bladder	Prostate	0.825174825174825	1	0.8252	ns	Wilcoxon
+7	log.Aneuploidy.Score	Bladder	Small Bowel	0.094719521964104	1	0.0947	ns	Wilcoxon
+8	log.Aneuploidy.Score	Bladder	Endometrial	0.728454189010665	1	0.7285	ns	Wilcoxon
+9	log.Aneuploidy.Score	Bladder	Rectal	0.0831875084129762	1	0.0832	ns	Wilcoxon
+10	log.Aneuploidy.Score	Bladder	CUP	0.898101898101898	1	0.8981	ns	Wilcoxon
+11	log.Aneuploidy.Score	Bladder	Other	0.688911088911089	1	0.6889	ns	Wilcoxon
+12	log.Aneuploidy.Score	Bladder	Ovarian	1	1	1.0000	ns	Wilcoxon
+13	log.Aneuploidy.Score	Colon	Esophagogastric	0.0446433370295139	1	0.0446	*	Wilcoxon
+14	log.Aneuploidy.Score	Colon	Pancreas	0.552965181977927	1	0.5530	ns	Wilcoxon
+15	log.Aneuploidy.Score	Colon	Colorectal	0.233292825678945	1	0.2333	ns	Wilcoxon
+16	log.Aneuploidy.Score	Colon	Biliary	0.0782211316753716	1	0.0782	ns	Wilcoxon
+17	log.Aneuploidy.Score	Colon	Prostate	0.0346668156575655	1	0.0347	*	Wilcoxon
+18	log.Aneuploidy.Score	Colon	Small Bowel	0.399069653272833	1	0.3991	ns	Wilcoxon
+19	log.Aneuploidy.Score	Colon	Endometrial	5.15090568273893e-05	0.004	5.2e-05	****	Wilcoxon
+20	log.Aneuploidy.Score	Colon	Rectal	0.676449399364961	1	0.6764	ns	Wilcoxon
+21	log.Aneuploidy.Score	Colon	CUP	0.117850773495616	1	0.1179	ns	Wilcoxon
+22	log.Aneuploidy.Score	Colon	Other	0.00818895035003499	0.61	0.0082	**	Wilcoxon
+23	log.Aneuploidy.Score	Colon	Ovarian	0.358835823799809	1	0.3588	ns	Wilcoxon
+24	log.Aneuploidy.Score	Esophagogastric	Pancreas	0.82453609918159	1	0.8245	ns	Wilcoxon
+25	log.Aneuploidy.Score	Esophagogastric	Colorectal	0.831670961444912	1	0.8317	ns	Wilcoxon
+26	log.Aneuploidy.Score	Esophagogastric	Biliary	0.51705512298252	1	0.5171	ns	Wilcoxon
+27	log.Aneuploidy.Score	Esophagogastric	Prostate	0.279815249979742	1	0.2798	ns	Wilcoxon
+28	log.Aneuploidy.Score	Esophagogastric	Small Bowel	0.0717269010638562	1	0.0717	ns	Wilcoxon
+29	log.Aneuploidy.Score	Esophagogastric	Endometrial	0.0861146754796093	1	0.0861	ns	Wilcoxon
+30	log.Aneuploidy.Score	Esophagogastric	Rectal	0.0963546734668249	1	0.0964	ns	Wilcoxon
+31	log.Aneuploidy.Score	Esophagogastric	CUP	0.565052927786904	1	0.5651	ns	Wilcoxon
+32	log.Aneuploidy.Score	Esophagogastric	Other	0.149771026855542	1	0.1498	ns	Wilcoxon
+33	log.Aneuploidy.Score	Esophagogastric	Ovarian	0.610104529616725	1	0.6101	ns	Wilcoxon
+34	log.Aneuploidy.Score	Pancreas	Colorectal	1	1	1.0000	ns	Wilcoxon
+35	log.Aneuploidy.Score	Pancreas	Biliary	0.555555555555556	1	0.5556	ns	Wilcoxon
+36	log.Aneuploidy.Score	Pancreas	Prostate	0.342857142857143	1	0.3429	ns	Wilcoxon
+37	log.Aneuploidy.Score	Pancreas	Small Bowel	0.303696303696304	1	0.3037	ns	Wilcoxon
+38	log.Aneuploidy.Score	Pancreas	Endometrial	0.357402410859774	1	0.3574	ns	Wilcoxon
+39	log.Aneuploidy.Score	Pancreas	Rectal	0.573856209150327	1	0.5739	ns	Wilcoxon
+40	log.Aneuploidy.Score	Pancreas	CUP	0.285714285714286	1	0.2857	ns	Wilcoxon
+41	log.Aneuploidy.Score	Pancreas	Other	0.114285714285714	1	0.1143	ns	Wilcoxon
+42	log.Aneuploidy.Score	Pancreas	Ovarian	0.628571428571429	1	0.6286	ns	Wilcoxon
+43	log.Aneuploidy.Score	Colorectal	Biliary	0.325180540283515	1	0.3252	ns	Wilcoxon
+44	log.Aneuploidy.Score	Colorectal	Prostate	0.226930963773069	1	0.2269	ns	Wilcoxon
+45	log.Aneuploidy.Score	Colorectal	Small Bowel	0.10918311284444	1	0.1092	ns	Wilcoxon
+46	log.Aneuploidy.Score	Colorectal	Endometrial	0.15193900607403	1	0.1519	ns	Wilcoxon
+47	log.Aneuploidy.Score	Colorectal	Rectal	0.266600808254616	1	0.2666	ns	Wilcoxon
+48	log.Aneuploidy.Score	Colorectal	CUP	0.325180540283515	1	0.3252	ns	Wilcoxon
+49	log.Aneuploidy.Score	Colorectal	Other	0.0471930815180243	1	0.0472	*	Wilcoxon
+50	log.Aneuploidy.Score	Colorectal	Ovarian	0.470676691729323	1	0.4707	ns	Wilcoxon
+51	log.Aneuploidy.Score	Biliary	Prostate	0.412698412698413	1	0.4127	ns	Wilcoxon
+52	log.Aneuploidy.Score	Biliary	Small Bowel	0.0193140193140193	1	0.0193	*	Wilcoxon
+53	log.Aneuploidy.Score	Biliary	Endometrial	0.710119225230952	1	0.7101	ns	Wilcoxon
+54	log.Aneuploidy.Score	Biliary	Rectal	0.0700034399724802	1	0.0700	ns	Wilcoxon
+55	log.Aneuploidy.Score	Biliary	CUP	0.547619047619048	1	0.5476	ns	Wilcoxon
+56	log.Aneuploidy.Score	Biliary	Other	0.246753246753247	1	0.2468	ns	Wilcoxon
+57	log.Aneuploidy.Score	Biliary	Ovarian	0.785714285714286	1	0.7857	ns	Wilcoxon
+58	log.Aneuploidy.Score	Prostate	Small Bowel	0.023976023976024	1	0.0240	*	Wilcoxon
+59	log.Aneuploidy.Score	Prostate	Endometrial	0.693266963775634	1	0.6933	ns	Wilcoxon
+60	log.Aneuploidy.Score	Prostate	Rectal	0.034640522875817	1	0.0346	*	Wilcoxon
+61	log.Aneuploidy.Score	Prostate	CUP	0.73015873015873	1	0.7302	ns	Wilcoxon
+62	log.Aneuploidy.Score	Prostate	Other	1	1	1.0000	ns	Wilcoxon
+63	log.Aneuploidy.Score	Prostate	Ovarian	1	1	1.0000	ns	Wilcoxon
+64	log.Aneuploidy.Score	Small Bowel	Endometrial	0.0106753720146643	0.78	0.0107	*	Wilcoxon
+65	log.Aneuploidy.Score	Small Bowel	Rectal	0.70883148349833	1	0.7088	ns	Wilcoxon
+66	log.Aneuploidy.Score	Small Bowel	CUP	0.0752580752580752	1	0.0753	ns	Wilcoxon
+67	log.Aneuploidy.Score	Small Bowel	Other	0.00474525474525475	0.37	0.0047	**	Wilcoxon
+68	log.Aneuploidy.Score	Small Bowel	Ovarian	0.468531468531469	1	0.4685	ns	Wilcoxon
+69	log.Aneuploidy.Score	Endometrial	Rectal	0.0070486085357588	0.53	0.0070	**	Wilcoxon
+70	log.Aneuploidy.Score	Endometrial	CUP	0.807031511181052	1	0.8070	ns	Wilcoxon
+71	log.Aneuploidy.Score	Endometrial	Other	0.736041569266079	1	0.7360	ns	Wilcoxon
+72	log.Aneuploidy.Score	Endometrial	Ovarian	0.900485349557323	1	0.9005	ns	Wilcoxon
+73	log.Aneuploidy.Score	Rectal	CUP	0.08703130374957	1	0.0870	ns	Wilcoxon
+74	log.Aneuploidy.Score	Rectal	Other	0.0064499484004128	0.49	0.0064	**	Wilcoxon
+75	log.Aneuploidy.Score	Rectal	Ovarian	0.432352941176471	1	0.4324	ns	Wilcoxon
+76	log.Aneuploidy.Score	CUP	Other	0.792207792207792	1	0.7922	ns	Wilcoxon
+77	log.Aneuploidy.Score	CUP	Ovarian	1	1	1.0000	ns	Wilcoxon
+78	log.Aneuploidy.Score	Other	Ovarian	1	1	1.0000	ns	Wilcoxon

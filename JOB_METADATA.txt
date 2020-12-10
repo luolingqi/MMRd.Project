@@ -1,0 +1,40 @@
+THIS FILE CONTAINS THE METADATA ABOUT SYSTEM AND RUNTIME
+
+
+-------System Info-------
+Operating System Name: Linux
+Nodename: 4031852b498e
+Release: 4.19.76-linuxkit
+Version: #1 SMP Tue May 26 11:42:35 UTC 2020
+
+-------Python and Package Versions------- 
+Python Version: 3.6.9
+Sigproextractor Version: 1.0.3
+SigprofilerPlotting Version: 1.1.0
+SigprofilerMatrixGenerator Version: 1.1.5
+Pandas version: 1.0.1
+Numpy version: 1.18.1
+Scipy version: 1.4.1
+Scikit-learn version: 0.22.2
+Nimfa version: 1.4.0
+
+-------Vital Parameters Used for the execution -------
+input_type: table
+inputdata: P-0045009-T01-IM6.SBS96.all
+startProcess: 1
+endProcess: 53
+totalIterations: 100
+cpu: 4
+refgen: GRCh37
+genome_build: GRCh37
+mtype: 96 
+init: alexandrov-lab-custom
+
+-------Date and Time Data------- 
+Date and Clock time when the execution started: 2020-08-06 10:54:09.825741
+
+Signature extraction for SBS96 completed for 1 signatures for 0:00:29.820981! TimeStamp: 2020-08-06 10:54:39.682229
+
+Date and Clock time when the execution ended: 2020-08-06 10:54:49.050974
+-------Job Status------- 
+Analysis of mutational signatures completed successfully! Total execution time: 0:00:39.225233. Results can be found in: [/data] folder

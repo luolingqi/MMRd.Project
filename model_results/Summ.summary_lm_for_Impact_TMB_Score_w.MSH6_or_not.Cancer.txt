@@ -1,0 +1,29 @@
+MODEL INFO:
+Observations: 382
+Dependent Variable: Impact_TMB_Score
+Type: OLS linear regression 
+
+MODEL FIT:
+F(13,368) = 3.364, p = 0.000
+R² = 0.106
+Adj. R² = 0.075 
+
+Standard errors: OLS
+-----------------------------------------------------------------------------------
+                                          Est.      2.5%     97.5%   t val.       p
+------------------------------------ --------- --------- --------- -------- -------
+(Intercept)                             82.384    70.531    94.237   13.668   0.000
+MSH6_or_notNot_MSH6                    -26.169   -37.653   -14.685   -4.481   0.000
+Cancer_Type_NEWBiliary                 -12.465   -47.341    22.410   -0.703   0.483
+Cancer_Type_NEWBladder                 -23.541   -53.151     6.069   -1.563   0.119
+Cancer_Type_NEWColorectal               -1.607   -20.431    17.218   -0.168   0.867
+Cancer_Type_NEWCUP                      65.218    30.343   100.093    3.677   0.000
+Cancer_Type_NEWEndometrial             -11.552   -22.882    -0.222   -2.005   0.046
+Cancer_Type_NEWEsophagogastric          -2.725   -17.252    11.802   -0.369   0.712
+Cancer_Type_NEWOther                   -43.736   -76.744   -10.728   -2.606   0.010
+Cancer_Type_NEWOvarian                 -28.700   -71.307    13.908   -1.325   0.186
+Cancer_Type_NEWPancreas                -17.059   -60.038    25.920   -0.780   0.436
+Cancer_Type_NEWProstate                -34.934   -77.913     8.045   -1.598   0.111
+Cancer_Type_NEWRectal                   -4.820   -24.632    14.993   -0.478   0.633
+Cancer_Type_NEWSmall Bowel             -15.802   -40.876     9.271   -1.239   0.216
+-----------------------------------------------------------------------------------

@@ -1,0 +1,59 @@
+Linear mixed model fit by maximum likelihood  ['lmerModLmerTest']
+Formula: formula
+   Data: data
+      AIC       BIC    logLik  deviance  df.resid 
+ 2630.172  2763.958 -1281.086  2562.172       344 
+Random effects:
+ Groups      Name                      Std.Dev. Corr          
+ Sample_Type (Intercept)               0.0000                 
+             Multiplex_or_not?         5.8131    NaN          
+             Multiplex_or_notMultiplex 0.5990    NaN 1.00     
+             Multiplex_or_notNORMAL    0.5317    NaN 1.00 1.00
+ Residual                              7.1448                 
+Number of obs: 378, groups:  Sample_Type, 3
+Fixed Effects:
+                      (Intercept)                  Multiplex_or_not?          Multiplex_or_notMultiplex  
+                         6.649372                          15.684414                          10.368044  
+           Multiplex_or_notNORMAL             Cancer_Type_NEWBiliary             Cancer_Type_NEWBladder  
+                         6.788972                          -3.073263                          -5.947155  
+        Cancer_Type_NEWColorectal                 Cancer_Type_NEWCUP         Cancer_Type_NEWEndometrial  
+                        -1.661975                          -1.482958                          -5.695250  
+   Cancer_Type_NEWEsophagogastric               Cancer_Type_NEWOther             Cancer_Type_NEWOvarian  
+                        -2.338594                          -9.456923                          -6.001334  
+          Cancer_Type_NEWPancreas            Cancer_Type_NEWProstate              Cancer_Type_NEWRectal  
+                        -3.437146                          -2.973479                          -0.058623  
+       Cancer_Type_NEWSmall Bowel                        Current_Age                       Tumor_Purity  
+                        -3.999934                           0.008812                           0.004474  
+    RaceBLACK OR AFRICAN AMERICAN  RaceNATIVE AMERICAN-AM IND/ALASKA                          RaceOTHER  
+                         2.685953                           0.796662                           4.144556  
+         RacePT REFUSED TO ANSWER                          RaceWHITE  
+                         3.074994                           0.696708  
+optimizer (nloptwrap) convergence code: 0 (OK) ; 0 optimizer warnings; 1 lme4 warnings 
+$Sample_Type
+           (Intercept) Multiplex_or_not? Multiplex_or_notMultiplex Multiplex_or_notNORMAL Cancer_Type_NEWBiliary
+Metastasis    6.649372         16.527173                 10.454879               6.866055              -3.073263
+Mixed         6.649372          9.897462                  9.771772               6.259672              -3.073263
+Primary       6.649372         20.628608                 10.877480               7.241190              -3.073263
+           Cancer_Type_NEWBladder Cancer_Type_NEWColorectal Cancer_Type_NEWCUP Cancer_Type_NEWEndometrial
+Metastasis              -5.947155                 -1.661975          -1.482958                   -5.69525
+Mixed                   -5.947155                 -1.661975          -1.482958                   -5.69525
+Primary                 -5.947155                 -1.661975          -1.482958                   -5.69525
+           Cancer_Type_NEWEsophagogastric Cancer_Type_NEWOther Cancer_Type_NEWOvarian Cancer_Type_NEWPancreas
+Metastasis                      -2.338594            -9.456923              -6.001334               -3.437146
+Mixed                           -2.338594            -9.456923              -6.001334               -3.437146
+Primary                         -2.338594            -9.456923              -6.001334               -3.437146
+           Cancer_Type_NEWProstate Cancer_Type_NEWRectal Cancer_Type_NEWSmall Bowel Current_Age Tumor_Purity
+Metastasis               -2.973479           -0.05862289                  -3.999934 0.008812074  0.004473528
+Mixed                    -2.973479           -0.05862289                  -3.999934 0.008812074  0.004473528
+Primary                  -2.973479           -0.05862289                  -3.999934 0.008812074  0.004473528
+           RaceBLACK OR AFRICAN AMERICAN RaceNATIVE AMERICAN-AM IND/ALASKA RaceOTHER RacePT REFUSED TO ANSWER
+Metastasis                      2.685953                         0.7966624  4.144556                 3.074994
+Mixed                           2.685953                         0.7966624  4.144556                 3.074994
+Primary                         2.685953                         0.7966624  4.144556                 3.074994
+           RaceWHITE
+Metastasis 0.6967084
+Mixed      0.6967084
+Primary    0.6967084
+
+attr(,"class")
+[1] "coef.mer"

@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: MSI_Score_1
+             Df Sum Sq Mean Sq F value Pr(>F)
+PMS2_or_not   1    111  111.08  1.0079 0.3161
+Residuals   379  41769  110.21               

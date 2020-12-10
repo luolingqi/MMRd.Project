@@ -1,0 +1,11 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Nonsynonymous_coding	MSH2_MSH6	?	0.141608391608392	1	0.14	ns	Wilcoxon
+2	Nonsynonymous_coding	MSH2_MSH6	MLH1_PMS2	0.258083093377211	1	0.26	ns	Wilcoxon
+3	Nonsynonymous_coding	MSH2_MSH6	MSH6	0.727272727272727	1	0.73	ns	Wilcoxon
+4	Nonsynonymous_coding	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon
+5	Nonsynonymous_coding	?	MLH1_PMS2	0.299125874125874	1	0.30	ns	Wilcoxon
+6	Nonsynonymous_coding	?	MSH6	0.333333333333333	1	0.33	ns	Wilcoxon
+7	Nonsynonymous_coding	?	PMS2	0.5	1	0.50	ns	Wilcoxon
+8	Nonsynonymous_coding	MLH1_PMS2	MSH6	0.327272727272727	1	0.33	ns	Wilcoxon
+9	Nonsynonymous_coding	MLH1_PMS2	PMS2	0.4	1	0.40	ns	Wilcoxon
+10	Nonsynonymous_coding	MSH6	PMS2	1	1	1.00	ns	Wilcoxon

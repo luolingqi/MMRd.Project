@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: Fraction_Genome_Altered
+                  Df  Sum Sq  Mean Sq F value   Pr(>F)   
+Multiplex_or_not   3 0.12145 0.040483  5.5269 0.001009 **
+Residuals        377 2.76141 0.007325                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

@@ -1,0 +1,19 @@
+MODEL INFO:
+Observations: 381
+Dependent Variable: No_Frameshift_Del
+Type: OLS linear regression 
+
+MODEL FIT:
+F(3,377) = 14.143, p = 0.000
+R² = 0.101
+Adj. R² = 0.094 
+
+Standard errors: OLS
+--------------------------------------------------------------------------
+                                    Est.    2.5%    97.5%   t val.       p
+------------------------------- -------- ------- -------- -------- -------
+(Intercept)                        5.320   2.319    8.321    3.485   0.001
+Multiplex_or_not?                 15.480   8.128   22.832    4.140   0.000
+Multiplex_or_notMultiplex          9.695   6.583   12.807    6.125   0.000
+Multiplex_or_notNORMAL             6.996   2.428   11.563    3.012   0.003
+--------------------------------------------------------------------------

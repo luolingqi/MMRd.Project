@@ -1,0 +1,4 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_DELETION	Singleton	Multiplex	2.57165959324067e-12	7.7e-12	2.6e-12	****	Wilcoxon
+2	No_DELETION	Singleton	NORMAL	0.000869667002749037	0.0017	0.00087	***	Wilcoxon
+3	No_DELETION	Multiplex	NORMAL	0.0496438719976737	0.05	0.04964	*	Wilcoxon

@@ -1,0 +1,12 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_Nonsense	MSH6	Not_MSH6	0.182422439451736	1	0.1824	ns	Wilcoxon
+2	Colon	No_Nonsense	MSH6	Not_MSH6	2.59735359937617e-05	0.00029	2.6e-05	****	Wilcoxon
+3	Esophagogastric	No_Nonsense	MSH6	Not_MSH6	0.16797519235138	1	0.1680	ns	Wilcoxon
+4	Pancreas	No_Nonsense	MSH6	Not_MSH6	1	1	1.0000	ns	Wilcoxon
+5	Colorectal	No_Nonsense	MSH6	Not_MSH6	0.314205149456071	1	0.3142	ns	Wilcoxon
+6	Prostate	No_Nonsense	MSH6	Not_MSH6	0.637351888233937	1	0.6374	ns	Wilcoxon
+7	Small Bowel	No_Nonsense	MSH6	Not_MSH6	0.140946460430972	1	0.1409	ns	Wilcoxon
+8	Endometrial	No_Nonsense	MSH6	Not_MSH6	0.00498606954961174	0.045	0.0050	**	Wilcoxon
+9	Rectal	No_Nonsense	MSH6	Not_MSH6	0.00171932649439033	0.017	0.0017	**	Wilcoxon
+10	Other	No_Nonsense	MSH6	Not_MSH6	0.550398489580591	1	0.5504	ns	Wilcoxon
+11	Ovarian	No_Nonsense	MSH6	Not_MSH6	0.193930852282411	1	0.1939	ns	Wilcoxon

@@ -1,0 +1,131 @@
+---
+title: "Summary Report for Mutation Signature Comparison among MMRd Types"
+author: "Lingqi Luo"
+date: "`r format(Sys.time(), '%d %B, %Y, %H:%M')`"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r library, include=FALSE,echo=FALSE}
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+library(viridis)
+library(ggsci)
+
+source("drawSigMutDotplotByMMRd.R")
+```
+
+##### 1. Generate mutation signature Dotplot for essential COSMIC **SBS** Signatures only!  
+
+```{r}
+sigs <- c("SBS1","SBS5","SBS6","SBS10b","SBS14","SBS15","SBS20","SBS21","SBS26","SBS44")
+drawSigMutDotplotByMMRd('Decomposed_Solution_Activities_SBS96.txt', sigs, 'SBS')
+
+```
+##### 2. Generate mutation signature Dotplot for essential COSMIC **INDEL** Signatures only!  
+
+```{r}
+sigs <- c("ID1","ID2","ID7","ID14","ID15","ID16")
+drawSigMutDotplotByMMRd('Decomposed_Solution_Activities_SBSINDEL.txt', sigs, 'INDEL')
+
+```
+##### 3. Plot SBS signature composition by MMRd types  
+
+```{r}
+df_SBS_deconvo <- read.csv2(file = "SBS_deconvo.txt", header = T, sep = "\t", quote = "")
+
+# merge in the MMRd type information
+  
+df_MMRd <- read.table(file = "MMRd_type.txt", header = T, sep = "\t")
+row.names(df_MMRd) <- df_MMRd$caseID
+df_MMRd <- df_MMRd[, ! names(df_MMRd) %in% c("X")]
+  
+# tumor.number <- as.data.frame(as.matrix(table(df_MMRd$MMRd_type)))
+# colnames(tumor.number) <- c("Tumor.number")
+  
+df_SBS_deconvo_MMRd <- merge(df_SBS_deconvo, df_MMRd, by = 0)
+row.names(df_SBS_deconvo_MMRd) <- df_SBS_deconvo_MMRd$Row.names
+df_SBS_deconvo_MMRd <- df_SBS_deconvo_MMRd[,! names(df_SBS_deconvo_MMRd) %in% c("Row.names","caseID")]
+  
+# write to file
+write.table(df_SBS_deconvo_MMRd, 
+            file = file.path(getwd(),paste0("SBS_portion_in_sample_by_MMRd.txt")), 
+            quote = F, sep = "\t", col.names = NA, row.names = T)
+
+# 
+  
+MMR.SBS <- c("SBS6","SBS15","SBS21","SBS26","SBS44")
+POL.SBS <- c("SBS14","SBS20")
+AGE.SBS <- c("SBS1","SBS5")
+
+# Summarize 
+df_SBS_deconvo_MMR <- df_SBS_deconvo_MMRd[,names(df_SBS_deconvo_MMRd) %in% c(MMR.SBS,"MMRd_type")]
+df_SBS_deconvo_MMR.rownames <- row.names(df_SBS_deconvo_MMR)
+df_SBS_deconvo_MMR.MMRd_type <- df_SBS_deconvo_MMR$MMRd_type
+df_SBS_deconvo_MMR <- df_SBS_deconvo_MMR %>%  select(.,contains("SBS")) %>% mutate_all(function(x) as.numeric(x)) 
+df_SBS_deconvo_MMR <- cbind(df_SBS_deconvo_MMR, MMRd_type = df_SBS_deconvo_MMR.MMRd_type)
+df_SBS_deconvo_MMR <- df_SBS_deconvo_MMR %>% 
+  mutate(SUM.MMR = rowSums(select(.,contains("SBS")))) %>% 
+  mutate(SampleID = df_SBS_deconvo_MMR.rownames)
+row.names(df_SBS_deconvo_MMR) <- df_SBS_deconvo_MMR.rownames
+
+
+df_SBS_deconvo_POL <- df_SBS_deconvo_MMRd[,names(df_SBS_deconvo_MMRd) %in% c(POL.SBS,"MMRd_type")]
+df_SBS_deconvo_POL.rownames <- row.names(df_SBS_deconvo_POL)
+df_SBS_deconvo_POL.MMRd_type <- df_SBS_deconvo_POL$MMRd_type
+df_SBS_deconvo_POL <- df_SBS_deconvo_POL %>%  select(.,contains("SBS")) %>% mutate_all(function(x) as.numeric(x)) 
+df_SBS_deconvo_POL <- cbind(df_SBS_deconvo_POL, MMRd_type = df_SBS_deconvo_POL.MMRd_type)
+df_SBS_deconvo_POL <- df_SBS_deconvo_POL %>% 
+  mutate(SUM.POL = rowSums(select(.,contains("SBS")))) %>% 
+  mutate(SampleID = df_SBS_deconvo_POL.rownames)
+
+row.names(df_SBS_deconvo_POL) <- df_SBS_deconvo_POL.rownames
+
+
+
+df_SBS_deconvo_AGE <- df_SBS_deconvo_MMRd[,names(df_SBS_deconvo_MMRd) %in% c(AGE.SBS,"MMRd_type")]
+df_SBS_deconvo_AGE.rownames <- row.names(df_SBS_deconvo_AGE)
+df_SBS_deconvo_AGE.MMRd_type <- df_SBS_deconvo_AGE$MMRd_type
+df_SBS_deconvo_AGE <- df_SBS_deconvo_AGE %>%  select(.,contains("SBS")) %>% mutate_all(function(x) as.numeric(x)) 
+df_SBS_deconvo_AGE <- cbind(df_SBS_deconvo_AGE, MMRd_type = df_SBS_deconvo_AGE.MMRd_type)
+df_SBS_deconvo_AGE <- df_SBS_deconvo_AGE %>% 
+  mutate(SUM.AGE = rowSums(select(.,contains("SBS")))) %>% 
+  mutate(SampleID = df_SBS_deconvo_AGE.rownames)
+row.names(df_SBS_deconvo_AGE) <- df_SBS_deconvo_AGE.rownames
+
+
+# merge MMR, POL, AGE related signatures portion dataframe
+# merged_df <- Reduce(function(...) merge(..., by=0, all=TRUE), 
+#        list(df_SBS_deconvo_MMR, df_SBS_deconvo_POL, df_SBS_deconvo_AGE))
+
+merged_df <- full_join(df_SBS_deconvo_MMR, df_SBS_deconvo_POL, by = 'SampleID') %>% full_join(., df_SBS_deconvo_AGE, by = 'SampleID') %>% select(SampleID, MMRd_type, SUM.MMR, SUM.POL, SUM.AGE)
+
+# reshape the dataframe
+df_plot <- melt(merged_df,
+     value.name = "Sum.Portion",
+     id.vars = c("SampleID","MMRd_type"),
+     variable.name = "Signature.Type")
+
+# Plot the signature portion by Signature type
+p <- df_plot %>% 
+  ggplot() + geom_bar(aes(Signature.Type, Sum.Portion, fill = Signature.Type), 
+                                position = "dodge", stat = "summary", fun.y = "mean") + 
+  ggtitle("Mean Signature Portion by Cosmic Signature Type") + scale_fill_jco()
+print(p)
+
+# Plot the signature portion by Signature type and MMRd type
+p1 <- df_plot %>% 
+  ggplot() + geom_bar(aes(Signature.Type, Sum.Portion, fill = MMRd_type), 
+                                position = "dodge", stat = "summary", fun.y = "mean") + 
+  ggtitle("Mean Signature Portion by MMRd & Cosmic Signature Type") + scale_fill_jco()
+print(p1)
+
+```
+

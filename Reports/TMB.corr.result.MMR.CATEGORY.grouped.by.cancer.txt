@@ -1,0 +1,6 @@
+TumorType	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Ampulla of Vater	TMB	MSH2_MSH6	MSH6	1	1	1.00	ns	Wilcoxon
+2	Small Intestine	TMB	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+3	Colorectal 	TMB	MSH2_MSH6	MLH1_PMS2	0.833333333333333	1	0.83	ns	Wilcoxon
+4	Endometrial cancer	TMB	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+5	Gastroesophageal cancer	TMB	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon

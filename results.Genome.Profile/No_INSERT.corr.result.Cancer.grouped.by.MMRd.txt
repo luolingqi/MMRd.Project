@@ -1,0 +1,180 @@
+CLASSIFICATION_PLOT	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	MSH2_MSH6	No_INSERT	Bladder	Colon	0.0162721009488922	1	0.0163	*	Wilcoxon
+2	MSH2_MSH6	No_INSERT	Bladder	Esophagogastric	0.168761228585149	1	0.1688	ns	Wilcoxon
+3	MSH2_MSH6	No_INSERT	Bladder	Pancreas	0.839197669230738	1	0.8392	ns	Wilcoxon
+4	MSH2_MSH6	No_INSERT	Bladder	Colorectal	0.0333386832715863	1	0.0333	*	Wilcoxon
+5	MSH2_MSH6	No_INSERT	Bladder	Prostate	0.828968502125176	1	0.8290	ns	Wilcoxon
+6	MSH2_MSH6	No_INSERT	Bladder	Small Bowel	0.828968502125176	1	0.8290	ns	Wilcoxon
+7	MSH2_MSH6	No_INSERT	Bladder	Endometrial	0.372533832642408	1	0.3725	ns	Wilcoxon
+8	MSH2_MSH6	No_INSERT	Bladder	Rectal	0.00216170043894948	0.39	0.0022	**	Wilcoxon
+9	MSH2_MSH6	No_INSERT	Bladder	Other	0.165271760298015	1	0.1653	ns	Wilcoxon
+10	MSH2_MSH6	No_INSERT	Bladder	Ovarian	0.0732148078897701	1	0.0732	ns	Wilcoxon
+11	MSH2_MSH6	No_INSERT	Colon	Esophagogastric	0.623215620429077	1	0.6232	ns	Wilcoxon
+12	MSH2_MSH6	No_INSERT	Colon	Pancreas	0.71653128963532	1	0.7165	ns	Wilcoxon
+13	MSH2_MSH6	No_INSERT	Colon	Colorectal	0.369216175825103	1	0.3692	ns	Wilcoxon
+14	MSH2_MSH6	No_INSERT	Colon	Prostate	0.129665258836682	1	0.1297	ns	Wilcoxon
+15	MSH2_MSH6	No_INSERT	Colon	Small Bowel	0.129665258836682	1	0.1297	ns	Wilcoxon
+16	MSH2_MSH6	No_INSERT	Colon	Endometrial	0.105940009364585	1	0.1059	ns	Wilcoxon
+17	MSH2_MSH6	No_INSERT	Colon	Rectal	0.281903702012871	1	0.2819	ns	Wilcoxon
+18	MSH2_MSH6	No_INSERT	Colon	Other	0.157068745389743	1	0.1571	ns	Wilcoxon
+19	MSH2_MSH6	No_INSERT	Colon	Ovarian	0.0795618026266101	1	0.0796	ns	Wilcoxon
+20	MSH2_MSH6	No_INSERT	Esophagogastric	Pancreas	0.811597509074705	1	0.8116	ns	Wilcoxon
+21	MSH2_MSH6	No_INSERT	Esophagogastric	Colorectal	0.901287773180033	1	0.9013	ns	Wilcoxon
+22	MSH2_MSH6	No_INSERT	Esophagogastric	Prostate	0.481120001127239	1	0.4811	ns	Wilcoxon
+23	MSH2_MSH6	No_INSERT	Esophagogastric	Small Bowel	0.481120001127239	1	0.4811	ns	Wilcoxon
+24	MSH2_MSH6	No_INSERT	Esophagogastric	Endometrial	0.198542793686662	1	0.1985	ns	Wilcoxon
+25	MSH2_MSH6	No_INSERT	Esophagogastric	Rectal	0.824635542464671	1	0.8246	ns	Wilcoxon
+26	MSH2_MSH6	No_INSERT	Esophagogastric	Other	0.170608744850832	1	0.1706	ns	Wilcoxon
+27	MSH2_MSH6	No_INSERT	Esophagogastric	Ovarian	0.481120001127239	1	0.4811	ns	Wilcoxon
+28	MSH2_MSH6	No_INSERT	Pancreas	Colorectal	0.430222691132191	1	0.4302	ns	Wilcoxon
+29	MSH2_MSH6	No_INSERT	Pancreas	Prostate	1	1	1.0000	ns	Wilcoxon
+30	MSH2_MSH6	No_INSERT	Pancreas	Small Bowel	1	1	1.0000	ns	Wilcoxon
+31	MSH2_MSH6	No_INSERT	Pancreas	Endometrial	0.87253685815055	1	0.8725	ns	Wilcoxon
+32	MSH2_MSH6	No_INSERT	Pancreas	Rectal	0.654107726573279	1	0.6541	ns	Wilcoxon
+33	MSH2_MSH6	No_INSERT	Pancreas	Other	0.840730447079886	1	0.8407	ns	Wilcoxon
+34	MSH2_MSH6	No_INSERT	Pancreas	Ovarian	0.220671361919847	1	0.2207	ns	Wilcoxon
+35	MSH2_MSH6	No_INSERT	Colorectal	Prostate	0.155479904711957	1	0.1555	ns	Wilcoxon
+36	MSH2_MSH6	No_INSERT	Colorectal	Small Bowel	0.155479904711957	1	0.1555	ns	Wilcoxon
+37	MSH2_MSH6	No_INSERT	Colorectal	Endometrial	0.0932894636293368	1	0.0933	ns	Wilcoxon
+38	MSH2_MSH6	No_INSERT	Colorectal	Rectal	0.564730822496085	1	0.5647	ns	Wilcoxon
+39	MSH2_MSH6	No_INSERT	Colorectal	Other	0.0896860217703646	1	0.0897	ns	Wilcoxon
+40	MSH2_MSH6	No_INSERT	Colorectal	Ovarian	0.0759269629825577	1	0.0759	ns	Wilcoxon
+41	MSH2_MSH6	No_INSERT	Prostate	Endometrial	0.688794490292495	1	0.6888	ns	Wilcoxon
+42	MSH2_MSH6	No_INSERT	Prostate	Rectal	0.0333122783674819	1	0.0333	*	Wilcoxon
+43	MSH2_MSH6	No_INSERT	Prostate	Other	0.310296867263819	1	0.3103	ns	Wilcoxon
+44	MSH2_MSH6	No_INSERT	Prostate	Ovarian	0.193930852282411	1	0.1939	ns	Wilcoxon
+45	MSH2_MSH6	No_INSERT	Small Bowel	Endometrial	0.688794490292495	1	0.6888	ns	Wilcoxon
+46	MSH2_MSH6	No_INSERT	Small Bowel	Rectal	0.0333122783674819	1	0.0333	*	Wilcoxon
+47	MSH2_MSH6	No_INSERT	Small Bowel	Other	0.310296867263819	1	0.3103	ns	Wilcoxon
+48	MSH2_MSH6	No_INSERT	Small Bowel	Ovarian	0.193930852282411	1	0.1939	ns	Wilcoxon
+49	MSH2_MSH6	No_INSERT	Endometrial	Rectal	0.0186692665691305	1	0.0187	*	Wilcoxon
+50	MSH2_MSH6	No_INSERT	Endometrial	Other	1	1	1.0000	ns	Wilcoxon
+51	MSH2_MSH6	No_INSERT	Endometrial	Ovarian	0.0660420293509796	1	0.0660	ns	Wilcoxon
+52	MSH2_MSH6	No_INSERT	Rectal	Other	0.0062336019387687	1	0.0062	**	Wilcoxon
+53	MSH2_MSH6	No_INSERT	Rectal	Ovarian	0.0333122783674819	1	0.0333	*	Wilcoxon
+54	MSH2_MSH6	No_INSERT	Other	Ovarian	0.067808282585735	1	0.0678	ns	Wilcoxon
+55	MLH1_PMS2	No_INSERT	Colon	Esophagogastric	0.452203359811067	1	0.4522	ns	Wilcoxon
+56	MLH1_PMS2	No_INSERT	Colon	Pancreas	0.953068722207994	1	0.9531	ns	Wilcoxon
+57	MLH1_PMS2	No_INSERT	Colon	Colorectal	0.676269266067617	1	0.6763	ns	Wilcoxon
+58	MLH1_PMS2	No_INSERT	Colon	Biliary	0.513264932474073	1	0.5133	ns	Wilcoxon
+59	MLH1_PMS2	No_INSERT	Colon	Prostate	0.276372513032913	1	0.2764	ns	Wilcoxon
+60	MLH1_PMS2	No_INSERT	Colon	Small Bowel	0.266551820196739	1	0.2666	ns	Wilcoxon
+61	MLH1_PMS2	No_INSERT	Colon	Endometrial	0.0329957546918602	1	0.0330	*	Wilcoxon
+62	MLH1_PMS2	No_INSERT	Colon	Rectal	0.203563189577346	1	0.2036	ns	Wilcoxon
+63	MLH1_PMS2	No_INSERT	Colon	CUP	0.0200707894659237	1	0.0201	*	Wilcoxon
+64	MLH1_PMS2	No_INSERT	Colon	Other	0.892836810456666	1	0.8928	ns	Wilcoxon
+65	MLH1_PMS2	No_INSERT	Colon	Ovarian	0.627376368401114	1	0.6274	ns	Wilcoxon
+66	MLH1_PMS2	No_INSERT	Esophagogastric	Pancreas	1	1	1.0000	ns	Wilcoxon
+67	MLH1_PMS2	No_INSERT	Esophagogastric	Colorectal	0.58039757468516	1	0.5804	ns	Wilcoxon
+68	MLH1_PMS2	No_INSERT	Esophagogastric	Biliary	0.895741588374275	1	0.8957	ns	Wilcoxon
+69	MLH1_PMS2	No_INSERT	Esophagogastric	Prostate	0.328518406732887	1	0.3285	ns	Wilcoxon
+70	MLH1_PMS2	No_INSERT	Esophagogastric	Small Bowel	0.245881844866521	1	0.2459	ns	Wilcoxon
+71	MLH1_PMS2	No_INSERT	Esophagogastric	Endometrial	0.487686595390921	1	0.4877	ns	Wilcoxon
+72	MLH1_PMS2	No_INSERT	Esophagogastric	Rectal	0.216273477505468	1	0.2163	ns	Wilcoxon
+73	MLH1_PMS2	No_INSERT	Esophagogastric	CUP	0.162129729142189	1	0.1621	ns	Wilcoxon
+74	MLH1_PMS2	No_INSERT	Esophagogastric	Other	0.746899897307038	1	0.7469	ns	Wilcoxon
+75	MLH1_PMS2	No_INSERT	Esophagogastric	Ovarian	0.718753491581938	1	0.7188	ns	Wilcoxon
+76	MLH1_PMS2	No_INSERT	Pancreas	Colorectal	1	1	1.0000	ns	Wilcoxon
+77	MLH1_PMS2	No_INSERT	Pancreas	Biliary	1	1	1.0000	ns	Wilcoxon
+78	MLH1_PMS2	No_INSERT	Pancreas	Prostate	1	1	1.0000	ns	Wilcoxon
+79	MLH1_PMS2	No_INSERT	Pancreas	Small Bowel	0.716800516994495	1	0.7168	ns	Wilcoxon
+80	MLH1_PMS2	No_INSERT	Pancreas	Endometrial	0.717797929873997	1	0.7178	ns	Wilcoxon
+81	MLH1_PMS2	No_INSERT	Pancreas	Rectal	0.472497614000689	1	0.4725	ns	Wilcoxon
+82	MLH1_PMS2	No_INSERT	Pancreas	CUP	0.227799993988229	1	0.2278	ns	Wilcoxon
+83	MLH1_PMS2	No_INSERT	Pancreas	Other	1	1	1.0000	ns	Wilcoxon
+84	MLH1_PMS2	No_INSERT	Pancreas	Ovarian	1	1	1.0000	ns	Wilcoxon
+85	MLH1_PMS2	No_INSERT	Colorectal	Biliary	0.445709924187335	1	0.4457	ns	Wilcoxon
+86	MLH1_PMS2	No_INSERT	Colorectal	Prostate	0.388623928289195	1	0.3886	ns	Wilcoxon
+87	MLH1_PMS2	No_INSERT	Colorectal	Small Bowel	0.506203713640915	1	0.5062	ns	Wilcoxon
+88	MLH1_PMS2	No_INSERT	Colorectal	Endometrial	0.169681179387467	1	0.1697	ns	Wilcoxon
+89	MLH1_PMS2	No_INSERT	Colorectal	Rectal	0.297257050138426	1	0.2973	ns	Wilcoxon
+90	MLH1_PMS2	No_INSERT	Colorectal	CUP	0.00897373627927597	1	0.0090	**	Wilcoxon
+91	MLH1_PMS2	No_INSERT	Colorectal	Other	1	1	1.0000	ns	Wilcoxon
+92	MLH1_PMS2	No_INSERT	Colorectal	Ovarian	0.388623928289195	1	0.3886	ns	Wilcoxon
+93	MLH1_PMS2	No_INSERT	Biliary	Prostate	0.365712296281513	1	0.3657	ns	Wilcoxon
+94	MLH1_PMS2	No_INSERT	Biliary	Small Bowel	0.253887299829074	1	0.2539	ns	Wilcoxon
+95	MLH1_PMS2	No_INSERT	Biliary	Endometrial	0.884809459861846	1	0.8848	ns	Wilcoxon
+96	MLH1_PMS2	No_INSERT	Biliary	Rectal	0.2496572863412	1	0.2497	ns	Wilcoxon
+97	MLH1_PMS2	No_INSERT	Biliary	CUP	0.274915836705365	1	0.2749	ns	Wilcoxon
+98	MLH1_PMS2	No_INSERT	Biliary	Other	0.693281817504481	1	0.6933	ns	Wilcoxon
+99	MLH1_PMS2	No_INSERT	Biliary	Ovarian	0.763024600552995	1	0.7630	ns	Wilcoxon
+100	MLH1_PMS2	No_INSERT	Prostate	Small Bowel	1	1	1.0000	ns	Wilcoxon
+101	MLH1_PMS2	No_INSERT	Prostate	Endometrial	0.173130769459824	1	0.1731	ns	Wilcoxon
+102	MLH1_PMS2	No_INSERT	Prostate	Rectal	0.367621571176972	1	0.3676	ns	Wilcoxon
+103	MLH1_PMS2	No_INSERT	Prostate	CUP	0.227799993988229	1	0.2278	ns	Wilcoxon
+104	MLH1_PMS2	No_INSERT	Prostate	Other	0.666666666666667	1	0.6667	ns	Wilcoxon
+105	MLH1_PMS2	No_INSERT	Prostate	Ovarian	1	1	1.0000	ns	Wilcoxon
+106	MLH1_PMS2	No_INSERT	Small Bowel	Endometrial	0.0871156746473523	1	0.0871	ns	Wilcoxon
+107	MLH1_PMS2	No_INSERT	Small Bowel	Rectal	0.344400282033699	1	0.3444	ns	Wilcoxon
+108	MLH1_PMS2	No_INSERT	Small Bowel	CUP	0.102357525572279	1	0.1024	ns	Wilcoxon
+109	MLH1_PMS2	No_INSERT	Small Bowel	Other	0.481120001127239	1	0.4811	ns	Wilcoxon
+110	MLH1_PMS2	No_INSERT	Small Bowel	Ovarian	0.716800516994495	1	0.7168	ns	Wilcoxon
+111	MLH1_PMS2	No_INSERT	Endometrial	Rectal	0.0410083999008021	1	0.0410	*	Wilcoxon
+112	MLH1_PMS2	No_INSERT	Endometrial	CUP	0.171973891227163	1	0.1720	ns	Wilcoxon
+113	MLH1_PMS2	No_INSERT	Endometrial	Other	0.506807092535077	1	0.5068	ns	Wilcoxon
+114	MLH1_PMS2	No_INSERT	Endometrial	Ovarian	0.504546297927409	1	0.5045	ns	Wilcoxon
+115	MLH1_PMS2	No_INSERT	Rectal	CUP	0.0251083053447158	1	0.0251	*	Wilcoxon
+116	MLH1_PMS2	No_INSERT	Rectal	Other	0.620138603286581	1	0.6201	ns	Wilcoxon
+117	MLH1_PMS2	No_INSERT	Rectal	Ovarian	0.588809186540854	1	0.5888	ns	Wilcoxon
+118	MLH1_PMS2	No_INSERT	CUP	Other	0.155479904711957	1	0.1555	ns	Wilcoxon
+119	MLH1_PMS2	No_INSERT	CUP	Ovarian	0.227799993988229	1	0.2278	ns	Wilcoxon
+120	MLH1_PMS2	No_INSERT	Other	Ovarian	1	1	1.0000	ns	Wilcoxon
+121	Complex	No_INSERT	Colon	Esophagogastric	0.157299207050285	1	0.1573	ns	Wilcoxon
+122	Complex	No_INSERT	Colon	Endometrial	0.594729336193591	1	0.5947	ns	Wilcoxon
+123	Complex	No_INSERT	Esophagogastric	Endometrial	1	1	1.0000	ns	Wilcoxon
+124	NORMAL	No_INSERT	Colon	Esophagogastric	0.881132727927916	1	0.8811	ns	Wilcoxon
+125	NORMAL	No_INSERT	Colon	Colorectal	0.444469087574028	1	0.4445	ns	Wilcoxon
+126	NORMAL	No_INSERT	Colon	Small Bowel	0.371093369522698	1	0.3711	ns	Wilcoxon
+127	NORMAL	No_INSERT	Colon	Endometrial	0.696095271895592	1	0.6961	ns	Wilcoxon
+128	NORMAL	No_INSERT	Colon	CUP	0.821965597932604	1	0.8220	ns	Wilcoxon
+129	NORMAL	No_INSERT	Esophagogastric	Colorectal	0.481120001127239	1	0.4811	ns	Wilcoxon
+130	NORMAL	No_INSERT	Esophagogastric	Small Bowel	0.479500122186953	1	0.4795	ns	Wilcoxon
+131	NORMAL	No_INSERT	Esophagogastric	Endometrial	0.474549143449401	1	0.4745	ns	Wilcoxon
+132	NORMAL	No_INSERT	Esophagogastric	CUP	0.479500122186953	1	0.4795	ns	Wilcoxon
+133	NORMAL	No_INSERT	Colorectal	Small Bowel	0.468159909854428	1	0.4682	ns	Wilcoxon
+134	NORMAL	No_INSERT	Colorectal	Endometrial	0.309424060364659	1	0.3094	ns	Wilcoxon
+135	NORMAL	No_INSERT	Colorectal	CUP	0.8	1	0.8000	ns	Wilcoxon
+136	NORMAL	No_INSERT	Small Bowel	Endometrial	0.276500480083433	1	0.2765	ns	Wilcoxon
+137	NORMAL	No_INSERT	Small Bowel	CUP	1	1	1.0000	ns	Wilcoxon
+138	NORMAL	No_INSERT	Endometrial	CUP	1	1	1.0000	ns	Wilcoxon
+139	MSH6	No_INSERT	Bladder	Colon	0.21129954733371	1	0.2113	ns	Wilcoxon
+140	MSH6	No_INSERT	Bladder	Pancreas	0.479500122186953	1	0.4795	ns	Wilcoxon
+141	MSH6	No_INSERT	Bladder	Colorectal	0.760906727075114	1	0.7609	ns	Wilcoxon
+142	MSH6	No_INSERT	Bladder	Prostate	0.479500122186953	1	0.4795	ns	Wilcoxon
+143	MSH6	No_INSERT	Bladder	Endometrial	0.479500122186953	1	0.4795	ns	Wilcoxon
+144	MSH6	No_INSERT	Colon	Pancreas	0.716800516994495	1	0.7168	ns	Wilcoxon
+145	MSH6	No_INSERT	Colon	Colorectal	1	1	1.0000	ns	Wilcoxon
+146	MSH6	No_INSERT	Colon	Prostate	1	1	1.0000	ns	Wilcoxon
+147	MSH6	No_INSERT	Colon	Endometrial	0.716800516994495	1	0.7168	ns	Wilcoxon
+148	MSH6	No_INSERT	Pancreas	Colorectal	0.34577858615116	1	0.3458	ns	Wilcoxon
+149	MSH6	No_INSERT	Pancreas	Prostate	1	1	1.0000	ns	Wilcoxon
+150	MSH6	No_INSERT	Colorectal	Prostate	1	1	1.0000	ns	Wilcoxon
+151	MSH6	No_INSERT	Colorectal	Endometrial	0.34577858615116	1	0.3458	ns	Wilcoxon
+152	MSH6	No_INSERT	Prostate	Endometrial	1	1	1.0000	ns	Wilcoxon
+153	PMS2	No_INSERT	Bladder	Colon	0.8	1	0.8000	ns	Wilcoxon
+154	PMS2	No_INSERT	Bladder	Colorectal	1	1	1.0000	ns	Wilcoxon
+155	PMS2	No_INSERT	Bladder	Biliary	1	1	1.0000	ns	Wilcoxon
+156	PMS2	No_INSERT	Bladder	Small Bowel	0.468159909854428	1	0.4682	ns	Wilcoxon
+157	PMS2	No_INSERT	Bladder	Rectal	1	1	1.0000	ns	Wilcoxon
+158	PMS2	No_INSERT	Bladder	Ovarian	1	1	1.0000	ns	Wilcoxon
+159	PMS2	No_INSERT	Colon	Colorectal	0.4	1	0.4000	ns	Wilcoxon
+160	PMS2	No_INSERT	Colon	Biliary	0.4	1	0.4000	ns	Wilcoxon
+161	PMS2	No_INSERT	Colon	Small Bowel	0.2	1	0.2000	ns	Wilcoxon
+162	PMS2	No_INSERT	Colon	Rectal	1	1	1.0000	ns	Wilcoxon
+163	PMS2	No_INSERT	Colon	Ovarian	0.8	1	0.8000	ns	Wilcoxon
+164	PMS2	No_INSERT	Colorectal	Biliary	1	1	1.0000	ns	Wilcoxon
+165	PMS2	No_INSERT	Colorectal	Small Bowel	1	1	1.0000	ns	Wilcoxon
+166	PMS2	No_INSERT	Colorectal	Rectal	1	1	1.0000	ns	Wilcoxon
+167	PMS2	No_INSERT	Colorectal	Ovarian	1	1	1.0000	ns	Wilcoxon
+168	PMS2	No_INSERT	Biliary	Small Bowel	0.4	1	0.4000	ns	Wilcoxon
+169	PMS2	No_INSERT	Biliary	Rectal	1	1	1.0000	ns	Wilcoxon
+170	PMS2	No_INSERT	Biliary	Ovarian	1	1	1.0000	ns	Wilcoxon
+171	PMS2	No_INSERT	Small Bowel	Rectal	0.8	1	0.8000	ns	Wilcoxon
+172	PMS2	No_INSERT	Small Bowel	Ovarian	0.8	1	0.8000	ns	Wilcoxon
+173	PMS2	No_INSERT	Rectal	Ovarian	1	1	1.0000	ns	Wilcoxon
+174	?	No_INSERT	Bladder	Esophagogastric	0.666666666666667	1	0.6667	ns	Wilcoxon
+175	?	No_INSERT	Bladder	Small Bowel	1	1	1.0000	ns	Wilcoxon
+176	?	No_INSERT	Bladder	Endometrial	1	1	1.0000	ns	Wilcoxon
+177	?	No_INSERT	Esophagogastric	Small Bowel	1	1	1.0000	ns	Wilcoxon
+178	?	No_INSERT	Esophagogastric	Endometrial	1	1	1.0000	ns	Wilcoxon
+179	?	No_INSERT	Small Bowel	Endometrial	1	1	1.0000	ns	Wilcoxon

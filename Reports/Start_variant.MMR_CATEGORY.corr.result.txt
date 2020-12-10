@@ -1,0 +1,10 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Start_variant	MSH2_MSH6	?	0.926528103081774	1	0.93	ns	Wilcoxon
+2	Start_variant	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+3	Start_variant	MSH2_MSH6	MSH6	0.813663715766792	1	0.81	ns	Wilcoxon
+4	Start_variant	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon
+5	Start_variant	?	MLH1_PMS2	0.926528103081774	1	0.93	ns	Wilcoxon
+6	Start_variant	?	MSH6	0.789268026134281	1	0.79	ns	Wilcoxon
+7	Start_variant	?	PMS2	1	1	1.00	ns	Wilcoxon
+8	Start_variant	MLH1_PMS2	MSH6	0.813663715766792	1	0.81	ns	Wilcoxon
+9	Start_variant	MLH1_PMS2	PMS2	1	1	1.00	ns	Wilcoxon

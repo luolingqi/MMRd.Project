@@ -1,0 +1,12 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_INDEL	PMS2	Not_PMS2	0.825199067091841	1	0.83	ns	Wilcoxon
+2	Colon	No_INDEL	PMS2	Not_PMS2	0.365619390426469	1	0.37	ns	Wilcoxon
+3	Esophagogastric	No_INDEL	PMS2	Not_PMS2	0.556823390067588	1	0.56	ns	Wilcoxon
+4	Pancreas	No_INDEL	PMS2	Not_PMS2	0.34577858615116	1	0.35	ns	Wilcoxon
+5	Colorectal	No_INDEL	PMS2	Not_PMS2	0.384892761368841	1	0.38	ns	Wilcoxon
+6	Prostate	No_INDEL	PMS2	Not_PMS2	0.5	1	0.50	ns	Wilcoxon
+7	Small Bowel	No_INDEL	PMS2	Not_PMS2	1	1	1.00	ns	Wilcoxon
+8	Endometrial	No_INDEL	PMS2	Not_PMS2	0.938393024787432	1	0.94	ns	Wilcoxon
+9	Rectal	No_INDEL	PMS2	Not_PMS2	0.820330062875326	1	0.82	ns	Wilcoxon
+10	Other	No_INDEL	PMS2	Not_PMS2	0.857142857142857	1	0.86	ns	Wilcoxon
+11	Ovarian	No_INDEL	PMS2	Not_PMS2	0.333333333333333	1	0.33	ns	Wilcoxon

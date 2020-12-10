@@ -1,0 +1,766 @@
+---
+title: "Untitled"
+author: "Lingqi Luo"
+date: "7/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r }
+#knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(render = 'normal_print')
+
+library(ggpubr)
+library(ggplot2)
+library(RColorBrewer)
+library(scales)
+library("survminer")
+require("survival")
+library(dplyr)
+library(reshape2)
+library(ggsci)
+library(jtools)
+
+df <- read.table(file = file.path(getwd(),"R_Input_2.txt"), 
+                 header = TRUE, 
+                 quote = "", 
+                 sep = "\t", 
+                 row.names = 6)
+#my_comparisons <- list( c("NORMAL", "PMS2"), c("NORMAL", "MSH6"), c("MSH6", "MSH2_MSH6") )
+
+###################################################################
+# plot genomic landscape by MMRd types
+####################################################################
+# add in cancer types
+df_Tumor.purity <- read.table(file = file.path(getwd(),"Tumor_purity.txt"), sep = "\t", header = T, quote = "" )
+row.names(df_Tumor.purity) <- df_Tumor.purity$Sample_ID
+
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+
+df_1 <- merge(df, df_Cancer, by = 0)
+row.names(df_1) <- df_1$Row.names
+df_1 <- df_1[,-which(names(df_1) %in% c("Row.names","Sample_ID"))]
+
+df_1 <- merge(df_1, df_Tumor.purity, by = 0)
+row.names(df_1) <- df_1$Row.names
+df_1 <- df_1[,-which(names(df_1) %in% c("Row.names","Sample_ID"))]
+
+
+plotCorr.MMRd <- function(x, y) {
+  my_comparisons <- list()
+  df_corr <- compare_means(as.formula(paste0(y," ~ ", "CLASSIFICATION_PLOT")),  data = x[-which(x$CLASSIFICATION_PLOT=="Delete"),])
+  idx <- 1
+  for(sig in which(df_corr$p.signif != "ns")){
+    #print(as.character(df_corr[sig,c("group1")]))
+    
+    my_comparisons[[idx]] <- c(as.character(df_corr[sig,c("group1")]), as.character(df_corr[sig,c("group2")]))
+    idx <- idx + 1
+  }
+  n <- length(my_comparisons)
+  write.table(df_corr, 
+              file = file.path(getwd(),paste0(y,".corr.result.txt")), 
+              quote = FALSE, 
+              sep = "\t")
+  
+  ylabel <- y
+  
+  if (y == "Fraction_Genome_Altered") {
+    max_y <- max(x[,y])
+    min_y <- min(x[,y])
+    assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+              x = "CLASSIFICATION_PLOT", y = y,
+              #color = "Cancer_Type_NEW", 
+              palette = "category20", size = 0.5,
+              add = c("mean","mean_sd"),
+              add.params = list(color = "red")) + 
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              xlab("MMRd Type") +
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.02*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 1.8*max_y) + 
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 7)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ )
+ return(get(paste0("p_",y)))    
+  }else {
+    max_y <- log10(max(x[,y]))
+    min_y <- log10(min(x[,y]))
+    assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+              x = "CLASSIFICATION_PLOT", y = y,
+              #color = "Cancer_Type_NEW", 
+              palette = "category20", size = 0.5,
+              add = c("mean","mean_sd"),
+              add.params = list(color = "red")) + 
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              xlab("MMRd Type") +
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.03*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 2*max_y) + 
+              scale_y_log10() +
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 7)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ )
+ return(get(paste0("p_",y)))
+  }
+  
+}
+
+# c(max_y*0.7, max_y*0.8, max_y*0.9)
+metrics <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", "No_Missense", "No_Frameshift", "No_Splice","No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del" )
+
+df_1_pls_1 <- cbind(df_1[,! names(df_1) %in% c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Row.names","Sample_ID","Tumor_Purity","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")]+1, df_1[,c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Tumor_Purity","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")])
+
+for(i in metrics) {
+  # compare means between MMRd groups, grouped by cancer types
+  corr_tmp <- compare_means(as.formula(paste0(i," ~ CLASSIFICATION_PLOT")), data = df_1[-which(df_1$CLASSIFICATION_PLOT=="Delete")], group.by = "Cancer_Type_NEW")
+  write.table(corr_tmp,
+              file = file.path(getwd(),paste0(i,".corr.result.MMRd.grouped.by.cancer.txt")),
+              quote = FALSE,
+              sep = "\t")
+
+  # plot and test without grouping by cancer types
+  assign(paste0("p_",i), plotCorr.MMRd(df_1_pls_1,i))
+  print(get(paste0("p_",i)))
+  
+  ## Build a linear model for each genomic feature using predictors 1) MMRd type; 2) Cancer type; 3) Tumor purity
+  sink(paste0("summary_lm_for_",i,"_w.MMRd.Cancer.Purity.txt"))
+  model <- lm(reformulate(termlabels = c('CLASSIFICATION_PLOT', 'Cancer_Type_NEW', 'Tumor_Purity'), response = i), df_1)
+  
+  # sink(paste0("summary_lm_for_",i,"_w.MMRd.Cancer.txt"))
+  # model <- lm(reformulate(termlabels = c('CLASSIFICATION_PLOT', 'Cancer_Type_NEW'), response = i), df_1)
+
+  # sink(paste0("summary_lm_for_",i,"_w.Purity.txt"))
+  # model <- lm(reformulate(termlabels = c('Tumor_Purity'), response = i), df_1)
+  
+  #print(summary(model))
+  sink() 
+  
+  sink(paste0("summary_annova_for_",i,"_w.MMRd.Cancer.Purity.txt"))
+  print(anova(model))
+  sink()
+  
+  #print(summ(model))
+}
+
+
+
+###################################################################
+# plot genomic landscape by cancer types
+####################################################################
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+
+df_1 <- merge(df, df_Cancer, by = 0)
+row.names(df_1) <- df_1$Row.names
+
+plotCorr.Cancer <- function(x, y) {
+  my_comparisons <- list()
+  df_corr <- compare_means(as.formula(paste0(y," ~ ", "Cancer_Type_NEW")),  data = x[-which(x$CLASSIFICATION_PLOT=="Delete"),])
+  idx <- 1
+  for(sig in which(df_corr$p.signif != "ns")){
+    #print(as.character(df_corr[sig,c("group1")]))
+    
+    my_comparisons[[idx]] <- c(as.character(df_corr[sig,c("group1")]), as.character(df_corr[sig,c("group2")]))
+    idx <- idx + 1
+  }
+  n <- length(my_comparisons)
+  write.table(df_corr, 
+              file = file.path(getwd(),paste0(y,".corr.result.by.Cancer.txt")), 
+              quote = FALSE, 
+              sep = "\t")
+  
+  ylabel <- y
+  
+  if (y == "Fraction_Genome_Altered") {
+    max_y <- max(x[,y])
+    min_y <- min(x[,y])
+    assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+              x = "Cancer_Type_NEW", y = y,
+              color = "CLASSIFICATION_PLOT", palette = "category20", size = 0.5) + 
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              xlab("Cancer Type") +
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.02*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 1.8*max_y) + 
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 7)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ )
+ return(get(paste0("p_",y)))    
+  }else {
+    max_y <- log10(max(x[,y]))
+    min_y <- log10(min(x[,y]))
+    assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+              x = "Cancer_Type_NEW", y = y,
+              color = "CLASSIFICATION_PLOT", palette = "category20", size = 0.5) + 
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              xlab("Cancer Type") +
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.8*max_y*(1-0.02*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 2*max_y) + 
+              scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+                            labels = trans_format("log10", math_format(10^.x))) +
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 7)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ )
+ return(get(paste0("p_",y)))
+  }
+  
+}
+
+# c(max_y*0.7, max_y*0.8, max_y*0.9)
+metrics <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", "No_Missense", "No_Frameshift", "No_Splice","No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL" )
+
+df_1_pls_1 <- cbind(df_1[,unlist(lapply(df_1, is.numeric))]+1,df_1[,!unlist(lapply(df_1, is.numeric))])
+#df_1_pls_1 <- cbind(df_1[,! names(df_1) %in% c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Row.names","Sample_ID")]+1, df_1[,c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT")])
+
+for(i in metrics) {
+    # compare means between MMRd groups, grouped by cancer types
+  corr_tmp <- compare_means(as.formula(paste0(i, " ~ Cancer_Type_NEW ")), data = df_1[-which(df_1$CLASSIFICATION_PLOT=="Delete")], group.by = "CLASSIFICATION_PLOT")
+  write.table(corr_tmp, 
+              file = file.path(getwd(),paste0(i,".corr.result.Cancer.grouped.by.MMRd.txt")), 
+              quote = FALSE, 
+              sep = "\t")
+  
+  # plot and test without grouping by cancer types
+  assign(paste0("p_",i), plotCorr.Cancer(df_1_pls_1,i))
+  print(get(paste0("p_",i)))
+}
+
+###########################################################################
+# plot case frequency by MMRd and Cancer types
+###########################################################################
+# By Cancer types
+p_freq_abs <- ggplot(df_1[which(df_1$CLASSIFICATION_PLOT != "Delete"),]) +
+  geom_bar(aes(x=Cancer_Type_NEW,fill=CLASSIFICATION_PLOT)) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab("Cancer Type") + labs(fill="MMRd Type")
+p_freq_abs
+
+p_freq_pct <- ggplot(df_1[which(df_1$CLASSIFICATION_PLOT != "Delete"),]) +
+  geom_bar(aes(x=Cancer_Type_NEW,fill=CLASSIFICATION_PLOT), position = "fill") +
+  ylab("Percentage") +
+  xlab("Cancer Type") + labs(fill="MMRd Type") +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+p_freq_pct
+
+# By MMRd types
+library("ggsci")
+p_freq_abs.1 <- ggplot(df_1[which(df_1$CLASSIFICATION_PLOT != "Delete"),]) +
+  geom_bar(aes(x=CLASSIFICATION_PLOT,fill=Cancer_Type_NEW)) +
+  scale_fill_d3(palette = "category20") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab("MMRd Type") + labs(fill="Cancer Type")
+p_freq_abs.1
+
+p_freq_pct.1 <- ggplot(df_1[which(df_1$CLASSIFICATION_PLOT != "Delete"),]) +
+  geom_bar(aes(x=CLASSIFICATION_PLOT,fill=Cancer_Type_NEW), position = "fill") +
+  ylab("Percentage") +
+  xlab("MMRd Type") + labs(fill="Cancer Type") +
+  scale_fill_d3(palette = "category20") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+p_freq_pct.1
+
+###########################################################################
+# plot VAF
+###########################################################################
+
+df_variants <- read.table(file = file.path(getwd(),"somatic_mutations_in_sample_list_AF.txt"), 
+                 header = TRUE, 
+                 quote = "", 
+                 sep = "\t")
+
+# column bind cancer types
+df_variants <- cbind(df_variants, df_Cancer[df_variants$Tumor_Sample_Barcode,c("Sample_ID","Cancer_Type_NEW")])
+# column bind MMRd types
+df_variants <- cbind(df_variants, df[df_variants$Tumor_Sample_Barcode, "CLASSIFICATION_PLOT"])
+names(df_variants)[length(names(df_variants))]<-"MMRd_Type" 
+
+# generate histogram of VAF for each MMRd type
+library(ggplot2)
+MMRd_types <- c("MLH1_PMS2","MSH2_MSH6","MSH6","PMS2","NORMAL","Complex")
+ymax <- c(1000,300,100,100,100,100) 
+
+for(type in MMRd_types) {
+  idx <- which(type == MMRd_types)
+  p_MAF <- ggplot(df_variants[df_variants$Mutation_Status=="SOMATIC" & df_variants$MMRd_Type==type & df_variants$Variant_Classification %in% c("Missense_Mutation","Frame_Shift_Del","Frame_Shift_Ins"),], aes(x=t_AF)) + 
+    geom_histogram(aes(color = Variant_Classification, fill = Variant_Classification), binwidth=0.01, position = "stack") +
+    ylim(0,ymax[idx]) + xlim(0,1) + ggtitle("MLH1_PMS2") + 
+    theme(plot.title = element_text(size=24,face="bold",hjust = 0.5))
+  
+  print(p_MAF)
+}
+
+
+###########################################################################
+# Survival Plot
+###########################################################################
+
+df_surv <- read.table(file = file.path(getwd(), "R_input_survival.txt"), header = T, sep = "\t", quote = "", fill = T)
+# the one recording only oncogenic mutations
+df_key_gene_mut <- read.table(file = file.path(getwd(), "oncogenic_mutations_in_key_genes_Y_N_1.txt"), sep = "\t",  header = T, quote = "", fill = T)
+#df_key_gene_mut <- read.table(file = file.path(getwd(), "sample_mutations_in_key_genes_Y_N.txt"), sep = "\t",  header = T, quote = "", fill = T)
+
+row.names(df_surv) <- df_surv$Sample_ID
+row.names(df_key_gene_mut) <- df_key_gene_mut$Sample_ID
+
+df_surv_MMRd <- merge(df_surv, df, by = 0, all.x = T)
+row.names(df_surv_MMRd) <- df_surv_MMRd$Row.names
+df_surv_MMRd <- df_surv_MMRd[,-which(names(df_surv_MMRd) %in% c("Row.names","Sample_ID"))]
+
+df_surv_MMRd.CancerType.GeneMut <- merge(df_surv_MMRd, df_key_gene_mut, by = 0, all = T)
+row.names(df_surv_MMRd.CancerType.GeneMut) <- df_surv_MMRd.CancerType.GeneMut$Row.names
+df_surv_MMRd.CancerType.GeneMut <- df_surv_MMRd.CancerType.GeneMut[,-which(names(df_surv_MMRd.CancerType.GeneMut) %in% c("Row.names","Sample_ID"))]
+
+
+# remove NA rows
+df_surv_MMRd.CancerType.GeneMut <- df_surv_MMRd.CancerType.GeneMut[
+  !is.na(df_surv_MMRd.CancerType.GeneMut$Overall_Survival_Months) & !df_surv_MMRd.CancerType.GeneMut$CLASSIFICATION_PLOT %in% c("Delete"),
+  c("Overall_Survival_Status","Overall_Survival_Months","CLASSIFICATION_PLOT", "Cancer_Type_NEW","TP53_Mut", "KRAS_Mut", "BRAF_Mut", "RNF43_Mut")]
+
+
+##########################################################################################
+# subset Colon Cancer only or not
+#######################################################################################
+df_surv_MMRd.CancerType.GeneMut <- df_surv_MMRd.CancerType.GeneMut[df_surv_MMRd.CancerType.GeneMut$Cancer_Type_NEW == "Colon",]
+############################################################################################
+# rename the dataframe
+colnames(df_surv_MMRd.CancerType.GeneMut) <- c("status", "time", "MMRd", "Cancer_Type","BRAF_Mut", "KRAS_Mut",  "RNF43_Mut", "TP53_Mut")
+df_surv_MMRd.CancerType.GeneMut$MMRd <- as.factor(df_surv_MMRd.CancerType.GeneMut$MMRd)
+MMRd_lvls <- levels(df_surv_MMRd.CancerType.GeneMut$MMRd)
+#MMRd_lvls <- MMRd_lvls[-which(MMRd_lvls == "Delete")]
+
+df_surv_MMRd.CancerType.GeneMut$Cancer_Type <- as.factor(df_surv_MMRd.CancerType.GeneMut$Cancer_Type)
+Cancer_Type_lvls <- levels(df_surv_MMRd.CancerType.GeneMut$Cancer_Type)
+
+
+df_surv_MMRd.CancerType.GeneMut$status <- as.numeric(as.factor(df_surv_MMRd.CancerType.GeneMut$status))
+df_surv_MMRd.CancerType.GeneMut$MMRd <- as.numeric(df_surv_MMRd.CancerType.GeneMut$MMRd)
+df_surv_MMRd.CancerType.GeneMut$Cancer_Type <- as.numeric(df_surv_MMRd.CancerType.GeneMut$Cancer_Type)
+
+# Drawing survival plot by MMRd
+fit.MMRd <- survfit(Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ MMRd, data = df_surv_MMRd.CancerType.GeneMut)
+ggsurvplot(fit.MMRd, linetype = "strata", pval = T, pval.method = T, legend.labs = MMRd_lvls,risk.table = T, 
+           data = df_surv_MMRd.CancerType.GeneMut) 
+
+# Drawing survival plot by Cancer type
+fit.Cancer_Type <- survfit(Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ Cancer_Type, data = df_surv_MMRd.CancerType.GeneMut)
+ggsurvplot(fit.Cancer_Type, linetype = "strata", pval = T, pval.method = T, legend.labs = Cancer_Type_lvls,
+           data = df_surv_MMRd.CancerType.GeneMut) 
+
+# Drawing survival plot by TP53 mut Y/N
+fit.TP53_Mut <- survfit(Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ TP53_Mut, data = df_surv_MMRd.CancerType.GeneMut)
+ggsurvplot(fit.TP53_Mut, linetype = "strata", pval = T, pval.method = T, legend.labs = c("N","Y"), legend.title = "TP53_Mut : ",risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T,
+           data = df_surv_MMRd.CancerType.GeneMut) 
+
+# Drawing survival plot by KRAS_Mut Y/N
+fit.KRAS_Mut <- survfit(Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ KRAS_Mut, data = df_surv_MMRd.CancerType.GeneMut)
+ggsurvplot(fit.KRAS_Mut, linetype = "strata", pval = T, pval.method = T, legend.labs = c("N","Y"), legend.title = "KRAS_Mut : ",risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T,
+           data = df_surv_MMRd.CancerType.GeneMut) 
+
+# Drawing survival plot by BRAF_Mut Y/N
+fit.BRAF_Mut <- survfit(Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ BRAF_Mut, data = df_surv_MMRd.CancerType.GeneMut)
+ggsurvplot(fit.BRAF_Mut, linetype = "strata", pval = T, pval.method = T, legend.labs = c("N","Y"), legend.title = "BRAF_Mut : ",risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T,
+           data = df_surv_MMRd.CancerType.GeneMut) 
+
+# Drawing survival plot by APC_Mut Y/N
+fit.RNF43_Mut <- survfit(Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ RNF43_Mut, data = df_surv_MMRd.CancerType.GeneMut)
+ggsurvplot(fit.RNF43_Mut, linetype = "strata", pval = T, pval.method = T, legend.labs = c("N","Y"), legend.title = "RNF43_Mut : ",risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T,
+           data = df_surv_MMRd.CancerType.GeneMut) 
+
+
+
+
+###########################################################################
+# Aneuploidy Score estimation
+###########################################################################
+df_aneuploidy <- read.table(file = file.path(getwd(),"CNA","R_input.txt"), header = T, quote = "")
+# calculate the aneuploidy scores for samples
+# I use the Steve's method for aneuploidy score calculation. Since we don't have any normal samples as reference, the formula here is: for each sample, we calculate mean(each tumor copy*segment)/STD(all tumor copy*segment)
+
+samples <- unique(df_aneuploidy$ID)
+df_aneuScore <- as.data.frame(matrix(nrow = 0, ncol = 2))
+
+df_means <- aggregate(df_aneuploidy, by = list(sample = df_aneuploidy$ID), formula = Copy.Segment ~ ID, FUN =  mean)
+Copy.Segment.sd <- sd(df_aneuploidy$Copy.Segment)
+
+df_aneuScore  <- as.data.frame(cbind(df_means$sample,df_means$Copy.Segment/Copy.Segment.sd))
+colnames(df_aneuScore) <- c("sample", "Aneuploidy.Score")
+row.names(df_aneuScore) <- df_aneuScore$sample
+# merge to add MMR.Type and Cancer_Type_New
+df_aneuScore_MMR <- merge(df_aneuScore, df_1, by = 0, all.x = T)
+row.names(df_aneuScore_MMR) <- df_aneuScore_MMR$sample
+df_aneuScore_MMR <- df_aneuScore_MMR[,!names(df_aneuScore_MMR) %in% c("Row.names","sample")]
+
+df_aneuScore_MMR$Aneuploidy.Score <- as.numeric(df_aneuScore_MMR$Aneuploidy.Score)
+df_aneuScore_MMR$log.Aneuploidy.Score <- log10(as.numeric(df_aneuScore_MMR$Aneuploidy.Score))
+
+library(ggplot2)
+ggplot(df_aneuScore_MMR[! df_aneuScore_MMR$CLASSIFICATION_PLOT %in% c("?","Delete"),], aes(x = CLASSIFICATION_PLOT, y = log10(Aneuploidy.Score))) +
+  geom_boxplot()
+
+
+p_aneuScore.MMRd <- plotCorr.MMRd(df_aneuScore_MMR[! df_aneuScore_MMR$CLASSIFICATION_PLOT %in% c("?","Delete"),],"log.Aneuploidy.Score")
+p_aneuScore.MMRd
+
+p_aneuScore.Cancer <- plotCorr.Cancer(df_aneuScore_MMR[! df_aneuScore_MMR$CLASSIFICATION_PLOT %in% c("?","Delete"),],"log.Aneuploidy.Score")
+p_aneuScore.Cancer
+
+```
+#############################################################
+# Pairwise survival plots by cancer types in mulitple-plot mode
+#############################################################
+```{r}
+# pairwise comparison of OS
+d_cmp <- expand.grid(x = c(1:13), y = c(1:13), stringsAsFactors = F) 
+d_cmp <- d_cmp[d_cmp$x < d_cmp$y,]
+
+#MMRd_lvls_1 <- c("?" , "Complex" , "MLH1_PMS2" ,"MSH2_MSH6" ,"MSH6"  , "NORMAL" , "PMS2")
+
+for (i in 1:nrow(d_cmp)) {
+  df_pair <- df_surv_MMRd.CancerType.GeneMut[df_surv_MMRd.CancerType.GeneMut$Cancer_Type %in% as.numeric(d_cmp[i,]),]
+  fit <- survfit(Surv(time = df_pair$time, event =  df_pair$status) ~ Cancer_Type, data = df_pair)
+  
+  # Estimate hazard ratio pairwisely
+  res.cox <- coxph(formula = Surv(time = df_pair$time, event =  df_pair$status) ~ MMRd, data = df_pair)
+  summary(res.cox) # summarize the result
+  # collect the following values: HR, lower 95%, upper 95%
+  estimate = exp(res.cox$coefficients)
+  conf.low = exp(confint(res.cox)[1,1])
+  conf.high = exp(confint(res.cox)[1,2])
+  
+  # Drawing curves
+  
+    p <- ggsurvplot(fit, pval = T, pval.method = T, legend.labs = Cancer_Type_lvls[as.numeric(d_cmp[i,])], 
+                    conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T, data = df_pair)
+    p$plot <- p$plot + 
+         annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1, 
+                  label = paste0("HR = ", round(estimate,2), " ( ",round(conf.low,2), " - ", round(conf.high,2), " ) "),
+                  size = 4)
+    print(p)
+    assign(paste0("p",i),  p$plot)
+  
+}
+# library(gridExtra)
+# grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,nrow = 5)
+# grid.arrange(             p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,nrow = 5)
+# grid.arrange(            p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54,p55,p56,p57,p58,p59,p60,nrow = 5)
+# grid.arrange(             p61,p62,p63,p64,p65,p66,p67,p68,p69,p70,p71,p72,p73,p74,p75,p76,p77,p78,nrow = 5)
+
+
+# grid plot for sig diff pairs
+#grid.arrange(p13,p21,p51,p53,p54,p66,p72, nrow=3)
+# print(p13)
+# print(p21)
+# print(p51)
+# print(p53)
+# print(p54)
+# print(p66)
+# print(p72)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+#############################################################
+# Pairwise survival plots by MMRd in mulitple-plot mode
+#############################################################
+```{r fig.height= 20, fig.width=20}
+
+# pairwise comparison of OS
+d_cmp <- expand.grid(x = c(1:7), y = c(1:7), stringsAsFactors = F) 
+d_cmp <- d_cmp[d_cmp$x < d_cmp$y,]
+
+#MMRd_lvls_1 <- c("?" , "Complex" , "MLH1_PMS2" ,"MSH2_MSH6" ,"MSH6"  , "NORMAL" , "PMS2")
+
+for (i in 1:nrow(d_cmp)) {
+  df_pair <- df_surv_MMRd.CancerType.GeneMut[df_surv_MMRd.CancerType.GeneMut$MMRd %in% as.numeric(d_cmp[i,]),]
+  fit <- survfit(Surv(time = df_pair$time, event =  df_pair$status) ~ MMRd, data = df_pair)
+  
+  # Estimate hazard ratio pairwisely
+  res.cox <- coxph(formula = Surv(time = df_pair$time, event =  df_pair$status) ~ MMRd, data = df_pair)
+  summary(res.cox) # summarize the result
+  # collect the following values: HR, lower 95%, upper 95%
+  estimate = exp(res.cox$coefficients)
+  conf.low = exp(confint(res.cox)[1,1])
+  conf.high = exp(confint(res.cox)[1,2])
+  
+  # Drawing curves
+  
+    p <- ggsurvplot(fit, pval = T, pval.method = T, legend.labs = MMRd_lvls_1[as.numeric(d_cmp[i,])], 
+                    conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T, data = df_pair)
+    p$plot <- p$plot + 
+         annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1, 
+                  label = paste0("HR = ", round(estimate,2), " ( ",round(conf.low,2), " - ", round(conf.high,2), " ) "),
+                  size = 4)
+    
+    assign(paste0("p",i),  p$plot)
+  
+}
+library(gridExtra)
+grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,nrow = 5)
+
+
+```
+#############################################################
+# survival plots by MMRd for top 3 most popular cancer types: 
+# 1) colon; 2) endometrial; 3) esophagogastric
+#############################################################
+```{r}
+# pairwise comparison of OS
+
+ # Colon Only
+MMRd_lvls_1 <- c("?" , "Complex" , "MLH1_PMS2" ,"MSH2_MSH6" ,"MSH6"  , "NORMAL" , "PMS2")
+avail.MMRd.types <- unique(df_surv_MMRd.CancerType.GeneMut[which(df_surv_MMRd.CancerType.GeneMut$Cancer_Type %in% c(3,6,7)),]$MMRd)
+
+d_cmp <- expand.grid(x = avail.MMRd.types, y = avail.MMRd.types, stringsAsFactors = F) 
+d_cmp <- d_cmp[d_cmp$x < d_cmp$y,]
+
+#MMRd_lvls_1 <- c("?" , "Complex" , "MLH1_PMS2" ,"MSH2_MSH6" ,"MSH6"  , "NORMAL" , "PMS2")
+
+for (i in 1:nrow(d_cmp)) {
+  subset <- which(df_surv_MMRd.CancerType.GeneMut$Cancer_Type %in% c(3,6,7) & df_surv_MMRd.CancerType.GeneMut$MMRd %in% as.numeric(d_cmp[i,]))
+  
+  df_pair <- df_surv_MMRd.CancerType.GeneMut[subset,] # Colon Only
+  fit <- survfit(Surv(time = df_pair$time, event =  df_pair$status) ~ MMRd, data = df_pair)
+  
+  # Estimate hazard ratio pairwisely
+  res.cox <- coxph(formula = Surv(time = df_pair$time, event =  df_pair$status) ~ MMRd, data = df_pair)
+  summary(res.cox) # summarize the result
+  # collect the following values: HR, lower 95%, upper 95%
+  estimate = exp(res.cox$coefficients)
+  conf.low = exp(confint(res.cox)[1,1])
+  conf.high = exp(confint(res.cox)[1,2])
+  
+  # Drawing curves
+  
+    #p <- ggsurvplot(fit, pval = T, pval.method = T, legend.labs = MMRd_lvls_1[as.numeric(d_cmp[i,])], 
+     p <- ggsurvplot(fit, pval = T, pval.method = T, combine = T, 
+                    conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T, data = df_pair)
+    p$plot <- p$plot + 
+         annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1, 
+                  label = paste0("HR = ", round(estimate,2), " ( ",round(conf.low,2), " - ", round(conf.high,2), " ) "),
+                  size = 4)
+    print(p)
+    assign(paste0("p",i),  p$plot)
+  
+}
+#library(gridExtra)
+#grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,nrow = 5)
+
+# draw surv plot for different onco genes mutations or not
+genes <- c("TP53_Mut","KRAS_Mut", "BRAF_Mut", "APC_Mut")
+for(gene in genes) {
+  fit <- survfit(as.formula(paste0("Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ ", gene)), data = df_surv_MMRd.CancerType.GeneMut)
+  
+  # Estimate hazard ratio pairwisely
+  res.cox <- coxph(formula = as.formula(paste0("Surv(time = df_surv_MMRd.CancerType.GeneMut$time, event =  df_surv_MMRd.CancerType.GeneMut$status) ~ ", gene)), data = df_surv_MMRd.CancerType.GeneMut)
+  summary(res.cox) # summarize the result
+  # collect the following values: HR, lower 95%, upper 95%
+  estimate = exp(res.cox$coefficients)
+  conf.low = exp(confint(res.cox)[1,1])
+  conf.high = exp(confint(res.cox)[1,2])
+  
+  # Drawing curves
+  
+    #p <- ggsurvplot(fit, pval = T, pval.method = T, legend.labs = MMRd_lvls_1[as.numeric(d_cmp[i,])], 
+     p <- ggsurvplot(fit, pval = T, pval.method = T, combine = T, 
+                    conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+                    risk.table.y.text.col = T, data = df_surv_MMRd.CancerType.GeneMut)
+    p$plot <- p$plot + 
+         annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1, 
+                  label = paste0("HR = ", round(estimate,2), " ( ",round(conf.low,2), " - ", round(conf.high,2), " ) "),
+                  size = 4)
+    print(p)
+    #assign(paste0("p",i),  p$plot)
+}
+
+```
+## Oncogenic or likely oncogenic gene mutations across all the MMRd and cancer categories
+```{r}
+#df_oncoMut <- read.table(file = file.path(getwd(), "data_mutations_extended_copy_fixed_in_sample_list.oncoKB.maf.txt"), header = T, sep = "\t", stringsAsFactors = T, fill = T)
+df_oncoMut <- read.delim2(file = file.path(getwd(), "data_mutations_extended_copy_fixed_in_sample_list.oncoKB.maf.txt"), header = T, sep = "\t", stringsAsFactors = T)
+
+# Filter for oncogenic or likely oncogenic
+df_oncoMut_MMRd.grouped <- df_oncoMut %>% 
+  mutate(Cancer.Type = df_1[df_oncoMut$Tumor_Sample_Barcode,"Cancer_Type_NEW"], 
+         MMRd.Type = df_1[df_oncoMut$Tumor_Sample_Barcode,"CLASSIFICATION_PLOT"]) %>% 
+  filter(ONCOGENIC %in% c("Oncogenic","Likely Oncogenic"), ! MMRd.Type %in% c("Delete")) %>% group_by(MMRd.Type, Cancer.Type) 
+
+freq.Onco.Mut <- df_oncoMut_MMRd.grouped  %>% tally(sort = T, name = "Freq.OncoGene.Mut")
+gene_list <- c("APC","TP53","RNF43","BRCA1","BRCA2", "PALB2", "ATM", "ATR", "BRAF")
+
+freq_list <- list()
+idx = 1
+for(gene in gene_list) {
+  assign(paste0("freq.Onco.Mut.by.",gene), df_oncoMut_MMRd.grouped %>% filter(Hugo_Symbol == gene) %>% tally(sort = T, name = paste0("Freq.",gene)))
+  freq_list[[idx]] <- get(paste0("freq.Onco.Mut.by.",gene))
+  idx = idx + 1
+}
+
+# full join all the freq tables of individual genes
+freq.all.Onco.Genes <- Reduce(function(x,y,...) merge(x,y,all = T, by = c("MMRd.Type","Cancer.Type"), ...), freq_list)
+freq.all.Onco.Genes[is.na(freq.all.Onco.Genes)] <- 0
+
+# sample size of each MMRd/Cancer categoryy
+freq.all.samples <- df_1 %>% select(CLASSIFICATION_PLOT, Cancer_Type_NEW) %>% 
+  mutate(MMRd.Type = CLASSIFICATION_PLOT, Cancer.Type = Cancer_Type_NEW) %>%
+  count(MMRd.Type, Cancer.Type, sort = T, name = "Sample.Size")
+
+freq.all.Onco.Genes.w.samplesize <- freq.all.Onco.Genes %>% inner_join(freq.all.samples, by = c("MMRd.Type","Cancer.Type"))
+
+divide_samplesize <- function(x) (x / freq.all.Onco.Genes.w.samplesize$Sample.Size)
+freq.all.Onco.Muts.rel.abundance <- freq.all.Onco.Genes.w.samplesize %>% mutate_at(c("Freq.APC", "Freq.TP53", "Freq.RNF43", "Freq.BRCA1", "Freq.BRCA2", "Freq.PALB2", "Freq.ATM", "Freq.ATR", "Freq.BRAF"), divide_samplesize)
+freq.all.Onco.Muts.rel.abundance <- freq.all.Onco.Muts.rel.abundance[,names(freq.all.Onco.Muts.rel.abundance) != "Sample.Size"]
+
+# reshape the dataframe to plot
+freq.all.Onco.Muts.rel.abundance_melt <- melt(freq.all.Onco.Muts.rel.abundance, 
+                      variable.name = "Gene",
+                      value.name = "Oncogenic.Mut.Count",
+                      id.vars = c("MMRd.Type", "Cancer.Type"))
+
+# plot by MMRd types, colored by Cancer typer
+for(gene in levels(as.factor(freq.all.Onco.Muts.rel.abundance_melt$Gene))) {
+  assign(paste0("p.",gene), ggplot(freq.all.Onco.Muts.rel.abundance_melt %>% filter(Gene == gene), 
+                     aes(x = MMRd.Type, y = Oncogenic.Mut.Count, fill = Cancer.Type)) + 
+              geom_bar( position = "stack", stat = "identity") + scale_color_d3(palette = "category20") +  ggtitle(paste0("Average # of Oncogenic/Like Ongenic Mutations\n in the Gene ", gsub("Freq.","",gene))) + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+         )
+  print(get(paste0("p.",gene)))
+}
+
+# plot by cancer types, colored by MMRd types
+for(gene in levels(as.factor(freq.all.Onco.Muts.rel.abundance_melt$Gene))) {
+  assign(paste0("p.",gene), ggplot(freq.all.Onco.Muts.rel.abundance_melt %>% filter(Gene == gene), 
+                     aes(x = Cancer.Type, y = Oncogenic.Mut.Count, fill = MMRd.Type)) + 
+              geom_bar( position = "stack", stat = "identity") + scale_color_d3(palette = "category20") +  ggtitle(paste0("Average # of Oncogenic/Like Ongenic Mutations\n in the Gene ", gsub("Freq.","",gene))) + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+         )
+  print(get(paste0("p.",gene)))
+}
+
+# limma linear model to test the correlation between average # of oncogenic muts and 
+library(limma)
+
+```
+## Draw PCA for all the genomic features and mutation signature
+# to see whether cancer type or MMRd type contribute to most difference
+
+```{r}
+  #################################################################################
+  # mutation signature PCA
+  #################################################################################
+  #SBS
+  SBS_df_MMRd <- read.table(file = file.path(getwd(),"SigMutations","SBS_mut_No_in_sample_by_MMRd.txt"), header = T, sep = "\t")
+  row.names(SBS_df_MMRd) <- SBS_df_MMRd$X
+  SBS_df <- SBS_df_MMRd[, ! names(SBS_df_MMRd) %in% c("X","MMRd_type")]
+  
+  SBS_df_Cancer <- read.table(file = file.path(getwd(),"SigMutations","SBS_mut_No_in_sample_by_Cancer.txt"), header = T, sep = "\t")
+  row.names(SBS_df_Cancer) <- SBS_df_Cancer$X
+  # remove the sample from SBS_df_Cancer with MMRd type "Delete"
+  SBS_df_Cancer <- SBS_df_Cancer[row.names(SBS_df_MMRd),]
+  
+  sample_types <- data.frame(MMRd.Types = SBS_df_MMRd$MMRd_type, Cancer.Types = SBS_df_Cancer$Cancer_Type_NEW)
+  row.names(sample_types) <- row.names(SBS_df_MMRd)
+  
+  
+  SBS_df.noOutlier <- SBS_df[ ! rownames(SBS_df) %in% c("P-0031479-T01-IM6", "P-0047901-T01-IM6","P-0048683-T01-IM6", "P-0042109-T01-IM6", "P-0050204-T01-IM6"),]
+  #SBS_df.noOutlier <- SBS_df
+  SBS_df.noOutlier <- SBS_df.noOutlier[,names(SBS_df.noOutlier) %in% c("SBS6","SBS15","SBS20","SBS21","SBS26","SBS44")]
+  SBS_df.noOutlier.noZero <- SBS_df.noOutlier[rowSums(SBS_df.noOutlier) != 0, colSums(SBS_df.noOutlier) != 0]
+   SBS.pca <- prcomp(SBS_df.noOutlier.noZero, center = T, scale. = T)
+ summary(SBS.pca)
+  SBS.pca.signatures <- prcomp(t(SBS_df.noOutlier.noZero), center = T, scale. = T)
+  summary(SBS.pca.signatures)
+ # plot the PCA
+ library(ggbiplot)
+ ggbiplot(SBS.pca, groups = SBS_df_MMRd[rownames(SBS_df.noOutlier.noZero),"MMRd_type"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) + 
+   xlim(-5,5) + ylim(-4,4)
+ ggbiplot(SBS.pca, groups = SBS_df_Cancer[rownames(SBS_df.noOutlier.noZero),"Cancer_Type_NEW"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) +
+   xlim(-5,5) + ylim(-4,4)
+ 
+ ggbiplot(SBS.pca.signatures, var.axes = F, labels = rownames(t(SBS_df.noOutlier.noZero))) 
+ 
+
+
+  #ID
+  ID_df_MMRd <- read.table(file = file.path(getwd(),"SigMutations","ID_mut_No_in_sample_by_MMRd.txt"), header = T, sep = "\t")
+  row.names(ID_df_MMRd) <- ID_df_MMRd$X
+  ID_df <- ID_df_MMRd[, ! names(ID_df_MMRd) %in% c("X","MMRd_type")]
+  
+  ID_df_Cancer <- read.table(file = file.path(getwd(),"SigMutations","ID_mut_No_in_sample_by_Cancer.txt"), header = T, sep = "\t")
+  row.names(ID_df_Cancer) <- ID_df_Cancer$X
+  # remove the sample from ID_df_Cancer with MMRd type "Delete"
+  ID_df_Cancer <- ID_df_Cancer[row.names(ID_df_MMRd),]
+  
+  sample_types <- data.frame(MMRd.Types = ID_df_MMRd$MMRd_type, Cancer.Types = ID_df_Cancer$Cancer_Type_NEW)
+  row.names(sample_types) <- row.names(ID_df_MMRd)
+  
+  
+  #ID_df.noOutlier <- ID_df[ ! rownames(ID_df) %in% c("P-0031479-T01-IM6", "P-0047901-T01-IM6","P-0048683-T01-IM6", "P-0042109-T01-IM6", "P-0050204-T01-IM6"),]
+  ID_df.noOutlier <- ID_df
+  ID_df.noOutlier.noZero <- ID_df.noOutlier[rowSums(ID_df.noOutlier) != 0, colSums(ID_df.noOutlier) != 0 & names(ID_df.noOutlier) %in% c("ID1","ID2","ID7")]
+   ID.pca <- prcomp(ID_df.noOutlier.noZero, center = T, scale. = T)
+ summary(ID.pca)
+  ID.pca.signatures <- prcomp(t(ID_df.noOutlier.noZero), center = T, scale. = T)
+  summary(ID.pca.signatures)
+ # plot the PCA
+ library(ggbiplot)
+ ggbiplot(ID.pca, groups = ID_df_MMRd[rownames(ID_df.noOutlier.noZero),"MMRd_type"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+ ggbiplot(ID.pca, groups = ID_df_Cancer[rownames(ID_df.noOutlier.noZero),"Cancer_Type_NEW"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+ 
+ ggbiplot(ID.pca.signatures, var.axes = F, labels = rownames(t(ID_df.noOutlier.noZero))) 
+```
+
+```{r}
+#################################################################################
+# genomic feature PCA
+#################################################################################
+library(dplyr)
+#features <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered","No_Missense","No_Frameshift","No_Splice","No_INSERT","No_DELETION","No_INFRAME","No_INDEL")
+features <- c("MSI_Score_1", "Impact_TMB_Score","No_Missense","No_Frameshift","No_INSERT","No_DELETION","No_INFRAME")
+df_features <- df_1 %>% filter(! CLASSIFICATION_PLOT %in% c("Delete", "?")) %>% select(features)
+gFeature.pca <- prcomp(df_features, center = T, scale. = T)
+summary(gFeature.pca)
+
+# plot the PCA
+ library(ggbiplot)
+ ggbiplot(gFeature.pca, groups = df_1[rownames(df_features),"CLASSIFICATION_PLOT"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+ ggbiplot(gFeature.pca, groups = df_1[rownames(df_features),"Cancer_Type_NEW"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+
+```
+
+
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

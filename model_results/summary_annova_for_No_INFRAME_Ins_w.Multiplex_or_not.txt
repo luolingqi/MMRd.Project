@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: No_INFRAME_Ins
+                  Df Sum Sq Mean Sq F value Pr(>F)
+Multiplex_or_not   3  0.984 0.32805  1.9316  0.124
+Residuals        377 64.029 0.16984               

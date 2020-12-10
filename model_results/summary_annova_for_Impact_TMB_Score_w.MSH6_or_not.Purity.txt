@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: Impact_TMB_Score
+              Df Sum Sq Mean Sq F value    Pr(>F)    
+MSH6_or_not    1  24659 24659.3 12.9357 0.0003655 ***
+Tumor_Purity   1   6893  6892.9  3.6159 0.0579962 .  
+Residuals    375 714859  1906.3                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

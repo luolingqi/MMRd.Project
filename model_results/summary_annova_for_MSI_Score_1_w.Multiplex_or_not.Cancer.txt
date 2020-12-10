@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: MSI_Score_1
+                  Df  Sum Sq Mean Sq F value    Pr(>F)    
+Multiplex_or_not   4  2027.2  506.79  5.9385 0.0001223 ***
+Cancer_Type_NEW   12  8708.7  725.72  8.5039 2.906e-14 ***
+Residuals        365 31148.9   85.34                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

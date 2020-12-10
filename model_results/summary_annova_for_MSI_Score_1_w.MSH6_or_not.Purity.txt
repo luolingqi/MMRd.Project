@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: MSI_Score_1
+              Df Sum Sq Mean Sq F value  Pr(>F)  
+MSH6_or_not    1    458  458.04  4.2350 0.04029 *
+Tumor_Purity   1    392  392.33  3.6275 0.05760 .
+Residuals    375  40558  108.15                  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

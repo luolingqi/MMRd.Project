@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: No_Nonsense
+             Df Sum Sq Mean Sq F value    Pr(>F)    
+PMS2_or_not   1  434.5  434.50  30.284 6.886e-08 ***
+Residuals   379 5437.8   14.35                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

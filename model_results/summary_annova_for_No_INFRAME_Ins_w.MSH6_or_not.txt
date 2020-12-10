@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: No_INFRAME_Ins
+             Df Sum Sq  Mean Sq F value Pr(>F)
+MSH6_or_not   1  0.046 0.045508  0.2655 0.6067
+Residuals   379 64.968 0.171419               

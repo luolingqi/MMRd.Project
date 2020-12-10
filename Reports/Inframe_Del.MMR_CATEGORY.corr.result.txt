@@ -1,0 +1,11 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Inframe_Del	MSH2_MSH6	?	0.831605696343826	1	0.832	ns	Wilcoxon
+2	Inframe_Del	MSH2_MSH6	MLH1_PMS2	0.626136105801933	1	0.626	ns	Wilcoxon
+3	Inframe_Del	MSH2_MSH6	MSH6	0.0904977476099096	0.81	0.090	ns	Wilcoxon
+4	Inframe_Del	MSH2_MSH6	PMS2	1	1	1.000	ns	Wilcoxon
+5	Inframe_Del	?	MLH1_PMS2	0.167860396314585	1	0.168	ns	Wilcoxon
+6	Inframe_Del	?	MSH6	0.185839007546076	1	0.186	ns	Wilcoxon
+7	Inframe_Del	?	PMS2	0.660620206367198	1	0.661	ns	Wilcoxon
+8	Inframe_Del	MLH1_PMS2	MSH6	0.0363636363636364	0.36	0.036	*	Wilcoxon
+9	Inframe_Del	MLH1_PMS2	PMS2	0.861387996871412	1	0.861	ns	Wilcoxon
+10	Inframe_Del	MSH6	PMS2	0.666666666666667	1	0.667	ns	Wilcoxon

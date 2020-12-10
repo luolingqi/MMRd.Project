@@ -1,0 +1,94 @@
+---
+title: "Untitled"
+author: "Lingqi Luo"
+date: "7/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+library(ggpubr)
+library(ggplot2)
+
+df <- read.table(file = file.path(getwd(),"R_Input_1.txt"), 
+                 header = TRUE, 
+                 quote = "", 
+                 sep = "\t", 
+                 row.names = 6)
+#my_comparisons <- list( c("NORMAL", "PMS2"), c("NORMAL", "MSH6"), c("MSH6", "MSH2_MSH6") )
+
+
+plotCorr <- function(x, y) {
+  my_comparisons <- list()
+  df_corr <- compare_means(as.formula(paste0(y," ~ ", "CLASSIFICATION_PLOT")),  data = x[-which(x$CLASSIFICATION_PLOT=="Delete"),])
+  idx <- 1
+  for(sig in which(df_corr$p.signif != "ns")){
+    #print(as.character(df_corr[sig,c("group1")]))
+    
+    my_comparisons[[idx]] <- c(as.character(df_corr[sig,c("group1")]), as.character(df_corr[sig,c("group2")]))
+    idx <- idx + 1
+  }
+  n <- length(my_comparisons)
+  write.table(df_corr, 
+              file = file.path(getwd(),paste0(y,".corr.result.txt")), 
+              quote = FALSE, 
+              sep = "\t")
+  
+  
+  max_y <- max(x[,y])
+  min_y <- min(x[,y])
+  if (y != "Fraction_Genome_Altered") {
+    ylabel <- paste0("log2(",y,")")
+  }else {
+    ylabel <- y
+  }
+  
+  assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+              x = "CLASSIFICATION_PLOT", y = y,
+              color = "CLASSIFICATION_PLOT", palette = "jco", add = "jitter") + 
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.03*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 2*max_y) + 
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 10)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ 
+            
+
+ )
+ return(get(paste0("p_",y)))
+}
+# c(max_y*0.7, max_y*0.8, max_y*0.9)
+metrics <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", "No_Missense", "No_Frameshift", "No_Splice","No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL" )
+df_log2 <- cbind(log2(df[,! names(df) %in% c("Fraction_Genome_Altered","CLASSIFICATION_PLOT")]+1), df[,c("Fraction_Genome_Altered","CLASSIFICATION_PLOT")])
+for(i in metrics) {
+  assign(paste0("p_",i), plotCorr(df_log2,i))
+  print(get(paste0("p_",i)))
+}
+
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

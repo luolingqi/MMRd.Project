@@ -1,0 +1,126 @@
+
+Call:
+lm(formula = formula, data = data)
+
+Coefficients:
+                                             (Intercept)                                         Multiplex_or_not?  
+                                                10.48943                                                   6.79948  
+                               Multiplex_or_notMultiplex                                    Multiplex_or_notNORMAL  
+                                                12.54739                                                  11.67561  
+                                  Cancer_Type_NEWBiliary                                    Cancer_Type_NEWBladder  
+                                                -1.36088                                                  -4.48821  
+                               Cancer_Type_NEWColorectal                                        Cancer_Type_NEWCUP  
+                                                 1.04602                                                 -25.87853  
+                              Cancer_Type_NEWEndometrial                            Cancer_Type_NEWEsophagogastric  
+                                                -7.74490                                                  -7.26859  
+                                    Cancer_Type_NEWOther                                    Cancer_Type_NEWOvarian  
+                                               -16.53959                                                 -14.58885  
+                                 Cancer_Type_NEWPancreas                                   Cancer_Type_NEWProstate  
+                                                -7.41454                                                 -11.27885  
+                                   Cancer_Type_NEWRectal                                Cancer_Type_NEWSmall Bowel  
+                                                18.89169                                                   8.00090  
+                                             Current_Age                                              Tumor_Purity  
+                                                 0.08266                                                   0.12573  
+                           RaceBLACK OR AFRICAN AMERICAN                         RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                                 3.60293                                                   0.12538  
+                                               RaceOTHER                                  RacePT REFUSED TO ANSWER  
+                                                 3.97568                                                  -3.75168  
+                                               RaceWHITE                  Multiplex_or_not?:Cancer_Type_NEWBiliary  
+                                                 1.37834                                                        NA  
+        Multiplex_or_notMultiplex:Cancer_Type_NEWBiliary             Multiplex_or_notNORMAL:Cancer_Type_NEWBiliary  
+                                                 0.48301                                                        NA  
+                Multiplex_or_not?:Cancer_Type_NEWBladder          Multiplex_or_notMultiplex:Cancer_Type_NEWBladder  
+                                                -0.13285                                                 -10.83544  
+           Multiplex_or_notNORMAL:Cancer_Type_NEWBladder               Multiplex_or_not?:Cancer_Type_NEWColorectal  
+                                                      NA                                                        NA  
+     Multiplex_or_notMultiplex:Cancer_Type_NEWColorectal          Multiplex_or_notNORMAL:Cancer_Type_NEWColorectal  
+                                                -1.13617                                                  -5.30632  
+                    Multiplex_or_not?:Cancer_Type_NEWCUP              Multiplex_or_notMultiplex:Cancer_Type_NEWCUP  
+                                                      NA                                                  17.39650  
+               Multiplex_or_notNORMAL:Cancer_Type_NEWCUP              Multiplex_or_not?:Cancer_Type_NEWEndometrial  
+                                                      NA                                                  10.70390  
+    Multiplex_or_notMultiplex:Cancer_Type_NEWEndometrial         Multiplex_or_notNORMAL:Cancer_Type_NEWEndometrial  
+                                                -3.90930                                                  -5.46045  
+        Multiplex_or_not?:Cancer_Type_NEWEsophagogastric  Multiplex_or_notMultiplex:Cancer_Type_NEWEsophagogastric  
+                                                23.66196                                                   1.11901  
+   Multiplex_or_notNORMAL:Cancer_Type_NEWEsophagogastric                    Multiplex_or_not?:Cancer_Type_NEWOther  
+                                                      NA                                                        NA  
+          Multiplex_or_notMultiplex:Cancer_Type_NEWOther               Multiplex_or_notNORMAL:Cancer_Type_NEWOther  
+                                                      NA                                                        NA  
+                Multiplex_or_not?:Cancer_Type_NEWOvarian          Multiplex_or_notMultiplex:Cancer_Type_NEWOvarian  
+                                                      NA                                                   6.33577  
+           Multiplex_or_notNORMAL:Cancer_Type_NEWOvarian                 Multiplex_or_not?:Cancer_Type_NEWPancreas  
+                                                      NA                                                        NA  
+       Multiplex_or_notMultiplex:Cancer_Type_NEWPancreas            Multiplex_or_notNORMAL:Cancer_Type_NEWPancreas  
+                                                 1.74787                                                        NA  
+               Multiplex_or_not?:Cancer_Type_NEWProstate         Multiplex_or_notMultiplex:Cancer_Type_NEWProstate  
+                                                      NA                                                  -2.46150  
+          Multiplex_or_notNORMAL:Cancer_Type_NEWProstate                   Multiplex_or_not?:Cancer_Type_NEWRectal  
+                                                      NA                                                        NA  
+         Multiplex_or_notMultiplex:Cancer_Type_NEWRectal              Multiplex_or_notNORMAL:Cancer_Type_NEWRectal  
+                                               -20.91248                                                        NA  
+            Multiplex_or_not?:Cancer_Type_NEWSmall Bowel      Multiplex_or_notMultiplex:Cancer_Type_NEWSmall Bowel  
+                                                      NA                                                 -11.30893  
+       Multiplex_or_notNORMAL:Cancer_Type_NEWSmall Bowel  
+                                                -6.61603  
+
+                                             (Intercept)                                        Multiplex_or_not? 
+                                             10.48943140                                               6.79948365 
+                               Multiplex_or_notMultiplex                                   Multiplex_or_notNORMAL 
+                                             12.54739024                                              11.67560819 
+                                  Cancer_Type_NEWBiliary                                   Cancer_Type_NEWBladder 
+                                             -1.36087707                                              -4.48820636 
+                               Cancer_Type_NEWColorectal                                       Cancer_Type_NEWCUP 
+                                              1.04601979                                             -25.87852870 
+                              Cancer_Type_NEWEndometrial                           Cancer_Type_NEWEsophagogastric 
+                                             -7.74489674                                              -7.26859355 
+                                    Cancer_Type_NEWOther                                   Cancer_Type_NEWOvarian 
+                                            -16.53958608                                             -14.58885227 
+                                 Cancer_Type_NEWPancreas                                  Cancer_Type_NEWProstate 
+                                             -7.41453820                                             -11.27884726 
+                                   Cancer_Type_NEWRectal                               Cancer_Type_NEWSmall Bowel 
+                                             18.89168887                                               8.00089788 
+                                             Current_Age                                             Tumor_Purity 
+                                              0.08266342                                               0.12573316 
+                           RaceBLACK OR AFRICAN AMERICAN                        RaceNATIVE AMERICAN-AM IND/ALASKA 
+                                              3.60293103                                               0.12537625 
+                                               RaceOTHER                                 RacePT REFUSED TO ANSWER 
+                                              3.97567534                                              -3.75168410 
+                                               RaceWHITE                 Multiplex_or_not?:Cancer_Type_NEWBiliary 
+                                              1.37834360                                                       NA 
+        Multiplex_or_notMultiplex:Cancer_Type_NEWBiliary            Multiplex_or_notNORMAL:Cancer_Type_NEWBiliary 
+                                              0.48300987                                                       NA 
+                Multiplex_or_not?:Cancer_Type_NEWBladder         Multiplex_or_notMultiplex:Cancer_Type_NEWBladder 
+                                             -0.13284674                                             -10.83543889 
+           Multiplex_or_notNORMAL:Cancer_Type_NEWBladder              Multiplex_or_not?:Cancer_Type_NEWColorectal 
+                                                      NA                                                       NA 
+     Multiplex_or_notMultiplex:Cancer_Type_NEWColorectal         Multiplex_or_notNORMAL:Cancer_Type_NEWColorectal 
+                                             -1.13616803                                              -5.30631999 
+                    Multiplex_or_not?:Cancer_Type_NEWCUP             Multiplex_or_notMultiplex:Cancer_Type_NEWCUP 
+                                                      NA                                              17.39649562 
+               Multiplex_or_notNORMAL:Cancer_Type_NEWCUP             Multiplex_or_not?:Cancer_Type_NEWEndometrial 
+                                                      NA                                              10.70389739 
+    Multiplex_or_notMultiplex:Cancer_Type_NEWEndometrial        Multiplex_or_notNORMAL:Cancer_Type_NEWEndometrial 
+                                             -3.90929523                                              -5.46045428 
+        Multiplex_or_not?:Cancer_Type_NEWEsophagogastric Multiplex_or_notMultiplex:Cancer_Type_NEWEsophagogastric 
+                                             23.66195534                                               1.11900863 
+   Multiplex_or_notNORMAL:Cancer_Type_NEWEsophagogastric                   Multiplex_or_not?:Cancer_Type_NEWOther 
+                                                      NA                                                       NA 
+          Multiplex_or_notMultiplex:Cancer_Type_NEWOther              Multiplex_or_notNORMAL:Cancer_Type_NEWOther 
+                                                      NA                                                       NA 
+                Multiplex_or_not?:Cancer_Type_NEWOvarian         Multiplex_or_notMultiplex:Cancer_Type_NEWOvarian 
+                                                      NA                                               6.33576797 
+           Multiplex_or_notNORMAL:Cancer_Type_NEWOvarian                Multiplex_or_not?:Cancer_Type_NEWPancreas 
+                                                      NA                                                       NA 
+       Multiplex_or_notMultiplex:Cancer_Type_NEWPancreas           Multiplex_or_notNORMAL:Cancer_Type_NEWPancreas 
+                                              1.74787234                                                       NA 
+               Multiplex_or_not?:Cancer_Type_NEWProstate        Multiplex_or_notMultiplex:Cancer_Type_NEWProstate 
+                                                      NA                                              -2.46149777 
+          Multiplex_or_notNORMAL:Cancer_Type_NEWProstate                  Multiplex_or_not?:Cancer_Type_NEWRectal 
+                                                      NA                                                       NA 
+         Multiplex_or_notMultiplex:Cancer_Type_NEWRectal             Multiplex_or_notNORMAL:Cancer_Type_NEWRectal 
+                                            -20.91248030                                                       NA 
+            Multiplex_or_not?:Cancer_Type_NEWSmall Bowel     Multiplex_or_notMultiplex:Cancer_Type_NEWSmall Bowel 
+                                                      NA                                             -11.30893070 
+       Multiplex_or_notNORMAL:Cancer_Type_NEWSmall Bowel 
+                                             -6.61603207 

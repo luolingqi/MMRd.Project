@@ -1,0 +1,20 @@
+MODEL INFO:
+Observations: 378 (3 missing obs. deleted)
+Dependent Variable: MSI_Score_1
+Type: OLS linear regression 
+
+MODEL FIT:
+F(4,373) = 5.809, p = 0.000
+R² = 0.059
+Adj. R² = 0.049 
+
+Standard errors: OLS
+---------------------------------------------------------------------------
+                                    Est.     2.5%    97.5%   t val.       p
+------------------------------- -------- -------- -------- -------- -------
+(Intercept)                       19.159   14.403   23.915    7.921   0.000
+Multiplex_or_not?                 15.083    5.219   24.947    3.007   0.003
+Multiplex_or_notMultiplex          8.680    4.510   12.851    4.093   0.000
+Multiplex_or_notNORMAL             6.436    0.296   12.576    2.061   0.040
+Tumor_Purity                       0.063   -0.002    0.128    1.913   0.057
+---------------------------------------------------------------------------

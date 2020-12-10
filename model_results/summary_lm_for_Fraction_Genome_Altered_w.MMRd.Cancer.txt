@@ -1,0 +1,38 @@
+
+Call:
+lm(formula = reformulate(termlabels = c("CLASSIFICATION_PLOT", 
+    "Cancer_Type_NEW"), response = i), data = df_1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.20405 -0.03608 -0.01860  0.02372  0.70580 
+
+Coefficients:
+                                Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                     0.107510   0.048757   2.205  0.02808 * 
+CLASSIFICATION_PLOTComplex      0.030670   0.043735   0.701  0.48359   
+CLASSIFICATION_PLOTDelete      -0.019675   0.088762  -0.222  0.82471   
+CLASSIFICATION_PLOTMLH1_PMS2    0.015496   0.036682   0.422  0.67295   
+CLASSIFICATION_PLOTMSH2_MSH6   -0.001757   0.037454  -0.047  0.96261   
+CLASSIFICATION_PLOTMSH6         0.006201   0.043151   0.144  0.88581   
+CLASSIFICATION_PLOTNORMAL       0.099151   0.040653   2.439  0.01521 * 
+CLASSIFICATION_PLOTPMS2         0.070260   0.042363   1.659  0.09808 . 
+Cancer_Type_NEWBladder          0.017387   0.042845   0.406  0.68511   
+Cancer_Type_NEWColon           -0.086922   0.033051  -2.630  0.00890 **
+Cancer_Type_NEWColorectal      -0.092199   0.036706  -2.512  0.01245 * 
+Cancer_Type_NEWCUP             -0.016782   0.045841  -0.366  0.71451   
+Cancer_Type_NEWEndometrial     -0.080138   0.033651  -2.381  0.01776 * 
+Cancer_Type_NEWEsophagogastric -0.044491   0.034731  -1.281  0.20101   
+Cancer_Type_NEWOther            0.125696   0.044764   2.808  0.00526 **
+Cancer_Type_NEWOvarian         -0.054808   0.051354  -1.067  0.28657   
+Cancer_Type_NEWPancreas        -0.034406   0.051826  -0.664  0.50720   
+Cancer_Type_NEWProstate        -0.047581   0.051826  -0.918  0.35918   
+Cancer_Type_NEWRectal          -0.079435   0.037240  -2.133  0.03359 * 
+Cancer_Type_NEWSmall Bowel     -0.119491   0.039960  -2.990  0.00298 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.07893 on 362 degrees of freedom
+Multiple R-squared:  0.2182,	Adjusted R-squared:  0.1772 
+F-statistic: 5.319 on 19 and 362 DF,  p-value: 2.058e-11
+

@@ -1,0 +1,21 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	MSI_Score_1	Singleton	Multiplex	1	1	1.00000	ns	Wilcoxon
+2	Colon	MSI_Score_1	Singleton	Multiplex	0.000335363601338161	0.0067	0.00034	***	Wilcoxon
+3	Colon	MSI_Score_1	Singleton	NORMAL	0.0400932400932401	0.76	0.04009	*	Wilcoxon
+4	Colon	MSI_Score_1	Multiplex	NORMAL	0.864797069025185	1	0.86480	ns	Wilcoxon
+5	Esophagogastric	MSI_Score_1	Multiplex	NORMAL	0.697435897435897	1	0.69744	ns	Wilcoxon
+6	Pancreas	MSI_Score_1	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon
+7	Colorectal	MSI_Score_1	Singleton	Multiplex	0.0485036119711042	0.87	0.04850	*	Wilcoxon
+8	Colorectal	MSI_Score_1	Singleton	NORMAL	0.114285714285714	1	0.11429	ns	Wilcoxon
+9	Colorectal	MSI_Score_1	Multiplex	NORMAL	0.469040247678019	1	0.46904	ns	Wilcoxon
+10	Biliary	MSI_Score_1	Singleton	Multiplex	0.234763662827669	1	0.23476	ns	Wilcoxon
+11	Prostate	MSI_Score_1	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon
+12	Small Bowel	MSI_Score_1	Singleton	Multiplex	0.761904761904762	1	0.76190	ns	Wilcoxon
+13	Small Bowel	MSI_Score_1	Singleton	NORMAL	0.4	1	0.40000	ns	Wilcoxon
+14	Small Bowel	MSI_Score_1	Multiplex	NORMAL	0.571428571428571	1	0.57143	ns	Wilcoxon
+15	Endometrial	MSI_Score_1	Singleton	Multiplex	0.398731446648287	1	0.39873	ns	Wilcoxon
+16	Endometrial	MSI_Score_1	Singleton	NORMAL	0.8	1	0.80000	ns	Wilcoxon
+17	Endometrial	MSI_Score_1	Multiplex	NORMAL	0.548883822790202	1	0.54888	ns	Wilcoxon
+18	Rectal	MSI_Score_1	Singleton	Multiplex	0.8	1	0.80000	ns	Wilcoxon
+19	CUP	MSI_Score_1	Multiplex	NORMAL	0.333333333333333	1	0.33333	ns	Wilcoxon
+20	Ovarian	MSI_Score_1	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon

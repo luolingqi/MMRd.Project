@@ -1,0 +1,139 @@
+Linear mixed model fit by maximum likelihood  ['lmerModLmerTest']
+Formula: formula
+   Data: data
+      AIC       BIC    logLik  deviance  df.resid 
+ 3853.130  3935.763 -1905.565  3811.130       357 
+Random effects:
+ Groups          Name                Std.Dev. Corr
+ Cancer_Type_NEW (Intercept)           0.000      
+                 PMS2_or_notNot_PMS2 119.032   NaN
+ Sample_Type     (Intercept)           0.000      
+                 PMS2_or_notNot_PMS2   5.647   NaN
+ Residual                             34.956      
+Number of obs: 378, groups:  Cancer_Type_NEW, 13; Sample_Type, 3
+Fixed Effects:
+                            (Intercept)  
+                                9.60443  
+                    PMS2_or_notNot_PMS2  
+                               45.52259  
+                            Current_Age  
+                                0.16841  
+                           Tumor_Purity  
+                                0.08047  
+          RaceBLACK OR AFRICAN AMERICAN  
+                               -0.05310  
+      RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                4.71863  
+                              RaceOTHER  
+                                3.57948  
+               RacePT REFUSED TO ANSWER  
+                               -8.32068  
+                              RaceWHITE  
+                               -0.80862  
+                             Ethnicity0  
+                               10.80666  
+            EthnicityDominican Republic  
+                               -6.31808  
+     EthnicityNon-Spanish; Non-Hispanic  
+                               11.72941  
+                  EthnicityPuerto Rican  
+                                2.81057  
+EthnicityUnknown whether Spanish or not  
+                                5.11961  
+optimizer (nloptwrap) convergence code: 0 (OK) ; 0 optimizer warnings; 1 lme4 warnings 
+$Cancer_Type_NEW
+                (Intercept) PMS2_or_notNot_PMS2 Current_Age Tumor_Purity
+Colon              9.604433           25.406393   0.1684078   0.08046782
+Biliary            9.604433           45.522590   0.1684078   0.08046782
+Bladder            9.604433            6.091701   0.1684078   0.08046782
+Colorectal         9.604433           14.144212   0.1684078   0.08046782
+CUP                9.604433          434.127553   0.1684078   0.08046782
+Endometrial        9.604433           16.509446   0.1684078   0.08046782
+Esophagogastric    9.604433           25.629584   0.1684078   0.08046782
+Other              9.604433           -7.409327   0.1684078   0.08046782
+Ovarian            9.604433            3.900009   0.1684078   0.08046782
+Pancreas           9.604433            7.865742   0.1684078   0.08046782
+Prostate           9.604433           -3.877737   0.1684078   0.08046782
+Rectal             9.604433           21.465286   0.1684078   0.08046782
+Small Bowel        9.604433            2.418218   0.1684078   0.08046782
+                RaceBLACK OR AFRICAN AMERICAN RaceNATIVE AMERICAN-AM IND/ALASKA
+Colon                             -0.05309728                          4.718627
+Biliary                           -0.05309728                          4.718627
+Bladder                           -0.05309728                          4.718627
+Colorectal                        -0.05309728                          4.718627
+CUP                               -0.05309728                          4.718627
+Endometrial                       -0.05309728                          4.718627
+Esophagogastric                   -0.05309728                          4.718627
+Other                             -0.05309728                          4.718627
+Ovarian                           -0.05309728                          4.718627
+Pancreas                          -0.05309728                          4.718627
+Prostate                          -0.05309728                          4.718627
+Rectal                            -0.05309728                          4.718627
+Small Bowel                       -0.05309728                          4.718627
+                RaceOTHER RacePT REFUSED TO ANSWER  RaceWHITE Ethnicity0
+Colon            3.579475                -8.320676 -0.8086227   10.80666
+Biliary          3.579475                -8.320676 -0.8086227   10.80666
+Bladder          3.579475                -8.320676 -0.8086227   10.80666
+Colorectal       3.579475                -8.320676 -0.8086227   10.80666
+CUP              3.579475                -8.320676 -0.8086227   10.80666
+Endometrial      3.579475                -8.320676 -0.8086227   10.80666
+Esophagogastric  3.579475                -8.320676 -0.8086227   10.80666
+Other            3.579475                -8.320676 -0.8086227   10.80666
+Ovarian          3.579475                -8.320676 -0.8086227   10.80666
+Pancreas         3.579475                -8.320676 -0.8086227   10.80666
+Prostate         3.579475                -8.320676 -0.8086227   10.80666
+Rectal           3.579475                -8.320676 -0.8086227   10.80666
+Small Bowel      3.579475                -8.320676 -0.8086227   10.80666
+                EthnicityDominican Republic EthnicityNon-Spanish; Non-Hispanic
+Colon                             -6.318082                           11.72941
+Biliary                           -6.318082                           11.72941
+Bladder                           -6.318082                           11.72941
+Colorectal                        -6.318082                           11.72941
+CUP                               -6.318082                           11.72941
+Endometrial                       -6.318082                           11.72941
+Esophagogastric                   -6.318082                           11.72941
+Other                             -6.318082                           11.72941
+Ovarian                           -6.318082                           11.72941
+Pancreas                          -6.318082                           11.72941
+Prostate                          -6.318082                           11.72941
+Rectal                            -6.318082                           11.72941
+Small Bowel                       -6.318082                           11.72941
+                EthnicityPuerto Rican EthnicityUnknown whether Spanish or not
+Colon                        2.810572                                5.119608
+Biliary                      2.810572                                5.119608
+Bladder                      2.810572                                5.119608
+Colorectal                   2.810572                                5.119608
+CUP                          2.810572                                5.119608
+Endometrial                  2.810572                                5.119608
+Esophagogastric              2.810572                                5.119608
+Other                        2.810572                                5.119608
+Ovarian                      2.810572                                5.119608
+Pancreas                     2.810572                                5.119608
+Prostate                     2.810572                                5.119608
+Rectal                       2.810572                                5.119608
+Small Bowel                  2.810572                                5.119608
+
+$Sample_Type
+           (Intercept) PMS2_or_notNot_PMS2 Current_Age Tumor_Purity
+Metastasis    9.604433            43.62999   0.1684078   0.08046782
+Mixed         9.604433            43.89981   0.1684078   0.08046782
+Primary       9.604433            49.03798   0.1684078   0.08046782
+           RaceBLACK OR AFRICAN AMERICAN RaceNATIVE AMERICAN-AM IND/ALASKA
+Metastasis                   -0.05309728                          4.718627
+Mixed                        -0.05309728                          4.718627
+Primary                      -0.05309728                          4.718627
+           RaceOTHER RacePT REFUSED TO ANSWER  RaceWHITE Ethnicity0
+Metastasis  3.579475                -8.320676 -0.8086227   10.80666
+Mixed       3.579475                -8.320676 -0.8086227   10.80666
+Primary     3.579475                -8.320676 -0.8086227   10.80666
+           EthnicityDominican Republic EthnicityNon-Spanish; Non-Hispanic
+Metastasis                   -6.318082                           11.72941
+Mixed                        -6.318082                           11.72941
+Primary                      -6.318082                           11.72941
+           EthnicityPuerto Rican EthnicityUnknown whether Spanish or not
+Metastasis              2.810572                                5.119608
+Mixed                   2.810572                                5.119608
+Primary                 2.810572                                5.119608
+
+attr(,"class")
+[1] "coef.mer"

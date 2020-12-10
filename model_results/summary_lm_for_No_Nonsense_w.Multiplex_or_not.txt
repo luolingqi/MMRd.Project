@@ -1,0 +1,22 @@
+
+Call:
+lm(formula = reformulate(termlabels = c(j), response = i), data = df_2[df_2$Multiplex_or_not != 
+    "Delete", ])
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.800 -1.994 -0.994  1.006 38.737 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                 5.8000     0.7715   7.517 4.11e-13 ***
+Multiplex_or_not?          -2.0000     1.8899  -1.058 0.290611    
+Multiplex_or_notMultiplex  -2.8060     0.8001  -3.507 0.000507 ***
+Multiplex_or_notNORMAL     -0.5368     1.1741  -0.457 0.647767    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.858 on 377 degrees of freedom
+Multiple R-squared:  0.04459,	Adjusted R-squared:  0.03698 
+F-statistic: 5.864 on 3 and 377 DF,  p-value: 0.0006376
+

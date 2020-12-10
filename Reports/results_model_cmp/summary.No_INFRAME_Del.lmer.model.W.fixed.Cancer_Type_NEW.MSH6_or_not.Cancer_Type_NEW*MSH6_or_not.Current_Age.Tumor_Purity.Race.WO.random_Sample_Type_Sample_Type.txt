@@ -1,0 +1,138 @@
+
+Call:
+lm(formula = formula, data = data)
+
+Coefficients:
+                                       (Intercept)  
+                                         9.254e-01  
+                            Cancer_Type_NEWBiliary  
+                                        -1.540e-01  
+                            Cancer_Type_NEWBladder  
+                                        -1.411e-01  
+                         Cancer_Type_NEWColorectal  
+                                        -8.739e-01  
+                                Cancer_Type_NEWCUP  
+                                         9.855e-01  
+                        Cancer_Type_NEWEndometrial  
+                                        -5.867e-01  
+                    Cancer_Type_NEWEsophagogastric  
+                                        -7.682e-01  
+                              Cancer_Type_NEWOther  
+                                        -4.695e-01  
+                            Cancer_Type_NEWOvarian  
+                                        -5.440e-01  
+                           Cancer_Type_NEWPancreas  
+                                        -8.592e-01  
+                           Cancer_Type_NEWProstate  
+                                        -1.031e+00  
+                             Cancer_Type_NEWRectal  
+                                        -8.764e-03  
+                        Cancer_Type_NEWSmall Bowel  
+                                        -1.464e-03  
+                               MSH6_or_notNot_MSH6  
+                                         2.606e-02  
+                                       Current_Age  
+                                         5.532e-03  
+                                      Tumor_Purity  
+                                         6.167e-05  
+                     RaceBLACK OR AFRICAN AMERICAN  
+                                         8.295e-02  
+                 RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                        -2.800e-01  
+                                         RaceOTHER  
+                                        -1.064e-01  
+                          RacePT REFUSED TO ANSWER  
+                                         2.542e-01  
+                                         RaceWHITE  
+                                        -2.608e-01  
+        Cancer_Type_NEWBiliary:MSH6_or_notNot_MSH6  
+                                                NA  
+        Cancer_Type_NEWBladder:MSH6_or_notNot_MSH6  
+                                        -4.046e-01  
+     Cancer_Type_NEWColorectal:MSH6_or_notNot_MSH6  
+                                         5.298e-01  
+            Cancer_Type_NEWCUP:MSH6_or_notNot_MSH6  
+                                                NA  
+    Cancer_Type_NEWEndometrial:MSH6_or_notNot_MSH6  
+                                         4.905e-01  
+Cancer_Type_NEWEsophagogastric:MSH6_or_notNot_MSH6  
+                                         7.389e-01  
+          Cancer_Type_NEWOther:MSH6_or_notNot_MSH6  
+                                         7.584e-01  
+        Cancer_Type_NEWOvarian:MSH6_or_notNot_MSH6  
+                                        -7.115e-02  
+       Cancer_Type_NEWPancreas:MSH6_or_notNot_MSH6  
+                                         2.723e+00  
+       Cancer_Type_NEWProstate:MSH6_or_notNot_MSH6  
+                                         2.884e+00  
+         Cancer_Type_NEWRectal:MSH6_or_notNot_MSH6  
+                                         5.585e-01  
+    Cancer_Type_NEWSmall Bowel:MSH6_or_notNot_MSH6  
+                                        -8.430e-01  
+
+                                       (Intercept) 
+                                      9.254226e-01 
+                            Cancer_Type_NEWBiliary 
+                                     -1.539781e-01 
+                            Cancer_Type_NEWBladder 
+                                     -1.410729e-01 
+                         Cancer_Type_NEWColorectal 
+                                     -8.739450e-01 
+                                Cancer_Type_NEWCUP 
+                                      9.854873e-01 
+                        Cancer_Type_NEWEndometrial 
+                                     -5.866599e-01 
+                    Cancer_Type_NEWEsophagogastric 
+                                     -7.682147e-01 
+                              Cancer_Type_NEWOther 
+                                     -4.694687e-01 
+                            Cancer_Type_NEWOvarian 
+                                     -5.439733e-01 
+                           Cancer_Type_NEWPancreas 
+                                     -8.591567e-01 
+                           Cancer_Type_NEWProstate 
+                                     -1.031315e+00 
+                             Cancer_Type_NEWRectal 
+                                     -8.763561e-03 
+                        Cancer_Type_NEWSmall Bowel 
+                                     -1.463819e-03 
+                               MSH6_or_notNot_MSH6 
+                                      2.605708e-02 
+                                       Current_Age 
+                                      5.532219e-03 
+                                      Tumor_Purity 
+                                      6.167317e-05 
+                     RaceBLACK OR AFRICAN AMERICAN 
+                                      8.295121e-02 
+                 RaceNATIVE AMERICAN-AM IND/ALASKA 
+                                     -2.800392e-01 
+                                         RaceOTHER 
+                                     -1.064033e-01 
+                          RacePT REFUSED TO ANSWER 
+                                      2.542009e-01 
+                                         RaceWHITE 
+                                     -2.608166e-01 
+        Cancer_Type_NEWBiliary:MSH6_or_notNot_MSH6 
+                                                NA 
+        Cancer_Type_NEWBladder:MSH6_or_notNot_MSH6 
+                                     -4.045865e-01 
+     Cancer_Type_NEWColorectal:MSH6_or_notNot_MSH6 
+                                      5.297926e-01 
+            Cancer_Type_NEWCUP:MSH6_or_notNot_MSH6 
+                                                NA 
+    Cancer_Type_NEWEndometrial:MSH6_or_notNot_MSH6 
+                                      4.904950e-01 
+Cancer_Type_NEWEsophagogastric:MSH6_or_notNot_MSH6 
+                                      7.389415e-01 
+          Cancer_Type_NEWOther:MSH6_or_notNot_MSH6 
+                                      7.583827e-01 
+        Cancer_Type_NEWOvarian:MSH6_or_notNot_MSH6 
+                                     -7.114716e-02 
+       Cancer_Type_NEWPancreas:MSH6_or_notNot_MSH6 
+                                      2.723449e+00 
+       Cancer_Type_NEWProstate:MSH6_or_notNot_MSH6 
+                                      2.884234e+00 
+         Cancer_Type_NEWRectal:MSH6_or_notNot_MSH6 
+                                      5.584707e-01 
+    Cancer_Type_NEWSmall Bowel:MSH6_or_notNot_MSH6 
+                                     -8.429922e-01 

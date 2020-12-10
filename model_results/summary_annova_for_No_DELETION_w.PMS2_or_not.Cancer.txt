@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: No_DELETION
+                 Df  Sum Sq Mean Sq F value    Pr(>F)    
+PMS2_or_not       1    13.5  13.498  0.2187    0.6403    
+Cancer_Type_NEW  12  2907.8 242.314  3.9266 1.059e-05 ***
+Residuals       368 22709.7  61.711                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

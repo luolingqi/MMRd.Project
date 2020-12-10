@@ -1,0 +1,16 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	log.Aneuploidy.Score	MSH2_MSH6	MLH1_PMS2	0.993406194944318	1	0.99	ns	Wilcoxon
+2	log.Aneuploidy.Score	MSH2_MSH6	NORMAL	0.338116247520434	1	0.34	ns	Wilcoxon
+3	log.Aneuploidy.Score	MSH2_MSH6	MSH6	0.229797064675868	1	0.23	ns	Wilcoxon
+4	log.Aneuploidy.Score	MSH2_MSH6	Complex	0.22600060553721	1	0.23	ns	Wilcoxon
+5	log.Aneuploidy.Score	MSH2_MSH6	PMS2	0.863106269119527	1	0.86	ns	Wilcoxon
+6	log.Aneuploidy.Score	MLH1_PMS2	NORMAL	0.288785127807443	1	0.29	ns	Wilcoxon
+7	log.Aneuploidy.Score	MLH1_PMS2	MSH6	0.252739703591884	1	0.25	ns	Wilcoxon
+8	log.Aneuploidy.Score	MLH1_PMS2	Complex	0.280613914919228	1	0.28	ns	Wilcoxon
+9	log.Aneuploidy.Score	MLH1_PMS2	PMS2	0.885187367268671	1	0.89	ns	Wilcoxon
+10	log.Aneuploidy.Score	NORMAL	MSH6	0.807804579321607	1	0.81	ns	Wilcoxon
+11	log.Aneuploidy.Score	NORMAL	Complex	0.963585434173669	1	0.96	ns	Wilcoxon
+12	log.Aneuploidy.Score	NORMAL	PMS2	0.623878701278082	1	0.62	ns	Wilcoxon
+13	log.Aneuploidy.Score	MSH6	Complex	0.863936063936064	1	0.86	ns	Wilcoxon
+14	log.Aneuploidy.Score	MSH6	PMS2	0.888358700123406	1	0.89	ns	Wilcoxon
+15	log.Aneuploidy.Score	Complex	PMS2	0.754578754578755	1	0.75	ns	Wilcoxon

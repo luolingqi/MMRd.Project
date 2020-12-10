@@ -1,0 +1,79 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Impact_TMB_Score	Bladder	Colon	0.683886418552239	1	0.68389	ns	Wilcoxon
+2	Impact_TMB_Score	Bladder	Esophagogastric	0.536685045630494	1	0.53669	ns	Wilcoxon
+3	Impact_TMB_Score	Bladder	Pancreas	0.503496503496504	1	0.50350	ns	Wilcoxon
+4	Impact_TMB_Score	Bladder	Colorectal	0.425660960421259	1	0.42566	ns	Wilcoxon
+5	Impact_TMB_Score	Bladder	Biliary	0.223776223776224	1	0.22378	ns	Wilcoxon
+6	Impact_TMB_Score	Bladder	Prostate	0.33006993006993	1	0.33007	ns	Wilcoxon
+7	Impact_TMB_Score	Bladder	Small Bowel	0.0815432245772803	1	0.08154	ns	Wilcoxon
+8	Impact_TMB_Score	Bladder	Endometrial	0.0185998501019844	1	0.01860	*	Wilcoxon
+9	Impact_TMB_Score	Bladder	Rectal	0.472162520138532	1	0.47216	ns	Wilcoxon
+10	Impact_TMB_Score	Bladder	CUP	0.723436695416533	1	0.72344	ns	Wilcoxon
+11	Impact_TMB_Score	Bladder	Other	0.0115384615384615	0.83	0.01154	*	Wilcoxon
+12	Impact_TMB_Score	Bladder	Ovarian	0.33006993006993	1	0.33007	ns	Wilcoxon
+13	Impact_TMB_Score	Colon	Esophagogastric	0.136712672618808	1	0.13671	ns	Wilcoxon
+14	Impact_TMB_Score	Colon	Pancreas	0.750570893145833	1	0.75057	ns	Wilcoxon
+15	Impact_TMB_Score	Colon	Colorectal	0.718860751817141	1	0.71886	ns	Wilcoxon
+16	Impact_TMB_Score	Colon	Biliary	0.113556981916552	1	0.11356	ns	Wilcoxon
+17	Impact_TMB_Score	Colon	Prostate	0.178394767674425	1	0.17839	ns	Wilcoxon
+18	Impact_TMB_Score	Colon	Small Bowel	0.0276715959482965	1	0.02767	*	Wilcoxon
+19	Impact_TMB_Score	Colon	Endometrial	7.27592041709457e-08	5.7e-06	7.3e-08	****	Wilcoxon
+20	Impact_TMB_Score	Colon	Rectal	0.477381284796997	1	0.47738	ns	Wilcoxon
+21	Impact_TMB_Score	Colon	CUP	0.627028833575428	1	0.62703	ns	Wilcoxon
+22	Impact_TMB_Score	Colon	Other	0.00291124303567684	0.22	0.00291	**	Wilcoxon
+23	Impact_TMB_Score	Colon	Ovarian	0.146592597628439	1	0.14659	ns	Wilcoxon
+24	Impact_TMB_Score	Esophagogastric	Pancreas	0.390983869514327	1	0.39098	ns	Wilcoxon
+25	Impact_TMB_Score	Esophagogastric	Colorectal	0.132937536992551	1	0.13294	ns	Wilcoxon
+26	Impact_TMB_Score	Esophagogastric	Biliary	0.502611613570333	1	0.50261	ns	Wilcoxon
+27	Impact_TMB_Score	Esophagogastric	Prostate	0.494992766237219	1	0.49499	ns	Wilcoxon
+28	Impact_TMB_Score	Esophagogastric	Small Bowel	0.204315839253731	1	0.20432	ns	Wilcoxon
+29	Impact_TMB_Score	Esophagogastric	Endometrial	0.0129234105592345	0.92	0.01292	*	Wilcoxon
+30	Impact_TMB_Score	Esophagogastric	Rectal	0.18009146637599	1	0.18009	ns	Wilcoxon
+31	Impact_TMB_Score	Esophagogastric	CUP	0.839389138819151	1	0.83939	ns	Wilcoxon
+32	Impact_TMB_Score	Esophagogastric	Other	0.0230930178931948	1	0.02309	*	Wilcoxon
+33	Impact_TMB_Score	Esophagogastric	Ovarian	0.359512229488679	1	0.35951	ns	Wilcoxon
+34	Impact_TMB_Score	Pancreas	Colorectal	0.8913728474793	1	0.89137	ns	Wilcoxon
+35	Impact_TMB_Score	Pancreas	Biliary	0.257142857142857	1	0.25714	ns	Wilcoxon
+36	Impact_TMB_Score	Pancreas	Prostate	0.2	1	0.20000	ns	Wilcoxon
+37	Impact_TMB_Score	Pancreas	Small Bowel	0.132967032967033	1	0.13297	ns	Wilcoxon
+38	Impact_TMB_Score	Pancreas	Endometrial	0.0358729554206894	1	0.03587	*	Wilcoxon
+39	Impact_TMB_Score	Pancreas	Rectal	0.970073404856014	1	0.97007	ns	Wilcoxon
+40	Impact_TMB_Score	Pancreas	CUP	0.476190476190476	1	0.47619	ns	Wilcoxon
+41	Impact_TMB_Score	Pancreas	Other	0.0242424242424242	1	0.02424	*	Wilcoxon
+42	Impact_TMB_Score	Pancreas	Ovarian	0.2	1	0.20000	ns	Wilcoxon
+43	Impact_TMB_Score	Colorectal	Biliary	0.0800885850248299	1	0.08009	ns	Wilcoxon
+44	Impact_TMB_Score	Colorectal	Prostate	0.133035140871174	1	0.13304	ns	Wilcoxon
+45	Impact_TMB_Score	Colorectal	Small Bowel	0.0207951932799592	1	0.02080	*	Wilcoxon
+46	Impact_TMB_Score	Colorectal	Endometrial	0.000136596766621064	0.011	0.00014	***	Wilcoxon
+47	Impact_TMB_Score	Colorectal	Rectal	0.788758939049726	1	0.78876	ns	Wilcoxon
+48	Impact_TMB_Score	Colorectal	CUP	0.419164626802603	1	0.41916	ns	Wilcoxon
+49	Impact_TMB_Score	Colorectal	Other	0.00276791160623171	0.21	0.00277	**	Wilcoxon
+50	Impact_TMB_Score	Colorectal	Ovarian	0.116126010536256	1	0.11613	ns	Wilcoxon
+51	Impact_TMB_Score	Biliary	Prostate	1	1	1.00000	ns	Wilcoxon
+52	Impact_TMB_Score	Biliary	Small Bowel	0.778617718887637	1	0.77862	ns	Wilcoxon
+53	Impact_TMB_Score	Biliary	Endometrial	0.706565079600754	1	0.70657	ns	Wilcoxon
+54	Impact_TMB_Score	Biliary	Rectal	0.128081336564438	1	0.12808	ns	Wilcoxon
+55	Impact_TMB_Score	Biliary	CUP	0.588744588744589	1	0.58874	ns	Wilcoxon
+56	Impact_TMB_Score	Biliary	Other	0.294871794871795	1	0.29487	ns	Wilcoxon
+57	Impact_TMB_Score	Biliary	Ovarian	0.668869942079093	1	0.66887	ns	Wilcoxon
+58	Impact_TMB_Score	Prostate	Small Bowel	0.952747252747253	1	0.95275	ns	Wilcoxon
+59	Impact_TMB_Score	Prostate	Endometrial	0.959575502111359	1	0.95958	ns	Wilcoxon
+60	Impact_TMB_Score	Prostate	Rectal	0.163143372515822	1	0.16314	ns	Wilcoxon
+61	Impact_TMB_Score	Prostate	CUP	0.476190476190476	1	0.47619	ns	Wilcoxon
+62	Impact_TMB_Score	Prostate	Other	0.315151515151515	1	0.31515	ns	Wilcoxon
+63	Impact_TMB_Score	Prostate	Ovarian	1	1	1.00000	ns	Wilcoxon
+64	Impact_TMB_Score	Small Bowel	Endometrial	0.875332983463077	1	0.87533	ns	Wilcoxon
+65	Impact_TMB_Score	Small Bowel	Rectal	0.0482399707625804	1	0.04824	*	Wilcoxon
+66	Impact_TMB_Score	Small Bowel	CUP	0.280950339873014	1	0.28095	ns	Wilcoxon
+67	Impact_TMB_Score	Small Bowel	Other	0.226839723743749	1	0.22684	ns	Wilcoxon
+68	Impact_TMB_Score	Small Bowel	Ovarian	0.903408211942422	1	0.90341	ns	Wilcoxon
+69	Impact_TMB_Score	Endometrial	Rectal	0.0017146596380578	0.13	0.00171	**	Wilcoxon
+70	Impact_TMB_Score	Endometrial	CUP	0.161658195046196	1	0.16166	ns	Wilcoxon
+71	Impact_TMB_Score	Endometrial	Other	0.156570747859505	1	0.15657	ns	Wilcoxon
+72	Impact_TMB_Score	Endometrial	Ovarian	0.895154863623097	1	0.89515	ns	Wilcoxon
+73	Impact_TMB_Score	Rectal	CUP	0.583818107456754	1	0.58382	ns	Wilcoxon
+74	Impact_TMB_Score	Rectal	Other	0.00629708455795412	0.46	0.00630	**	Wilcoxon
+75	Impact_TMB_Score	Rectal	Ovarian	0.121254310436039	1	0.12125	ns	Wilcoxon
+76	Impact_TMB_Score	CUP	Other	0.101398601398601	1	0.10140	ns	Wilcoxon
+77	Impact_TMB_Score	CUP	Ovarian	0.476190476190476	1	0.47619	ns	Wilcoxon
+78	Impact_TMB_Score	Other	Ovarian	0.527272727272727	1	0.52727	ns	Wilcoxon

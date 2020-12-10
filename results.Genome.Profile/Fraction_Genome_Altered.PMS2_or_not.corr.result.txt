@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Fraction_Genome_Altered	PMS2	Not_PMS2	0.597936854827121	0.6	0.6	ns	Wilcoxon

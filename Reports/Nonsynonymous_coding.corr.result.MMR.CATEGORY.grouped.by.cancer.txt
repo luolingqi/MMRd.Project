@@ -1,0 +1,6 @@
+TumorType	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Ampulla of Vater	Nonsynonymous_coding	MSH2_MSH6	MSH6	1	1	1	ns	Wilcoxon
+2	Small Intestine	Nonsynonymous_coding	MSH2_MSH6	MLH1_PMS2	1	1	1	ns	Wilcoxon
+3	Colorectal 	Nonsynonymous_coding	MSH2_MSH6	MLH1_PMS2	1	1	1	ns	Wilcoxon
+4	Endometrial cancer	Nonsynonymous_coding	MSH2_MSH6	MLH1_PMS2	1	1	1	ns	Wilcoxon
+5	Gastroesophageal cancer	Nonsynonymous_coding	MSH2_MSH6	PMS2	1	1	1	ns	Wilcoxon

@@ -1,0 +1,21 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_INDEL	Singleton	Multiplex	0.174494245463354	1	0.17449	ns	Wilcoxon
+2	Colon	No_INDEL	Singleton	Multiplex	0.000320903730422593	0.0064	0.00032	***	Wilcoxon
+3	Colon	No_INDEL	Singleton	NORMAL	0.178509324407007	1	0.17851	ns	Wilcoxon
+4	Colon	No_INDEL	Multiplex	NORMAL	0.460162956398203	1	0.46016	ns	Wilcoxon
+5	Esophagogastric	No_INDEL	Multiplex	NORMAL	0.975222337026536	1	0.97522	ns	Wilcoxon
+6	Pancreas	No_INDEL	Singleton	Multiplex	0.637351888233937	1	0.63735	ns	Wilcoxon
+7	Colorectal	No_INDEL	Singleton	Multiplex	0.0140731602357208	0.27	0.01407	*	Wilcoxon
+8	Colorectal	No_INDEL	Singleton	NORMAL	0.242525561978572	1	0.24253	ns	Wilcoxon
+9	Colorectal	No_INDEL	Multiplex	NORMAL	0.145281579060934	1	0.14528	ns	Wilcoxon
+10	Biliary	No_INDEL	Singleton	Multiplex	1	1	1.00000	ns	Wilcoxon
+11	Prostate	No_INDEL	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon
+12	Small Bowel	No_INDEL	Singleton	Multiplex	0.609523809523809	1	0.60952	ns	Wilcoxon
+13	Small Bowel	No_INDEL	Singleton	NORMAL	0.8	1	0.80000	ns	Wilcoxon
+14	Small Bowel	No_INDEL	Multiplex	NORMAL	0.571428571428571	1	0.57143	ns	Wilcoxon
+15	Endometrial	No_INDEL	Singleton	Multiplex	0.327776598632312	1	0.32778	ns	Wilcoxon
+16	Endometrial	No_INDEL	Singleton	NORMAL	0.8	1	0.80000	ns	Wilcoxon
+17	Endometrial	No_INDEL	Multiplex	NORMAL	0.793348648601443	1	0.79335	ns	Wilcoxon
+18	Rectal	No_INDEL	Singleton	Multiplex	0.487222345928612	1	0.48722	ns	Wilcoxon
+19	CUP	No_INDEL	Multiplex	NORMAL	0.234763662827669	1	0.23476	ns	Wilcoxon
+20	Ovarian	No_INDEL	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon

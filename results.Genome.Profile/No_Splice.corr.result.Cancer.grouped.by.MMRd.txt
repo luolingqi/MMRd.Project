@@ -1,0 +1,173 @@
+CLASSIFICATION_PLOT	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	MSH2_MSH6	No_Splice	Bladder	Colon	0.0350170402670496	1	0.035	*	Wilcoxon
+2	MSH2_MSH6	No_Splice	Bladder	Esophagogastric	0.379775474840949	1	0.380	ns	Wilcoxon
+3	MSH2_MSH6	No_Splice	Bladder	Pancreas	0.0839528182931277	1	0.084	ns	Wilcoxon
+4	MSH2_MSH6	No_Splice	Bladder	Colorectal	0.231997723628734	1	0.232	ns	Wilcoxon
+5	MSH2_MSH6	No_Splice	Bladder	Prostate	0.624206114766406	1	0.624	ns	Wilcoxon
+6	MSH2_MSH6	No_Splice	Bladder	Small Bowel	0.0518686606519384	1	0.052	ns	Wilcoxon
+7	MSH2_MSH6	No_Splice	Bladder	Endometrial	0.014264934071046	1	0.014	*	Wilcoxon
+8	MSH2_MSH6	No_Splice	Bladder	Rectal	0.0596753083904224	1	0.060	ns	Wilcoxon
+9	MSH2_MSH6	No_Splice	Bladder	Other	0.518605016428726	1	0.519	ns	Wilcoxon
+10	MSH2_MSH6	No_Splice	Bladder	Ovarian	0.624206114766406	1	0.624	ns	Wilcoxon
+11	MSH2_MSH6	No_Splice	Colon	Esophagogastric	0.701703778562003	1	0.702	ns	Wilcoxon
+12	MSH2_MSH6	No_Splice	Colon	Pancreas	0.568992772209455	1	0.569	ns	Wilcoxon
+13	MSH2_MSH6	No_Splice	Colon	Colorectal	0.49895132673296	1	0.499	ns	Wilcoxon
+14	MSH2_MSH6	No_Splice	Colon	Prostate	0.374780981716477	1	0.375	ns	Wilcoxon
+15	MSH2_MSH6	No_Splice	Colon	Small Bowel	0.187196242654906	1	0.187	ns	Wilcoxon
+16	MSH2_MSH6	No_Splice	Colon	Endometrial	0.523530700233954	1	0.524	ns	Wilcoxon
+17	MSH2_MSH6	No_Splice	Colon	Rectal	0.520571730686024	1	0.521	ns	Wilcoxon
+18	MSH2_MSH6	No_Splice	Colon	Other	0.246176298803336	1	0.246	ns	Wilcoxon
+19	MSH2_MSH6	No_Splice	Colon	Ovarian	0.374780981716477	1	0.375	ns	Wilcoxon
+20	MSH2_MSH6	No_Splice	Esophagogastric	Pancreas	0.633553475376833	1	0.634	ns	Wilcoxon
+21	MSH2_MSH6	No_Splice	Esophagogastric	Colorectal	1	1	1.000	ns	Wilcoxon
+22	MSH2_MSH6	No_Splice	Esophagogastric	Prostate	1	1	1.000	ns	Wilcoxon
+23	MSH2_MSH6	No_Splice	Esophagogastric	Small Bowel	0.474549143449401	1	0.475	ns	Wilcoxon
+24	MSH2_MSH6	No_Splice	Esophagogastric	Endometrial	0.432982276283878	1	0.433	ns	Wilcoxon
+25	MSH2_MSH6	No_Splice	Esophagogastric	Rectal	0.715776212736969	1	0.716	ns	Wilcoxon
+26	MSH2_MSH6	No_Splice	Esophagogastric	Other	0.787406490666269	1	0.787	ns	Wilcoxon
+27	MSH2_MSH6	No_Splice	Esophagogastric	Ovarian	1	1	1.000	ns	Wilcoxon
+28	MSH2_MSH6	No_Splice	Pancreas	Colorectal	0.412355183890253	1	0.412	ns	Wilcoxon
+29	MSH2_MSH6	No_Splice	Pancreas	Prostate	0.414216178242525	1	0.414	ns	Wilcoxon
+30	MSH2_MSH6	No_Splice	Pancreas	Small Bowel	0.617075077451974	1	0.617	ns	Wilcoxon
+31	MSH2_MSH6	No_Splice	Pancreas	Endometrial	0.797351470111364	1	0.797	ns	Wilcoxon
+32	MSH2_MSH6	No_Splice	Pancreas	Rectal	1	1	1.000	ns	Wilcoxon
+33	MSH2_MSH6	No_Splice	Pancreas	Other	0.305507086861254	1	0.306	ns	Wilcoxon
+34	MSH2_MSH6	No_Splice	Pancreas	Ovarian	0.414216178242525	1	0.414	ns	Wilcoxon
+35	MSH2_MSH6	No_Splice	Colorectal	Prostate	0.834319428858139	1	0.834	ns	Wilcoxon
+36	MSH2_MSH6	No_Splice	Colorectal	Small Bowel	0.151408782541429	1	0.151	ns	Wilcoxon
+37	MSH2_MSH6	No_Splice	Colorectal	Endometrial	0.276879552050429	1	0.277	ns	Wilcoxon
+38	MSH2_MSH6	No_Splice	Colorectal	Rectal	0.342781711147911	1	0.343	ns	Wilcoxon
+39	MSH2_MSH6	No_Splice	Colorectal	Other	0.733729995696247	1	0.734	ns	Wilcoxon
+40	MSH2_MSH6	No_Splice	Colorectal	Ovarian	0.834319428858139	1	0.834	ns	Wilcoxon
+41	MSH2_MSH6	No_Splice	Prostate	Small Bowel	0.220671361919847	1	0.221	ns	Wilcoxon
+42	MSH2_MSH6	No_Splice	Prostate	Endometrial	0.231997723628734	1	0.232	ns	Wilcoxon
+43	MSH2_MSH6	No_Splice	Prostate	Rectal	0.376462365767638	1	0.376	ns	Wilcoxon
+44	MSH2_MSH6	No_Splice	Prostate	Other	1	1	1.000	ns	Wilcoxon
+45	MSH2_MSH6	No_Splice	Prostate	Ovarian	1	1	1.000	ns	Wilcoxon
+46	MSH2_MSH6	No_Splice	Small Bowel	Endometrial	0.273094512813125	1	0.273	ns	Wilcoxon
+47	MSH2_MSH6	No_Splice	Small Bowel	Rectal	0.740144135804575	1	0.740	ns	Wilcoxon
+48	MSH2_MSH6	No_Splice	Small Bowel	Other	0.143151589732787	1	0.143	ns	Wilcoxon
+49	MSH2_MSH6	No_Splice	Small Bowel	Ovarian	0.220671361919847	1	0.221	ns	Wilcoxon
+50	MSH2_MSH6	No_Splice	Endometrial	Rectal	0.92738099439242	1	0.927	ns	Wilcoxon
+51	MSH2_MSH6	No_Splice	Endometrial	Other	0.130369828410806	1	0.130	ns	Wilcoxon
+52	MSH2_MSH6	No_Splice	Endometrial	Ovarian	0.231997723628734	1	0.232	ns	Wilcoxon
+53	MSH2_MSH6	No_Splice	Rectal	Other	0.201992787640168	1	0.202	ns	Wilcoxon
+54	MSH2_MSH6	No_Splice	Rectal	Ovarian	0.376462365767638	1	0.376	ns	Wilcoxon
+55	MSH2_MSH6	No_Splice	Other	Ovarian	1	1	1.000	ns	Wilcoxon
+56	MLH1_PMS2	No_Splice	Colon	Esophagogastric	0.0450860153917358	1	0.045	*	Wilcoxon
+57	MLH1_PMS2	No_Splice	Colon	Pancreas	0.880214989910294	1	0.880	ns	Wilcoxon
+58	MLH1_PMS2	No_Splice	Colon	Colorectal	0.1153003095305	1	0.115	ns	Wilcoxon
+59	MLH1_PMS2	No_Splice	Colon	Biliary	0.370427735067349	1	0.370	ns	Wilcoxon
+60	MLH1_PMS2	No_Splice	Colon	Prostate	0.222189401130057	1	0.222	ns	Wilcoxon
+61	MLH1_PMS2	No_Splice	Colon	Small Bowel	0.395716994484999	1	0.396	ns	Wilcoxon
+62	MLH1_PMS2	No_Splice	Colon	Endometrial	0.0584262775091805	1	0.058	ns	Wilcoxon
+63	MLH1_PMS2	No_Splice	Colon	Rectal	0.319291648242801	1	0.319	ns	Wilcoxon
+64	MLH1_PMS2	No_Splice	Colon	CUP	0.370427735067349	1	0.370	ns	Wilcoxon
+65	MLH1_PMS2	No_Splice	Colon	Other	0.328757138962191	1	0.329	ns	Wilcoxon
+66	MLH1_PMS2	No_Splice	Colon	Ovarian	0.222189401130057	1	0.222	ns	Wilcoxon
+67	MLH1_PMS2	No_Splice	Esophagogastric	Pancreas	0.660338027339458	1	0.660	ns	Wilcoxon
+68	MLH1_PMS2	No_Splice	Esophagogastric	Colorectal	0.815595096287036	1	0.816	ns	Wilcoxon
+69	MLH1_PMS2	No_Splice	Esophagogastric	Biliary	0.925848188564791	1	0.926	ns	Wilcoxon
+70	MLH1_PMS2	No_Splice	Esophagogastric	Prostate	0.376005684926533	1	0.376	ns	Wilcoxon
+71	MLH1_PMS2	No_Splice	Esophagogastric	Small Bowel	0.812264740972406	1	0.812	ns	Wilcoxon
+72	MLH1_PMS2	No_Splice	Esophagogastric	Endometrial	0.483706536922269	1	0.484	ns	Wilcoxon
+73	MLH1_PMS2	No_Splice	Esophagogastric	Rectal	0.0444108455233895	1	0.044	*	Wilcoxon
+74	MLH1_PMS2	No_Splice	Esophagogastric	CUP	0.925848188564791	1	0.926	ns	Wilcoxon
+75	MLH1_PMS2	No_Splice	Esophagogastric	Other	0.787730982942321	1	0.788	ns	Wilcoxon
+76	MLH1_PMS2	No_Splice	Esophagogastric	Ovarian	0.376005684926533	1	0.376	ns	Wilcoxon
+77	MLH1_PMS2	No_Splice	Pancreas	Colorectal	0.732969927616132	1	0.733	ns	Wilcoxon
+78	MLH1_PMS2	No_Splice	Pancreas	Biliary	1	1	1.000	ns	Wilcoxon
+79	MLH1_PMS2	No_Splice	Pancreas	Prostate	1	1	1.000	ns	Wilcoxon
+80	MLH1_PMS2	No_Splice	Pancreas	Small Bowel	1	1	1.000	ns	Wilcoxon
+81	MLH1_PMS2	No_Splice	Pancreas	Endometrial	0.81447246771317	1	0.814	ns	Wilcoxon
+82	MLH1_PMS2	No_Splice	Pancreas	Rectal	0.709388115014226	1	0.709	ns	Wilcoxon
+83	MLH1_PMS2	No_Splice	Pancreas	CUP	1	1	1.000	ns	Wilcoxon
+84	MLH1_PMS2	No_Splice	Pancreas	Other	1	1	1.000	ns	Wilcoxon
+85	MLH1_PMS2	No_Splice	Pancreas	Ovarian	1	1	1.000	ns	Wilcoxon
+86	MLH1_PMS2	No_Splice	Colorectal	Biliary	0.842707592633937	1	0.843	ns	Wilcoxon
+87	MLH1_PMS2	No_Splice	Colorectal	Prostate	0.484423364712776	1	0.484	ns	Wilcoxon
+88	MLH1_PMS2	No_Splice	Colorectal	Small Bowel	0.817383234012773	1	0.817	ns	Wilcoxon
+89	MLH1_PMS2	No_Splice	Colorectal	Endometrial	0.471193596884715	1	0.471	ns	Wilcoxon
+90	MLH1_PMS2	No_Splice	Colorectal	Rectal	0.0605092355693963	1	0.061	ns	Wilcoxon
+91	MLH1_PMS2	No_Splice	Colorectal	CUP	0.842707592633937	1	0.843	ns	Wilcoxon
+92	MLH1_PMS2	No_Splice	Colorectal	Other	0.906653709466255	1	0.907	ns	Wilcoxon
+93	MLH1_PMS2	No_Splice	Colorectal	Ovarian	0.484423364712776	1	0.484	ns	Wilcoxon
+94	MLH1_PMS2	No_Splice	Biliary	Prostate	0.527089256865538	1	0.527	ns	Wilcoxon
+95	MLH1_PMS2	No_Splice	Biliary	Small Bowel	1	1	1.000	ns	Wilcoxon
+96	MLH1_PMS2	No_Splice	Biliary	Endometrial	0.828836718789551	1	0.829	ns	Wilcoxon
+97	MLH1_PMS2	No_Splice	Biliary	Rectal	0.184208620417858	1	0.184	ns	Wilcoxon
+98	MLH1_PMS2	No_Splice	Biliary	CUP	1	1	1.000	ns	Wilcoxon
+99	MLH1_PMS2	No_Splice	Biliary	Other	0.834319428858139	1	0.834	ns	Wilcoxon
+100	MLH1_PMS2	No_Splice	Biliary	Ovarian	0.527089256865538	1	0.527	ns	Wilcoxon
+101	MLH1_PMS2	No_Splice	Prostate	Small Bowel	0.414216178242525	1	0.414	ns	Wilcoxon
+102	MLH1_PMS2	No_Splice	Prostate	Endometrial	0.265326007867143	1	0.265	ns	Wilcoxon
+103	MLH1_PMS2	No_Splice	Prostate	Rectal	0.205718061264228	1	0.206	ns	Wilcoxon
+104	MLH1_PMS2	No_Splice	Prostate	CUP	0.527089256865538	1	0.527	ns	Wilcoxon
+105	MLH1_PMS2	No_Splice	Prostate	Other	1	1	1.000	ns	Wilcoxon
+106	MLH1_PMS2	No_Splice	Small Bowel	Endometrial	0.874344589713948	1	0.874	ns	Wilcoxon
+107	MLH1_PMS2	No_Splice	Small Bowel	Rectal	0.178192320329428	1	0.178	ns	Wilcoxon
+108	MLH1_PMS2	No_Splice	Small Bowel	CUP	1	1	1.000	ns	Wilcoxon
+109	MLH1_PMS2	No_Splice	Small Bowel	Other	0.779854617964919	1	0.780	ns	Wilcoxon
+110	MLH1_PMS2	No_Splice	Small Bowel	Ovarian	0.414216178242525	1	0.414	ns	Wilcoxon
+111	MLH1_PMS2	No_Splice	Endometrial	Rectal	0.0568081088552405	1	0.057	ns	Wilcoxon
+112	MLH1_PMS2	No_Splice	Endometrial	CUP	0.828836718789551	1	0.829	ns	Wilcoxon
+113	MLH1_PMS2	No_Splice	Endometrial	Other	0.55044336996575	1	0.550	ns	Wilcoxon
+114	MLH1_PMS2	No_Splice	Endometrial	Ovarian	0.265326007867143	1	0.265	ns	Wilcoxon
+115	MLH1_PMS2	No_Splice	Rectal	CUP	0.184208620417858	1	0.184	ns	Wilcoxon
+116	MLH1_PMS2	No_Splice	Rectal	Other	0.21414065315268	1	0.214	ns	Wilcoxon
+117	MLH1_PMS2	No_Splice	Rectal	Ovarian	0.205718061264228	1	0.206	ns	Wilcoxon
+118	MLH1_PMS2	No_Splice	CUP	Other	0.834319428858139	1	0.834	ns	Wilcoxon
+119	MLH1_PMS2	No_Splice	CUP	Ovarian	0.527089256865538	1	0.527	ns	Wilcoxon
+120	MLH1_PMS2	No_Splice	Other	Ovarian	1	1	1.000	ns	Wilcoxon
+121	Complex	No_Splice	Colon	Esophagogastric	0.550097317230397	1	0.550	ns	Wilcoxon
+122	Complex	No_Splice	Colon	Endometrial	0.550097317230397	1	0.550	ns	Wilcoxon
+123	NORMAL	No_Splice	Colon	Esophagogastric	0.872600060989729	1	0.873	ns	Wilcoxon
+124	NORMAL	No_Splice	Colon	Colorectal	0.439097606673471	1	0.439	ns	Wilcoxon
+125	NORMAL	No_Splice	Colon	Small Bowel	0.47328946538009	1	0.473	ns	Wilcoxon
+126	NORMAL	No_Splice	Colon	Endometrial	0.763927123021339	1	0.764	ns	Wilcoxon
+127	NORMAL	No_Splice	Colon	CUP	0.168668618887815	1	0.169	ns	Wilcoxon
+128	NORMAL	No_Splice	Esophagogastric	Colorectal	0.481120001127239	1	0.481	ns	Wilcoxon
+129	NORMAL	No_Splice	Esophagogastric	Small Bowel	1	1	1.000	ns	Wilcoxon
+130	NORMAL	No_Splice	Esophagogastric	Endometrial	1	1	1.000	ns	Wilcoxon
+131	NORMAL	No_Splice	Esophagogastric	CUP	0.666666666666667	1	0.667	ns	Wilcoxon
+132	NORMAL	No_Splice	Colorectal	Small Bowel	0.276500480083433	1	0.277	ns	Wilcoxon
+133	NORMAL	No_Splice	Colorectal	Endometrial	0.230804379939274	1	0.231	ns	Wilcoxon
+134	NORMAL	No_Splice	Colorectal	CUP	0.276500480083433	1	0.277	ns	Wilcoxon
+135	NORMAL	No_Splice	Small Bowel	Endometrial	0.69263278404196	1	0.693	ns	Wilcoxon
+136	NORMAL	No_Splice	Small Bowel	CUP	1	1	1.000	ns	Wilcoxon
+137	NORMAL	No_Splice	Endometrial	CUP	0.276500480083433	1	0.277	ns	Wilcoxon
+138	MSH6	No_Splice	Bladder	Colon	0.411313791776259	1	0.411	ns	Wilcoxon
+139	MSH6	No_Splice	Bladder	Colorectal	0.332921608065566	1	0.333	ns	Wilcoxon
+140	MSH6	No_Splice	Bladder	Endometrial	0.479500122186953	1	0.480	ns	Wilcoxon
+141	MSH6	No_Splice	Colon	Pancreas	0.69263278404196	1	0.693	ns	Wilcoxon
+142	MSH6	No_Splice	Colon	Colorectal	1	1	1.000	ns	Wilcoxon
+143	MSH6	No_Splice	Colon	Prostate	0.69263278404196	1	0.693	ns	Wilcoxon
+144	MSH6	No_Splice	Colon	Endometrial	1	1	1.000	ns	Wilcoxon
+145	MSH6	No_Splice	Pancreas	Colorectal	0.637351888233937	1	0.637	ns	Wilcoxon
+146	MSH6	No_Splice	Pancreas	Endometrial	1	1	1.000	ns	Wilcoxon
+147	MSH6	No_Splice	Colorectal	Prostate	0.637351888233937	1	0.637	ns	Wilcoxon
+148	MSH6	No_Splice	Colorectal	Endometrial	1	1	1.000	ns	Wilcoxon
+149	MSH6	No_Splice	Prostate	Endometrial	1	1	1.000	ns	Wilcoxon
+150	PMS2	No_Splice	Bladder	Colon	0.235679913429038	1	0.236	ns	Wilcoxon
+151	PMS2	No_Splice	Bladder	Colorectal	1	1	1.000	ns	Wilcoxon
+152	PMS2	No_Splice	Bladder	Biliary	1	1	1.000	ns	Wilcoxon
+153	PMS2	No_Splice	Bladder	Small Bowel	0.235679913429038	1	0.236	ns	Wilcoxon
+154	PMS2	No_Splice	Bladder	Rectal	1	1	1.000	ns	Wilcoxon
+155	PMS2	No_Splice	Bladder	Ovarian	1	1	1.000	ns	Wilcoxon
+156	PMS2	No_Splice	Colon	Colorectal	0.235679913429038	1	0.236	ns	Wilcoxon
+157	PMS2	No_Splice	Colon	Biliary	0.414216178242525	1	0.414	ns	Wilcoxon
+158	PMS2	No_Splice	Colon	Small Bowel	0.247061525091658	1	0.247	ns	Wilcoxon
+159	PMS2	No_Splice	Colon	Rectal	0.414216178242525	1	0.414	ns	Wilcoxon
+160	PMS2	No_Splice	Colon	Ovarian	0.414216178242525	1	0.414	ns	Wilcoxon
+161	PMS2	No_Splice	Colorectal	Biliary	1	1	1.000	ns	Wilcoxon
+162	PMS2	No_Splice	Colorectal	Small Bowel	0.235679913429038	1	0.236	ns	Wilcoxon
+163	PMS2	No_Splice	Colorectal	Rectal	1	1	1.000	ns	Wilcoxon
+164	PMS2	No_Splice	Colorectal	Ovarian	1	1	1.000	ns	Wilcoxon
+165	PMS2	No_Splice	Biliary	Small Bowel	1	1	1.000	ns	Wilcoxon
+166	PMS2	No_Splice	Small Bowel	Rectal	1	1	1.000	ns	Wilcoxon
+167	PMS2	No_Splice	Small Bowel	Ovarian	1	1	1.000	ns	Wilcoxon
+168	?	No_Splice	Bladder	Esophagogastric	1	1	1.000	ns	Wilcoxon
+169	?	No_Splice	Bladder	Small Bowel	1	1	1.000	ns	Wilcoxon
+170	?	No_Splice	Bladder	Endometrial	1	1	1.000	ns	Wilcoxon
+171	?	No_Splice	Esophagogastric	Small Bowel	1	1	1.000	ns	Wilcoxon
+172	?	No_Splice	Esophagogastric	Endometrial	1	1	1.000	ns	Wilcoxon

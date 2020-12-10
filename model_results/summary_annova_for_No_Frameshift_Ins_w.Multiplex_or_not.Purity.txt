@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: No_Frameshift_Ins
+                  Df Sum Sq Mean Sq F value  Pr(>F)  
+Multiplex_or_not   3   75.1 25.0322  2.7721 0.04138 *
+Tumor_Purity       1    0.8  0.7874  0.0872 0.76793  
+Residuals        373 3368.2  9.0301                  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

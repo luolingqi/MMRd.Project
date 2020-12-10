@@ -1,0 +1,138 @@
+
+Call:
+lm(formula = formula, data = data)
+
+Coefficients:
+                                       (Intercept)  
+                                         -0.153328  
+                            Cancer_Type_NEWBiliary  
+                                          0.007794  
+                            Cancer_Type_NEWBladder  
+                                         -0.221942  
+                         Cancer_Type_NEWColorectal  
+                                         -0.044546  
+                                Cancer_Type_NEWCUP  
+                                         -0.175728  
+                        Cancer_Type_NEWEndometrial  
+                                          0.092247  
+                    Cancer_Type_NEWEsophagogastric  
+                                          0.080098  
+                              Cancer_Type_NEWOther  
+                                         -0.120742  
+                            Cancer_Type_NEWOvarian  
+                                         -0.246295  
+                           Cancer_Type_NEWPancreas  
+                                         -0.199973  
+                           Cancer_Type_NEWProstate  
+                                         -0.213549  
+                             Cancer_Type_NEWRectal  
+                                          0.362327  
+                        Cancer_Type_NEWSmall Bowel  
+                                          0.061083  
+                               PMS2_or_notNot_PMS2  
+                                          0.010569  
+                                       Current_Age  
+                                          0.001540  
+                                      Tumor_Purity  
+                                          0.002099  
+                     RaceBLACK OR AFRICAN AMERICAN  
+                                          0.020590  
+                 RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                         -0.010988  
+                                         RaceOTHER  
+                                          0.108381  
+                          RacePT REFUSED TO ANSWER  
+                                          0.064435  
+                                         RaceWHITE  
+                                          0.146154  
+        Cancer_Type_NEWBiliary:PMS2_or_notNot_PMS2  
+                                                NA  
+        Cancer_Type_NEWBladder:PMS2_or_notNot_PMS2  
+                                          0.185271  
+     Cancer_Type_NEWColorectal:PMS2_or_notNot_PMS2  
+                                          0.117528  
+            Cancer_Type_NEWCUP:PMS2_or_notNot_PMS2  
+                                         -0.057759  
+    Cancer_Type_NEWEndometrial:PMS2_or_notNot_PMS2  
+                                         -0.093124  
+Cancer_Type_NEWEsophagogastric:PMS2_or_notNot_PMS2  
+                                         -0.110593  
+          Cancer_Type_NEWOther:PMS2_or_notNot_PMS2  
+                                         -0.037305  
+        Cancer_Type_NEWOvarian:PMS2_or_notNot_PMS2  
+                                          0.652993  
+       Cancer_Type_NEWPancreas:PMS2_or_notNot_PMS2  
+                                          0.053170  
+       Cancer_Type_NEWProstate:PMS2_or_notNot_PMS2  
+                                          0.325754  
+         Cancer_Type_NEWRectal:PMS2_or_notNot_PMS2  
+                                         -0.413297  
+    Cancer_Type_NEWSmall Bowel:PMS2_or_notNot_PMS2  
+                                          0.098285  
+
+                                       (Intercept) 
+                                      -0.153327866 
+                            Cancer_Type_NEWBiliary 
+                                       0.007793603 
+                            Cancer_Type_NEWBladder 
+                                      -0.221941667 
+                         Cancer_Type_NEWColorectal 
+                                      -0.044546225 
+                                Cancer_Type_NEWCUP 
+                                      -0.175728160 
+                        Cancer_Type_NEWEndometrial 
+                                       0.092246875 
+                    Cancer_Type_NEWEsophagogastric 
+                                       0.080098184 
+                              Cancer_Type_NEWOther 
+                                      -0.120741856 
+                            Cancer_Type_NEWOvarian 
+                                      -0.246295252 
+                           Cancer_Type_NEWPancreas 
+                                      -0.199972975 
+                           Cancer_Type_NEWProstate 
+                                      -0.213548610 
+                             Cancer_Type_NEWRectal 
+                                       0.362326713 
+                        Cancer_Type_NEWSmall Bowel 
+                                       0.061082773 
+                               PMS2_or_notNot_PMS2 
+                                       0.010569433 
+                                       Current_Age 
+                                       0.001539707 
+                                      Tumor_Purity 
+                                       0.002099244 
+                     RaceBLACK OR AFRICAN AMERICAN 
+                                       0.020589569 
+                 RaceNATIVE AMERICAN-AM IND/ALASKA 
+                                      -0.010988404 
+                                         RaceOTHER 
+                                       0.108380866 
+                          RacePT REFUSED TO ANSWER 
+                                       0.064434759 
+                                         RaceWHITE 
+                                       0.146154499 
+        Cancer_Type_NEWBiliary:PMS2_or_notNot_PMS2 
+                                                NA 
+        Cancer_Type_NEWBladder:PMS2_or_notNot_PMS2 
+                                       0.185270503 
+     Cancer_Type_NEWColorectal:PMS2_or_notNot_PMS2 
+                                       0.117528360 
+            Cancer_Type_NEWCUP:PMS2_or_notNot_PMS2 
+                                      -0.057759189 
+    Cancer_Type_NEWEndometrial:PMS2_or_notNot_PMS2 
+                                      -0.093124248 
+Cancer_Type_NEWEsophagogastric:PMS2_or_notNot_PMS2 
+                                      -0.110592730 
+          Cancer_Type_NEWOther:PMS2_or_notNot_PMS2 
+                                      -0.037305222 
+        Cancer_Type_NEWOvarian:PMS2_or_notNot_PMS2 
+                                       0.652993477 
+       Cancer_Type_NEWPancreas:PMS2_or_notNot_PMS2 
+                                       0.053170167 
+       Cancer_Type_NEWProstate:PMS2_or_notNot_PMS2 
+                                       0.325753762 
+         Cancer_Type_NEWRectal:PMS2_or_notNot_PMS2 
+                                      -0.413297174 
+    Cancer_Type_NEWSmall Bowel:PMS2_or_notNot_PMS2 
+                                       0.098285486 

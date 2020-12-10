@@ -1,0 +1,12 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	Fraction_Genome_Altered	PMS2	Not_PMS2	0.25	1	0.25	ns	Wilcoxon
+2	Colon	Fraction_Genome_Altered	PMS2	Not_PMS2	0.188079633313805	1	0.19	ns	Wilcoxon
+3	Esophagogastric	Fraction_Genome_Altered	PMS2	Not_PMS2	0.448211838836756	1	0.45	ns	Wilcoxon
+4	Pancreas	Fraction_Genome_Altered	PMS2	Not_PMS2	1	1	1.00	ns	Wilcoxon
+5	Colorectal	Fraction_Genome_Altered	PMS2	Not_PMS2	0.544759334233018	1	0.54	ns	Wilcoxon
+6	Prostate	Fraction_Genome_Altered	PMS2	Not_PMS2	1	1	1.00	ns	Wilcoxon
+7	Small Bowel	Fraction_Genome_Altered	PMS2	Not_PMS2	1	1	1.00	ns	Wilcoxon
+8	Endometrial	Fraction_Genome_Altered	PMS2	Not_PMS2	0.0104605192919732	0.12	0.01	*	Wilcoxon
+9	Rectal	Fraction_Genome_Altered	PMS2	Not_PMS2	0.909038324456433	1	0.91	ns	Wilcoxon
+10	Other	Fraction_Genome_Altered	PMS2	Not_PMS2	0.857142857142857	1	0.86	ns	Wilcoxon
+11	Ovarian	Fraction_Genome_Altered	PMS2	Not_PMS2	0.333333333333333	1	0.33	ns	Wilcoxon

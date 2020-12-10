@@ -1,0 +1,7 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Fraction_Genome_Altered	Singleton	?	0.845538811505914	1	0.85	ns	Wilcoxon
+2	Fraction_Genome_Altered	Singleton	Multiplex	0.695670782156479	1	0.70	ns	Wilcoxon
+3	Fraction_Genome_Altered	Singleton	NORMAL	0.553449212893446	1	0.55	ns	Wilcoxon
+4	Fraction_Genome_Altered	?	Multiplex	0.880418706963559	1	0.88	ns	Wilcoxon
+5	Fraction_Genome_Altered	?	NORMAL	0.568664372752467	1	0.57	ns	Wilcoxon
+6	Fraction_Genome_Altered	Multiplex	NORMAL	0.154427532079599	0.93	0.15	ns	Wilcoxon

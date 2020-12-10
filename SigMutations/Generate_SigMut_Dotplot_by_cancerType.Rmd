@@ -1,0 +1,454 @@
+---
+title: "Generate Dot plot with color and size scale by Cancer Types"
+author: "Lingqi Luo"
+date: "8/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+# SBS
+```{r}
+# read in all the Decomposed_Solution_Activities_SBS96 files
+# padding with all the cosmic SBS signatures (add 0 value)
+# concatenate all the dataframe into one
+
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+library(viridis)
+
+files <- list.files(path = getwd(), pattern = 'Decomposed_Solution_Activities_SBS96.txt', full.names = TRUE, recursive = TRUE)
+
+#sigs <- c("SBS1","SBS10a","SBS10b","SBS13","SBS14","SBS15","SBS17a","SBS17b","SBS2","SBS20","SBS21","SBS23","SBS24","SBS26","SBS28","SBS33","SBS42","SBS44","SBS45","SBS46","SBS5","SBS53","SBS54","SBS59","SBS6","SBS8")
+
+sigs <- c("SBS1","SBS2","SBS4","SBS5","SBS6","SBS10a","SBS10b","SBS13","SBS14","SBS15","SBS17a","SBS17b","SBS20","SBS21","SBS24","SBS26","SBS33","SBS42","SBS44","SBS45","SBS46","SBS53","SBS54","SBS59")
+
+#sigs <- c("SBS1","SBS10a","SBS10b","SBS13","SBS14","SBS15","SBS17a","SBS17b","SBS2","SBS20","SBS21","SBS24","SBS26","SBS33","SBS4","SBS42","SBS44","SBS45","SBS46","SBS5","SBS54","SBS59","SBS6")
+#sigs_desc <- c("Deamination of 5-methylcytosine","APOBEC activity","","Defective DNA mismatch repair")
+df.samples <- data.frame()
+
+for (file in files) {
+  df <- read.delim2(file = file, quote = "", stringsAsFactors = FALSE)
+  row.names(df) <- df$Samples
+  # remove the "Samples" column
+  df <- df[,! names(df) %in% c("Samples","X96A")]
+  
+  #df_pad <- data.frame()
+  for (sig in sigs[! sigs %in% colnames(df)]) {
+    df <- cbind(df, new = 0)
+    names(df)[dim(df)[2]] <- sig
+  }
+  #tmp <- cbind(df, df_pad)
+  df <- df[,order(colnames(df))]
+  # concatenate to the final data frame
+  df.samples <- rbind(df.samples, df)
+}
+
+
+# MSK-IMPACT target size : ~ 1.5 Mb in human genome
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+
+
+tumor.number <- as.data.frame(as.matrix(table(df_Cancer$Cancer_Type_NEW)))
+colnames(tumor.number) <- c("Tumor.number")
+
+df.samples.Cancer <- merge(df.samples, df_Cancer, by = 0)
+row.names(df.samples.Cancer) <- df.samples.Cancer$Row.names
+df.samples.Cancer <- df.samples.Cancer[,! names(df.samples.Cancer) %in% c("Row.names","caseID","Sample_ID")]
+
+# write to file
+write.table(df.samples.Cancer, file = file.path(getwd(),"SBS_mut_No_in_sample_by_Cancer.txt"), quote = F, sep = "\t", col.names = NA, row.names = T)
+
+# estimate the number of samples relevant to any Cosmic signature
+df.samples.Cancer$SUM <- apply(df.samples.Cancer[,!names(df.samples.Cancer) %in% c("Cancer_Type_NEW")],1,sum)
+
+sig.tumor.count <- df.samples.Cancer %>% group_by(Cancer_Type_NEW) %>% summarise(count = sum(SUM>0, na.rm = TRUE))
+# aggregate median # of mutation due to the SBS signatures by MMRd types
+median_mut <- aggregate(.~Cancer_Type_NEW, 
+                        df.samples.Cancer[,!names(df.samples.Cancer) %in% c("SUM")],
+                        FUN=(function(x){
+                          ifelse(sum(x==0)>0 & sum(x !=0) >0, median(x[x>0]), median(x))
+                        })
+                        )
+row.names(median_mut) <- median_mut$Cancer_Type_NEW
+#median_mut <- median_mut[,!names(median_mut) %in% c("MMRd_type")]
+#colnames(median_mut) <- paste0(names(median_mut),".median")
+# normalize by the size of MSK-IMPACT-468genes size 1.5Mb
+median_mut <- log2(median_mut[,!names(median_mut) %in% c("Cancer_Type_NEW")]/1.5)
+median_mut$Cancer_Type_NEW <- row.names(median_mut)
+
+median_mut_melt <- melt(median_mut, 
+                      variable.name = "SBS",
+                      value.name = "Median_mut",
+                      id.vars = c("Cancer_Type_NEW"))
+
+
+# dplyr way
+median_mut_dplyr <- df.samples.Cancer %>% 
+                group_by(Cancer_Type_NEW) %>% 
+                summarise_each(funs(median))
+
+# function count portion of tumors with a signature
+portion <- function(x) {
+  result <- sum(x>0)/length(x)
+  return(result)
+}
+
+portion_tumor <- aggregate(.~Cancer_Type_NEW, 
+                           df.samples.Cancer[,!names(df.samples.Cancer) %in% c("SUM")],
+                           portion)
+row.names(portion_tumor) <- portion_tumor$Cancer_Type_NEW
+
+portion_tumor_melt <- melt(portion_tumor, 
+                      variable.name = "SBS",
+                      value.name = "Tumor_portion",
+                      id.vars = c("Cancer_Type_NEW"))
+
+
+##############################################################################
+# Combine all the summary data, mean/meadian of Mut #/Mb, portion.tumor, tumor.number
+##############################################################################
+#df_plot <- expand.grid(as.factor(row.names(portion_tumor)), as.factor(sigs))
+
+df_plot <- median_mut_melt
+df_plot <- merge(df_plot, portion_tumor_melt, by = c("Cancer_Type_NEW","SBS"))
+#levels(df_plot$MMRd_type) <- sigs # reorder the levels
+#df_plot <- df_plot[order(df_plot$SBS),]
+
+options(repr.plot.width = 14, repr.plot.height = 8)
+
+df_plot %>% mutate(SBS = factor(SBS, levels=sigs)) %>%
+ggplot(aes(x=Cancer_Type_NEW, y=SBS, size = Tumor_portion, color = Median_mut)) + 
+  geom_point(alpha=0.7) +
+  scale_size(range = c(.1, 10), name="Proportion of tumours \nwith the signature") + 
+  scale_fill_viridis(discrete=TRUE, guide=FALSE, option="B") + 
+  scale_colour_viridis_c("log2 Median mutations \n per Mb due to signature \n(among tumours with \nthe signature)") +
+  scale_x_discrete(labels=c("Biliary" = "Biliary\n2/6", "Bladder" = "Bladder\n8/9","Colon" = "Colon\n131/161",
+                            "Colorectal" = "Colorectal\n19/23", "CUP" = "CUP\n5/6", "Endometrial" = "Endometrial\n44/83", "Esophagogastric" = "Esophagogastric\n33/42", "Other" = "Other\n6/7", "Ovarian" = "Ovarian\n2/4", "Pancreas" = "Pancreas\n4/4", "Prostate" = "Prostate\n4/4", "Rectal" = "Rectal\n18/21", "Small Bowel" = "Small Bowel\n6/12")) +
+  theme(plot.margin = margin(16,16,16,16)) + 
+  theme(legend.position="bottom", legend.justification = "left", legend.margin = margin(6,6,6,6)) +
+  theme(axis.text.x = element_text(size = 8, angle = 30, margin = margin(t = .4, unit = "cm"))) +
+  theme(axis.text.y = element_text(size = 8)) +
+  theme(legend.title = element_text(size = 6, face = "bold"),
+        legend.text = element_text(size = 6)) + 
+  ylab("SBS") +
+  xlab("Cancer Types") +
+  theme(axis.title = element_text(size = 15, face = "bold"))
+
+# scale_x_discrete(labels=c("Complex" = "Complex\n8/11", "MLH1_PMS2" = "MLH1_PMS2\n164/246","MSH2_MSH6" = "MSH2_MSH6\n68/69",
+ #                           "MSH6_only" = "MSH6_only\n12/12", "NORMAL_only" = "NORMAL_only\n17/19", "PMS2_only" = "PMS2_only\n3/13", "UNK" = "UNK\n9/11")) +
+
+# Plot the correlation of total # of variants by SBS1 with age
+# Correlation between age and SBS1 
+df_corr_1 <- read.table(file = "../R_Input_w_age_site.txt", header = TRUE, sep = "\t")
+row.names(df_corr_1) <- df_corr_1$Sample_ID
+
+age_sigs <- c("SBS1","SBS5")
+
+df_corr_1 <- merge(df_corr_1, df.samples.Cancer, by = 0)
+row.names(df_corr_1) <- df_corr_1$Row.names
+df_corr_1 <- df_corr_1[,names(df_corr_1) %in% c("Sequencing_Age","SBS1","SBS5","Cancer_Type_NEW")]
+
+# plot correlation
+library("ggpubr")
+#Sequencing_Age
+#Current_Age
+
+ggscatter(df_corr_1[df_corr_1$SBS1 != 0,], x = "Sequencing_Age", y = "SBS1",
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Age", ylab = "No. of SBS1 Variant")
+
+ggscatter(df_corr_1[df_corr_1$Cancer_Type_NEW == "Colon" & df_corr_1$SBS1 != 0,], x = "Sequencing_Age", y = "SBS1",
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Age", ylab = "No. of SBS1 Variant", title = "Colon Cancer") + 
+    theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5))
+
+ggscatter(df_corr_1[df_corr_1$Cancer_Type_NEW == "Esophagogastric" & df_corr_1$SBS1 != 0,], x = "Sequencing_Age", y = "SBS1",
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Age", ylab = "No. of SBS1 Variant", title = "Esophagus & Gastric Cancer") + 
+    theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5))
+
+
+
+```
+
+# ID
+```{r}
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+library(viridis)
+
+files <- list.files(path = getwd(), pattern = 'Decomposed_Solution_Activities_SBSINDEL.txt', full.names = TRUE, recursive = TRUE)
+
+sigs <- c("ID1","ID2","ID4","ID5","ID6","ID7","ID8","ID9","ID10","ID11","ID14","ID15","ID16")
+
+df.samples <- data.frame()
+
+for (file in files) {
+  df <- read.delim2(file = file, quote = "", stringsAsFactors = FALSE)
+  row.names(df) <- df$Samples
+  # remove the "Samples" column
+  df <- df[,! names(df) %in% c("Samples","IDA")]
+  
+  #df_pad <- data.frame()
+  for (sig in sigs[! sigs %in% colnames(df)]) {
+    df <- cbind(df, new = 0)
+    names(df)[dim(df)[2]] <- sig
+  }
+  #tmp <- cbind(df, df_pad)
+  df <- df[,order(colnames(df))]
+  # concatenate to the final data frame
+  df.samples <- rbind(df.samples, df)
+}
+
+
+# MSK-IMPACT target size : ~ 1.5 Mb in human genome
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+
+
+tumor.number <- as.data.frame(as.matrix(table(df_Cancer$Cancer_Type_NEW)))
+colnames(tumor.number) <- c("Tumor.number")
+
+df.samples.Cancer <- merge(df.samples, df_Cancer, by = 0)
+row.names(df.samples.Cancer) <- df.samples.Cancer$Row.names
+df.samples.Cancer <- df.samples.Cancer[,! names(df.samples.Cancer) %in% c("Row.names","caseID","Sample_ID")]
+
+# write to file
+write.table(df.samples.Cancer, file = file.path(getwd(),"ID_mut_No_in_sample_by_Cancer.txt"), quote = F, sep = "\t", col.names = NA, row.names = T)
+
+# estimate the number of samples relevant to any Cosmic signature
+df.samples.Cancer$SUM <- apply(df.samples.Cancer[,!names(df.samples.Cancer) %in% c("Cancer_Type_NEW")],1,sum)
+
+sig.tumor.count <- df.samples.Cancer %>% group_by(Cancer_Type_NEW) %>% summarise(count = sum(SUM>0, na.rm = TRUE))
+# aggregate median # of mutation due to the Indel signatures by MMRd types
+median_mut <- aggregate(.~Cancer_Type_NEW, 
+                        df.samples.Cancer[,!names(df.samples.Cancer) %in% c("SUM")],
+                        FUN=(function(x){
+                          ifelse(sum(x==0)>0 & sum(x !=0) >0, median(x[x>0]), median(x))
+                        })
+                        )
+row.names(median_mut) <- median_mut$Cancer_Type_NEW
+#median_mut <- median_mut[,!names(median_mut) %in% c("MMRd_type")]
+#colnames(median_mut) <- paste0(names(median_mut),".median")
+# normalize by the size of MSK-IMPACT-468genes size 1.5Mb
+median_mut <- log2(median_mut[,!names(median_mut) %in% c("Cancer_Type_NEW")]/1.5)
+median_mut$Cancer_Type_NEW <- row.names(median_mut)
+
+median_mut_melt <- melt(median_mut, 
+                      variable.name = "Indel",
+                      value.name = "Median_mut",
+                      id.vars = c("Cancer_Type_NEW"))
+
+
+# dplyr way
+median_mut_dplyr <- df.samples.Cancer %>% 
+                group_by(Cancer_Type_NEW) %>% 
+                summarise_each(funs(median))
+
+# function count portion of tumors with a signature
+portion <- function(x) {
+  result <- sum(x>0)/length(x)
+  return(result)
+}
+
+portion_tumor <- aggregate(.~Cancer_Type_NEW, 
+                           df.samples.Cancer[,!names(df.samples.Cancer) %in% c("SUM")],
+                           portion)
+row.names(portion_tumor) <- portion_tumor$Cancer_Type_NEW
+
+portion_tumor_melt <- melt(portion_tumor, 
+                      variable.name = "Indel",
+                      value.name = "Tumor_portion",
+                      id.vars = c("Cancer_Type_NEW"))
+
+
+##############################################################################
+# Combine all the summary data, mean/meadian of Mut #/Mb, portion.tumor, tumor.number
+##############################################################################
+#df_plot <- expand.grid(as.factor(row.names(portion_tumor)), as.factor(sigs))
+
+df_plot <- median_mut_melt
+df_plot <- merge(df_plot, portion_tumor_melt, by = c("Cancer_Type_NEW","Indel"))
+#levels(df_plot$MMRd_type) <- sigs # reorder the levels
+#df_plot <- df_plot[order(df_plot$Indel),]
+
+options(repr.plot.width = 14, repr.plot.height = 8)
+
+df_plot %>% mutate(Indel = factor(Indel, levels=sigs)) %>%
+ggplot(aes(x=Cancer_Type_NEW, y=Indel, size = Tumor_portion, color = Median_mut)) + 
+  geom_point(alpha=0.7) +
+  scale_size(range = c(.1, 10), name="Proportion of tumours \nwith the signature") + 
+  scale_fill_viridis(discrete=TRUE, guide=FALSE, option="B") + 
+  scale_colour_viridis_c("log2 Median mutations \n per Mb due to signature \n(among tumours with \nthe signature)") +
+  scale_x_discrete(labels=c("Biliary" = "Biliary\n2/6", "Bladder" = "Bladder\n5/9","Colon" = "Colon\n114/161",
+                            "Colorectal" = "Colorectal\n16/23", "CUP" = "CUP\n3/6", "Endometrial" = "Endometrial\n39/83", "Esophagogastric" = "Esophagogastric\n24/42", "Other" = "Other\n2/7", "Ovarian" = "Ovarian\n2/4", "Pancreas" = "Pancreas\n3/4", "Prostate" = "Prostate\n1/4", "Rectal" = "Rectal\n14/21", "Small Bowel" = "Small Bowel\n4/12")) +
+  theme(plot.margin = margin(16,16,16,16)) + 
+  theme(legend.position="bottom", legend.justification = "left", legend.margin = margin(6,6,6,6)) +
+  theme(axis.text.x = element_text(size = 8, angle = 30, margin = margin(t = .4, unit = "cm"))) +
+  theme(legend.title = element_text(size = 8, face = "bold"),
+        legend.text = element_text(size = 8)) + 
+  ylab("Indel") +
+  xlab("Cancer Types") +
+  theme(axis.title = element_text(size = 15, face = "bold"))
+
+
+```
+
+# DBS
+```{r}
+# read in all the Decomposed_Solution_Activities_SBS96 files
+# padding with all the cosmic SBS signatures (add 0 value)
+# concatenate all the dataframe into one
+
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+library(viridis)
+
+files <- list.files(path = getwd(), pattern = 'Decomposed_Solution_Activities_SBSDINUC.txt', full.names = TRUE, recursive = TRUE)
+
+#sigs <- c("SBS1","SBS10a","SBS10b","SBS13","SBS14","SBS15","SBS17a","SBS17b","SBS2","SBS20","SBS21","SBS23","SBS24","SBS26","SBS28","SBS33","SBS42","SBS44","SBS45","SBS46","SBS5","SBS53","SBS54","SBS59","SBS6","SBS8")
+
+sigs <- c("DBS1","DBS2","DBS10")
+
+df.samples <- data.frame()
+
+for (file in files) {
+  df <- read.delim2(file = file, quote = "", stringsAsFactors = FALSE)
+  row.names(df) <- df$Samples
+  # remove the "Samples" column
+  df <- df[,! names(df) %in% c("Samples","DINUCA")]
+  
+  #df_pad <- data.frame()
+  for (sig in sigs[! sigs %in% colnames(df)]) {
+    df <- cbind(df, new = 0)
+    names(df)[dim(df)[2]] <- sig
+  }
+  #tmp <- cbind(df, df_pad)
+  df <- df[,order(colnames(df))]
+  # concatenate to the final data frame
+  df.samples <- rbind(df.samples, df)
+}
+
+
+# MSK-IMPACT target size : ~ 1.5 Mb in human genome
+df_MMRd <- read.table(file = "MMRd_type.txt", header = T, sep = "\t")
+row.names(df_MMRd) <- df_MMRd$caseID
+df_MMRd <- df_MMRd[, ! names(df_MMRd) %in% c("X")]
+
+tumor.number <- as.data.frame(as.matrix(table(df_MMRd$MMRd_type)))
+colnames(tumor.number) <- c("Tumor.number")
+
+df.samples.MMRd <- merge(df.samples, df_MMRd, by = 0)
+row.names(df.samples.MMRd) <- df.samples.MMRd$Row.names
+df.samples.MMRd <- df.samples.MMRd[,! names(df.samples.MMRd) %in% c("Row.names","caseID")]
+
+# aggregate median # of mutation due to the DBS signatures by MMRd types
+median_mut <- aggregate(.~MMRd_type, 
+                        df.samples.MMRd,
+                        FUN=(function(x){
+                          ifelse(sum(x==0)>0 & sum(x !=0) >0, median(x[x>0]), median(x))
+                        })
+                        )
+row.names(median_mut) <- median_mut$MMRd_type
+#median_mut <- median_mut[,!names(median_mut) %in% c("MMRd_type")]
+#colnames(median_mut) <- paste0(names(median_mut),".median")
+# normalize by the size of MSK-IMPACT-468genes size 1.5Mb
+median_mut <- log2(median_mut[,!names(median_mut) %in% c("MMRd_type")]/1.5)
+median_mut$MMRd_type <- row.names(median_mut)
+
+median_mut_melt <- melt(median_mut, 
+                      variable.name = "DBS",
+                      value.name = "Median_mut",
+                      id.vars = c("MMRd_type"))
+
+
+# dplyr way
+median_mut_dplyr <- df.samples.MMRd %>% 
+                group_by(MMRd_type) %>% 
+                summarise_each(funs(median))
+
+# aggregate mean # of mutation due to the DBS signatures by MMRd types
+mean_mut <- aggregate(.~MMRd_type, 
+                      df.samples.MMRd,
+                      FUN=(function(x){
+                        ifelse(sum(x==0)>0 & sum(x !=0) >0, mean(x[x>0]), mean(x))
+                        })
+                      )
+
+row.names(mean_mut) <- mean_mut$MMRd_type
+#mean_mut <- mean_mut[,!names(mean_mut) %in% c("MMRd_type")]
+#colnames(mean_mut) <- paste0(names(mean_mut),".mean")
+mean_mut <- log2(mean_mut[,!names(mean_mut) %in% c("MMRd_type")]/1.5)
+mean_mut$MMRd_type <- row.names(mean_mut)
+
+
+mean_mut_melt <- melt(mean_mut, 
+                      variable.name = "DBS",
+                      value.name = "Mean_mut",
+                      id.vars = c("MMRd_type"))
+# function count portion of tumors with a signature
+portion <- function(x) {
+  result <- sum(x>0)/length(x)
+  return(result)
+}
+
+portion_tumor <- aggregate(.~MMRd_type, df.samples.MMRd,portion)
+row.names(portion_tumor) <- portion_tumor$MMRd_type
+
+portion_tumor_melt <- melt(portion_tumor, 
+                      variable.name = "DBS",
+                      value.name = "Tumor_portion",
+                      id.vars = c("MMRd_type"))
+
+
+##############################################################################
+# Combine all the summary data, mean/meadian of Mut #/Mb, portion.tumor, tumor.number
+##############################################################################
+#df_plot <- expand.grid(as.factor(row.names(portion_tumor)), as.factor(sigs))
+
+df_plot <- merge(mean_mut_melt, median_mut_melt, by = c("MMRd_type","DBS"))
+df_plot <- merge(df_plot, portion_tumor_melt, by = c("MMRd_type","DBS"))
+#levels(df_plot$MMRd_type) <- sigs # reorder the levels
+#df_plot <- df_plot[order(df_plot$DBS),]
+
+options(repr.plot.width = 14, repr.plot.height = 8)
+
+df_plot %>% mutate(DBS = factor(DBS, levels=sigs)) %>%
+ggplot(aes(x=MMRd_type, y=DBS, size = Tumor_portion, color = Median_mut)) + 
+  geom_point(alpha=0.7) +
+  scale_size(range = c(.1, 10), name="Proportion of tumours \nwith the signature") + 
+  scale_fill_viridis(discrete=TRUE, guide=FALSE, option="B") + 
+  scale_colour_viridis_c("log2 Median mutations \n per Mb due to signature \n(among tumours with \nthe signature)") +
+  theme(plot.margin = margin(16,16,16,16)) + 
+  theme(legend.position="bottom", legend.justification = "left", legend.margin = margin(6,6,6,6)) +
+  scale_x_discrete(labels=c("Complex" = "Complex\n11", "MLH1_PMS2" = "MLH1_PMS2\n246","MSH2_MSH6" = "MSH2_MSH6\n69",
+                            "MSH6_only" = "MSH6_only\n12", "NORMAL_only" = "NORMAL_only\n19", "PMS2_only" = "PMS2_only\n13", "UNK" = "UNK\n11")) + 
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(legend.title = element_text(size = 8, face = "bold"),
+        legend.text = element_text(size = 8)) + 
+  ylab("DBS") +
+  xlab("MMRd Types") +
+  theme(axis.title = element_text(size = 15, face = "bold"))
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

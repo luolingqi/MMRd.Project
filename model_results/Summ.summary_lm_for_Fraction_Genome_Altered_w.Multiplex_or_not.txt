@@ -1,0 +1,19 @@
+MODEL INFO:
+Observations: 381
+Dependent Variable: Fraction_Genome_Altered
+Type: OLS linear regression 
+
+MODEL FIT:
+F(3,377) = 5.527, p = 0.001
+R² = 0.042
+Adj. R² = 0.035 
+
+Standard errors: OLS
+--------------------------------------------------------------------------
+                                    Est.     2.5%   97.5%   t val.       p
+------------------------------- -------- -------- ------- -------- -------
+(Intercept)                        0.076    0.042   0.109    4.415   0.000
+Multiplex_or_not?                 -0.022   -0.105   0.060   -0.532   0.595
+Multiplex_or_notMultiplex         -0.027   -0.062   0.008   -1.524   0.128
+Multiplex_or_notNORMAL             0.051   -0.000   0.102    1.955   0.051
+--------------------------------------------------------------------------

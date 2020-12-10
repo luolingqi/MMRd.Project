@@ -1,0 +1,203 @@
+---
+title: "decipherMutSig"
+author: "Lingqi Luo"
+date: "2/3/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+library(deconstructSigs)
+library(RColorBrewer)
+library(BSgenome.Hsapiens.UCSC.hg19)
+
+#tumors <- c('P_vs_CDDP_gain', 'P_vs_DR396_gain', 'P_vs_TMZCDDP_gain', 'P_vs_TMZ_gain')
+tumors <-  list.dirs(full.names = FALSE, recursive = FALSE)
+tumors <- tumors[grepl("^P-",tumors)]
+workDir <- getwd()
+df_sbs <- data.frame()
+for (t in tumors) {
+    #vcf <- list.files(path = paste0(workDir,'/',t,), full.names =  TRUE)
+    vcf <- file.path(workDir,t,paste0(t,".w_chr.vcf"))
+    sigs.input <- vcf.to.sigs.input(vcf = vcf, bsg = BSgenome.Hsapiens.UCSC.hg19 )
+    wchSig <- whichSignatures(tumor.ref = sigs.input, signatures.ref = signatures.exome.cosmic.v3.may2019, contexts.needed = TRUE, tri.counts.method = 'exome')
+    df_sbs <- rbind(df_sbs, wchSig$weights)
+    
+    pdf(file = paste0(t,'.pdf'),  width = 10, height = 10)
+    chart <- plotSignatures(wchSig)
+    dev.off()
+
+    n <- length(which(wchSig$weights>0))
+    qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+    col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+    
+    pdf(file = paste0(t,'.piechart.pdf'), width = 10, height = 10)
+    pie <- makePie(wchSig, add.color = sample(col_vector,n))
+    dev.off()
+}
+
+write.table(df_sbs, file = "SBS_deconvo.txt", quote = F, sep = "\t")
+
+
+
+
+df_sbs_1<- df_sbs[row.names(df_sbs)!="P-0051335-T01-IM6",colSums(df_sbs)>0] # remove the deteled one
+# add MMRd type
+df_type <- read.table(file = file.path(workDir,"../grand_case_type.txt"), header = T, sep = "\t", quote = "", stringsAsFactors=FALSE)
+
+type_col <- c() 
+for (case in row.names(df_sbs_1)) {
+    print(paste0(case,"\t",df_type[which(df_type$caseID == case),2]))
+    type_col <- c(type_col, df_type[which(df_type$caseID == case),2])
+}
+df_sbs_1 <- cbind(df_sbs_1, MMRd_type = type_col, caseID = row.names(df_sbs_1))
+
+library(reshape2)
+df_sbs_melt <- melt(df_sbs_1, 
+                     variable.name = "Signature",
+                     value.name = "Signature_Portion",
+                     id.vars = c("caseID", "MMRd_type"))
+#df_sbs_melt$value <- log2(df_sbs_melt$value + 1)
+
+# heatmap to show SBS clustering by MMRd types
+library(pheatmap)
+df_sbs_1_order <- df_sbs_1[order(df_sbs_1$MMRd_type),]
+
+df_hm <- df_sbs_1_order[,!colnames(df_sbs_1) %in% c("MMRd_type","caseID")]
+my_patient_type <- data.frame(type = df_sbs_1$MMRd_type)
+row.names(my_patient_type) <- df_sbs_1$caseID
+
+pheatmap(df_hm,
+         annotation_row = my_patient_type,
+         fontsize_row = 1,
+         fontsize_col = 5,
+         cluster_rows = FALSE,
+         cluster_cols = FALSE
+         )
+
+df_hm_subset <- df_sbs_1_order[,colnames(df_sbs_1) %in% c("SBS6","SBS14","SBS15","SBS20","SBS21","SBS26","SBS44")]
+pheatmap(df_hm_subset,
+         annotation_row = my_patient_type,
+         fontsize_row = 1,
+         fontsize_col = 10,
+         cluster_rows = FALSE,
+         cluster_cols = FALSE
+         )
+# Heatmap to show SBS clustering by Cancer types
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+df_hm.Cancer <- merge(df_hm, df_Cancer, by = 0)
+row.names(df_hm.Cancer) <- df_hm.Cancer$Row.names
+df_hm.Cancer <- df_hm.Cancer[order(df_hm.Cancer$Cancer_Type_NEW),]
+df_hm.Cancer <- df_hm.Cancer[,!names(df_hm.Cancer) %in% c("Row.names","Cancer_Type_NEW","Sample_ID")]
+my_patient_type <- data.frame(type = df_Cancer$Cancer_Type_NEW)
+row.names(my_patient_type) <- df_Cancer$Sample_ID
+
+pheatmap(df_hm.Cancer,
+         annotation_row = my_patient_type,
+         fontsize_row = 1,
+         fontsize_col = 5,
+         cluster_rows = FALSE,
+         cluster_cols = FALSE
+         )
+
+# Correlation between age and SBS1 
+df_corr <- read.table(file = "../R_Input_w_age_site.txt", header = TRUE, sep = "\t")
+row.names(df_corr) <- df_corr$Sample_ID
+
+age_sigs <- c("SBS1","SBS5")
+
+df_corr <- cbind(df_corr, SBS1=df_sbs_1[row.names(df_corr),"SBS1"])
+df_corr <- cbind(df_corr, SBS5=df_sbs_1[row.names(df_corr),"SBS5"])
+# remove outliers defined as more than 3 SD above or below the mean
+ave_age <- mean(df_corr$Sequencing_Age, na.rm = TRUE)
+sd_age <- sd(df_corr$Sequencing_Age, na.rm = TRUE)
+ave_sbs1 <- mean(df_corr$SBS1, na.rm = TRUE)
+sd_sbs1 <- sd(df_corr$SBS1, na.rm = TRUE)
+
+library("ggpubr")
+#Sequencing_Age
+#Current_Age
+
+ggscatter(df_corr, x = "Sequencing_Age", y = "SBS1",
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Age", ylab = "Weight of SBS1")
+
+# age correlation by age types
+# MSK-IMPACT target size : ~ 1.5 Mb in human genome
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+
+df_corr_w_CancerType <- merge(df_corr, df_Cancer, by = 0)
+
+ggscatter(df_corr_w_CancerType[df_corr_w_CancerType$Cancer_Type_NEW == "Colon",], x = "Sequencing_Age", y = "SBS1",
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Age", ylab = "Weight of SBS1", title = "Colon Cancer") + 
+    theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5))
+
+#####################################################################################
+library(ggplot2)
+p1 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% levels(df_sbs_melt$Signature)[1:10],], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p1
+
+p2 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% levels(df_sbs_melt$Signature)[11:20],], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p2
+
+p3 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% levels(df_sbs_melt$Signature)[21:30],], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p3
+
+p4 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% levels(df_sbs_melt$Signature)[31:40],], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p4
+
+p5 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% levels(df_sbs_melt$Signature)[41:50],], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p5
+
+p6 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% levels(df_sbs_melt$Signature)[51:60],], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p6
+
+#subset to the signatures c("SBS1","SBS6", "SBS10b", "SBS15", "SBS21")
+
+p7 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% c("SBS1","SBS6", "SBS10b", "SBS15", "SBS21"),], aes(x=Signature, y=Signature_Portion, color=MMRd_type)) +
+    geom_boxplot()
+
+p7
+
+p8 <- ggplot(data = df_sbs_melt[df_sbs_melt$Signature %in% c("SBS1","SBS6", "SBS10b", "SBS15", "SBS21"),], aes(x=MMRd_type, y=Signature_Portion, color=Signature)) +
+    geom_boxplot()
+
+p8
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

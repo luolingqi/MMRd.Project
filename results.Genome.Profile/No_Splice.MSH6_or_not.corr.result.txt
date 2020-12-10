@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Splice	MSH6	Not_MSH6	0.91072280438382	0.91	0.91	ns	Wilcoxon

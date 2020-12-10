@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_INFRAME	PMS2	Not_PMS2	0.0575438166527447	0.058	0.058	ns	Wilcoxon

@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: Fraction_Genome_Altered
+                  Df  Sum Sq  Mean Sq F value    Pr(>F)    
+Multiplex_or_not   4 0.12354 0.030886  4.9128 0.0007204 ***
+Cancer_Type_NEW   12 0.46670 0.038891  6.1861 6.153e-10 ***
+Residuals        365 2.29472 0.006287                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

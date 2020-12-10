@@ -1,0 +1,11 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	MLH1_PMS2	0.565791592741957	1	0.566	ns	Wilcoxon
+2	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	PMS2	0.6	1	0.600	ns	Wilcoxon
+3	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	MSH6	0.0363636363636364	0.36	0.036	*	Wilcoxon
+4	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	?	0.79114592851632	1	0.791	ns	Wilcoxon
+5	Overall.Survival.cutoff.4.2.18	MLH1_PMS2	PMS2	0.6	1	0.600	ns	Wilcoxon
+6	Overall.Survival.cutoff.4.2.18	MLH1_PMS2	MSH6	0.0363636363636364	0.36	0.036	*	Wilcoxon
+7	Overall.Survival.cutoff.4.2.18	MLH1_PMS2	?	0.680594405594406	1	0.681	ns	Wilcoxon
+8	Overall.Survival.cutoff.4.2.18	PMS2	MSH6	0.666666666666667	1	0.667	ns	Wilcoxon
+9	Overall.Survival.cutoff.4.2.18	PMS2	?	0.75	1	0.750	ns	Wilcoxon
+10	Overall.Survival.cutoff.4.2.18	MSH6	?	0.0555555555555556	0.44	0.056	ns	Wilcoxon

@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: No_Frameshift
+                  Df  Sum Sq Mean Sq F value    Pr(>F)    
+Multiplex_or_not   4  2084.3  521.08  6.6354 3.653e-05 ***
+Cancer_Type_NEW   12  2999.4  249.95  3.1829 0.0002391 ***
+Residuals        365 28663.6   78.53                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

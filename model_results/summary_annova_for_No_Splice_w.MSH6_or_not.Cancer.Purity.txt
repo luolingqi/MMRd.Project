@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: No_Splice
+                 Df  Sum Sq Mean Sq F value Pr(>F)
+MSH6_or_not       1    9.20  9.1968  2.3296 0.1278
+Cancer_Type_NEW  12   64.53  5.3777  1.3622 0.1819
+Tumor_Purity      1    8.52  8.5216  2.1585 0.1426
+Residuals       364 1437.01  3.9478               

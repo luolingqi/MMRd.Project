@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: No_DELETION
+                  Df  Sum Sq Mean Sq F value    Pr(>F)    
+Multiplex_or_not   4  3287.7  821.92 15.1294 1.869e-11 ***
+Cancer_Type_NEW   12  2514.1  209.51  3.8566 1.434e-05 ***
+Residuals        365 19829.1   54.33                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

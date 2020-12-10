@@ -1,0 +1,33 @@
+MODEL INFO:
+Observations: 379 (3 missing obs. deleted)
+Dependent Variable: Impact_TMB_Score
+Type: OLS linear regression 
+
+MODEL FIT:
+F(17,361) = 1.897, p = 0.017
+R² = 0.082
+Adj. R² = 0.039 
+
+Standard errors: OLS
+-----------------------------------------------------------------------------------
+                                          Est.       2.5%    97.5%   t val.       p
+------------------------------------ --------- ---------- -------- -------- -------
+(Intercept)                             63.850     41.747   85.953    5.681   0.000
+Multiplex_or_not?                       -4.862    -47.665   37.941   -0.223   0.823
+Multiplex_or_notDelete                 -32.412   -122.070   57.245   -0.711   0.478
+Multiplex_or_notMultiplex              -15.608    -34.596    3.380   -1.616   0.107
+Multiplex_or_notNORMAL                   1.907    -25.066   28.880    0.139   0.890
+Cancer_Type_NEWBiliary                 -16.971    -52.675   18.732   -0.935   0.351
+Cancer_Type_NEWBladder                 -13.863    -44.131   16.406   -0.901   0.368
+Cancer_Type_NEWColorectal               -1.678    -21.154   17.799   -0.169   0.866
+Cancer_Type_NEWCUP                      56.949     21.099   92.798    3.124   0.002
+Cancer_Type_NEWEndometrial             -11.928    -23.731   -0.124   -1.987   0.048
+Cancer_Type_NEWEsophagogastric          -3.948    -18.935   11.039   -0.518   0.605
+Cancer_Type_NEWOther                   -32.922    -71.952    6.107   -1.659   0.098
+Cancer_Type_NEWOvarian                 -26.705    -70.557   17.146   -1.198   0.232
+Cancer_Type_NEWPancreas                 -3.009    -46.553   40.535   -0.136   0.892
+Cancer_Type_NEWProstate                -25.823    -69.607   17.962   -1.160   0.247
+Cancer_Type_NEWRectal                    5.893    -14.443   26.229    0.570   0.569
+Cancer_Type_NEWSmall Bowel             -18.989    -45.619    7.641   -1.402   0.162
+Tumor_Purity                             0.276     -0.011    0.563    1.888   0.060
+-----------------------------------------------------------------------------------

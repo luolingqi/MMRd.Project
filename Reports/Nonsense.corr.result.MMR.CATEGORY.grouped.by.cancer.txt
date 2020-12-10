@@ -1,0 +1,6 @@
+TumorType	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Ampulla of Vater	Nonsense	MSH2_MSH6	MSH6	1	1	1.00	ns	Wilcoxon
+2	Small Intestine	Nonsense	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+3	Colorectal 	Nonsense	MSH2_MSH6	MLH1_PMS2	0.81916818175372	1	0.82	ns	Wilcoxon
+4	Endometrial cancer	Nonsense	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+5	Gastroesophageal cancer	Nonsense	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon

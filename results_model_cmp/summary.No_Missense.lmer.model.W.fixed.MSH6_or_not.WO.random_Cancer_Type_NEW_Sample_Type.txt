@@ -1,0 +1,48 @@
+
+Call:
+lm(formula = formula, data = data)
+
+Coefficients:
+                            (Intercept)  
+                               35.85378  
+                    MSH6_or_notNot_MSH6  
+                              -22.26146  
+                            Current_Age  
+                                0.06503  
+                           Tumor_Purity  
+                                0.23656  
+          RaceBLACK OR AFRICAN AMERICAN  
+                               -2.38205  
+      RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                3.47293  
+                              RaceOTHER  
+                                1.22130  
+               RacePT REFUSED TO ANSWER  
+                               -3.30492  
+                              RaceWHITE  
+                               -0.01745  
+                             Ethnicity0  
+                                5.21605  
+            EthnicityDominican Republic  
+                               19.19470  
+     EthnicityNon-Spanish; Non-Hispanic  
+                               10.22634  
+                  EthnicityPuerto Rican  
+                                2.05152  
+EthnicityUnknown whether Spanish or not  
+                                2.41062  
+
+                            (Intercept)                     MSH6_or_notNot_MSH6 
+                            35.85378487                            -22.26146083 
+                            Current_Age                            Tumor_Purity 
+                             0.06502619                              0.23656353 
+          RaceBLACK OR AFRICAN AMERICAN       RaceNATIVE AMERICAN-AM IND/ALASKA 
+                            -2.38204725                              3.47293040 
+                              RaceOTHER                RacePT REFUSED TO ANSWER 
+                             1.22129696                             -3.30492433 
+                              RaceWHITE                              Ethnicity0 
+                            -0.01744535                              5.21604688 
+            EthnicityDominican Republic      EthnicityNon-Spanish; Non-Hispanic 
+                            19.19469734                             10.22633674 
+                  EthnicityPuerto Rican EthnicityUnknown whether Spanish or not 
+                             2.05152303                              2.41061673 

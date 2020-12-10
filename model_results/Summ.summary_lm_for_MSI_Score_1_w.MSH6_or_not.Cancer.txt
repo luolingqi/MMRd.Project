@@ -1,0 +1,29 @@
+MODEL INFO:
+Observations: 382
+Dependent Variable: MSI_Score_1
+Type: OLS linear regression 
+
+MODEL FIT:
+F(13,368) = 7.194, p = 0.000
+R² = 0.203
+Adj. R² = 0.174 
+
+Standard errors: OLS
+----------------------------------------------------------------------------------
+                                          Est.      2.5%    97.5%   t val.       p
+------------------------------------ --------- --------- -------- -------- -------
+(Intercept)                             32.663    30.012   35.313   24.236   0.000
+MSH6_or_notNot_MSH6                      1.262    -1.305    3.830    0.967   0.334
+Cancer_Type_NEWBiliary                  -3.302   -11.099    4.496   -0.833   0.406
+Cancer_Type_NEWBladder                 -13.269   -19.889   -6.648   -3.941   0.000
+Cancer_Type_NEWColorectal               -1.307    -5.516    2.902   -0.611   0.542
+Cancer_Type_NEWCUP                     -10.165   -17.963   -2.367   -2.563   0.011
+Cancer_Type_NEWEndometrial              -9.947   -12.480   -7.414   -7.722   0.000
+Cancer_Type_NEWEsophagogastric          -4.112    -7.360   -0.864   -2.489   0.013
+Cancer_Type_NEWOther                   -14.379   -21.759   -6.999   -3.831   0.000
+Cancer_Type_NEWOvarian                 -10.301   -19.828   -0.775   -2.126   0.034
+Cancer_Type_NEWPancreas                 -7.176   -16.785    2.434   -1.468   0.143
+Cancer_Type_NEWProstate                -12.406   -22.015   -2.796   -2.539   0.012
+Cancer_Type_NEWRectal                   -1.086    -5.516    3.344   -0.482   0.630
+Cancer_Type_NEWSmall Bowel              -4.510   -10.116    1.096   -1.582   0.114
+----------------------------------------------------------------------------------

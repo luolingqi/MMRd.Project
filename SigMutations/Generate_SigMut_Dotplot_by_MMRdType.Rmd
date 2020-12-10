@@ -1,0 +1,40 @@
+---
+title: "Generate Dot Plot by MMRd Types"
+author: "Lingqi Luo"
+date: "`r format(Sys.time(), '%d %B, %Y, %H:%M')`"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r library, include=FALSE,echo=FALSE}
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+library(viridis)
+
+source("drawSigMutDotplotByMMRd.R")
+```
+
+##### 1. Generate mutation signature Dotplot for essential COSMIC **SBS** Signatures only!
+################################################################################################
+
+```{r}
+sigs <- c("SBS1","SBS5","SBS6","SBS10b","SBS14","SBS15","SBS20","SBS21","SBS26","SBS44")
+drawSigMutDotplotByMMRd('Decomposed_Solution_Activities_SBS96.txt', sigs, 'SBS')
+
+```
+##### 2. Generate mutation signature Dotplot for essential COSMIC **INDEL** Signatures only!
+################################################################################################
+
+```{r}
+sigs <- c("ID1","ID2","ID7","ID14","ID15","ID16")
+drawSigMutDotplotByMMRd('Decomposed_Solution_Activities_SBSINDEL.txt', sigs, 'INDEL')
+
+```
+

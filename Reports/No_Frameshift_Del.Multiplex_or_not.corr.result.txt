@@ -1,0 +1,4 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Frameshift_Del	Singleton	Multiplex	2.5637224314496e-10	7.7e-10	2.6e-10	****	Wilcoxon
+2	No_Frameshift_Del	Singleton	NORMAL	0.000775619162895985	0.0016	0.00078	***	Wilcoxon
+3	No_Frameshift_Del	Multiplex	NORMAL	0.127455854721881	0.13	0.12746	ns	Wilcoxon

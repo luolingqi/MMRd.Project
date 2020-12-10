@@ -1,0 +1,2 @@
+TumorType	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Colorectal 	Start_variant	MSH2_MSH6	MLH1_PMS2	0.662520583540057	0.66	0.66	ns	Wilcoxon

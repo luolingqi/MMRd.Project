@@ -1,0 +1,50 @@
+
+Call:
+lm(formula = formula, data = data)
+
+Coefficients:
+                      (Intercept)                MSH6_or_notNot_MSH6  
+                         4.630479                          -2.377556  
+           Cancer_Type_NEWBiliary             Cancer_Type_NEWBladder  
+                        -0.096972                           1.848355  
+        Cancer_Type_NEWColorectal                 Cancer_Type_NEWCUP  
+                         0.458572                           7.269329  
+       Cancer_Type_NEWEndometrial     Cancer_Type_NEWEsophagogastric  
+                        -0.006618                          -0.622892  
+             Cancer_Type_NEWOther             Cancer_Type_NEWOvarian  
+                        -2.283775                          -2.323297  
+          Cancer_Type_NEWPancreas            Cancer_Type_NEWProstate  
+                         2.354846                          -1.116324  
+            Cancer_Type_NEWRectal         Cancer_Type_NEWSmall Bowel  
+                        -0.834140                          -0.475250  
+                      Current_Age                       Tumor_Purity  
+                        -0.006224                           0.020136  
+    RaceBLACK OR AFRICAN AMERICAN  RaceNATIVE AMERICAN-AM IND/ALASKA  
+                        -0.116548                          -1.090432  
+                        RaceOTHER           RacePT REFUSED TO ANSWER  
+                         0.225556                          -0.725913  
+                        RaceWHITE  
+                         0.198873  
+
+                      (Intercept)               MSH6_or_notNot_MSH6 
+                      4.630478970                      -2.377556466 
+           Cancer_Type_NEWBiliary            Cancer_Type_NEWBladder 
+                     -0.096971711                       1.848355191 
+        Cancer_Type_NEWColorectal                Cancer_Type_NEWCUP 
+                      0.458572435                       7.269328827 
+       Cancer_Type_NEWEndometrial    Cancer_Type_NEWEsophagogastric 
+                     -0.006617800                      -0.622892114 
+             Cancer_Type_NEWOther            Cancer_Type_NEWOvarian 
+                     -2.283775437                      -2.323297366 
+          Cancer_Type_NEWPancreas           Cancer_Type_NEWProstate 
+                      2.354845601                      -1.116323860 
+            Cancer_Type_NEWRectal        Cancer_Type_NEWSmall Bowel 
+                     -0.834139803                      -0.475249930 
+                      Current_Age                      Tumor_Purity 
+                     -0.006224372                       0.020135646 
+    RaceBLACK OR AFRICAN AMERICAN RaceNATIVE AMERICAN-AM IND/ALASKA 
+                     -0.116547712                      -1.090432154 
+                        RaceOTHER          RacePT REFUSED TO ANSWER 
+                      0.225555839                      -0.725912666 
+                        RaceWHITE 
+                      0.198872700 

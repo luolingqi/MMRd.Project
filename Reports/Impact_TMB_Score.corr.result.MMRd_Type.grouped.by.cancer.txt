@@ -1,0 +1,66 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	Impact_TMB_Score	MSH2_MSH6	MSH6	0.571428571428571	1	0.5714	ns	Wilcoxon
+2	Bladder	Impact_TMB_Score	MSH2_MSH6	PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon
+3	Bladder	Impact_TMB_Score	MSH6	PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+4	Colon	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.01375930285779	0.84	0.0138	*	Wilcoxon
+5	Colon	Impact_TMB_Score	MSH2_MSH6	Complex	0.289829746258189	1	0.2898	ns	Wilcoxon
+6	Colon	Impact_TMB_Score	MSH2_MSH6	NORMAL	0.602816210842935	1	0.6028	ns	Wilcoxon
+7	Colon	Impact_TMB_Score	MSH2_MSH6	MSH6	0.655438948575815	1	0.6554	ns	Wilcoxon
+8	Colon	Impact_TMB_Score	MSH2_MSH6	PMS2	0.00450741610475365	0.29	0.0045	**	Wilcoxon
+9	Colon	Impact_TMB_Score	MLH1_PMS2	Complex	0.312387216468939	1	0.3124	ns	Wilcoxon
+10	Colon	Impact_TMB_Score	MLH1_PMS2	NORMAL	0.199340304808175	1	0.1993	ns	Wilcoxon
+11	Colon	Impact_TMB_Score	MLH1_PMS2	MSH6	0.0222312307049808	1	0.0222	*	Wilcoxon
+12	Colon	Impact_TMB_Score	MLH1_PMS2	PMS2	0.00176225165994256	0.11	0.0018	**	Wilcoxon
+13	Colon	Impact_TMB_Score	Complex	NORMAL	1	1	1.0000	ns	Wilcoxon
+14	Colon	Impact_TMB_Score	Complex	MSH6	0.315208819313	1	0.3152	ns	Wilcoxon
+15	Colon	Impact_TMB_Score	Complex	PMS2	0.0107874492546704	0.68	0.0108	*	Wilcoxon
+16	Colon	Impact_TMB_Score	NORMAL	MSH6	0.648484848484848	1	0.6485	ns	Wilcoxon
+17	Colon	Impact_TMB_Score	NORMAL	PMS2	0.0727272727272727	1	0.0727	ns	Wilcoxon
+18	Colon	Impact_TMB_Score	MSH6	PMS2	0.0285714285714286	1	0.0286	*	Wilcoxon
+19	Esophagogastric	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.352551793037695	1	0.3526	ns	Wilcoxon
+20	Esophagogastric	Impact_TMB_Score	MSH2_MSH6	Complex	0.4	1	0.4000	ns	Wilcoxon
+21	Esophagogastric	Impact_TMB_Score	MSH2_MSH6	NORMAL	0.8	1	0.8000	ns	Wilcoxon
+22	Esophagogastric	Impact_TMB_Score	MLH1_PMS2	Complex	0.414751764038529	1	0.4148	ns	Wilcoxon
+23	Esophagogastric	Impact_TMB_Score	MLH1_PMS2	NORMAL	1	1	1.0000	ns	Wilcoxon
+24	Esophagogastric	Impact_TMB_Score	Complex	NORMAL	1	1	1.0000	ns	Wilcoxon
+25	Pancreas	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	1	1	1.0000	ns	Wilcoxon
+26	Pancreas	Impact_TMB_Score	MSH2_MSH6	MSH6	1	1	1.0000	ns	Wilcoxon
+27	Pancreas	Impact_TMB_Score	MLH1_PMS2	MSH6	1	1	1.0000	ns	Wilcoxon
+28	Colorectal	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.0498389338621442	1	0.0498	*	Wilcoxon
+29	Colorectal	Impact_TMB_Score	MSH2_MSH6	NORMAL	0.111111111111111	1	0.1111	ns	Wilcoxon
+30	Colorectal	Impact_TMB_Score	MSH2_MSH6	MSH6	1	1	1.0000	ns	Wilcoxon
+31	Colorectal	Impact_TMB_Score	MSH2_MSH6	PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon
+32	Colorectal	Impact_TMB_Score	MLH1_PMS2	NORMAL	0.67103273673357	1	0.6710	ns	Wilcoxon
+33	Colorectal	Impact_TMB_Score	MLH1_PMS2	MSH6	0.013986013986014	0.84	0.0140	*	Wilcoxon
+34	Colorectal	Impact_TMB_Score	MLH1_PMS2	PMS2	0.181818181818182	1	0.1818	ns	Wilcoxon
+35	Colorectal	Impact_TMB_Score	NORMAL	MSH6	0.228571428571429	1	0.2286	ns	Wilcoxon
+36	Colorectal	Impact_TMB_Score	NORMAL	PMS2	0.4	1	0.4000	ns	Wilcoxon
+37	Colorectal	Impact_TMB_Score	MSH6	PMS2	0.5	1	0.5000	ns	Wilcoxon
+38	Biliary	Impact_TMB_Score	MLH1_PMS2	PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon
+39	Prostate	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+40	Prostate	Impact_TMB_Score	MSH2_MSH6	MSH6	1	1	1.0000	ns	Wilcoxon
+41	Prostate	Impact_TMB_Score	MLH1_PMS2	MSH6	1	1	1.0000	ns	Wilcoxon
+42	Small Bowel	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.533333333333333	1	0.5333	ns	Wilcoxon
+43	Small Bowel	Impact_TMB_Score	MSH2_MSH6	NORMAL	0.666666666666667	1	0.6667	ns	Wilcoxon
+44	Small Bowel	Impact_TMB_Score	MSH2_MSH6	PMS2	0.133333333333333	1	0.1333	ns	Wilcoxon
+45	Small Bowel	Impact_TMB_Score	MLH1_PMS2	NORMAL	1	1	1.0000	ns	Wilcoxon
+46	Small Bowel	Impact_TMB_Score	MLH1_PMS2	PMS2	0.885714285714286	1	0.8857	ns	Wilcoxon
+47	Small Bowel	Impact_TMB_Score	NORMAL	PMS2	0.8	1	0.8000	ns	Wilcoxon
+48	Endometrial	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.0126496996879515	0.78	0.0126	*	Wilcoxon
+49	Endometrial	Impact_TMB_Score	MSH2_MSH6	Complex	0.20261353134705	1	0.2026	ns	Wilcoxon
+50	Endometrial	Impact_TMB_Score	MSH2_MSH6	NORMAL	0.184121583467802	1	0.1841	ns	Wilcoxon
+51	Endometrial	Impact_TMB_Score	MSH2_MSH6	MSH6	0.642834826490804	1	0.6428	ns	Wilcoxon
+52	Endometrial	Impact_TMB_Score	MLH1_PMS2	Complex	0.491586205871518	1	0.4916	ns	Wilcoxon
+53	Endometrial	Impact_TMB_Score	MLH1_PMS2	NORMAL	0.925025677407717	1	0.9250	ns	Wilcoxon
+54	Endometrial	Impact_TMB_Score	MLH1_PMS2	MSH6	0.160605734963968	1	0.1606	ns	Wilcoxon
+55	Endometrial	Impact_TMB_Score	Complex	NORMAL	0.8	1	0.8000	ns	Wilcoxon
+56	Endometrial	Impact_TMB_Score	Complex	MSH6	1	1	1.0000	ns	Wilcoxon
+57	Endometrial	Impact_TMB_Score	NORMAL	MSH6	0.4	1	0.4000	ns	Wilcoxon
+58	Rectal	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.182316135876507	1	0.1823	ns	Wilcoxon
+59	Rectal	Impact_TMB_Score	MSH2_MSH6	PMS2	0.363636363636364	1	0.3636	ns	Wilcoxon
+60	Rectal	Impact_TMB_Score	MLH1_PMS2	PMS2	0.6	1	0.6000	ns	Wilcoxon
+61	CUP	Impact_TMB_Score	MLH1_PMS2	NORMAL	0.333333333333333	1	0.3333	ns	Wilcoxon
+62	Other	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.857142857142857	1	0.8571	ns	Wilcoxon
+63	Ovarian	Impact_TMB_Score	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+64	Ovarian	Impact_TMB_Score	MSH2_MSH6	PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+65	Ovarian	Impact_TMB_Score	MLH1_PMS2	PMS2	1	1	1.0000	ns	Wilcoxon

@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Frameshift	MSH6	Not_MSH6	0.381541454757714	0.38	0.38	ns	Wilcoxon

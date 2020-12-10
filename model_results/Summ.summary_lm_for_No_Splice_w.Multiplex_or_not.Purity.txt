@@ -1,0 +1,20 @@
+MODEL INFO:
+Observations: 378 (3 missing obs. deleted)
+Dependent Variable: No_Splice
+Type: OLS linear regression 
+
+MODEL FIT:
+F(4,373) = 1.907, p = 0.109
+R² = 0.020
+Adj. R² = 0.010 
+
+Standard errors: OLS
+--------------------------------------------------------------------------
+                                    Est.     2.5%   97.5%   t val.       p
+------------------------------- -------- -------- ------- -------- -------
+(Intercept)                        1.603    0.674   2.532    3.393   0.001
+Multiplex_or_not?                 -0.693   -2.620   1.233   -0.707   0.480
+Multiplex_or_notMultiplex         -0.614   -1.429   0.200   -1.483   0.139
+Multiplex_or_notNORMAL             0.375   -0.824   1.574    0.615   0.539
+Tumor_Purity                       0.006   -0.007   0.019    0.939   0.348
+--------------------------------------------------------------------------

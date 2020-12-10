@@ -1,0 +1,20 @@
+MODEL INFO:
+Observations: 378 (3 missing obs. deleted)
+Dependent Variable: Fraction_Genome_Altered
+Type: OLS linear regression 
+
+MODEL FIT:
+F(4,373) = 7.423, p = 0.000
+R² = 0.074
+Adj. R² = 0.064 
+
+Standard errors: OLS
+--------------------------------------------------------------------------
+                                    Est.     2.5%   97.5%   t val.       p
+------------------------------- -------- -------- ------- -------- -------
+(Intercept)                        0.037   -0.002   0.077    1.874   0.062
+Multiplex_or_not?                 -0.031   -0.112   0.051   -0.744   0.458
+Multiplex_or_notMultiplex         -0.026   -0.061   0.008   -1.509   0.132
+Multiplex_or_notNORMAL             0.043   -0.008   0.094    1.672   0.095
+Tumor_Purity                       0.001    0.000   0.002    3.563   0.000
+--------------------------------------------------------------------------

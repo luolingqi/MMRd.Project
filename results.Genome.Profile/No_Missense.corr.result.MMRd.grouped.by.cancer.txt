@@ -1,0 +1,84 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_Missense	MSH2_MSH6	MSH6	0.171370996516729	1	0.17137	ns	Wilcoxon
+2	Bladder	No_Missense	MSH2_MSH6	PMS2	0.234763662827669	1	0.23476	ns	Wilcoxon
+3	Bladder	No_Missense	MSH2_MSH6	?	1	1	1.00000	ns	Wilcoxon
+4	Bladder	No_Missense	MSH6	PMS2	0.666666666666667	1	0.66667	ns	Wilcoxon
+5	Bladder	No_Missense	MSH6	?	0.666666666666667	1	0.66667	ns	Wilcoxon
+6	Bladder	No_Missense	PMS2	?	1	1	1.00000	ns	Wilcoxon
+7	Colon	No_Missense	MSH2_MSH6	MLH1_PMS2	0.000196878324063245	0.016	0.00020	***	Wilcoxon
+8	Colon	No_Missense	MSH2_MSH6	Complex	0.175949325132319	1	0.17595	ns	Wilcoxon
+9	Colon	No_Missense	MSH2_MSH6	NORMAL	0.469626909631719	1	0.46963	ns	Wilcoxon
+10	Colon	No_Missense	MSH2_MSH6	MSH6	0.255909941806735	1	0.25591	ns	Wilcoxon
+11	Colon	No_Missense	MSH2_MSH6	PMS2	0.00579558824099012	0.45	0.00580	**	Wilcoxon
+12	Colon	No_Missense	MLH1_PMS2	Complex	0.103849975966866	1	0.10385	ns	Wilcoxon
+13	Colon	No_Missense	MLH1_PMS2	NORMAL	0.136724527805042	1	0.13672	ns	Wilcoxon
+14	Colon	No_Missense	MLH1_PMS2	MSH6	0.00419923352690294	0.34	0.00420	**	Wilcoxon
+15	Colon	No_Missense	MLH1_PMS2	PMS2	0.00561516939433685	0.44	0.00562	**	Wilcoxon
+16	Colon	No_Missense	Complex	NORMAL	1	1	1.00000	ns	Wilcoxon
+17	Colon	No_Missense	Complex	MSH6	0.075579586158403	1	0.07558	ns	Wilcoxon
+18	Colon	No_Missense	Complex	PMS2	0.0166206366176091	1	0.01662	*	Wilcoxon
+19	Colon	No_Missense	NORMAL	MSH6	0.23030303030303	1	0.23030	ns	Wilcoxon
+20	Colon	No_Missense	NORMAL	PMS2	0.0372015447521518	1	0.03720	*	Wilcoxon
+21	Colon	No_Missense	MSH6	PMS2	0.0285714285714286	1	0.02857	*	Wilcoxon
+22	Esophagogastric	No_Missense	MSH2_MSH6	MLH1_PMS2	0.155351441244775	1	0.15535	ns	Wilcoxon
+23	Esophagogastric	No_Missense	MSH2_MSH6	Complex	0.4	1	0.40000	ns	Wilcoxon
+24	Esophagogastric	No_Missense	MSH2_MSH6	NORMAL	0.8	1	0.80000	ns	Wilcoxon
+25	Esophagogastric	No_Missense	MSH2_MSH6	?	0.8	1	0.80000	ns	Wilcoxon
+26	Esophagogastric	No_Missense	MLH1_PMS2	Complex	0.184202479781698	1	0.18420	ns	Wilcoxon
+27	Esophagogastric	No_Missense	MLH1_PMS2	NORMAL	0.373320344957138	1	0.37332	ns	Wilcoxon
+28	Esophagogastric	No_Missense	MLH1_PMS2	?	0.109047750679151	1	0.10905	ns	Wilcoxon
+29	Esophagogastric	No_Missense	Complex	NORMAL	0.666666666666667	1	0.66667	ns	Wilcoxon
+30	Esophagogastric	No_Missense	Complex	?	0.666666666666667	1	0.66667	ns	Wilcoxon
+31	Esophagogastric	No_Missense	NORMAL	?	1	1	1.00000	ns	Wilcoxon
+32	Pancreas	No_Missense	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.66667	ns	Wilcoxon
+33	Pancreas	No_Missense	MSH2_MSH6	MSH6	0.666666666666667	1	0.66667	ns	Wilcoxon
+34	Colorectal	No_Missense	MSH2_MSH6	MLH1_PMS2	0.00267062302183419	0.22	0.00267	**	Wilcoxon
+35	Colorectal	No_Missense	MSH2_MSH6	NORMAL	0.109855242885712	1	0.10986	ns	Wilcoxon
+36	Colorectal	No_Missense	MSH2_MSH6	MSH6	0.368227133821696	1	0.36823	ns	Wilcoxon
+37	Colorectal	No_Missense	MSH2_MSH6	PMS2	0.234763662827669	1	0.23476	ns	Wilcoxon
+38	Colorectal	No_Missense	MLH1_PMS2	NORMAL	0.777058756443632	1	0.77706	ns	Wilcoxon
+39	Colorectal	No_Missense	MLH1_PMS2	MSH6	0.00699300699300699	0.54	0.00699	**	Wilcoxon
+40	Colorectal	No_Missense	MLH1_PMS2	PMS2	0.181818181818182	1	0.18182	ns	Wilcoxon
+41	Colorectal	No_Missense	NORMAL	MSH6	0.114285714285714	1	0.11429	ns	Wilcoxon
+42	Colorectal	No_Missense	NORMAL	PMS2	0.4	1	0.40000	ns	Wilcoxon
+43	Colorectal	No_Missense	MSH6	PMS2	0.5	1	0.50000	ns	Wilcoxon
+44	Biliary	No_Missense	MLH1_PMS2	PMS2	0.333333333333333	1	0.33333	ns	Wilcoxon
+45	Prostate	No_Missense	MSH2_MSH6	MLH1_PMS2	1	1	1.00000	ns	Wilcoxon
+46	Prostate	No_Missense	MSH2_MSH6	MSH6	0.666666666666667	1	0.66667	ns	Wilcoxon
+47	Prostate	No_Missense	MLH1_PMS2	MSH6	1	1	1.00000	ns	Wilcoxon
+48	Small Bowel	No_Missense	MSH2_MSH6	MLH1_PMS2	0.481120001127239	1	0.48112	ns	Wilcoxon
+49	Small Bowel	No_Missense	MSH2_MSH6	NORMAL	0.666666666666667	1	0.66667	ns	Wilcoxon
+50	Small Bowel	No_Missense	MSH2_MSH6	PMS2	0.100209511845015	1	0.10021	ns	Wilcoxon
+51	Small Bowel	No_Missense	MSH2_MSH6	?	0.666666666666667	1	0.66667	ns	Wilcoxon
+52	Small Bowel	No_Missense	MLH1_PMS2	NORMAL	0.716800516994495	1	0.71680	ns	Wilcoxon
+53	Small Bowel	No_Missense	MLH1_PMS2	PMS2	0.306492165041584	1	0.30649	ns	Wilcoxon
+54	Small Bowel	No_Missense	MLH1_PMS2	?	0.716800516994495	1	0.71680	ns	Wilcoxon
+55	Small Bowel	No_Missense	NORMAL	PMS2	1	1	1.00000	ns	Wilcoxon
+56	Small Bowel	No_Missense	NORMAL	?	1	1	1.00000	ns	Wilcoxon
+57	Small Bowel	No_Missense	PMS2	?	0.456056540250256	1	0.45606	ns	Wilcoxon
+58	Endometrial	No_Missense	MSH2_MSH6	MLH1_PMS2	0.000430387215143067	0.035	0.00043	***	Wilcoxon
+59	Endometrial	No_Missense	MSH2_MSH6	Complex	0.133333333333333	1	0.13333	ns	Wilcoxon
+60	Endometrial	No_Missense	MSH2_MSH6	NORMAL	0.0891198224798156	1	0.08912	ns	Wilcoxon
+61	Endometrial	No_Missense	MSH2_MSH6	MSH6	0.533333333333333	1	0.53333	ns	Wilcoxon
+62	Endometrial	No_Missense	MSH2_MSH6	?	0.8	1	0.80000	ns	Wilcoxon
+63	Endometrial	No_Missense	MLH1_PMS2	Complex	0.491143269649394	1	0.49114	ns	Wilcoxon
+64	Endometrial	No_Missense	MLH1_PMS2	NORMAL	0.647323534636107	1	0.64732	ns	Wilcoxon
+65	Endometrial	No_Missense	MLH1_PMS2	MSH6	0.136986813990171	1	0.13699	ns	Wilcoxon
+66	Endometrial	No_Missense	MLH1_PMS2	?	0.321488344006796	1	0.32149	ns	Wilcoxon
+67	Endometrial	No_Missense	Complex	NORMAL	0.8	1	0.80000	ns	Wilcoxon
+68	Endometrial	No_Missense	Complex	MSH6	1	1	1.00000	ns	Wilcoxon
+69	Endometrial	No_Missense	Complex	?	1	1	1.00000	ns	Wilcoxon
+70	Endometrial	No_Missense	NORMAL	MSH6	0.4	1	0.40000	ns	Wilcoxon
+71	Endometrial	No_Missense	NORMAL	?	0.468159909854428	1	0.46816	ns	Wilcoxon
+72	Endometrial	No_Missense	MSH6	?	1	1	1.00000	ns	Wilcoxon
+73	Rectal	No_Missense	MSH2_MSH6	MLH1_PMS2	0.220468839620081	1	0.22047	ns	Wilcoxon
+74	Rectal	No_Missense	MSH2_MSH6	PMS2	0.181818181818182	1	0.18182	ns	Wilcoxon
+75	Rectal	No_Missense	MSH2_MSH6	Delete	0.545454545454545	1	0.54545	ns	Wilcoxon
+76	Rectal	No_Missense	MLH1_PMS2	PMS2	0.4	1	0.40000	ns	Wilcoxon
+77	Rectal	No_Missense	MLH1_PMS2	Delete	1	1	1.00000	ns	Wilcoxon
+78	Rectal	No_Missense	PMS2	Delete	1	1	1.00000	ns	Wilcoxon
+79	CUP	No_Missense	MLH1_PMS2	NORMAL	0.234763662827669	1	0.23476	ns	Wilcoxon
+80	Other	No_Missense	MSH2_MSH6	MLH1_PMS2	0.571428571428571	1	0.57143	ns	Wilcoxon
+81	Ovarian	No_Missense	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.66667	ns	Wilcoxon
+82	Ovarian	No_Missense	MSH2_MSH6	PMS2	0.666666666666667	1	0.66667	ns	Wilcoxon
+83	Ovarian	No_Missense	MLH1_PMS2	PMS2	1	1	1.00000	ns	Wilcoxon

@@ -1,0 +1,79 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	MSI_Score_1	Bladder	Colon	0.000125810810171239	0.0097	0.00013	***	Wilcoxon
+2	MSI_Score_1	Bladder	Esophagogastric	0.0121165921704259	0.78	0.01212	*	Wilcoxon
+3	MSI_Score_1	Bladder	Pancreas	0.198601398601399	1	0.19860	ns	Wilcoxon
+4	MSI_Score_1	Bladder	Colorectal	0.000163358147229115	0.012	0.00016	***	Wilcoxon
+5	MSI_Score_1	Bladder	Biliary	0.0112106034364914	0.73	0.01121	*	Wilcoxon
+6	MSI_Score_1	Bladder	Prostate	1	1	1.00000	ns	Wilcoxon
+7	MSI_Score_1	Bladder	Small Bowel	0.00430034361922907	0.31	0.00430	**	Wilcoxon
+8	MSI_Score_1	Bladder	Endometrial	0.224092997412159	1	0.22409	ns	Wilcoxon
+9	MSI_Score_1	Bladder	Rectal	0.00505301794657117	0.34	0.00505	**	Wilcoxon
+10	MSI_Score_1	Bladder	CUP	0.775624375624376	1	0.77562	ns	Wilcoxon
+11	MSI_Score_1	Bladder	Other	0.536013986013986	1	0.53601	ns	Wilcoxon
+12	MSI_Score_1	Bladder	Ovarian	0.503496503496504	1	0.50350	ns	Wilcoxon
+13	MSI_Score_1	Colon	Esophagogastric	0.017865453615509	1	0.01787	*	Wilcoxon
+14	MSI_Score_1	Colon	Pancreas	0.0930969849903027	1	0.09310	ns	Wilcoxon
+15	MSI_Score_1	Colon	Colorectal	0.280225810350816	1	0.28023	ns	Wilcoxon
+16	MSI_Score_1	Colon	Biliary	0.278597123717531	1	0.27860	ns	Wilcoxon
+17	MSI_Score_1	Colon	Prostate	0.010507810847307	0.69	0.01051	*	Wilcoxon
+18	MSI_Score_1	Colon	Small Bowel	0.0566608932583142	1	0.05666	ns	Wilcoxon
+19	MSI_Score_1	Colon	Endometrial	3.8141437941608e-12	3e-10	3.8e-12	****	Wilcoxon
+20	MSI_Score_1	Colon	Rectal	0.591803957753004	1	0.59180	ns	Wilcoxon
+21	MSI_Score_1	Colon	CUP	0.0333160285026254	1	0.03332	*	Wilcoxon
+22	MSI_Score_1	Colon	Other	0.0011849064250932	0.088	0.00118	**	Wilcoxon
+23	MSI_Score_1	Colon	Ovarian	0.0458112952309979	1	0.04581	*	Wilcoxon
+24	MSI_Score_1	Esophagogastric	Pancreas	0.611563562827466	1	0.61156	ns	Wilcoxon
+25	MSI_Score_1	Esophagogastric	Colorectal	0.302761912854461	1	0.30276	ns	Wilcoxon
+26	MSI_Score_1	Esophagogastric	Biliary	0.767107216115732	1	0.76711	ns	Wilcoxon
+27	MSI_Score_1	Esophagogastric	Prostate	0.11693476728866	1	0.11693	ns	Wilcoxon
+28	MSI_Score_1	Esophagogastric	Small Bowel	0.89384757872191	1	0.89385	ns	Wilcoxon
+29	MSI_Score_1	Esophagogastric	Endometrial	0.00578382888302742	0.39	0.00578	**	Wilcoxon
+30	MSI_Score_1	Esophagogastric	Rectal	0.365338686794288	1	0.36534	ns	Wilcoxon
+31	MSI_Score_1	Esophagogastric	CUP	0.224432164512409	1	0.22443	ns	Wilcoxon
+32	MSI_Score_1	Esophagogastric	Other	0.0133368359870522	0.84	0.01334	*	Wilcoxon
+33	MSI_Score_1	Esophagogastric	Ovarian	0.296240463277875	1	0.29624	ns	Wilcoxon
+34	MSI_Score_1	Pancreas	Colorectal	0.147122507122507	1	0.14712	ns	Wilcoxon
+35	MSI_Score_1	Pancreas	Biliary	0.335886983279348	1	0.33589	ns	Wilcoxon
+36	MSI_Score_1	Pancreas	Prostate	0.485714285714286	1	0.48571	ns	Wilcoxon
+37	MSI_Score_1	Pancreas	Small Bowel	0.683516483516483	1	0.68352	ns	Wilcoxon
+38	MSI_Score_1	Pancreas	Endometrial	0.648391548277626	1	0.64839	ns	Wilcoxon
+39	MSI_Score_1	Pancreas	Rectal	0.347073216638434	1	0.34707	ns	Wilcoxon
+40	MSI_Score_1	Pancreas	CUP	0.761904761904762	1	0.76190	ns	Wilcoxon
+41	MSI_Score_1	Pancreas	Other	0.23030303030303	1	0.23030	ns	Wilcoxon
+42	MSI_Score_1	Pancreas	Ovarian	0.885714285714286	1	0.88571	ns	Wilcoxon
+43	MSI_Score_1	Colorectal	Biliary	0.535774435000521	1	0.53577	ns	Wilcoxon
+44	MSI_Score_1	Colorectal	Prostate	0.00433048433048433	0.31	0.00433	**	Wilcoxon
+45	MSI_Score_1	Colorectal	Small Bowel	0.22080595188362	1	0.22081	ns	Wilcoxon
+46	MSI_Score_1	Colorectal	Endometrial	0.000227157826207393	0.017	0.00023	***	Wilcoxon
+47	MSI_Score_1	Colorectal	Rectal	0.913670674441229	1	0.91367	ns	Wilcoxon
+48	MSI_Score_1	Colorectal	CUP	0.101633615426719	1	0.10163	ns	Wilcoxon
+49	MSI_Score_1	Colorectal	Other	0.00491895078101975	0.34	0.00492	**	Wilcoxon
+50	MSI_Score_1	Colorectal	Ovarian	0.110883190883191	1	0.11088	ns	Wilcoxon
+51	MSI_Score_1	Biliary	Prostate	0.0421969589499785	1	0.04220	*	Wilcoxon
+52	MSI_Score_1	Biliary	Small Bowel	0.742931086027574	1	0.74293	ns	Wilcoxon
+53	MSI_Score_1	Biliary	Endometrial	0.0842986484806613	1	0.08430	ns	Wilcoxon
+54	MSI_Score_1	Biliary	Rectal	0.73779363432161	1	0.73779	ns	Wilcoxon
+55	MSI_Score_1	Biliary	CUP	0.228950681414595	1	0.22895	ns	Wilcoxon
+56	MSI_Score_1	Biliary	Other	0.0380533311837477	1	0.03805	*	Wilcoxon
+57	MSI_Score_1	Biliary	Ovarian	0.454174267355451	1	0.45417	ns	Wilcoxon
+58	MSI_Score_1	Prostate	Small Bowel	0.0417582417582418	1	0.04176	*	Wilcoxon
+59	MSI_Score_1	Prostate	Endometrial	0.655693636384174	1	0.65569	ns	Wilcoxon
+60	MSI_Score_1	Prostate	Rectal	0.0453604366647845	1	0.04536	*	Wilcoxon
+61	MSI_Score_1	Prostate	CUP	0.761904761904762	1	0.76190	ns	Wilcoxon
+62	MSI_Score_1	Prostate	Other	0.163636363636364	1	0.16364	ns	Wilcoxon
+63	MSI_Score_1	Prostate	Ovarian	1	1	1.00000	ns	Wilcoxon
+64	MSI_Score_1	Small Bowel	Endometrial	0.0546970862014773	1	0.05470	ns	Wilcoxon
+65	MSI_Score_1	Small Bowel	Rectal	0.43064090960546	1	0.43064	ns	Wilcoxon
+66	MSI_Score_1	Small Bowel	CUP	0.249622926093514	1	0.24962	ns	Wilcoxon
+67	MSI_Score_1	Small Bowel	Other	0.0283400809716599	1	0.02834	*	Wilcoxon
+68	MSI_Score_1	Small Bowel	Ovarian	0.379120879120879	1	0.37912	ns	Wilcoxon
+69	MSI_Score_1	Endometrial	Rectal	0.00179456680825668	0.13	0.00179	**	Wilcoxon
+70	MSI_Score_1	Endometrial	CUP	0.947814888935466	1	0.94781	ns	Wilcoxon
+71	MSI_Score_1	Endometrial	Other	0.148098017197574	1	0.14810	ns	Wilcoxon
+72	MSI_Score_1	Endometrial	Ovarian	0.863228537139735	1	0.86323	ns	Wilcoxon
+73	MSI_Score_1	Rectal	CUP	0.0828302132649959	1	0.08283	ns	Wilcoxon
+74	MSI_Score_1	Rectal	Other	0.00265081134646352	0.19	0.00265	**	Wilcoxon
+75	MSI_Score_1	Rectal	Ovarian	0.114624505928854	1	0.11462	ns	Wilcoxon
+76	MSI_Score_1	CUP	Other	0.294871794871795	1	0.29487	ns	Wilcoxon
+77	MSI_Score_1	CUP	Ovarian	0.761904761904762	1	0.76190	ns	Wilcoxon
+78	MSI_Score_1	Other	Ovarian	0.648484848484848	1	0.64848	ns	Wilcoxon

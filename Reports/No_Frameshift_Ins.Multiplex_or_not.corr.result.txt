@@ -1,0 +1,7 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Frameshift_Ins	Singleton	?	0.673973588221858	1	0.67	ns	Wilcoxon
+2	No_Frameshift_Ins	Singleton	Multiplex	0.280344300865426	1	0.28	ns	Wilcoxon
+3	No_Frameshift_Ins	Singleton	NORMAL	0.322060734036203	1	0.32	ns	Wilcoxon
+4	No_Frameshift_Ins	?	Multiplex	0.983272482680812	1	0.98	ns	Wilcoxon
+5	No_Frameshift_Ins	?	NORMAL	0.857318840507791	1	0.86	ns	Wilcoxon
+6	No_Frameshift_Ins	Multiplex	NORMAL	0.622048793508366	1	0.62	ns	Wilcoxon

@@ -1,0 +1,10 @@
+Analysis of Variance Table
+
+Response: No_Splice
+                 Df  Sum Sq Mean Sq F value  Pr(>F)  
+PMS2_or_not       1   13.43 13.4336  3.4020 0.06593 .
+Cancer_Type_NEW  12   61.99  5.1662  1.3083 0.21121  
+Tumor_Purity      1    6.50  6.4957  1.6450 0.20046  
+Residuals       364 1437.34  3.9487                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

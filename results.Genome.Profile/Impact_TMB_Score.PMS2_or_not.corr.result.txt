@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Impact_TMB_Score	PMS2	Not_PMS2	5.38794921908819e-06	5.4e-06	5.4e-06	****	Wilcoxon

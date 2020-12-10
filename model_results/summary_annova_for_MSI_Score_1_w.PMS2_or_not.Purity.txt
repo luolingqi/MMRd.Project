@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: MSI_Score_1
+              Df Sum Sq Mean Sq F value  Pr(>F)  
+PMS2_or_not    1     67   67.16  0.6153 0.43329  
+Tumor_Purity   1    409  409.00  3.7470 0.05365 .
+Residuals    375  40932  109.15                  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

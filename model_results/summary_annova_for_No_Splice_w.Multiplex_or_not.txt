@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: No_Splice
+                  Df  Sum Sq Mean Sq F value  Pr(>F)  
+Multiplex_or_not   3   27.22  9.0748  2.2927 0.07769 .
+Residuals        377 1492.23  3.9582                  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

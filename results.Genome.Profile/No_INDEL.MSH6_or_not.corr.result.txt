@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_INDEL	MSH6	Not_MSH6	0.321623511193702	0.32	0.32	ns	Wilcoxon

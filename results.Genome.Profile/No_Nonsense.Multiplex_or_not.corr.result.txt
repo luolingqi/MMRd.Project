@@ -1,0 +1,7 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Nonsense	Singleton	?	0.556186209303404	1	0.5562	ns	Wilcoxon
+2	No_Nonsense	Singleton	Multiplex	0.00361108156781334	0.022	0.0036	**	Wilcoxon
+3	No_Nonsense	Singleton	NORMAL	0.180697486428956	0.9	0.1807	ns	Wilcoxon
+4	No_Nonsense	?	Multiplex	0.538878081931621	1	0.5389	ns	Wilcoxon
+5	No_Nonsense	?	NORMAL	0.855948786088843	1	0.8559	ns	Wilcoxon
+6	No_Nonsense	Multiplex	NORMAL	0.481409551434416	1	0.4814	ns	Wilcoxon

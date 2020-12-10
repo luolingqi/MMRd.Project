@@ -1,0 +1,7 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Splice	Singleton	?	0.296964169383832	1	0.30	ns	Wilcoxon
+2	No_Splice	Singleton	Multiplex	0.290890108125024	1	0.29	ns	Wilcoxon
+3	No_Splice	Singleton	NORMAL	0.236603565467228	1	0.24	ns	Wilcoxon
+4	No_Splice	?	Multiplex	0.63127219542865	1	0.63	ns	Wilcoxon
+5	No_Splice	?	NORMAL	0.854471886525652	1	0.85	ns	Wilcoxon
+6	No_Splice	Multiplex	NORMAL	0.318391606602147	1	0.32	ns	Wilcoxon

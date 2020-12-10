@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: MSI_Score_1
+                  Df Sum Sq Mean Sq F value    Pr(>F)    
+Multiplex_or_not   3   2022  674.09   6.376 0.0003179 ***
+Residuals        377  39858  105.72                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

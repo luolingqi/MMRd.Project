@@ -1,0 +1,7 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_INSERT	Singleton	?	0.955428112949722	1	0.96	ns	Wilcoxon
+2	No_INSERT	Singleton	Multiplex	0.437639717952306	1	0.44	ns	Wilcoxon
+3	No_INSERT	Singleton	NORMAL	0.371412724859146	1	0.37	ns	Wilcoxon
+4	No_INSERT	?	Multiplex	0.472959122637313	1	0.47	ns	Wilcoxon
+5	No_INSERT	?	NORMAL	0.331404541280167	1	0.33	ns	Wilcoxon
+6	No_INSERT	Multiplex	NORMAL	0.482932574682912	1	0.48	ns	Wilcoxon

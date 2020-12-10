@@ -1,0 +1,79 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_INDEL	Bladder	Colon	0.000684933790234214	0.053	0.00068	***	Wilcoxon
+2	No_INDEL	Bladder	Esophagogastric	0.00876165452594088	0.63	0.00876	**	Wilcoxon
+3	No_INDEL	Bladder	Pancreas	0.243237563380349	1	0.24324	ns	Wilcoxon
+4	No_INDEL	Bladder	Colorectal	0.00634109308843347	0.46	0.00634	**	Wilcoxon
+5	No_INDEL	Bladder	Biliary	0.123816402832758	1	0.12382	ns	Wilcoxon
+6	No_INDEL	Bladder	Prostate	0.215143592164729	1	0.21514	ns	Wilcoxon
+7	No_INDEL	Bladder	Small Bowel	0.101366133812768	1	0.10137	ns	Wilcoxon
+8	No_INDEL	Bladder	Endometrial	0.0308705813690542	1	0.03087	*	Wilcoxon
+9	No_INDEL	Bladder	Rectal	0.00534040096436934	0.4	0.00534	**	Wilcoxon
+10	No_INDEL	Bladder	CUP	0.155814036138452	1	0.15581	ns	Wilcoxon
+11	No_INDEL	Bladder	Other	0.750111916300925	1	0.75011	ns	Wilcoxon
+12	No_INDEL	Bladder	Ovarian	0.392795922672576	1	0.39280	ns	Wilcoxon
+13	No_INDEL	Colon	Esophagogastric	0.134901036703186	1	0.13490	ns	Wilcoxon
+14	No_INDEL	Colon	Pancreas	0.19211247050255	1	0.19211	ns	Wilcoxon
+15	No_INDEL	Colon	Colorectal	0.253671405408754	1	0.25367	ns	Wilcoxon
+16	No_INDEL	Colon	Biliary	0.16320567829977	1	0.16321	ns	Wilcoxon
+17	No_INDEL	Colon	Prostate	0.130746271414351	1	0.13075	ns	Wilcoxon
+18	No_INDEL	Colon	Small Bowel	0.0530415784532529	1	0.05304	ns	Wilcoxon
+19	No_INDEL	Colon	Endometrial	5.59515554588144e-07	4.4e-05	5.6e-07	****	Wilcoxon
+20	No_INDEL	Colon	Rectal	0.685218232657112	1	0.68522	ns	Wilcoxon
+21	No_INDEL	Colon	CUP	0.186435560517733	1	0.18644	ns	Wilcoxon
+22	No_INDEL	Colon	Other	0.00345842685687368	0.26	0.00346	**	Wilcoxon
+23	No_INDEL	Colon	Ovarian	0.277037524363177	1	0.27704	ns	Wilcoxon
+24	No_INDEL	Esophagogastric	Pancreas	0.435096692017132	1	0.43510	ns	Wilcoxon
+25	No_INDEL	Esophagogastric	Colorectal	0.885322417209584	1	0.88532	ns	Wilcoxon
+26	No_INDEL	Esophagogastric	Biliary	0.532590956817069	1	0.53259	ns	Wilcoxon
+27	No_INDEL	Esophagogastric	Prostate	0.412515891914285	1	0.41252	ns	Wilcoxon
+28	No_INDEL	Esophagogastric	Small Bowel	0.354077634146797	1	0.35408	ns	Wilcoxon
+29	No_INDEL	Esophagogastric	Endometrial	0.0365790486119832	1	0.03658	*	Wilcoxon
+30	No_INDEL	Esophagogastric	Rectal	0.236732889129627	1	0.23673	ns	Wilcoxon
+31	No_INDEL	Esophagogastric	CUP	0.574219026946838	1	0.57422	ns	Wilcoxon
+32	No_INDEL	Esophagogastric	Other	0.0297608391223652	1	0.02976	*	Wilcoxon
+33	No_INDEL	Esophagogastric	Ovarian	0.611992819434408	1	0.61199	ns	Wilcoxon
+34	No_INDEL	Pancreas	Colorectal	0.493983559440598	1	0.49398	ns	Wilcoxon
+35	No_INDEL	Pancreas	Biliary	0.746127778503757	1	0.74613	ns	Wilcoxon
+36	No_INDEL	Pancreas	Prostate	1	1	1.00000	ns	Wilcoxon
+37	No_INDEL	Pancreas	Small Bowel	0.807530738306077	1	0.80753	ns	Wilcoxon
+38	No_INDEL	Pancreas	Endometrial	0.791888698893133	1	0.79189	ns	Wilcoxon
+39	No_INDEL	Pancreas	Rectal	0.200435051009893	1	0.20044	ns	Wilcoxon
+40	No_INDEL	Pancreas	CUP	0.745363078747956	1	0.74536	ns	Wilcoxon
+41	No_INDEL	Pancreas	Other	0.504430998762287	1	0.50443	ns	Wilcoxon
+42	No_INDEL	Pancreas	Ovarian	1	1	1.00000	ns	Wilcoxon
+43	No_INDEL	Colorectal	Biliary	0.517570394588098	1	0.51757	ns	Wilcoxon
+44	No_INDEL	Colorectal	Prostate	0.273862437562919	1	0.27386	ns	Wilcoxon
+45	No_INDEL	Colorectal	Small Bowel	0.329671731073658	1	0.32967	ns	Wilcoxon
+46	No_INDEL	Colorectal	Endometrial	0.0389927800354092	1	0.03899	*	Wilcoxon
+47	No_INDEL	Colorectal	Rectal	0.251950003836665	1	0.25195	ns	Wilcoxon
+48	No_INDEL	Colorectal	CUP	0.433985381442082	1	0.43399	ns	Wilcoxon
+49	No_INDEL	Colorectal	Other	0.0196340444922783	1	0.01963	*	Wilcoxon
+50	No_INDEL	Colorectal	Ovarian	0.494049750572575	1	0.49405	ns	Wilcoxon
+51	No_INDEL	Biliary	Prostate	0.83066424240396	1	0.83066	ns	Wilcoxon
+52	No_INDEL	Biliary	Small Bowel	0.962591373532949	1	0.96259	ns	Wilcoxon
+53	No_INDEL	Biliary	Endometrial	0.915167335441014	1	0.91517	ns	Wilcoxon
+54	No_INDEL	Biliary	Rectal	0.18981026108251	1	0.18981	ns	Wilcoxon
+55	No_INDEL	Biliary	CUP	0.935849675859761	1	0.93585	ns	Wilcoxon
+56	No_INDEL	Biliary	Other	0.35178476518308	1	0.35178	ns	Wilcoxon
+57	No_INDEL	Biliary	Ovarian	1	1	1.00000	ns	Wilcoxon
+58	No_INDEL	Prostate	Small Bowel	0.760734834881874	1	0.76073	ns	Wilcoxon
+59	No_INDEL	Prostate	Endometrial	1	1	1.00000	ns	Wilcoxon
+60	No_INDEL	Prostate	Rectal	0.140400860795246	1	0.14040	ns	Wilcoxon
+61	No_INDEL	Prostate	CUP	0.830153495620087	1	0.83015	ns	Wilcoxon
+62	No_INDEL	Prostate	Other	0.392932047340753	1	0.39293	ns	Wilcoxon
+63	No_INDEL	Prostate	Ovarian	1	1	1.00000	ns	Wilcoxon
+64	No_INDEL	Small Bowel	Endometrial	0.813787564801795	1	0.81379	ns	Wilcoxon
+65	No_INDEL	Small Bowel	Rectal	0.10164105873429	1	0.10164	ns	Wilcoxon
+66	No_INDEL	Small Bowel	CUP	0.74254595147204	1	0.74255	ns	Wilcoxon
+67	No_INDEL	Small Bowel	Other	0.162056373545901	1	0.16206	ns	Wilcoxon
+68	No_INDEL	Small Bowel	Ovarian	0.951436307205917	1	0.95144	ns	Wilcoxon
+69	No_INDEL	Endometrial	Rectal	0.00397500910519287	0.3	0.00398	**	Wilcoxon
+70	No_INDEL	Endometrial	CUP	0.658182508113609	1	0.65818	ns	Wilcoxon
+71	No_INDEL	Endometrial	Other	0.129460868105696	1	0.12946	ns	Wilcoxon
+72	No_INDEL	Endometrial	Ovarian	0.935299758453264	1	0.93530	ns	Wilcoxon
+73	No_INDEL	Rectal	CUP	0.211555410376345	1	0.21156	ns	Wilcoxon
+74	No_INDEL	Rectal	Other	0.0159806141855583	1	0.01598	*	Wilcoxon
+75	No_INDEL	Rectal	Ovarian	0.313419900079032	1	0.31342	ns	Wilcoxon
+76	No_INDEL	CUP	Other	0.172954917988421	1	0.17295	ns	Wilcoxon
+77	No_INDEL	CUP	Ovarian	0.830153495620087	1	0.83015	ns	Wilcoxon
+78	No_INDEL	Other	Ovarian	0.448658835108447	1	0.44866	ns	Wilcoxon

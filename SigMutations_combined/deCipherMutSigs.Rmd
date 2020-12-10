@@ -1,0 +1,54 @@
+---
+title: "decipherMutSig"
+author: "Lingqi Luo"
+date: "2/3/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+library(deconstructSigs)
+library(RColorBrewer)
+library(BSgenome.Hsapiens.UCSC.hg19)
+
+#tumors <- c('P_vs_CDDP_gain', 'P_vs_DR396_gain', 'P_vs_TMZCDDP_gain', 'P_vs_TMZ_gain')
+tumors <-  list.dirs(full.names = FALSE, recursive = FALSE)
+tumors <- tumors[grepl("Signature$",tumors)]
+workDir <- getwd()
+for (t in tumors) {
+    #vcf <- list.files(path = paste0(workDir,'/',t,), full.names =  TRUE)
+    vcf <- file.path(paste0(workDir,'/',t,'/',gsub("_Signature",".concat.vcf",t)))
+    sigs.input <- vcf.to.sigs.input(vcf = vcf, bsg = BSgenome.Hsapiens.UCSC.hg19 )
+    wchSig <- whichSignatures(tumor.ref = sigs.input, signatures.ref = signatures.exome.cosmic.v3.may2019, contexts.needed = TRUE, tri.counts.method = 'exome')
+    pdf(file = paste0(t,'.pdf'),  width = 10, height = 10)
+    chart <- plotSignatures(wchSig)
+    dev.off()
+
+    n <- length(which(wchSig$weights>0))
+    qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+    col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+    
+    pdf(file = paste0(t,'.piechart.pdf'), width = 10, height = 10)
+    pie <- makePie(wchSig, add.color = sample(col_vector,n))
+    dev.off()
+}
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

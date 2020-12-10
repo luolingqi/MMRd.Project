@@ -1,0 +1,85 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	MSI_Score_1	MSH2_MSH6	MSH6	0.380952380952381	1	0.3810	ns	Wilcoxon
+2	Bladder	MSI_Score_1	MSH2_MSH6	PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon
+3	Bladder	MSI_Score_1	MSH2_MSH6	?	0.333333333333333	1	0.3333	ns	Wilcoxon
+4	Bladder	MSI_Score_1	MSH6	PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+5	Bladder	MSI_Score_1	MSH6	?	0.666666666666667	1	0.6667	ns	Wilcoxon
+6	Bladder	MSI_Score_1	PMS2	?	1	1	1.0000	ns	Wilcoxon
+7	Colon	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.75077479340953	1	0.7508	ns	Wilcoxon
+8	Colon	MSI_Score_1	MSH2_MSH6	Complex	0.127219815243915	1	0.1272	ns	Wilcoxon
+9	Colon	MSI_Score_1	MSH2_MSH6	NORMAL	1	1	1.0000	ns	Wilcoxon
+10	Colon	MSI_Score_1	MSH2_MSH6	MSH6	0.046844491284134	1	0.0468	*	Wilcoxon
+11	Colon	MSI_Score_1	MSH2_MSH6	PMS2	0.0133427290273517	1	0.0133	*	Wilcoxon
+12	Colon	MSI_Score_1	MLH1_PMS2	Complex	0.115542672730116	1	0.1155	ns	Wilcoxon
+13	Colon	MSI_Score_1	MLH1_PMS2	NORMAL	0.918749324617708	1	0.9187	ns	Wilcoxon
+14	Colon	MSI_Score_1	MLH1_PMS2	MSH6	0.0142350854876239	1	0.0142	*	Wilcoxon
+15	Colon	MSI_Score_1	MLH1_PMS2	PMS2	0.00986091907193137	0.81	0.0099	**	Wilcoxon
+16	Colon	MSI_Score_1	Complex	NORMAL	0.351048951048951	1	0.3510	ns	Wilcoxon
+17	Colon	MSI_Score_1	Complex	MSH6	0.00559440559440559	0.47	0.0056	**	Wilcoxon
+18	Colon	MSI_Score_1	Complex	PMS2	0.00559440559440559	0.47	0.0056	**	Wilcoxon
+19	Colon	MSI_Score_1	NORMAL	MSH6	0.163636363636364	1	0.1636	ns	Wilcoxon
+20	Colon	MSI_Score_1	NORMAL	PMS2	0.0727272727272727	1	0.0727	ns	Wilcoxon
+21	Colon	MSI_Score_1	MSH6	PMS2	0.342857142857143	1	0.3429	ns	Wilcoxon
+22	Esophagogastric	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.434582481641305	1	0.4346	ns	Wilcoxon
+23	Esophagogastric	MSI_Score_1	MSH2_MSH6	Complex	0.4	1	0.4000	ns	Wilcoxon
+24	Esophagogastric	MSI_Score_1	MSH2_MSH6	NORMAL	1	1	1.0000	ns	Wilcoxon
+25	Esophagogastric	MSI_Score_1	MSH2_MSH6	?	0.133333333333333	1	0.1333	ns	Wilcoxon
+26	Esophagogastric	MSI_Score_1	MLH1_PMS2	Complex	0.764705882352941	1	0.7647	ns	Wilcoxon
+27	Esophagogastric	MSI_Score_1	MLH1_PMS2	NORMAL	0.658823529411765	1	0.6588	ns	Wilcoxon
+28	Esophagogastric	MSI_Score_1	MLH1_PMS2	?	0.188235294117647	1	0.1882	ns	Wilcoxon
+29	Esophagogastric	MSI_Score_1	Complex	NORMAL	1	1	1.0000	ns	Wilcoxon
+30	Esophagogastric	MSI_Score_1	Complex	?	0.666666666666667	1	0.6667	ns	Wilcoxon
+31	Esophagogastric	MSI_Score_1	NORMAL	?	0.666666666666667	1	0.6667	ns	Wilcoxon
+32	Pancreas	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	1	1	1.0000	ns	Wilcoxon
+33	Pancreas	MSI_Score_1	MSH2_MSH6	MSH6	0.666666666666667	1	0.6667	ns	Wilcoxon
+34	Pancreas	MSI_Score_1	MLH1_PMS2	MSH6	1	1	1.0000	ns	Wilcoxon
+35	Colorectal	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.767898767898768	1	0.7679	ns	Wilcoxon
+36	Colorectal	MSI_Score_1	MSH2_MSH6	NORMAL	1	1	1.0000	ns	Wilcoxon
+37	Colorectal	MSI_Score_1	MSH2_MSH6	MSH6	0.571428571428571	1	0.5714	ns	Wilcoxon
+38	Colorectal	MSI_Score_1	MSH2_MSH6	PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon
+39	Colorectal	MSI_Score_1	MLH1_PMS2	NORMAL	0.303696303696304	1	0.3037	ns	Wilcoxon
+40	Colorectal	MSI_Score_1	MLH1_PMS2	MSH6	0.111888111888112	1	0.1119	ns	Wilcoxon
+41	Colorectal	MSI_Score_1	MLH1_PMS2	PMS2	0.181818181818182	1	0.1818	ns	Wilcoxon
+42	Colorectal	MSI_Score_1	NORMAL	MSH6	0.228571428571429	1	0.2286	ns	Wilcoxon
+43	Colorectal	MSI_Score_1	NORMAL	PMS2	0.4	1	0.4000	ns	Wilcoxon
+44	Colorectal	MSI_Score_1	MSH6	PMS2	1	1	1.0000	ns	Wilcoxon
+45	Biliary	MSI_Score_1	MLH1_PMS2	PMS2	0.234763662827669	1	0.2348	ns	Wilcoxon
+46	Prostate	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+47	Prostate	MSI_Score_1	MSH2_MSH6	MSH6	0.666666666666667	1	0.6667	ns	Wilcoxon
+48	Prostate	MSI_Score_1	MLH1_PMS2	MSH6	1	1	1.0000	ns	Wilcoxon
+49	Small Bowel	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.133333333333333	1	0.1333	ns	Wilcoxon
+50	Small Bowel	MSI_Score_1	MSH2_MSH6	NORMAL	1	1	1.0000	ns	Wilcoxon
+51	Small Bowel	MSI_Score_1	MSH2_MSH6	PMS2	0.133333333333333	1	0.1333	ns	Wilcoxon
+52	Small Bowel	MSI_Score_1	MSH2_MSH6	?	1	1	1.0000	ns	Wilcoxon
+53	Small Bowel	MSI_Score_1	MLH1_PMS2	NORMAL	0.4	1	0.4000	ns	Wilcoxon
+54	Small Bowel	MSI_Score_1	MLH1_PMS2	PMS2	0.685714285714286	1	0.6857	ns	Wilcoxon
+55	Small Bowel	MSI_Score_1	MLH1_PMS2	?	0.4	1	0.4000	ns	Wilcoxon
+56	Small Bowel	MSI_Score_1	NORMAL	PMS2	0.4	1	0.4000	ns	Wilcoxon
+57	Small Bowel	MSI_Score_1	NORMAL	?	1	1	1.0000	ns	Wilcoxon
+58	Small Bowel	MSI_Score_1	PMS2	?	0.4	1	0.4000	ns	Wilcoxon
+59	Endometrial	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.712512717024813	1	0.7125	ns	Wilcoxon
+60	Endometrial	MSI_Score_1	MSH2_MSH6	Complex	0.933333333333333	1	0.9333	ns	Wilcoxon
+61	Endometrial	MSI_Score_1	MSH2_MSH6	NORMAL	0.878431372549019	1	0.8784	ns	Wilcoxon
+62	Endometrial	MSI_Score_1	MSH2_MSH6	MSH6	0.8	1	0.8000	ns	Wilcoxon
+63	Endometrial	MSI_Score_1	MSH2_MSH6	?	0.4	1	0.4000	ns	Wilcoxon
+64	Endometrial	MSI_Score_1	MLH1_PMS2	Complex	0.52711528833355	1	0.5271	ns	Wilcoxon
+65	Endometrial	MSI_Score_1	MLH1_PMS2	NORMAL	0.493167743006325	1	0.4932	ns	Wilcoxon
+66	Endometrial	MSI_Score_1	MLH1_PMS2	MSH6	0.364206397848554	1	0.3642	ns	Wilcoxon
+67	Endometrial	MSI_Score_1	MLH1_PMS2	?	0.177877074595169	1	0.1779	ns	Wilcoxon
+68	Endometrial	MSI_Score_1	Complex	NORMAL	1	1	1.0000	ns	Wilcoxon
+69	Endometrial	MSI_Score_1	Complex	MSH6	1	1	1.0000	ns	Wilcoxon
+70	Endometrial	MSI_Score_1	Complex	?	1	1	1.0000	ns	Wilcoxon
+71	Endometrial	MSI_Score_1	NORMAL	MSH6	0.8	1	0.8000	ns	Wilcoxon
+72	Endometrial	MSI_Score_1	NORMAL	?	0.4	1	0.4000	ns	Wilcoxon
+73	Endometrial	MSI_Score_1	MSH6	?	1	1	1.0000	ns	Wilcoxon
+74	Rectal	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.356232003290827	1	0.3562	ns	Wilcoxon
+75	Rectal	MSI_Score_1	MSH2_MSH6	PMS2	0.909090909090909	1	0.9091	ns	Wilcoxon
+76	Rectal	MSI_Score_1	MSH2_MSH6	Delete	0.909090909090909	1	0.9091	ns	Wilcoxon
+77	Rectal	MSI_Score_1	MLH1_PMS2	PMS2	0.8	1	0.8000	ns	Wilcoxon
+78	Rectal	MSI_Score_1	MLH1_PMS2	Delete	1	1	1.0000	ns	Wilcoxon
+79	Rectal	MSI_Score_1	PMS2	Delete	1	1	1.0000	ns	Wilcoxon
+80	CUP	MSI_Score_1	MLH1_PMS2	NORMAL	0.333333333333333	1	0.3333	ns	Wilcoxon
+81	Other	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.857142857142857	1	0.8571	ns	Wilcoxon
+82	Ovarian	MSI_Score_1	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+83	Ovarian	MSI_Score_1	MSH2_MSH6	PMS2	0.666666666666667	1	0.6667	ns	Wilcoxon
+84	Ovarian	MSI_Score_1	MLH1_PMS2	PMS2	1	1	1.0000	ns	Wilcoxon

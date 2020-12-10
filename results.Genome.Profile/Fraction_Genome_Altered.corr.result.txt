@@ -1,0 +1,22 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.178943409592753	1	0.179	ns	Wilcoxon
+2	Fraction_Genome_Altered	MSH2_MSH6	Complex	0.224625356894388	1	0.225	ns	Wilcoxon
+3	Fraction_Genome_Altered	MSH2_MSH6	NORMAL	0.0950883335185606	1	0.095	ns	Wilcoxon
+4	Fraction_Genome_Altered	MSH2_MSH6	MSH6	0.895549966056671	1	0.896	ns	Wilcoxon
+5	Fraction_Genome_Altered	MSH2_MSH6	PMS2	0.219080035522184	1	0.219	ns	Wilcoxon
+6	Fraction_Genome_Altered	MSH2_MSH6	?	0.717719499155516	1	0.718	ns	Wilcoxon
+7	Fraction_Genome_Altered	MLH1_PMS2	Complex	0.53094318123443	1	0.531	ns	Wilcoxon
+8	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.182584888147203	1	0.183	ns	Wilcoxon
+9	Fraction_Genome_Altered	MLH1_PMS2	MSH6	0.708983193095421	1	0.709	ns	Wilcoxon
+10	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.467207186122407	1	0.467	ns	Wilcoxon
+11	Fraction_Genome_Altered	MLH1_PMS2	?	0.917338074548171	1	0.917	ns	Wilcoxon
+12	Fraction_Genome_Altered	Complex	NORMAL	0.746594402034128	1	0.747	ns	Wilcoxon
+13	Fraction_Genome_Altered	Complex	MSH6	0.441589459788131	1	0.442	ns	Wilcoxon
+14	Fraction_Genome_Altered	Complex	PMS2	1	1	1.000	ns	Wilcoxon
+15	Fraction_Genome_Altered	Complex	?	0.864964961153623	1	0.865	ns	Wilcoxon
+16	Fraction_Genome_Altered	NORMAL	MSH6	0.394115279037003	1	0.394	ns	Wilcoxon
+17	Fraction_Genome_Altered	NORMAL	PMS2	0.893073479581644	1	0.893	ns	Wilcoxon
+18	Fraction_Genome_Altered	NORMAL	?	0.568664372752467	1	0.569	ns	Wilcoxon
+19	Fraction_Genome_Altered	MSH6	PMS2	0.399088062014256	1	0.399	ns	Wilcoxon
+20	Fraction_Genome_Altered	MSH6	?	0.957941496631342	1	0.958	ns	Wilcoxon
+21	Fraction_Genome_Altered	PMS2	?	0.805249317327242	1	0.805	ns	Wilcoxon

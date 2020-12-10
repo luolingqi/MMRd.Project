@@ -1,0 +1,22 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Frameshift_Del	MSH2_MSH6	MLH1_PMS2	0.501055073533137	1	0.50106	ns	Wilcoxon
+2	No_Frameshift_Del	MSH2_MSH6	Complex	0.287891297133677	1	0.28789	ns	Wilcoxon
+3	No_Frameshift_Del	MSH2_MSH6	NORMAL	0.141980865650731	1	0.14198	ns	Wilcoxon
+4	No_Frameshift_Del	MSH2_MSH6	MSH6	4.3056026441436e-05	0.00082	4.3e-05	****	Wilcoxon
+5	No_Frameshift_Del	MSH2_MSH6	PMS2	6.47235458707588e-05	0.0012	6.5e-05	****	Wilcoxon
+6	No_Frameshift_Del	MSH2_MSH6	?	0.412975216593869	1	0.41298	ns	Wilcoxon
+7	No_Frameshift_Del	MLH1_PMS2	Complex	0.120012992997789	1	0.12001	ns	Wilcoxon
+8	No_Frameshift_Del	MLH1_PMS2	NORMAL	0.158278676677364	1	0.15828	ns	Wilcoxon
+9	No_Frameshift_Del	MLH1_PMS2	MSH6	1.93294016884328e-06	4.1e-05	1.9e-06	****	Wilcoxon
+10	No_Frameshift_Del	MLH1_PMS2	PMS2	1.34723036143317e-05	0.00027	1.3e-05	****	Wilcoxon
+11	No_Frameshift_Del	MLH1_PMS2	?	0.253453037185065	1	0.25345	ns	Wilcoxon
+12	No_Frameshift_Del	Complex	NORMAL	0.0518945752173838	0.57	0.05189	ns	Wilcoxon
+13	No_Frameshift_Del	Complex	MSH6	0.000324885738076806	0.0054	0.00032	***	Wilcoxon
+14	No_Frameshift_Del	Complex	PMS2	0.000318339284098531	0.0054	0.00032	***	Wilcoxon
+15	No_Frameshift_Del	Complex	?	0.954628291670579	1	0.95463	ns	Wilcoxon
+16	No_Frameshift_Del	NORMAL	MSH6	0.00496360518241356	0.069	0.00496	**	Wilcoxon
+17	No_Frameshift_Del	NORMAL	PMS2	0.0056105525138318	0.073	0.00561	**	Wilcoxon
+18	No_Frameshift_Del	NORMAL	?	0.134489943296904	1	0.13449	ns	Wilcoxon
+19	No_Frameshift_Del	MSH6	PMS2	0.339015214280097	1	0.33902	ns	Wilcoxon
+20	No_Frameshift_Del	MSH6	?	0.00205951259050121	0.031	0.00206	**	Wilcoxon
+21	No_Frameshift_Del	PMS2	?	0.00565422692295339	0.073	0.00565	**	Wilcoxon

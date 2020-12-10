@@ -1,0 +1,405 @@
+---
+title: "Linear models with collapsed MMRd & tumor types"
+author: "Lingqi Luo"
+date: "10/21/2020"
+output: html_document
+---
+
+```{r}
+
+# knitr::opts_chunk$set(echo = TRUE)
+# knitr::opts_chunk$set(render = 'normal_print')
+# knitr::opts_chunk$set(results='asis')
+
+library(table1)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+library(ggsci)
+library(jtools)
+library(lmerTest)
+
+df <- read.table(file = file.path(getwd(),"R_Input_2.txt"), 
+                 header = TRUE, 
+                 quote = "", 
+                 sep = "\t", 
+                 row.names = 6)
+#my_comparisons <- list( c("NORMAL", "PMS2"), c("NORMAL", "MSH6"), c("MSH6", "MSH2_MSH6") )
+
+###################################################################
+# plot genomic landscape by MMRd types
+####################################################################
+# add in cancer types
+df_Tumor.purity <- read.table(file = file.path(getwd(),"Tumor_purity.txt"), sep = "\t", header = T, quote = "" )
+row.names(df_Tumor.purity) <- df_Tumor.purity$Sample_ID
+
+df_Cancer <- read.table(file = "Cancer_type.txt", header = T, sep = "\t")
+row.names(df_Cancer) <- df_Cancer$Sample_ID
+
+df_1 <- merge(df, df_Cancer, by = 0)
+row.names(df_1) <- df_1$Row.names
+df_1 <- df_1[,-which(names(df_1) %in% c("Row.names","Sample_ID"))]
+
+df_1 <- merge(df_1, df_Tumor.purity, by = 0)
+row.names(df_1) <- df_1$Row.names
+df_1 <- df_1[,-which(names(df_1) %in% c("Row.names","Sample_ID"))]
+
+# Add the column "Multiplex_or_not"
+df_2 <- df_1 %>% mutate(Multiplex_or_not = 
+                  ifelse(df_1$CLASSIFICATION_PLOT %in% c("MSH2_MSH6","MLH1_PMS2","Complex"), "Multiplex",
+                         ifelse(df_1$CLASSIFICATION_PLOT %in% c("MSH6","PMS2"), "Singleton",df_1$CLASSIFICATION_PLOT)))
+
+# Add the column "MSH6_or_not"
+df_2 <- df_2 %>% mutate(MSH6_or_not = 
+                           ifelse(grepl("MSH6",df_2$CLASSIFICATION_PLOT),"MSH6","Not_MSH6"))
+
+# Add the column "PMS2_or_not"
+df_2 <- df_2 %>% mutate(PMS2_or_not = 
+                           ifelse(grepl("PMS2",df_2$CLASSIFICATION_PLOT),"PMS2","Not_PMS2"))
+
+df_2 <- df_2 %>% mutate(Multiplex_or_not = as.factor(Multiplex_or_not)) %>% mutate(Multiplex_or_not = relevel(Multiplex_or_not, ref = "Singleton"))
+df_2 <- df_2 %>% mutate(MSH6_or_not = as.factor(MSH6_or_not)) %>% mutate(MSH6_or_not = relevel(MSH6_or_not, ref = "MSH6"))
+df_2 <- df_2 %>% mutate(PMS2_or_not = as.factor(PMS2_or_not)) %>% mutate(PMS2_or_not = relevel(PMS2_or_not, ref = "PMS2"))
+df_2 <- df_2 %>% mutate(Cancer_Type_NEW = as.factor(Cancer_Type_NEW)) %>% mutate(Cancer_Type_NEW = relevel(Cancer_Type_NEW, ref = "Colon"))
+
+row.names(df_2) <- row.names(df_1)
+
+# renames CLASSIFICATION_PLOT to MMRd_Type for both df_1 and df_2
+df_1 <- df_1 %>% rename(MMRd_Type = CLASSIFICATION_PLOT) %>% filter(MMRd_Type != "Delete")
+df_2 <- df_2 %>% rename(MMRd_Type = CLASSIFICATION_PLOT) %>% filter(MMRd_Type != "Delete")
+
+
+label(df_1$Current_Age) <- "Age"
+units(df_1$Current_Age) <- "years"
+
+label(df_2$Current_Age) <- "Age"
+units(df_2$Current_Age) <- "years"
+
+label(df_1$Tumor_Purity) <- "Tumor Purity"
+units(df_1$Tumor_Purity) <- "%"
+
+label(df_2$Tumor_Purity) <- "Tumor Purity"
+units(df_2$Tumor_Purity) <- "%"
+
+label(df_1$Cancer_Type_NEW) <- "Cancer Type"
+label(df_2$Cancer_Type_NEW) <- "Cancer Type"
+
+label(df_1$Sample_Type) <- "Sample Type"
+label(df_2$Sample_Type) <- "Sample Type"
+###################################################################
+# make table1 for both df_1 and df_2 for baseline characteristic table
+###################################################################
+#topclass="Rtable1-grid Rtable1-shade Rtable1-times"
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | MMRd_Type, data=df_1[df_1$MMRd_Type!="Delete",], overall="Total")
+
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | Multiplex_or_not, data=df_2[df_2$MMRd_Type!="Delete",], overall="Total")
+
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | MSH6_or_not, data=df_2[df_2$MMRd_Type!="Delete",], overall="Total")
+
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | PMS2_or_not, data=df_2[df_2$MMRd_Type!="Delete",], overall="Total")
+
+
+
+plotCorr.MMRd <- function(x, y, z) {
+  my_comparisons <- list()
+  df_corr <- compare_means(as.formula(paste0(y," ~ ", z)),  data = x)
+  idx <- 1
+  for(sig in which(df_corr$p.signif != "ns")){
+    #print(as.character(df_corr[sig,c("group1")]))
+    
+    my_comparisons[[idx]] <- c(as.character(df_corr[sig,c("group1")]), as.character(df_corr[sig,c("group2")]))
+    idx <- idx + 1
+  }
+  n <- length(my_comparisons)
+  write.table(df_corr, 
+              file = file.path(getwd(),paste0(y,".",z,".corr.result.txt")), 
+              quote = FALSE, 
+              sep = "\t")
+  
+  ylabel <- y
+  
+  if (y == "Fraction_Genome_Altered") {
+    max_y <- max(x[,y])
+    min_y <- min(x[,y])
+    assign(paste0("p_",y), ggboxplot(x, 
+              x = z, y = y,
+              #color = "Cancer_Type_NEW", 
+              palette = "category20", 
+              size = 0.5,
+              add = c("mean","mean_sd"),
+              add.params = list(color = "red")) +
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              xlab("MMRd Type") +
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.02*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 1.8*max_y) + 
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 7)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ )
+ return(get(paste0("p_",y)))    
+  }else {
+    max_y <- log10(max(x[,y]))
+    min_y <- log10(min(x[,y]))
+    assign(paste0("p_",y), ggboxplot(x, 
+              x = z, y = y,
+              #color = "Cancer_Type_NEW", 
+              palette = "category20", 
+              size = 0.5,
+              add = c("mean","mean_sd"),
+              add.params = list(color = "red")) + 
+              #add = "jitter") + 
+              rotate_x_text(angle = 25) + 
+              ylim(min_y, 2*max_y) + 
+              ylab(ylabel) + 
+              xlab("MMRd Type") +
+              stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.03*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
+              stat_compare_means(label.y = 2*max_y) + 
+              scale_y_log10() +
+              theme(axis.text = element_text(size = 10)) + 
+              theme(axis.title = element_text(face = "bold")) + 
+              theme(legend.text = element_text(size = 7)) + 
+              theme(plot.margin = unit(c(0.5,0.5,0.5,0.5),"cm"))
+ )
+ return(get(paste0("p_",y)))
+  }
+  
+}
+
+
+metrics <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", "No_Missense", "No_Frameshift", "No_Splice","No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del" )
+
+df_2_pls_1 <- cbind(df_2[,! names(df_2) %in% c("Fraction_Genome_Altered","Cancer_Type_NEW","MMRd_Type","Row.names","Sample_ID","Tumor_Purity","Multiplex_or_not","MSH6_or_not","PMS2_or_not","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")]+1, df_2[,c("Fraction_Genome_Altered","Cancer_Type_NEW","MMRd_Type","Tumor_Purity","Multiplex_or_not","MSH6_or_not","PMS2_or_not","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")])
+
+for(j in c("Multiplex_or_not","MSH6_or_not","PMS2_or_not")){
+  for(i in metrics) {
+  #compare means between MMRd groups, grouped by cancer types
+  corr_tmp <- compare_means(as.formula(paste0(i," ~ ",j)), data = df_2[!df_2$MMRd_Type %in% c("?","Delete","Complex","NORMAL"),], group.by = "Cancer_Type_NEW")
+  write.table(corr_tmp,
+              file = file.path(getwd(),paste0(i,".corr.result.",j,".grouped.by.cancer.txt")),
+              quote = FALSE,
+              sep = "\t")
+
+  # plot and test without grouping by cancer types
+  assign(paste0("p_",i), plotCorr.MMRd(df_2_pls_1,i,j))
+  print(get(paste0("p_",i)))
+  
+  ## Build a linear model for each genomic feature using predictors 1) MMRd type; 2) Cancer type; 3) Tumor purity
+  sink(paste0("summary_lm_for_",i,"_w.",j,".Purity.txt"))
+  model <- lm(reformulate(termlabels = c(j, 'Tumor_Purity'), response = i), df_2[df_2$Multiplex_or_not != "Delete",])
+  print(summary(model))
+  sink()
+  sink(paste0("summary_annova_for_",i,"_w.",j,".Purity.txt"))
+  print(anova(model))
+  sink()
+  sink(paste0("Summ.summary_lm_for_",i,"_w.",j,".Purity.txt"))
+  print(summ(model, confint = TRUE, digits = 3))
+  sink()
+  p0 <- plot_summs(model, plot.distributions = T)
+  print(p0 + ggtitle(paste0("Linear model: ", i, " ~ ", j, " + Tumor_Purity")) +
+         scale_y_discrete(limits=levels(p0$data$term), labels=gsub(j,"",levels(p0$data$term))) + 
+          theme(plot.title = element_text(size = 12, face = "bold")))
+  
+  sink(paste0("summary_lm_for_",i,"_w.",j,".txt"))
+  model1 <- lm(reformulate(termlabels = c(j), response = i), df_2[df_2$Multiplex_or_not != "Delete",])
+  print(summary(model1))
+  sink()
+  sink(paste0("summary_annova_for_",i,"_w.",j,".txt"))
+  print(anova(model1))
+  sink()
+  sink(paste0("Summ.summary_lm_for_",i,"_w.",j,".txt"))
+  print(summ(model1, confint = TRUE, digits = 3))
+  sink()
+  p1 <- plot_summs(model1, plot.distributions = T)
+  print(p1 + ggtitle(paste0("Linear model: ", i, " ~ ", j)) +
+          scale_y_discrete(limits=rev(levels(p1$data$term)), labels=gsub(j,"",rev(levels(p1$data$term)))) + 
+          theme(plot.title = element_text(size = 12, face = "bold")))
+  
+  #Compare the two models w/ or w/o purity
+  # export_summs(model, model1, error_format = "[{conf.low}, {conf.high}]",
+  #              to.file = "xlsx",
+  #              file.name = file.path(getwd(),paste0("model_",j,"_cmp_wo_purity_for_",i,".xlsx"))
+  #              )
+  # 
+  
+  # sink(paste0("summary_lm_for_",i,"_w.Purity.txt"))
+  # model <- lm(reformulate(termlabels = c('Tumor_Purity'), response = i), df_1)
+  #print(summ(model))
+  }
+}
+
+```
+```{r results='asis'}
+#################################################################
+# linear mixed effect model
+##################################################################
+library(lme4)
+library(sjPlot)
+#library(sjmisc)
+#df_2[df_2$Multiplex_or_not != "Delete",]
+buildLmeModel <- function(x,y,z,data) {# x: response; y: fixed_effect; z: random_effect - cancerType
+  # model w. both cancer types and mmrd type as fixed effect
+  formula <- reformulate(termlabels = c(y, "Current_Age", "Tumor_Purity", z, paste0(y,"*",z),
+                                          "Race", "Ethnicity",
+                                          paste0("(1+",y,"|Sample_Type)")
+                                          ), 
+                           response = x)
+  print(paste0(format(formula), collapse = ""))
+  
+  fit0 <- lmer(formula,
+               data = data, REML = FALSE)
+  #print(get(paste0(response,".model")))
+  sink(file = file.path(getwd(),"results_model_cmp",paste0("summary.",x,".lmer.model.W.fixed.",y,"and",z,".random_Sample_Type.txt")))
+  print(fit0)
+  print(coef(fit0))
+  sink()
+  # plot the model (fixed effect)
+  
+  p <- plot_model(fit0, vline.color = "red", 
+                  sort.est = T, show.values = T, 
+                  value.offset = .3, 
+                  p.adjust = c("BH"),
+                  title = paste0("linear mixed effect model for ",x,"\n",paste0(format(formula), collapse = "")))
+  print(p)
+  
+  # model w. random effects
+  formula <- reformulate(termlabels = c(y, "Current_Age", "Tumor_Purity", 
+                                          "Race", "Ethnicity",
+                                          paste0("(1+",y,"|",z,")"), 
+                                          paste0("(1+",y,"|Sample_Type)")
+                                          ), 
+                           response = x)
+  print(paste0(format(formula), collapse = ""))
+  
+  fit1 <- lmer(formula,
+               data = data, REML = FALSE)
+  #print(get(paste0(response,".model")))
+  sink(file = file.path(getwd(),"results_model_cmp",paste0("summary.",x,".lmer.model.W.fixed.",y,".random_", z,"_Sample_Type.txt")))
+  print(fit1)
+  print(coef(fit1))
+  sink()
+  # plot the model (fixed effect)
+  
+  p <- plot_model(fit1, vline.color = "red", 
+                  sort.est = T, show.values = T, 
+                  value.offset = .3, 
+                  p.adjust = c("BH"),
+                  title = paste0("linear mixed effect model for ",x,"\n",paste0(format(formula), collapse = "")))
+  print(p)
+  
+  # model w/o random effects
+  formula <- reformulate(termlabels = c(y,"Current_Age", "Tumor_Purity", 
+                                          "Race", "Ethnicity"),
+                           response = x)
+  print(paste0(format(formula), collapse = ""))
+  
+  fit2 <- lm(formula, 
+               data = data)
+  
+  #print(get(paste0(response,".model")))
+  sink(file = file.path(getwd(),"results_model_cmp",paste0("summary.",x,".lmer.model.W.fixed.",y,".WO.random_", z,"_Sample_Type.txt")))
+  print(fit2)
+  print(coef(fit2))
+  sink()
+  # plot the model (fixed effect)
+  p <- plot_model(fit2, vline.color = "red", 
+                  sort.est = T, show.values = T, 
+                  value.offset = .3, 
+                  p.adjust = c("BH"),
+                  title = paste0("linear model for ",x,"\n",paste0(format(formula), collapse = "")))
+  print(p)
+  
+  # print anova test for the comparison of the above 2 models W/WO fixed effect
+  sink(file = file.path(getwd(),"results_model_cmp",paste0("summary.",x,".lmer.model.W.fixed.",y,".W.vs.WO.random_",z,"_Sample_Type_anova.txt")))
+  print(anova(fit1,fit2))
+  sink()
+  
+  
+  return(list(fit1,fit2))
+}
+
+features <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", 
+              "No_Missense", "No_Frameshift", "No_Splice","No_INSERT", "No_DELETION",
+              "No_INFRAME","No_INDEL","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense",
+              "No_Frameshift_Ins","No_Frameshift_Del" )
+
+fix_effects <- c("Multiplex_or_not","PMS2_or_not","MSH6_or_not")
+
+random_effects <- c("Cancer_Type_NEW")
+
+data <- df_2[df_2$Multiplex_or_not != "Delete",]
+
+for(f in features){
+  for(fe in fix_effects){
+    for(re in random_effects){
+      fits <- buildLmeModel(f,fe,re,data) 
+      # make HTML report
+      #conditional F-tests with Kenward-Roger approximation
+      #cat(tab_model(r)$knitr,"\n--------\n")
+      tab <- tab_model(fits[[1]],fits[[2]],
+            #p.val = "kr", 
+            show.df = TRUE
+            )
+      cat(tab$knitr,"\n--------\n", file = file.path(getwd(),"results_model_cmp",
+                             paste0("summary.",f,".lmer.model.W.fixed_effect",fe,".W.vs.WO.random_effects_", re,".Sample_Type.html")
+                             )
+          )
+    }
+  }
+}
+
+
+# No_Frameshift_Del.model = lmer(No_Frameshift_Del ~ Multiplex_or_not + (1+Multiplex_or_not|Cancer_Type_NEW), data = df_2[df_2$Multiplex_or_not != "Delete",])
+# No_Frameshift_Del.model
+# coef(No_Frameshift_Del.model)
+# # make HTML report
+# #conditional F-tests with Kenward-Roger approximation
+# tab_model(No_Frameshift_Del.model, show.df = T, p.adjust = c("BH"), file = "temp.html")
+# #cat(tab$knitr,"\n--------\n", file = "temp.html")
+
+```
+
+
+
+
+
+
+```{r}
+#################################################################################
+# genomic feature PCA
+#################################################################################
+library(dplyr)
+#features <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered","No_Missense","No_Frameshift","No_Splice","No_INSERT","No_DELETION","No_INFRAME","No_INDEL")
+#features <- c("MSI_Score_1", "Impact_TMB_Score","No_Missense","No_INSERT","No_DELETION")
+
+# features of coding variants
+features <- c("MSI_Score_1", "Impact_TMB_Score","No_Missense","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del")
+df_features <- df_2 %>% filter(! MMRd_Type %in% c("Delete")) %>% select(features)
+gFeature.pca <- prcomp(df_features, center = T, scale. = T)
+summary(gFeature.pca)
+
+# plot the PCA
+ library(ggbiplot)
+ ggbiplot(gFeature.pca, groups = df_2[rownames(df_features),"Multiplex_or_not"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+ ggbiplot(gFeature.pca, groups = df_2[rownames(df_features),"MSH6_or_not"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+ ggbiplot(gFeature.pca, groups = df_2[rownames(df_features),"PMS2_or_not"], ellipse = T, obs.scale = 1, var.scale = 1, varname.size = 2) 
+
+```
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

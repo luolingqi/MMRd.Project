@@ -1,0 +1,5 @@
+TumorType	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Ampulla of Vater	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	MSH6	0.666666666666667	1	0.67	ns	Wilcoxon
+2	Small Intestine	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+3	Colorectal 	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.67	ns	Wilcoxon
+4	Gastroesophageal cancer	Overall.Survival.cutoff.4.2.18	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon

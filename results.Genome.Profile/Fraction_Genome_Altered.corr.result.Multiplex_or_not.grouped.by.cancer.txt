@@ -1,0 +1,11 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	Fraction_Genome_Altered	Singleton	Multiplex	0.571428571428571	1	0.57	ns	Wilcoxon
+2	Colon	Fraction_Genome_Altered	Singleton	Multiplex	0.903222466669467	1	0.90	ns	Wilcoxon
+3	Pancreas	Fraction_Genome_Altered	Singleton	Multiplex	0.5	1	0.50	ns	Wilcoxon
+4	Colorectal	Fraction_Genome_Altered	Singleton	Multiplex	0.530443756449948	1	0.53	ns	Wilcoxon
+5	Biliary	Fraction_Genome_Altered	Singleton	Multiplex	0.666666666666667	1	0.67	ns	Wilcoxon
+6	Prostate	Fraction_Genome_Altered	Singleton	Multiplex	0.5	1	0.50	ns	Wilcoxon
+7	Small Bowel	Fraction_Genome_Altered	Singleton	Multiplex	0.521165931150543	1	0.52	ns	Wilcoxon
+8	Endometrial	Fraction_Genome_Altered	Singleton	Multiplex	0.156292184459375	1	0.16	ns	Wilcoxon
+9	Rectal	Fraction_Genome_Altered	Singleton	Multiplex	0.484575000775495	1	0.48	ns	Wilcoxon
+10	Ovarian	Fraction_Genome_Altered	Singleton	Multiplex	0.5	1	0.50	ns	Wilcoxon

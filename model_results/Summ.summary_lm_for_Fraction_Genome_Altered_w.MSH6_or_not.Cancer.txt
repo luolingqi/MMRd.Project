@@ -1,0 +1,29 @@
+MODEL INFO:
+Observations: 382
+Dependent Variable: Fraction_Genome_Altered
+Type: OLS linear regression 
+
+MODEL FIT:
+F(13,368) = 5.649, p = 0.000
+R² = 0.166
+Adj. R² = 0.137 
+
+Standard errors: OLS
+-------------------------------------------------------------------------------
+                                         Est.     2.5%   97.5%   t val.       p
+------------------------------------ -------- -------- ------- -------- -------
+(Intercept)                             0.018   -0.004   0.041    1.608   0.109
+MSH6_or_notNot_MSH6                     0.025    0.003   0.047    2.240   0.026
+Cancer_Type_NEWBiliary                  0.089    0.023   0.155    2.643   0.009
+Cancer_Type_NEWBladder                  0.109    0.053   0.165    3.822   0.000
+Cancer_Type_NEWColorectal               0.008   -0.028   0.044    0.451   0.652
+Cancer_Type_NEWCUP                      0.077    0.011   0.143    2.287   0.023
+Cancer_Type_NEWEndometrial              0.005   -0.016   0.027    0.471   0.638
+Cancer_Type_NEWEsophagogastric          0.040    0.012   0.067    2.828   0.005
+Cancer_Type_NEWOther                    0.211    0.148   0.274    6.622   0.000
+Cancer_Type_NEWOvarian                  0.042   -0.038   0.123    1.033   0.302
+Cancer_Type_NEWPancreas                 0.053   -0.028   0.135    1.279   0.202
+Cancer_Type_NEWProstate                 0.040   -0.042   0.121    0.962   0.337
+Cancer_Type_NEWRectal                   0.005   -0.033   0.042    0.256   0.798
+Cancer_Type_NEWSmall Bowel             -0.014   -0.062   0.033   -0.599   0.549
+-------------------------------------------------------------------------------

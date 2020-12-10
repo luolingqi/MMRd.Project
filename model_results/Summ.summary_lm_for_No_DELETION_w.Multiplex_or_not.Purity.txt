@@ -1,0 +1,20 @@
+MODEL INFO:
+Observations: 378 (3 missing obs. deleted)
+Dependent Variable: No_DELETION
+Type: OLS linear regression 
+
+MODEL FIT:
+F(4,373) = 14.117, p = 0.000
+R² = 0.131
+Adj. R² = 0.122 
+
+Standard errors: OLS
+---------------------------------------------------------------------------
+                                    Est.     2.5%    97.5%   t val.       p
+------------------------------- -------- -------- -------- -------- -------
+(Intercept)                        6.268    2.688    9.849    3.442   0.001
+Multiplex_or_not?                 17.052    9.625   24.479    4.515   0.000
+Multiplex_or_notMultiplex         11.283    8.143   14.423    7.066   0.000
+Multiplex_or_notNORMAL             7.756    3.133   12.378    3.299   0.001
+Tumor_Purity                      -0.015   -0.064    0.034   -0.605   0.546
+---------------------------------------------------------------------------

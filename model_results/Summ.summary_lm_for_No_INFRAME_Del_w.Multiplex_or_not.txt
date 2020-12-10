@@ -1,0 +1,19 @@
+MODEL INFO:
+Observations: 381
+Dependent Variable: No_INFRAME_Del
+Type: OLS linear regression 
+
+MODEL FIT:
+F(3,377) = 4.446, p = 0.004
+R² = 0.034
+Adj. R² = 0.026 
+
+Standard errors: OLS
+-------------------------------------------------------------------------
+                                   Est.     2.5%   97.5%   t val.       p
+------------------------------- ------- -------- ------- -------- -------
+(Intercept)                       0.240   -0.210   0.690    1.050   0.294
+Multiplex_or_not?                 1.360    0.259   2.461    2.429   0.016
+Multiplex_or_notMultiplex         0.814    0.348   1.280    3.435   0.001
+Multiplex_or_notNORMAL            0.655   -0.029   1.339    1.882   0.061
+-------------------------------------------------------------------------

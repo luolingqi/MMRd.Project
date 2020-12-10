@@ -1,0 +1,54 @@
+
+Call:
+lm(formula = formula, data = data)
+
+Coefficients:
+                            (Intercept)  
+                               39.37637  
+                      Multiplex_or_not?  
+                              -15.98836  
+              Multiplex_or_notMultiplex  
+                              -17.84288  
+                 Multiplex_or_notNORMAL  
+                                4.94657  
+                            Current_Age  
+                               -0.03245  
+                           Tumor_Purity  
+                                0.21272  
+          RaceBLACK OR AFRICAN AMERICAN  
+                               -0.45134  
+      RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                3.39746  
+                              RaceOTHER  
+                                7.02576  
+               RacePT REFUSED TO ANSWER  
+                               -3.40007  
+                              RaceWHITE  
+                                2.72005  
+                             Ethnicity0  
+                               11.09205  
+            EthnicityDominican Republic  
+                               14.08368  
+     EthnicityNon-Spanish; Non-Hispanic  
+                                9.22984  
+                  EthnicityPuerto Rican  
+                               -1.86878  
+EthnicityUnknown whether Spanish or not  
+                                0.84761  
+
+                            (Intercept)                       Multiplex_or_not? 
+                            39.37636840                            -15.98836185 
+              Multiplex_or_notMultiplex                  Multiplex_or_notNORMAL 
+                           -17.84288450                              4.94657238 
+                            Current_Age                            Tumor_Purity 
+                            -0.03245362                              0.21271701 
+          RaceBLACK OR AFRICAN AMERICAN       RaceNATIVE AMERICAN-AM IND/ALASKA 
+                            -0.45133605                              3.39745891 
+                              RaceOTHER                RacePT REFUSED TO ANSWER 
+                             7.02575760                             -3.40007198 
+                              RaceWHITE                              Ethnicity0 
+                             2.72004676                             11.09204866 
+            EthnicityDominican Republic      EthnicityNon-Spanish; Non-Hispanic 
+                            14.08367859                              9.22984356 
+                  EthnicityPuerto Rican EthnicityUnknown whether Spanish or not 
+                            -1.86877969                              0.84760706 

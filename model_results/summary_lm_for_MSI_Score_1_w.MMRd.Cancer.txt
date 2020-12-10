@@ -1,0 +1,38 @@
+
+Call:
+lm(formula = reformulate(termlabels = c("CLASSIFICATION_PLOT", 
+    "Cancer_Type_NEW"), response = i), data = df_1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-23.9485  -6.2556   0.5182   7.1065  24.0528 
+
+Coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     42.1333     5.7073   7.382 1.08e-12 ***
+CLASSIFICATION_PLOTComplex      -5.9210     5.1195  -1.157 0.248218    
+CLASSIFICATION_PLOTDelete      -11.0752    10.3903  -1.066 0.287170    
+CLASSIFICATION_PLOTMLH1_PMS2   -10.2530     4.2939  -2.388 0.017461 *  
+CLASSIFICATION_PLOTMSH2_MSH6   -10.3713     4.3842  -2.366 0.018528 *  
+CLASSIFICATION_PLOTMSH6        -20.6972     5.0511  -4.098 5.16e-05 ***
+CLASSIFICATION_PLOTNORMAL      -12.4412     4.7588  -2.614 0.009312 ** 
+CLASSIFICATION_PLOTPMS2        -17.7947     4.9589  -3.588 0.000378 ***
+Cancer_Type_NEWBladder         -10.1204     5.0153  -2.018 0.044337 *  
+Cancer_Type_NEWColon             2.1782     3.8688   0.563 0.573778    
+Cancer_Type_NEWColorectal        2.3953     4.2967   0.557 0.577547    
+Cancer_Type_NEWCUP              -7.7556     5.3660  -1.445 0.149233    
+Cancer_Type_NEWEndometrial      -8.0551     3.9391  -2.045 0.041587 *  
+Cancer_Type_NEWEsophagogastric  -2.6631     4.0656  -0.655 0.512860    
+Cancer_Type_NEWOther           -13.1515     5.2399  -2.510 0.012513 *  
+Cancer_Type_NEWOvarian          -6.9432     6.0114  -1.155 0.248849    
+Cancer_Type_NEWPancreas         -3.4076     6.0666  -0.562 0.574673    
+Cancer_Type_NEWProstate         -8.6376     6.0666  -1.424 0.155368    
+Cancer_Type_NEWRectal            0.8120     4.3592   0.186 0.852343    
+Cancer_Type_NEWSmall Bowel      -0.8146     4.6777  -0.174 0.861854    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.24 on 362 degrees of freedom
+Multiple R-squared:  0.2622,	Adjusted R-squared:  0.2234 
+F-statistic:  6.77 on 19 and 362 DF,  p-value: 2.671e-15
+

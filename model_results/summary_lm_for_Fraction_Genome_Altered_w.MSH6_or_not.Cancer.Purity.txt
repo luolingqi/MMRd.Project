@@ -1,0 +1,34 @@
+
+Call:
+lm(formula = reformulate(termlabels = c(j, "Cancer_Type_NEW", 
+    "Tumor_Purity"), response = i), data = df_2)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.25368 -0.03633 -0.01801  0.01257  0.63752 
+
+Coefficients:
+                                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    -0.0134338  0.0146077  -0.920 0.358368    
+MSH6_or_notNot_MSH6             0.0217919  0.0108231   2.013 0.044801 *  
+Cancer_Type_NEWBiliary          0.0903608  0.0327800   2.757 0.006135 ** 
+Cancer_Type_NEWBladder          0.1002525  0.0279152   3.591 0.000374 ***
+Cancer_Type_NEWColorectal       0.0034795  0.0177338   0.196 0.844557    
+Cancer_Type_NEWCUP              0.0667380  0.0329108   2.028 0.043304 *  
+Cancer_Type_NEWEndometrial     -0.0005609  0.0108333  -0.052 0.958737    
+Cancer_Type_NEWEsophagogastric  0.0392088  0.0136547   2.871 0.004325 ** 
+Cancer_Type_NEWOther            0.2618723  0.0361858   7.237 2.74e-12 ***
+Cancer_Type_NEWOvarian          0.0245131  0.0403352   0.608 0.543742    
+Cancer_Type_NEWPancreas         0.0529985  0.0403989   1.312 0.190388    
+Cancer_Type_NEWProstate         0.0231163  0.0406294   0.569 0.569737    
+Cancer_Type_NEWRectal           0.0052257  0.0186253   0.281 0.779198    
+Cancer_Type_NEWSmall Bowel     -0.0070906  0.0236582  -0.300 0.764571    
+Tumor_Purity                    0.0009325  0.0002613   3.569 0.000406 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.07875 on 364 degrees of freedom
+  (3 observations deleted due to missingness)
+Multiple R-squared:  0.2161,	Adjusted R-squared:  0.186 
+F-statistic: 7.168 on 14 and 364 DF,  p-value: 3.7e-13
+

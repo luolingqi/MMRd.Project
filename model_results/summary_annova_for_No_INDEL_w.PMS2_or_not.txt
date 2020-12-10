@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: No_INDEL
+             Df Sum Sq Mean Sq F value Pr(>F)
+PMS2_or_not   1     36  35.801  0.4068  0.524
+Residuals   379  33357  88.012               

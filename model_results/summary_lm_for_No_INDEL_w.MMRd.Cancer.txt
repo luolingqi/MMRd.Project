@@ -1,0 +1,38 @@
+
+Call:
+lm(formula = reformulate(termlabels = c("CLASSIFICATION_PLOT", 
+    "Cancer_Type_NEW"), response = i), data = df_1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.664  -6.013  -1.082   4.547  29.918 
+
+Coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     27.6606     5.3139   5.205 3.25e-07 ***
+CLASSIFICATION_PLOTComplex      -6.4723     4.7667  -1.358 0.175362    
+CLASSIFICATION_PLOTDelete      -14.6789     9.6741  -1.517 0.130053    
+CLASSIFICATION_PLOTMLH1_PMS2    -9.0970     3.9979  -2.275 0.023464 *  
+CLASSIFICATION_PLOTMSH2_MSH6    -7.5225     4.0820  -1.843 0.066168 .  
+CLASSIFICATION_PLOTMSH6        -20.2013     4.7029  -4.295 2.24e-05 ***
+CLASSIFICATION_PLOTNORMAL      -12.8855     4.4308  -2.908 0.003859 ** 
+CLASSIFICATION_PLOTPMS2        -15.4791     4.6171  -3.353 0.000885 ***
+Cancer_Type_NEWBladder          -5.2724     4.6696  -1.129 0.259606    
+Cancer_Type_NEWColon             4.8893     3.6021   1.357 0.175523    
+Cancer_Type_NEWColorectal        3.7397     4.0006   0.935 0.350522    
+Cancer_Type_NEWCUP               0.9011     4.9961   0.180 0.856975    
+Cancer_Type_NEWEndometrial      -1.5939     3.6676  -0.435 0.664125    
+Cancer_Type_NEWEsophagogastric   2.5187     3.7853   0.665 0.506224    
+Cancer_Type_NEWOther            -7.1168     4.8787  -1.459 0.145500    
+Cancer_Type_NEWOvarian          -0.5054     5.5970  -0.090 0.928106    
+Cancer_Type_NEWPancreas          0.1752     5.6484   0.031 0.975273    
+Cancer_Type_NEWProstate         -0.3248     5.6484  -0.058 0.954176    
+Cancer_Type_NEWRectal            5.0182     4.0587   1.236 0.217112    
+Cancer_Type_NEWSmall Bowel       0.5256     4.3552   0.121 0.904012    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.603 on 362 degrees of freedom
+Multiple R-squared:  0.1979,	Adjusted R-squared:  0.1558 
+F-statistic:   4.7 on 19 and 362 DF,  p-value: 9.647e-10
+

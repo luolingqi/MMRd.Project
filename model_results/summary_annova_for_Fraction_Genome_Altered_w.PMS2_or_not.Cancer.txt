@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: Fraction_Genome_Altered
+                 Df  Sum Sq  Mean Sq F value   Pr(>F)    
+PMS2_or_not       1 0.01029 0.010291  1.5537   0.2134    
+Cancer_Type_NEW  12 0.43720 0.036433  5.5005 1.19e-08 ***
+Residuals       368 2.43747 0.006624                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

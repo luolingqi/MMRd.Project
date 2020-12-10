@@ -1,0 +1,2 @@
+Sample Names	Total Mutations	Cosine Similarity	L1 Norm	L1_Norm_%	L2 Norm	L2_Norm_%	KL Divergence
+P-0045009-T01-IM6	26	1.0	0.903	3.473%	0.283	3.052%	0.0015

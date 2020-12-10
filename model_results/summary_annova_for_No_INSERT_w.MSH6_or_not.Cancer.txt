@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: No_INSERT
+                 Df  Sum Sq Mean Sq F value   Pr(>F)   
+MSH6_or_not       1   11.26 11.2589  1.3131 0.252584   
+Cancer_Type_NEW  12  290.78 24.2319  2.8261 0.001012 **
+Residuals       368 3155.39  8.5744                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

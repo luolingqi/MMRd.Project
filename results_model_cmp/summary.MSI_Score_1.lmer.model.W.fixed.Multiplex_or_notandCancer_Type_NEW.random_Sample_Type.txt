@@ -1,0 +1,227 @@
+Linear mixed model fit by maximum likelihood  ['lmerModLmerTest']
+Formula: formula
+   Data: data
+      AIC       BIC    logLik  deviance  df.resid 
+ 2794.187  3014.541 -1341.094  2682.187       322 
+Random effects:
+ Groups      Name                      Std.Dev.  Corr             
+ Sample_Type (Intercept)               0.000e+00                  
+             Multiplex_or_not?         3.076e-03   NaN            
+             Multiplex_or_notMultiplex 1.008e-05   NaN  0.91      
+             Multiplex_or_notNORMAL    1.247e-03   NaN -0.37 -0.06
+ Residual                              8.406e+00                  
+Number of obs: 378, groups:  Sample_Type, 3
+Fixed Effects:
+                                             (Intercept)  
+                                                12.60571  
+                                       Multiplex_or_not?  
+                                                 6.72505  
+                               Multiplex_or_notMultiplex  
+                                                12.29230  
+                                  Multiplex_or_notNORMAL  
+                                                11.25494  
+                                             Current_Age  
+                                                 0.09157  
+                                            Tumor_Purity  
+                                                 0.12733  
+                                  Cancer_Type_NEWBiliary  
+                                                -1.46470  
+                                  Cancer_Type_NEWBladder  
+                                                -4.96063  
+                               Cancer_Type_NEWColorectal  
+                                                 0.99248  
+                                      Cancer_Type_NEWCUP  
+                                               -25.47595  
+                              Cancer_Type_NEWEndometrial  
+                                                -9.36260  
+                          Cancer_Type_NEWEsophagogastric  
+                                                -6.94651  
+                                    Cancer_Type_NEWOther  
+                                               -16.79781  
+                                  Cancer_Type_NEWOvarian  
+                                               -14.79391  
+                                 Cancer_Type_NEWPancreas  
+                                                -7.57171  
+                                 Cancer_Type_NEWProstate  
+                                               -11.50875  
+                                   Cancer_Type_NEWRectal  
+                                                16.42853  
+                              Cancer_Type_NEWSmall Bowel  
+                                                 8.17630  
+                           RaceBLACK OR AFRICAN AMERICAN  
+                                                 3.35452  
+                       RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                                -0.22065  
+                                               RaceOTHER  
+                                                 2.86835  
+                                RacePT REFUSED TO ANSWER  
+                                                -3.50264  
+                                               RaceWHITE  
+                                                 1.32312  
+                                              Ethnicity0  
+                                                 0.50490  
+                             EthnicityDominican Republic  
+                                                 6.59576  
+                      EthnicityNon-Spanish; Non-Hispanic  
+                                                -2.63536  
+                                   EthnicityPuerto Rican  
+                                               -13.64160  
+                 EthnicityUnknown whether Spanish or not  
+                                                -1.55719  
+        Multiplex_or_notMultiplex:Cancer_Type_NEWBiliary  
+                                                 0.06963  
+                Multiplex_or_not?:Cancer_Type_NEWBladder  
+                                                 0.35845  
+        Multiplex_or_notMultiplex:Cancer_Type_NEWBladder  
+                                               -10.09506  
+     Multiplex_or_notMultiplex:Cancer_Type_NEWColorectal  
+                                                -1.18892  
+        Multiplex_or_notNORMAL:Cancer_Type_NEWColorectal  
+                                                -4.90042  
+            Multiplex_or_notMultiplex:Cancer_Type_NEWCUP  
+                                                17.22963  
+            Multiplex_or_not?:Cancer_Type_NEWEndometrial  
+                                                12.18207  
+    Multiplex_or_notMultiplex:Cancer_Type_NEWEndometrial  
+                                                -2.37987  
+       Multiplex_or_notNORMAL:Cancer_Type_NEWEndometrial  
+                                                -3.44261  
+        Multiplex_or_not?:Cancer_Type_NEWEsophagogastric  
+                                                23.25402  
+Multiplex_or_notMultiplex:Cancer_Type_NEWEsophagogastric  
+                                                 0.85954  
+        Multiplex_or_notMultiplex:Cancer_Type_NEWOvarian  
+                                                 5.73269  
+       Multiplex_or_notMultiplex:Cancer_Type_NEWPancreas  
+                                                 1.94166  
+       Multiplex_or_notMultiplex:Cancer_Type_NEWProstate  
+                                                -2.07465  
+         Multiplex_or_notMultiplex:Cancer_Type_NEWRectal  
+                                               -18.60357  
+    Multiplex_or_notMultiplex:Cancer_Type_NEWSmall Bowel  
+                                               -11.16102  
+       Multiplex_or_notNORMAL:Cancer_Type_NEWSmall Bowel  
+                                                -6.51207  
+fit warnings:
+fixed-effect model matrix is rank deficient so dropping 19 columns / coefficients
+optimizer (nloptwrap) convergence code: 0 (OK) ; 0 optimizer warnings; 1 lme4 warnings 
+$Sample_Type
+           (Intercept) Multiplex_or_not? Multiplex_or_notMultiplex
+Metastasis    12.60571           6.72505                   12.2923
+Mixed         12.60571           6.72505                   12.2923
+Primary       12.60571           6.72505                   12.2923
+           Multiplex_or_notNORMAL Current_Age Tumor_Purity
+Metastasis               11.25494  0.09156726    0.1273271
+Mixed                    11.25494  0.09156726    0.1273271
+Primary                  11.25494  0.09156726    0.1273271
+           Cancer_Type_NEWBiliary Cancer_Type_NEWBladder
+Metastasis              -1.464698              -4.960633
+Mixed                   -1.464698              -4.960633
+Primary                 -1.464698              -4.960633
+           Cancer_Type_NEWColorectal Cancer_Type_NEWCUP
+Metastasis                 0.9924799          -25.47595
+Mixed                      0.9924799          -25.47595
+Primary                    0.9924799          -25.47595
+           Cancer_Type_NEWEndometrial Cancer_Type_NEWEsophagogastric
+Metastasis                  -9.362604                      -6.946511
+Mixed                       -9.362604                      -6.946511
+Primary                     -9.362604                      -6.946511
+           Cancer_Type_NEWOther Cancer_Type_NEWOvarian Cancer_Type_NEWPancreas
+Metastasis            -16.79781              -14.79391               -7.571709
+Mixed                 -16.79781              -14.79391               -7.571709
+Primary               -16.79781              -14.79391               -7.571709
+           Cancer_Type_NEWProstate Cancer_Type_NEWRectal
+Metastasis               -11.50875              16.42853
+Mixed                    -11.50875              16.42853
+Primary                  -11.50875              16.42853
+           Cancer_Type_NEWSmall Bowel RaceBLACK OR AFRICAN AMERICAN
+Metastasis                   8.176299                      3.354516
+Mixed                        8.176299                      3.354516
+Primary                      8.176299                      3.354516
+           RaceNATIVE AMERICAN-AM IND/ALASKA RaceOTHER RacePT REFUSED TO ANSWER
+Metastasis                        -0.2206496  2.868346                 -3.50264
+Mixed                             -0.2206496  2.868346                 -3.50264
+Primary                           -0.2206496  2.868346                 -3.50264
+           RaceWHITE Ethnicity0 EthnicityDominican Republic
+Metastasis  1.323125  0.5048989                    6.595761
+Mixed       1.323125  0.5048989                    6.595761
+Primary     1.323125  0.5048989                    6.595761
+           EthnicityNon-Spanish; Non-Hispanic EthnicityPuerto Rican
+Metastasis                          -2.635359              -13.6416
+Mixed                               -2.635359              -13.6416
+Primary                             -2.635359              -13.6416
+           EthnicityUnknown whether Spanish or not
+Metastasis                               -1.557188
+Mixed                                    -1.557188
+Primary                                  -1.557188
+           Multiplex_or_notMultiplex:Cancer_Type_NEWBiliary
+Metastasis                                       0.06963176
+Mixed                                            0.06963176
+Primary                                          0.06963176
+           Multiplex_or_not?:Cancer_Type_NEWBladder
+Metastasis                                0.3584491
+Mixed                                     0.3584491
+Primary                                   0.3584491
+           Multiplex_or_notMultiplex:Cancer_Type_NEWBladder
+Metastasis                                        -10.09506
+Mixed                                             -10.09506
+Primary                                           -10.09506
+           Multiplex_or_notMultiplex:Cancer_Type_NEWColorectal
+Metastasis                                           -1.188923
+Mixed                                                -1.188923
+Primary                                              -1.188923
+           Multiplex_or_notNORMAL:Cancer_Type_NEWColorectal
+Metastasis                                        -4.900417
+Mixed                                             -4.900417
+Primary                                           -4.900417
+           Multiplex_or_notMultiplex:Cancer_Type_NEWCUP
+Metastasis                                     17.22963
+Mixed                                          17.22963
+Primary                                        17.22963
+           Multiplex_or_not?:Cancer_Type_NEWEndometrial
+Metastasis                                     12.18207
+Mixed                                          12.18207
+Primary                                        12.18207
+           Multiplex_or_notMultiplex:Cancer_Type_NEWEndometrial
+Metastasis                                            -2.379867
+Mixed                                                 -2.379867
+Primary                                               -2.379867
+           Multiplex_or_notNORMAL:Cancer_Type_NEWEndometrial
+Metastasis                                          -3.44261
+Mixed                                               -3.44261
+Primary                                             -3.44261
+           Multiplex_or_not?:Cancer_Type_NEWEsophagogastric
+Metastasis                                         23.25402
+Mixed                                              23.25402
+Primary                                            23.25402
+           Multiplex_or_notMultiplex:Cancer_Type_NEWEsophagogastric
+Metastasis                                                0.8595447
+Mixed                                                     0.8595447
+Primary                                                   0.8595447
+           Multiplex_or_notMultiplex:Cancer_Type_NEWOvarian
+Metastasis                                         5.732687
+Mixed                                              5.732687
+Primary                                            5.732687
+           Multiplex_or_notMultiplex:Cancer_Type_NEWPancreas
+Metastasis                                          1.941663
+Mixed                                               1.941663
+Primary                                             1.941663
+           Multiplex_or_notMultiplex:Cancer_Type_NEWProstate
+Metastasis                                         -2.074651
+Mixed                                              -2.074651
+Primary                                            -2.074651
+           Multiplex_or_notMultiplex:Cancer_Type_NEWRectal
+Metastasis                                       -18.60357
+Mixed                                            -18.60357
+Primary                                          -18.60357
+           Multiplex_or_notMultiplex:Cancer_Type_NEWSmall Bowel
+Metastasis                                            -11.16102
+Mixed                                                 -11.16102
+Primary                                               -11.16102
+           Multiplex_or_notNORMAL:Cancer_Type_NEWSmall Bowel
+Metastasis                                         -6.512075
+Mixed                                              -6.512075
+Primary                                            -6.512075
+
+attr(,"class")
+[1] "coef.mer"

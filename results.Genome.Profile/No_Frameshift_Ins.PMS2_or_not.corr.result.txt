@@ -1,0 +1,2 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	No_Frameshift_Ins	PMS2	Not_PMS2	0.547718228576758	0.55	0.55	ns	Wilcoxon

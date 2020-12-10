@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: No_Frameshift
+             Df Sum Sq Mean Sq F value Pr(>F)
+MSH6_or_not   1     64  64.394  0.7319 0.3928
+Residuals   379  33344  87.978               

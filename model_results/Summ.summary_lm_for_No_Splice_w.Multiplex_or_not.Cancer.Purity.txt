@@ -1,0 +1,33 @@
+MODEL INFO:
+Observations: 379 (3 missing obs. deleted)
+Dependent Variable: No_Splice
+Type: OLS linear regression 
+
+MODEL FIT:
+F(17,361) = 1.388, p = 0.139
+R² = 0.061
+Adj. R² = 0.017 
+
+Standard errors: OLS
+--------------------------------------------------------------------------------
+                                         Est.     2.5%    97.5%   t val.       p
+------------------------------------ -------- -------- -------- -------- -------
+(Intercept)                             2.029    1.021    3.037    3.958   0.000
+Multiplex_or_not?                      -0.566   -2.518    1.387   -0.570   0.569
+Multiplex_or_notDelete                 -2.534   -6.624    1.555   -1.219   0.224
+Multiplex_or_notMultiplex              -0.923   -1.790   -0.057   -2.097   0.037
+Multiplex_or_notNORMAL                 -0.006   -1.237    1.224   -0.010   0.992
+Cancer_Type_NEWBiliary                 -0.693   -2.321    0.936   -0.836   0.403
+Cancer_Type_NEWBladder                 -1.228   -2.609    0.153   -1.749   0.081
+Cancer_Type_NEWColorectal              -0.255   -1.143    0.634   -0.563   0.573
+Cancer_Type_NEWCUP                      1.716    0.080    3.351    2.063   0.040
+Cancer_Type_NEWEndometrial             -0.307   -0.845    0.232   -1.120   0.263
+Cancer_Type_NEWEsophagogastric         -0.374   -1.058    0.310   -1.076   0.283
+Cancer_Type_NEWOther                   -0.848   -2.628    0.933   -0.936   0.350
+Cancer_Type_NEWOvarian                 -1.245   -3.246    0.755   -1.224   0.222
+Cancer_Type_NEWPancreas                -0.597   -2.583    1.390   -0.591   0.555
+Cancer_Type_NEWProstate                -1.480   -3.477    0.517   -1.457   0.146
+Cancer_Type_NEWRectal                   0.282   -0.645    1.210    0.599   0.550
+Cancer_Type_NEWSmall Bowel             -0.818   -2.033    0.397   -1.324   0.186
+Tumor_Purity                            0.007   -0.006    0.021    1.116   0.265
+--------------------------------------------------------------------------------

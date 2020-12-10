@@ -1,0 +1,6 @@
+Analysis of Variance Table
+
+Response: Impact_TMB_Score
+                  Df Sum Sq Mean Sq F value Pr(>F)
+Multiplex_or_not   3  11905  3968.2  2.0342 0.1087
+Residuals        377 735448  1950.8               

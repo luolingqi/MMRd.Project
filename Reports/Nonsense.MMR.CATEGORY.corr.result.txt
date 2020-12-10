@@ -1,0 +1,11 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Nonsense	MSH2_MSH6	MLH1_PMS2	0.232747500203385	1	0.23	ns	Wilcoxon
+2	Nonsense	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon
+3	Nonsense	MSH2_MSH6	MSH6	0.727272727272727	1	0.73	ns	Wilcoxon
+4	Nonsense	MSH2_MSH6	?	0.136910357603362	1	0.14	ns	Wilcoxon
+5	Nonsense	MLH1_PMS2	PMS2	0.484908135450228	1	0.48	ns	Wilcoxon
+6	Nonsense	MLH1_PMS2	MSH6	0.287746121351149	1	0.29	ns	Wilcoxon
+7	Nonsense	MLH1_PMS2	?	0.288755822512036	1	0.29	ns	Wilcoxon
+8	Nonsense	PMS2	MSH6	1	1	1.00	ns	Wilcoxon
+9	Nonsense	PMS2	?	0.658687417407885	1	0.66	ns	Wilcoxon
+10	Nonsense	MSH6	?	0.18398553600272	1	0.18	ns	Wilcoxon

@@ -1,0 +1,7 @@
+Data: data
+Models:
+fit2: formula
+fit1: formula
+     npar    AIC    BIC  logLik deviance Chisq Df Pr(>Chisq)
+fit2   41 1924.0 2085.3 -920.98   1842.0                    
+fit1  132 2105.8 2625.3 -920.93   1841.8 0.101 91          1

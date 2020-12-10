@@ -1,0 +1,85 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	Fraction_Genome_Altered	MSH2_MSH6	MSH6	1	1	1.000	ns	Wilcoxon
+2	Bladder	Fraction_Genome_Altered	MSH2_MSH6	PMS2	0.333333333333333	1	0.333	ns	Wilcoxon
+3	Bladder	Fraction_Genome_Altered	MSH2_MSH6	?	1	1	1.000	ns	Wilcoxon
+4	Bladder	Fraction_Genome_Altered	MSH6	PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+5	Bladder	Fraction_Genome_Altered	MSH6	?	1	1	1.000	ns	Wilcoxon
+6	Bladder	Fraction_Genome_Altered	PMS2	?	1	1	1.000	ns	Wilcoxon
+7	Colon	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.397117282361378	1	0.397	ns	Wilcoxon
+8	Colon	Fraction_Genome_Altered	MSH2_MSH6	Complex	0.153423716633989	1	0.153	ns	Wilcoxon
+9	Colon	Fraction_Genome_Altered	MSH2_MSH6	NORMAL	0.182835302302828	1	0.183	ns	Wilcoxon
+10	Colon	Fraction_Genome_Altered	MSH2_MSH6	MSH6	0.569901735061432	1	0.570	ns	Wilcoxon
+11	Colon	Fraction_Genome_Altered	MSH2_MSH6	PMS2	0.0678663308138911	1	0.068	ns	Wilcoxon
+12	Colon	Fraction_Genome_Altered	MLH1_PMS2	Complex	0.406543293649477	1	0.407	ns	Wilcoxon
+13	Colon	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.201175016494739	1	0.201	ns	Wilcoxon
+14	Colon	Fraction_Genome_Altered	MLH1_PMS2	MSH6	0.275872605391246	1	0.276	ns	Wilcoxon
+15	Colon	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.282286614957929	1	0.282	ns	Wilcoxon
+16	Colon	Fraction_Genome_Altered	Complex	NORMAL	0.595543754231181	1	0.596	ns	Wilcoxon
+17	Colon	Fraction_Genome_Altered	Complex	MSH6	0.106293706293706	1	0.106	ns	Wilcoxon
+18	Colon	Fraction_Genome_Altered	Complex	PMS2	0.93986013986014	1	0.940	ns	Wilcoxon
+19	Colon	Fraction_Genome_Altered	NORMAL	MSH6	0.297517091364237	1	0.298	ns	Wilcoxon
+20	Colon	Fraction_Genome_Altered	NORMAL	PMS2	0.92454787098415	1	0.925	ns	Wilcoxon
+21	Colon	Fraction_Genome_Altered	MSH6	PMS2	0.0285714285714286	1	0.029	*	Wilcoxon
+22	Esophagogastric	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.448211838836756	1	0.448	ns	Wilcoxon
+23	Esophagogastric	Fraction_Genome_Altered	MSH2_MSH6	Complex	0.276500480083433	1	0.277	ns	Wilcoxon
+24	Esophagogastric	Fraction_Genome_Altered	MSH2_MSH6	NORMAL	0.481120001127239	1	0.481	ns	Wilcoxon
+25	Esophagogastric	Fraction_Genome_Altered	MSH2_MSH6	?	0.805732790848439	1	0.806	ns	Wilcoxon
+26	Esophagogastric	Fraction_Genome_Altered	MLH1_PMS2	Complex	0.153419256369285	1	0.153	ns	Wilcoxon
+27	Esophagogastric	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.858935412694577	1	0.859	ns	Wilcoxon
+28	Esophagogastric	Fraction_Genome_Altered	MLH1_PMS2	?	0.803499009016714	1	0.803	ns	Wilcoxon
+29	Esophagogastric	Fraction_Genome_Altered	Complex	NORMAL	1	1	1.000	ns	Wilcoxon
+30	Esophagogastric	Fraction_Genome_Altered	Complex	?	0.666666666666667	1	0.667	ns	Wilcoxon
+31	Esophagogastric	Fraction_Genome_Altered	NORMAL	?	0.666666666666667	1	0.667	ns	Wilcoxon
+32	Pancreas	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+33	Pancreas	Fraction_Genome_Altered	MSH2_MSH6	MSH6	0.666666666666667	1	0.667	ns	Wilcoxon
+34	Pancreas	Fraction_Genome_Altered	MLH1_PMS2	MSH6	1	1	1.000	ns	Wilcoxon
+35	Colorectal	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.678654678654679	1	0.679	ns	Wilcoxon
+36	Colorectal	Fraction_Genome_Altered	MSH2_MSH6	NORMAL	0.73015873015873	1	0.730	ns	Wilcoxon
+37	Colorectal	Fraction_Genome_Altered	MSH2_MSH6	MSH6	1	1	1.000	ns	Wilcoxon
+38	Colorectal	Fraction_Genome_Altered	MSH2_MSH6	PMS2	1	1	1.000	ns	Wilcoxon
+39	Colorectal	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.67103273673357	1	0.671	ns	Wilcoxon
+40	Colorectal	Fraction_Genome_Altered	MLH1_PMS2	MSH6	0.573426573426573	1	0.573	ns	Wilcoxon
+41	Colorectal	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.727272727272727	1	0.727	ns	Wilcoxon
+42	Colorectal	Fraction_Genome_Altered	NORMAL	MSH6	0.4	1	0.400	ns	Wilcoxon
+43	Colorectal	Fraction_Genome_Altered	NORMAL	PMS2	0.8	1	0.800	ns	Wilcoxon
+44	Colorectal	Fraction_Genome_Altered	MSH6	PMS2	1	1	1.000	ns	Wilcoxon
+45	Biliary	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+46	Prostate	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+47	Prostate	Fraction_Genome_Altered	MSH2_MSH6	MSH6	0.666666666666667	1	0.667	ns	Wilcoxon
+48	Prostate	Fraction_Genome_Altered	MLH1_PMS2	MSH6	1	1	1.000	ns	Wilcoxon
+49	Small Bowel	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+50	Small Bowel	Fraction_Genome_Altered	MSH2_MSH6	NORMAL	0.666666666666667	1	0.667	ns	Wilcoxon
+51	Small Bowel	Fraction_Genome_Altered	MSH2_MSH6	PMS2	1	1	1.000	ns	Wilcoxon
+52	Small Bowel	Fraction_Genome_Altered	MSH2_MSH6	?	1	1	1.000	ns	Wilcoxon
+53	Small Bowel	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.4	1	0.400	ns	Wilcoxon
+54	Small Bowel	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.485714285714286	1	0.486	ns	Wilcoxon
+55	Small Bowel	Fraction_Genome_Altered	MLH1_PMS2	?	0.4	1	0.400	ns	Wilcoxon
+56	Small Bowel	Fraction_Genome_Altered	NORMAL	PMS2	0.4	1	0.400	ns	Wilcoxon
+57	Small Bowel	Fraction_Genome_Altered	NORMAL	?	1	1	1.000	ns	Wilcoxon
+58	Small Bowel	Fraction_Genome_Altered	PMS2	?	0.4	1	0.400	ns	Wilcoxon
+59	Endometrial	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.0204156767755666	1	0.020	*	Wilcoxon
+60	Endometrial	Fraction_Genome_Altered	MSH2_MSH6	Complex	0.4	1	0.400	ns	Wilcoxon
+61	Endometrial	Fraction_Genome_Altered	MSH2_MSH6	NORMAL	0.523784795528882	1	0.524	ns	Wilcoxon
+62	Endometrial	Fraction_Genome_Altered	MSH2_MSH6	MSH6	0.266666666666667	1	0.267	ns	Wilcoxon
+63	Endometrial	Fraction_Genome_Altered	MSH2_MSH6	?	0.533333333333333	1	0.533	ns	Wilcoxon
+64	Endometrial	Fraction_Genome_Altered	MLH1_PMS2	Complex	0.890623990068833	1	0.891	ns	Wilcoxon
+65	Endometrial	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.736877404618935	1	0.737	ns	Wilcoxon
+66	Endometrial	Fraction_Genome_Altered	MLH1_PMS2	MSH6	0.160671065744862	1	0.161	ns	Wilcoxon
+67	Endometrial	Fraction_Genome_Altered	MLH1_PMS2	?	0.308863983751921	1	0.309	ns	Wilcoxon
+68	Endometrial	Fraction_Genome_Altered	Complex	NORMAL	1	1	1.000	ns	Wilcoxon
+69	Endometrial	Fraction_Genome_Altered	Complex	MSH6	1	1	1.000	ns	Wilcoxon
+70	Endometrial	Fraction_Genome_Altered	Complex	?	1	1	1.000	ns	Wilcoxon
+71	Endometrial	Fraction_Genome_Altered	NORMAL	MSH6	0.4	1	0.400	ns	Wilcoxon
+72	Endometrial	Fraction_Genome_Altered	NORMAL	?	0.8	1	0.800	ns	Wilcoxon
+73	Endometrial	Fraction_Genome_Altered	MSH6	?	1	1	1.000	ns	Wilcoxon
+74	Rectal	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+75	Rectal	Fraction_Genome_Altered	MSH2_MSH6	PMS2	0.632142422148543	1	0.632	ns	Wilcoxon
+76	Rectal	Fraction_Genome_Altered	MSH2_MSH6	Delete	0.873218879412635	1	0.873	ns	Wilcoxon
+77	Rectal	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.484908135450228	1	0.485	ns	Wilcoxon
+78	Rectal	Fraction_Genome_Altered	MLH1_PMS2	Delete	1	1	1.000	ns	Wilcoxon
+79	Rectal	Fraction_Genome_Altered	PMS2	Delete	1	1	1.000	ns	Wilcoxon
+80	CUP	Fraction_Genome_Altered	MLH1_PMS2	NORMAL	0.333333333333333	1	0.333	ns	Wilcoxon
+81	Other	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.857142857142857	1	0.857	ns	Wilcoxon
+82	Ovarian	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+83	Ovarian	Fraction_Genome_Altered	MSH2_MSH6	PMS2	0.666666666666667	1	0.667	ns	Wilcoxon
+84	Ovarian	Fraction_Genome_Altered	MLH1_PMS2	PMS2	1	1	1.000	ns	Wilcoxon

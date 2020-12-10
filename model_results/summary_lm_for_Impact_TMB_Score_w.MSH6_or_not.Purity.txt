@@ -1,0 +1,22 @@
+
+Call:
+lm(formula = reformulate(termlabels = c(j, "Tumor_Purity"), response = i), 
+    data = df_2[df_2$Multiplex_or_not != "Delete", ])
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-65.24 -18.83  -5.75   7.50 440.22 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          62.0393     7.3726   8.415 8.38e-16 ***
+MSH6_or_notNot_MSH6 -19.6347     5.4983  -3.571 0.000402 ***
+Tumor_Purity          0.2654     0.1396   1.902 0.057996 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 43.66 on 375 degrees of freedom
+  (3 observations deleted due to missingness)
+Multiple R-squared:  0.04227,	Adjusted R-squared:  0.03716 
+F-statistic: 8.276 on 2 and 375 DF,  p-value: 0.000304
+

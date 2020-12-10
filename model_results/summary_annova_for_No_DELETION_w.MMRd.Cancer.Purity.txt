@@ -1,0 +1,10 @@
+Analysis of Variance Table
+
+Response: No_DELETION
+                     Df  Sum Sq Mean Sq F value    Pr(>F)    
+CLASSIFICATION_PLOT   7  3433.1  490.45  8.9327 3.734e-10 ***
+Cancer_Type_NEW      12  2347.3  195.61  3.5628 5.007e-05 ***
+Tumor_Purity          1     9.2    9.15  0.1667    0.6833    
+Residuals           358 19655.7   54.90                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

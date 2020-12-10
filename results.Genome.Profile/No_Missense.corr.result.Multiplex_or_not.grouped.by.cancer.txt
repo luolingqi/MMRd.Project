@@ -1,0 +1,11 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_Missense	Singleton	Multiplex	0.764228217764177	1	0.764	ns	Wilcoxon
+2	Colon	No_Missense	Singleton	Multiplex	0.910323018753288	1	0.910	ns	Wilcoxon
+3	Pancreas	No_Missense	Singleton	Multiplex	0.637351888233937	1	0.637	ns	Wilcoxon
+4	Colorectal	No_Missense	Singleton	Multiplex	0.0107377607100735	0.11	0.011	*	Wilcoxon
+5	Biliary	No_Missense	Singleton	Multiplex	0.333333333333333	1	0.333	ns	Wilcoxon
+6	Prostate	No_Missense	Singleton	Multiplex	0.5	1	0.500	ns	Wilcoxon
+7	Small Bowel	No_Missense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
+8	Endometrial	No_Missense	Singleton	Multiplex	0.162699358973495	1	0.163	ns	Wilcoxon
+9	Rectal	No_Missense	Singleton	Multiplex	0.165168163164623	1	0.165	ns	Wilcoxon
+10	Ovarian	No_Missense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon

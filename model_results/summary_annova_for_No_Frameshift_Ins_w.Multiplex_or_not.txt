@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: No_Frameshift_Ins
+                  Df Sum Sq Mean Sq F value  Pr(>F)  
+Multiplex_or_not   3   76.0 25.3281  2.8291 0.03836 *
+Residuals        377 3375.2  8.9528                  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

@@ -1,0 +1,7 @@
+Analysis of Variance Table
+
+Response: No_INFRAME_Ins
+              Df Sum Sq Mean Sq F value Pr(>F)
+MSH6_or_not    1  0.024 0.02430  0.1427 0.7058
+Tumor_Purity   1  0.390 0.38993  2.2894 0.1311
+Residuals    375 63.871 0.17032               

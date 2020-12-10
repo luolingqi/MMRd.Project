@@ -1,0 +1,11 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Splice_site_acceptor	MSH2_MSH6	MLH1_PMS2	0.690950936604382	1	0.69	ns	Wilcoxon
+2	Splice_site_acceptor	MSH2_MSH6	PMS2	0.6	1	0.60	ns	Wilcoxon
+3	Splice_site_acceptor	MSH2_MSH6	MSH6	0.478498659801032	1	0.48	ns	Wilcoxon
+4	Splice_site_acceptor	MSH2_MSH6	?	0.606468531468532	1	0.61	ns	Wilcoxon
+5	Splice_site_acceptor	MLH1_PMS2	PMS2	0.6	1	0.60	ns	Wilcoxon
+6	Splice_site_acceptor	MLH1_PMS2	MSH6	0.327272727272727	1	0.33	ns	Wilcoxon
+7	Splice_site_acceptor	MLH1_PMS2	?	0.757692307692308	1	0.76	ns	Wilcoxon
+8	Splice_site_acceptor	PMS2	MSH6	0.666666666666667	1	0.67	ns	Wilcoxon
+9	Splice_site_acceptor	PMS2	?	1	1	1.00	ns	Wilcoxon
+10	Splice_site_acceptor	MSH6	?	1	1	1.00	ns	Wilcoxon

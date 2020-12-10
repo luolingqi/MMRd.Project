@@ -1,0 +1,6 @@
+TumorType	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Ampulla of Vater	Inframe_Del	MSH2_MSH6	MSH6	0.666666666666667	1	0.67	ns	Wilcoxon
+2	Small Intestine	Inframe_Del	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+3	Colorectal 	Inframe_Del	MSH2_MSH6	MLH1_PMS2	0.383333333333333	1	0.38	ns	Wilcoxon
+4	Endometrial cancer	Inframe_Del	MSH2_MSH6	MLH1_PMS2	1	1	1.00	ns	Wilcoxon
+5	Gastroesophageal cancer	Inframe_Del	MSH2_MSH6	PMS2	1	1	1.00	ns	Wilcoxon

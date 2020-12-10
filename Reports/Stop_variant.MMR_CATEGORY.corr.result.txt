@@ -1,0 +1,5 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Stop_variant	MSH2_MSH6	PMS2	0.00766076113517947	0.031	0.0077	**	Wilcoxon
+2	Stop_variant	?	PMS2	0.0233422020128908	0.047	0.0233	*	Wilcoxon
+3	Stop_variant	MLH1_PMS2	PMS2	0.00766076113517947	0.031	0.0077	**	Wilcoxon
+4	Stop_variant	MSH6	PMS2	0.479500122186953	0.48	0.4795	ns	Wilcoxon

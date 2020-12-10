@@ -1,0 +1,9 @@
+Analysis of Variance Table
+
+Response: Fraction_Genome_Altered
+                  Df  Sum Sq  Mean Sq F value    Pr(>F)    
+Multiplex_or_not   3 0.12145 0.040484  5.6656 0.0008368 ***
+Tumor_Purity       1 0.09071 0.090707 12.6943 0.0004143 ***
+Residuals        373 2.66527 0.007145                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
