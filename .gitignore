@@ -31,4 +31,6 @@ vignettes/*.pdf
 *.pptx
 # ignore "vcfs" folder
 /vcfs/
+# big raw data
+data_mutations_extended*
 #grand_case_type.txt#
