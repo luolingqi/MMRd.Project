@@ -33,4 +33,6 @@ vignettes/*.pdf
 /vcfs/
 # big raw data
 data_mutations_extended*
+*.seg
+SigMutations/P-*/
 #grand_case_type.txt#
