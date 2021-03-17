@@ -57,10 +57,31 @@ buildLmeModel <- function(x,y,z,data) {# x: response; y: fixed_effects; z: rando
   # print(p)
   # plot the model (interaction)
   #data[,y[2]]
+  
+  # case freq # by MMRd type
+  # t <- table(data$Cancer_Type_NEW)
+  # caseNo <- paste(names(t),as.vector(t),sep = "\n")
+  # names(caseNo) <- names(t)
+  # print(caseNo)
+  
+  # caseNo <- c("Colon\n154","Biliary\n6","Bladder\n8","Colorectal\n19", "CUP\n5", "Endometrial\n78", 
+  #             "Esophagogastric\n38", "Other\n7", "Ovarian\n4", "Pancreas\n4", "Prostate\n4",
+  #             "Rectal\n20", "Small Bowel\n10")
+  # Types <- c("Colon","Biliary","Bladder","Colorectal", "CUP", "Endometrial", 
+  #            "Esophagogastric", "Other", "Ovarian", "Pancreas", "Prostate",
+  #            "Rectal", "Small Bowel")
+  # names(caseNo) <- Types
+  
   p <- plot_model(fit1, type = "eff", terms = c(y[1],y[2]),
   #p <- plot_model(fit1, type = "int",
-                  title = paste0("linear mixed effect model for ",x,"\n",gsub("\\(","\n\\(", paste0(format(formula), collapse = "")))) + 
-    theme(axis.text.x = element_text(angle = 45,hjust = 1)) + theme(plot.title = element_text(size = 8))
+                  title = paste0("linear mixed effect model for ",
+                                 x,
+                                 "\n",
+                                 gsub("\\(","\n\\(", paste0(format(formula), collapse = "")))) + 
+    #scale_x_discrete("Cancer_Type_NEW",labels=caseNo) + 
+    theme(axis.text.x = element_text(angle = 45,hjust = 1)) + 
+    theme(plot.title = element_text(size = 8))
+  
   print(p)
   
   

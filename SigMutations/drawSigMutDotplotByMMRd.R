@@ -126,8 +126,8 @@ drawSigMutDotplotByMMRd <- function(file_pattern, sigs, sigType){
   
   df_plot <- merge(mean_mut_melt, median_mut_melt, by = c("MMRd_type",sigType))
   df_plot <- merge(df_plot, portion_tumor_melt, by = c("MMRd_type",sigType))
-  # Remove "UNK" MMRd Type
-  df_plot <- df_plot[df_plot$MMRd_type != "UNK",]
+  # Remove "UNK" and "Normal" MMRd Type
+  df_plot <- df_plot[!df_plot$MMRd_type %in% c("UNK", "NORMAL_only"),]
   df_plot[[sigType]] <- factor(df_plot[,sigType], levels = sigs)
   #levels(df_plot$MMRd_type) <- sigs # reorder the levels
   #df_plot <- df_plot[order(df_plot$SBS),]
@@ -158,7 +158,6 @@ drawSigMutDotplotByMMRd <- function(file_pattern, sigs, sigType){
                               "MLH1_PMS2" = paste0("MLH1_PMS2\n",n.MLH1_PMS2,"/246"),
                               "MSH2_MSH6" = paste0("MSH2_MSH6\n",n.MSH2_MSH6,"/69"),
                               "MSH6_only" = paste0("MSH6_only\n",n.MSH6_only,"/12"), 
-                              "NORMAL_only" = paste0("NORMAL_only\n",n.NORMAL_only,"/19"), 
                               "PMS2_only" = paste0("PMS2_only\n",n.PMS2_only,"/13"))) + 
     theme(axis.text.x = element_text(size = 8)) +
     theme(legend.title = element_text(size = 8, face = "bold"),

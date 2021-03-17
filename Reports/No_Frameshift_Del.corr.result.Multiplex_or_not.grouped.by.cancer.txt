@@ -1,21 +1,11 @@
 Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	Bladder	No_Frameshift_Del	Singleton	Multiplex	0.133701125808964	1	0.13370	ns	Wilcoxon
-2	Colon	No_Frameshift_Del	Singleton	Multiplex	0.000341453035393013	0.0068	0.00034	***	Wilcoxon
-3	Colon	No_Frameshift_Del	Singleton	NORMAL	0.0626538328635597	1	0.06265	ns	Wilcoxon
-4	Colon	No_Frameshift_Del	Multiplex	NORMAL	0.640031408022237	1	0.64003	ns	Wilcoxon
-5	Esophagogastric	No_Frameshift_Del	Multiplex	NORMAL	0.975166270552119	1	0.97517	ns	Wilcoxon
-6	Pancreas	No_Frameshift_Del	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon
-7	Colorectal	No_Frameshift_Del	Singleton	Multiplex	0.0787940894793555	1	0.07879	ns	Wilcoxon
-8	Colorectal	No_Frameshift_Del	Singleton	NORMAL	0.144050633909659	1	0.14405	ns	Wilcoxon
-9	Colorectal	No_Frameshift_Del	Multiplex	NORMAL	0.209088888357045	1	0.20909	ns	Wilcoxon
-10	Biliary	No_Frameshift_Del	Singleton	Multiplex	1	1	1.00000	ns	Wilcoxon
-11	Prostate	No_Frameshift_Del	Singleton	Multiplex	0.34577858615116	1	0.34578	ns	Wilcoxon
-12	Small Bowel	No_Frameshift_Del	Singleton	Multiplex	0.0403241676300489	0.77	0.04032	*	Wilcoxon
-13	Small Bowel	No_Frameshift_Del	Singleton	NORMAL	0.8	1	0.80000	ns	Wilcoxon
-14	Small Bowel	No_Frameshift_Del	Multiplex	NORMAL	0.44917720161029	1	0.44918	ns	Wilcoxon
-15	Endometrial	No_Frameshift_Del	Singleton	Multiplex	0.160793378476827	1	0.16079	ns	Wilcoxon
-16	Endometrial	No_Frameshift_Del	Singleton	NORMAL	1	1	1.00000	ns	Wilcoxon
-17	Endometrial	No_Frameshift_Del	Multiplex	NORMAL	0.43159546140158	1	0.43160	ns	Wilcoxon
-18	Rectal	No_Frameshift_Del	Singleton	Multiplex	0.384807477486692	1	0.38481	ns	Wilcoxon
-19	CUP	No_Frameshift_Del	Multiplex	NORMAL	0.234763662827669	1	0.23476	ns	Wilcoxon
-20	Ovarian	No_Frameshift_Del	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon
+1	Bladder	No_Frameshift_Del	Singleton	Multiplex	0.133701125808964	0.94	0.13370	ns	Wilcoxon
+2	Colon	No_Frameshift_Del	Singleton	Multiplex	0.000341453035393013	0.0034	0.00034	***	Wilcoxon
+3	Pancreas	No_Frameshift_Del	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon
+4	Colorectal	No_Frameshift_Del	Singleton	Multiplex	0.0787940894793555	0.63	0.07879	ns	Wilcoxon
+5	Biliary	No_Frameshift_Del	Singleton	Multiplex	1	1	1.00000	ns	Wilcoxon
+6	Prostate	No_Frameshift_Del	Singleton	Multiplex	0.34577858615116	1	0.34578	ns	Wilcoxon
+7	Small Bowel	No_Frameshift_Del	Singleton	Multiplex	0.0403241676300489	0.36	0.04032	*	Wilcoxon
+8	Endometrial	No_Frameshift_Del	Singleton	Multiplex	0.160793378476827	0.96	0.16079	ns	Wilcoxon
+9	Rectal	No_Frameshift_Del	Singleton	Multiplex	0.384807477486692	1	0.38481	ns	Wilcoxon
+10	Ovarian	No_Frameshift_Del	Singleton	Multiplex	0.5	1	0.50000	ns	Wilcoxon

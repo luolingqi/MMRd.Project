@@ -1,0 +1,82 @@
+Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Bladder	No_Splice	MSH2_MSH6	MSH6	0.751829634045849	1	0.752	ns	Wilcoxon
+2	Bladder	No_Splice	MSH2_MSH6	PMS2	0.16585666034291	1	0.166	ns	Wilcoxon
+3	Bladder	No_Splice	MSH2_MSH6	?	0.16585666034291	1	0.166	ns	Wilcoxon
+4	Bladder	No_Splice	MSH6	PMS2	0.479500122186953	1	0.480	ns	Wilcoxon
+5	Bladder	No_Splice	MSH6	?	0.479500122186953	1	0.480	ns	Wilcoxon
+6	Colon	No_Splice	MSH2_MSH6	MLH1_PMS2	0.761583565006913	1	0.762	ns	Wilcoxon
+7	Colon	No_Splice	MSH2_MSH6	Complex	0.339204622284967	1	0.339	ns	Wilcoxon
+8	Colon	No_Splice	MSH2_MSH6	NORMAL	0.83323980811897	1	0.833	ns	Wilcoxon
+9	Colon	No_Splice	MSH2_MSH6	MSH6	0.701703778562003	1	0.702	ns	Wilcoxon
+10	Colon	No_Splice	MSH2_MSH6	PMS2	0.0716703631606891	1	0.072	ns	Wilcoxon
+11	Colon	No_Splice	MLH1_PMS2	Complex	0.188568912210929	1	0.189	ns	Wilcoxon
+12	Colon	No_Splice	MLH1_PMS2	NORMAL	0.946851334579551	1	0.947	ns	Wilcoxon
+13	Colon	No_Splice	MLH1_PMS2	MSH6	0.676893844959417	1	0.677	ns	Wilcoxon
+14	Colon	No_Splice	MLH1_PMS2	PMS2	0.0564632015990039	1	0.056	ns	Wilcoxon
+15	Colon	No_Splice	Complex	NORMAL	0.41463252909919	1	0.415	ns	Wilcoxon
+16	Colon	No_Splice	Complex	MSH6	0.86569926358466	1	0.866	ns	Wilcoxon
+17	Colon	No_Splice	Complex	PMS2	0.424369954974076	1	0.424	ns	Wilcoxon
+18	Colon	No_Splice	NORMAL	MSH6	0.920257576111459	1	0.920	ns	Wilcoxon
+19	Colon	No_Splice	NORMAL	PMS2	0.211263511300427	1	0.211	ns	Wilcoxon
+20	Colon	No_Splice	MSH6	PMS2	0.504985075093846	1	0.505	ns	Wilcoxon
+21	Esophagogastric	No_Splice	MSH2_MSH6	MLH1_PMS2	0.853353548100723	1	0.853	ns	Wilcoxon
+22	Esophagogastric	No_Splice	MSH2_MSH6	Complex	0.69263278404196	1	0.693	ns	Wilcoxon
+23	Esophagogastric	No_Splice	MSH2_MSH6	NORMAL	1	1	1.000	ns	Wilcoxon
+24	Esophagogastric	No_Splice	MSH2_MSH6	?	1	1	1.000	ns	Wilcoxon
+25	Esophagogastric	No_Splice	MLH1_PMS2	Complex	0.376005684926533	1	0.376	ns	Wilcoxon
+26	Esophagogastric	No_Splice	MLH1_PMS2	NORMAL	0.908518765349053	1	0.909	ns	Wilcoxon
+27	Esophagogastric	No_Splice	MLH1_PMS2	?	0.908518765349053	1	0.909	ns	Wilcoxon
+28	Esophagogastric	No_Splice	Complex	NORMAL	1	1	1.000	ns	Wilcoxon
+29	Esophagogastric	No_Splice	Complex	?	1	1	1.000	ns	Wilcoxon
+30	Esophagogastric	No_Splice	NORMAL	?	1	1	1.000	ns	Wilcoxon
+31	Pancreas	No_Splice	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+32	Pancreas	No_Splice	MSH2_MSH6	MSH6	0.666666666666667	1	0.667	ns	Wilcoxon
+33	Pancreas	No_Splice	MLH1_PMS2	MSH6	1	1	1.000	ns	Wilcoxon
+34	Colorectal	No_Splice	MSH2_MSH6	MLH1_PMS2	0.842707592633937	1	0.843	ns	Wilcoxon
+35	Colorectal	No_Splice	MSH2_MSH6	NORMAL	0.157489754427381	1	0.157	ns	Wilcoxon
+36	Colorectal	No_Splice	MSH2_MSH6	MSH6	0.753945210459497	1	0.754	ns	Wilcoxon
+37	Colorectal	No_Splice	MSH2_MSH6	PMS2	0.227799993988229	1	0.228	ns	Wilcoxon
+38	Colorectal	No_Splice	MLH1_PMS2	NORMAL	0.0638486556218492	1	0.064	ns	Wilcoxon
+39	Colorectal	No_Splice	MLH1_PMS2	MSH6	0.526764629473917	1	0.527	ns	Wilcoxon
+40	Colorectal	No_Splice	MLH1_PMS2	PMS2	0.13066252896793	1	0.131	ns	Wilcoxon
+41	Colorectal	No_Splice	NORMAL	MSH6	0.711025407078729	1	0.711	ns	Wilcoxon
+42	Colorectal	No_Splice	NORMAL	PMS2	0.276500480083433	1	0.277	ns	Wilcoxon
+43	Colorectal	No_Splice	MSH6	PMS2	0.5	1	0.500	ns	Wilcoxon
+44	Biliary	No_Splice	MLH1_PMS2	PMS2	1	1	1.000	ns	Wilcoxon
+45	Prostate	No_Splice	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+46	Prostate	No_Splice	MSH2_MSH6	MSH6	1	1	1.000	ns	Wilcoxon
+47	Small Bowel	No_Splice	MSH2_MSH6	MLH1_PMS2	0.0801183137276342	1	0.080	ns	Wilcoxon
+48	Small Bowel	No_Splice	MSH2_MSH6	NORMAL	0.479500122186953	1	0.480	ns	Wilcoxon
+49	Small Bowel	No_Splice	MSH2_MSH6	PMS2	0.0801183137276342	1	0.080	ns	Wilcoxon
+50	Small Bowel	No_Splice	MSH2_MSH6	?	0.479500122186953	1	0.480	ns	Wilcoxon
+51	Small Bowel	No_Splice	MLH1_PMS2	NORMAL	0.414216178242525	1	0.414	ns	Wilcoxon
+52	Small Bowel	No_Splice	MLH1_PMS2	PMS2	1	1	1.000	ns	Wilcoxon
+53	Small Bowel	No_Splice	MLH1_PMS2	?	1	1	1.000	ns	Wilcoxon
+54	Small Bowel	No_Splice	NORMAL	PMS2	0.414216178242525	1	0.414	ns	Wilcoxon
+55	Small Bowel	No_Splice	NORMAL	?	1	1	1.000	ns	Wilcoxon
+56	Small Bowel	No_Splice	PMS2	?	1	1	1.000	ns	Wilcoxon
+57	Endometrial	No_Splice	MSH2_MSH6	MLH1_PMS2	0.0987889636859898	1	0.099	ns	Wilcoxon
+58	Endometrial	No_Splice	MSH2_MSH6	Complex	0.17617041581474	1	0.176	ns	Wilcoxon
+59	Endometrial	No_Splice	MSH2_MSH6	NORMAL	0.370192602681892	1	0.370	ns	Wilcoxon
+60	Endometrial	No_Splice	MSH2_MSH6	MSH6	0.800749496468463	1	0.801	ns	Wilcoxon
+61	Endometrial	No_Splice	MSH2_MSH6	?	0.800749496468463	1	0.801	ns	Wilcoxon
+62	Endometrial	No_Splice	MLH1_PMS2	Complex	0.265326007867143	1	0.265	ns	Wilcoxon
+63	Endometrial	No_Splice	MLH1_PMS2	NORMAL	0.852462113709354	1	0.852	ns	Wilcoxon
+64	Endometrial	No_Splice	MLH1_PMS2	MSH6	0.81447246771317	1	0.814	ns	Wilcoxon
+65	Endometrial	No_Splice	MLH1_PMS2	?	0.81447246771317	1	0.814	ns	Wilcoxon
+66	Endometrial	No_Splice	Complex	NORMAL	0.69263278404196	1	0.693	ns	Wilcoxon
+67	Endometrial	No_Splice	Complex	MSH6	1	1	1.000	ns	Wilcoxon
+68	Endometrial	No_Splice	Complex	?	1	1	1.000	ns	Wilcoxon
+69	Endometrial	No_Splice	NORMAL	MSH6	1	1	1.000	ns	Wilcoxon
+70	Endometrial	No_Splice	NORMAL	?	1	1	1.000	ns	Wilcoxon
+71	Rectal	No_Splice	MSH2_MSH6	MLH1_PMS2	0.86694394687706	1	0.867	ns	Wilcoxon
+72	Rectal	No_Splice	MSH2_MSH6	PMS2	0.87143601181082	1	0.871	ns	Wilcoxon
+73	Rectal	No_Splice	MSH2_MSH6	Delete	0.328064781700837	1	0.328	ns	Wilcoxon
+74	Rectal	No_Splice	MLH1_PMS2	PMS2	0.709388115014226	1	0.709	ns	Wilcoxon
+75	Rectal	No_Splice	MLH1_PMS2	Delete	0.205718061264228	1	0.206	ns	Wilcoxon
+76	Rectal	No_Splice	PMS2	Delete	1	1	1.000	ns	Wilcoxon
+77	CUP	No_Splice	MLH1_PMS2	NORMAL	0.227799993988229	1	0.228	ns	Wilcoxon
+78	Other	No_Splice	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+79	Ovarian	No_Splice	MSH2_MSH6	MLH1_PMS2	1	1	1.000	ns	Wilcoxon
+80	Ovarian	No_Splice	MSH2_MSH6	PMS2	1	1	1.000	ns	Wilcoxon
+81	Ovarian	No_Splice	MLH1_PMS2	PMS2	1	1	1.000	ns	Wilcoxon

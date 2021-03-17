@@ -1,4 +1,2 @@
 .y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	No_Missense	Singleton	Multiplex	0.433057684869198	1	0.43	ns	Wilcoxon
-2	No_Missense	Singleton	NORMAL	0.886859566480834	1	0.89	ns	Wilcoxon
-3	No_Missense	Multiplex	NORMAL	0.560217869080028	1	0.56	ns	Wilcoxon
+1	No_Missense	Singleton	Multiplex	0.433057684869198	0.43	0.43	ns	Wilcoxon

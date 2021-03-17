@@ -1,13 +1,12 @@
 Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
 1	Bladder	No_Missense	PMS2	Not_PMS2	0.187781272099152	1	0.1878	ns	Wilcoxon
-2	Colon	No_Missense	PMS2	Not_PMS2	3.22598203926241e-06	3.9e-05	3.2e-06	****	Wilcoxon
-3	Esophagogastric	No_Missense	PMS2	Not_PMS2	0.309633078170288	1	0.3096	ns	Wilcoxon
+2	Colon	No_Missense	PMS2	Not_PMS2	4.55338623731332e-06	5e-05	4.6e-06	****	Wilcoxon
+3	Esophagogastric	No_Missense	PMS2	Not_PMS2	0.502598712496142	1	0.5026	ns	Wilcoxon
 4	Pancreas	No_Missense	PMS2	Not_PMS2	0.637351888233937	1	0.6374	ns	Wilcoxon
-5	Colorectal	No_Missense	PMS2	Not_PMS2	0.0562799663196963	0.56	0.0563	ns	Wilcoxon
+5	Colorectal	No_Missense	PMS2	Not_PMS2	0.0033613390761919	0.03	0.0034	**	Wilcoxon
 6	Prostate	No_Missense	PMS2	Not_PMS2	1	1	1.0000	ns	Wilcoxon
-7	Small Bowel	No_Missense	PMS2	Not_PMS2	0.150232112940178	1	0.1502	ns	Wilcoxon
-8	Endometrial	No_Missense	PMS2	Not_PMS2	0.00145972399981894	0.016	0.0015	**	Wilcoxon
+7	Small Bowel	No_Missense	PMS2	Not_PMS2	0.148479099790606	1	0.1485	ns	Wilcoxon
+8	Endometrial	No_Missense	PMS2	Not_PMS2	0.000601779820626469	0.006	0.0006	***	Wilcoxon
 9	Rectal	No_Missense	PMS2	Not_PMS2	0.130425377212635	1	0.1304	ns	Wilcoxon
-10	CUP	No_Missense	PMS2	Not_PMS2	0.234763662827669	1	0.2348	ns	Wilcoxon
-11	Other	No_Missense	PMS2	Not_PMS2	0.571428571428571	1	0.5714	ns	Wilcoxon
-12	Ovarian	No_Missense	PMS2	Not_PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon
+10	Other	No_Missense	PMS2	Not_PMS2	0.571428571428571	1	0.5714	ns	Wilcoxon
+11	Ovarian	No_Missense	PMS2	Not_PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon

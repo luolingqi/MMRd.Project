@@ -1,0 +1,8 @@
+Analysis of Variance Table
+
+Response: No_Splice
+                     Df  Sum Sq Mean Sq F value Pr(>F)
+CLASSIFICATION_PLOT   7   46.52  6.6457  1.7031 0.1070
+Cancer_Type_NEW      12   70.26  5.8552  1.5005 0.1215
+Tumor_Purity          1    5.48  5.4780  1.4038 0.2369
+Residuals           358 1397.00  3.9022               

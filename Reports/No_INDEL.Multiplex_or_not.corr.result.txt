@@ -1,4 +1,2 @@
 .y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	No_INDEL	Singleton	Multiplex	7.10681269839371e-08	2.1e-07	7.1e-08	****	Wilcoxon
-2	No_INDEL	Singleton	NORMAL	0.0217813618563772	0.044	0.022	*	Wilcoxon
-3	No_INDEL	Multiplex	NORMAL	0.103664715949134	0.1	0.104	ns	Wilcoxon
+1	No_INDEL	Singleton	Multiplex	7.10681269839371e-08	7.1e-08	7.1e-08	****	Wilcoxon

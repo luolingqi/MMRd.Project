@@ -1,0 +1,182 @@
+CLASSIFICATION_PLOT	.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	MSH2_MSH6	No_Missense	Bladder	Colon	0.0463207058154644	1	0.0463	*	Wilcoxon
+2	MSH2_MSH6	No_Missense	Bladder	Esophagogastric	0.902116593107254	1	0.9021	ns	Wilcoxon
+3	MSH2_MSH6	No_Missense	Bladder	Pancreas	0.114652641684495	1	0.1147	ns	Wilcoxon
+4	MSH2_MSH6	No_Missense	Bladder	Colorectal	0.0344536370394713	1	0.0345	*	Wilcoxon
+5	MSH2_MSH6	No_Missense	Bladder	Prostate	0.0786428966689894	1	0.0786	ns	Wilcoxon
+6	MSH2_MSH6	No_Missense	Bladder	Small Bowel	0.0786428966689894	1	0.0786	ns	Wilcoxon
+7	MSH2_MSH6	No_Missense	Bladder	Endometrial	0.745478512508865	1	0.7455	ns	Wilcoxon
+8	MSH2_MSH6	No_Missense	Bladder	Rectal	0.581203291715217	1	0.5812	ns	Wilcoxon
+9	MSH2_MSH6	No_Missense	Bladder	Other	0.401965358356735	1	0.4020	ns	Wilcoxon
+10	MSH2_MSH6	No_Missense	Bladder	Ovarian	0.693281817504481	1	0.6933	ns	Wilcoxon
+11	MSH2_MSH6	No_Missense	Colon	Esophagogastric	0.935322014582588	1	0.9353	ns	Wilcoxon
+12	MSH2_MSH6	No_Missense	Colon	Pancreas	0.718839441373282	1	0.7188	ns	Wilcoxon
+13	MSH2_MSH6	No_Missense	Colon	Colorectal	0.971611370212113	1	0.9716	ns	Wilcoxon
+14	MSH2_MSH6	No_Missense	Colon	Prostate	0.0550880226921398	1	0.0551	ns	Wilcoxon
+15	MSH2_MSH6	No_Missense	Colon	Small Bowel	0.952216412947944	1	0.9522	ns	Wilcoxon
+16	MSH2_MSH6	No_Missense	Colon	Endometrial	0.0330521059604331	1	0.0331	*	Wilcoxon
+17	MSH2_MSH6	No_Missense	Colon	Rectal	0.696424952610011	1	0.6964	ns	Wilcoxon
+18	MSH2_MSH6	No_Missense	Colon	Other	0.0172058800539307	1	0.0172	*	Wilcoxon
+19	MSH2_MSH6	No_Missense	Colon	Ovarian	0.134109292878259	1	0.1341	ns	Wilcoxon
+20	MSH2_MSH6	No_Missense	Esophagogastric	Pancreas	1	1	1.0000	ns	Wilcoxon
+21	MSH2_MSH6	No_Missense	Esophagogastric	Colorectal	1	1	1.0000	ns	Wilcoxon
+22	MSH2_MSH6	No_Missense	Esophagogastric	Prostate	0.266666666666667	1	0.2667	ns	Wilcoxon
+23	MSH2_MSH6	No_Missense	Esophagogastric	Small Bowel	1	1	1.0000	ns	Wilcoxon
+24	MSH2_MSH6	No_Missense	Esophagogastric	Endometrial	0.595232767219125	1	0.5952	ns	Wilcoxon
+25	MSH2_MSH6	No_Missense	Esophagogastric	Rectal	0.945054945054945	1	0.9451	ns	Wilcoxon
+26	MSH2_MSH6	No_Missense	Esophagogastric	Other	0.19047619047619	1	0.1905	ns	Wilcoxon
+27	MSH2_MSH6	No_Missense	Esophagogastric	Ovarian	0.8	1	0.8000	ns	Wilcoxon
+28	MSH2_MSH6	No_Missense	Pancreas	Colorectal	0.693281817504481	1	0.6933	ns	Wilcoxon
+29	MSH2_MSH6	No_Missense	Pancreas	Prostate	0.333333333333333	1	0.3333	ns	Wilcoxon
+30	MSH2_MSH6	No_Missense	Pancreas	Small Bowel	0.333333333333333	1	0.3333	ns	Wilcoxon
+31	MSH2_MSH6	No_Missense	Pancreas	Endometrial	0.266666666666667	1	0.2667	ns	Wilcoxon
+32	MSH2_MSH6	No_Missense	Pancreas	Rectal	1	1	1.0000	ns	Wilcoxon
+33	MSH2_MSH6	No_Missense	Pancreas	Other	0.380952380952381	1	0.3810	ns	Wilcoxon
+34	MSH2_MSH6	No_Missense	Pancreas	Ovarian	0.333333333333333	1	0.3333	ns	Wilcoxon
+35	MSH2_MSH6	No_Missense	Colorectal	Prostate	0.0786428966689894	1	0.0786	ns	Wilcoxon
+36	MSH2_MSH6	No_Missense	Colorectal	Small Bowel	1	1	1.0000	ns	Wilcoxon
+37	MSH2_MSH6	No_Missense	Colorectal	Endometrial	0.0295080276056011	1	0.0295	*	Wilcoxon
+38	MSH2_MSH6	No_Missense	Colorectal	Rectal	0.759254457546827	1	0.7593	ns	Wilcoxon
+39	MSH2_MSH6	No_Missense	Colorectal	Other	0.0361451420465623	1	0.0361	*	Wilcoxon
+40	MSH2_MSH6	No_Missense	Colorectal	Ovarian	0.114652641684495	1	0.1147	ns	Wilcoxon
+41	MSH2_MSH6	No_Missense	Prostate	Small Bowel	0.333333333333333	1	0.3333	ns	Wilcoxon
+42	MSH2_MSH6	No_Missense	Prostate	Endometrial	0.1	1	0.1000	ns	Wilcoxon
+43	MSH2_MSH6	No_Missense	Prostate	Rectal	0.0606060606060606	1	0.0606	ns	Wilcoxon
+44	MSH2_MSH6	No_Missense	Prostate	Other	1	1	1.0000	ns	Wilcoxon
+45	MSH2_MSH6	No_Missense	Prostate	Ovarian	0.414216178242525	1	0.4142	ns	Wilcoxon
+46	MSH2_MSH6	No_Missense	Small Bowel	Endometrial	0.266666666666667	1	0.2667	ns	Wilcoxon
+47	MSH2_MSH6	No_Missense	Small Bowel	Rectal	0.757575757575758	1	0.7576	ns	Wilcoxon
+48	MSH2_MSH6	No_Missense	Small Bowel	Other	0.118002392068983	1	0.1180	ns	Wilcoxon
+49	MSH2_MSH6	No_Missense	Small Bowel	Ovarian	0.333333333333333	1	0.3333	ns	Wilcoxon
+50	MSH2_MSH6	No_Missense	Endometrial	Rectal	0.253329405468595	1	0.2533	ns	Wilcoxon
+51	MSH2_MSH6	No_Missense	Endometrial	Other	0.164729494511482	1	0.1647	ns	Wilcoxon
+52	MSH2_MSH6	No_Missense	Endometrial	Ovarian	1	1	1.0000	ns	Wilcoxon
+53	MSH2_MSH6	No_Missense	Rectal	Other	0.0752580752580752	1	0.0753	ns	Wilcoxon
+54	MSH2_MSH6	No_Missense	Rectal	Ovarian	0.484848484848485	1	0.4848	ns	Wilcoxon
+55	MSH2_MSH6	No_Missense	Other	Ovarian	0.571428571428571	1	0.5714	ns	Wilcoxon
+56	MLH1_PMS2	No_Missense	Colon	Esophagogastric	0.168706548982159	1	0.1687	ns	Wilcoxon
+57	MLH1_PMS2	No_Missense	Colon	Pancreas	0.45758472607657	1	0.4576	ns	Wilcoxon
+58	MLH1_PMS2	No_Missense	Colon	Colorectal	0.203886882979974	1	0.2039	ns	Wilcoxon
+59	MLH1_PMS2	No_Missense	Colon	Biliary	0.0613196760088681	1	0.0613	ns	Wilcoxon
+60	MLH1_PMS2	No_Missense	Colon	Prostate	0.294313214913703	1	0.2943	ns	Wilcoxon
+61	MLH1_PMS2	No_Missense	Colon	Small Bowel	0.138403525555765	1	0.1384	ns	Wilcoxon
+62	MLH1_PMS2	No_Missense	Colon	Endometrial	6.8388427318008e-09	1.2e-06	6.8e-09	****	Wilcoxon
+63	MLH1_PMS2	No_Missense	Colon	Rectal	0.850860509251791	1	0.8509	ns	Wilcoxon
+64	MLH1_PMS2	No_Missense	Colon	CUP	0.0748504108297827	1	0.0749	ns	Wilcoxon
+65	MLH1_PMS2	No_Missense	Colon	Other	0.305040353796681	1	0.3050	ns	Wilcoxon
+66	MLH1_PMS2	No_Missense	Colon	Ovarian	0.0939343428597796	1	0.0939	ns	Wilcoxon
+67	MLH1_PMS2	No_Missense	Esophagogastric	Pancreas	0.574212736898316	1	0.5742	ns	Wilcoxon
+68	MLH1_PMS2	No_Missense	Esophagogastric	Colorectal	0.795547592095614	1	0.7955	ns	Wilcoxon
+69	MLH1_PMS2	No_Missense	Esophagogastric	Biliary	0.299141256700373	1	0.2991	ns	Wilcoxon
+70	MLH1_PMS2	No_Missense	Esophagogastric	Prostate	0.759212506270003	1	0.7592	ns	Wilcoxon
+71	MLH1_PMS2	No_Missense	Esophagogastric	Small Bowel	0.185767625205849	1	0.1858	ns	Wilcoxon
+72	MLH1_PMS2	No_Missense	Esophagogastric	Endometrial	0.00148774944148768	0.27	0.0015	**	Wilcoxon
+73	MLH1_PMS2	No_Missense	Esophagogastric	Rectal	0.529094229764927	1	0.5291	ns	Wilcoxon
+74	MLH1_PMS2	No_Missense	Esophagogastric	CUP	0.298742927708732	1	0.2987	ns	Wilcoxon
+75	MLH1_PMS2	No_Missense	Esophagogastric	Other	0.454659250742594	1	0.4547	ns	Wilcoxon
+76	MLH1_PMS2	No_Missense	Esophagogastric	Ovarian	0.102181028275597	1	0.1022	ns	Wilcoxon
+77	MLH1_PMS2	No_Missense	Pancreas	Colorectal	0.181818181818182	1	0.1818	ns	Wilcoxon
+78	MLH1_PMS2	No_Missense	Pancreas	Biliary	0.333333333333333	1	0.3333	ns	Wilcoxon
+79	MLH1_PMS2	No_Missense	Pancreas	Prostate	1	1	1.0000	ns	Wilcoxon
+80	MLH1_PMS2	No_Missense	Pancreas	Small Bowel	0.716800516994495	1	0.7168	ns	Wilcoxon
+81	MLH1_PMS2	No_Missense	Pancreas	Endometrial	0.195555798547392	1	0.1956	ns	Wilcoxon
+82	MLH1_PMS2	No_Missense	Pancreas	Rectal	0.861387996871412	1	0.8614	ns	Wilcoxon
+83	MLH1_PMS2	No_Missense	Pancreas	CUP	0.234763662827669	1	0.2348	ns	Wilcoxon
+84	MLH1_PMS2	No_Missense	Pancreas	Other	0.666666666666667	1	0.6667	ns	Wilcoxon
+85	MLH1_PMS2	No_Missense	Pancreas	Ovarian	1	1	1.0000	ns	Wilcoxon
+86	MLH1_PMS2	No_Missense	Colorectal	Biliary	0.424323668935289	1	0.4243	ns	Wilcoxon
+87	MLH1_PMS2	No_Missense	Colorectal	Prostate	0.727272727272727	1	0.7273	ns	Wilcoxon
+88	MLH1_PMS2	No_Missense	Colorectal	Small Bowel	0.227277943546707	1	0.2273	ns	Wilcoxon
+89	MLH1_PMS2	No_Missense	Colorectal	Endometrial	0.0271816241888276	1	0.0272	*	Wilcoxon
+90	MLH1_PMS2	No_Missense	Colorectal	Rectal	0.326974615026912	1	0.3270	ns	Wilcoxon
+91	MLH1_PMS2	No_Missense	Colorectal	CUP	0.244202056725967	1	0.2442	ns	Wilcoxon
+92	MLH1_PMS2	No_Missense	Colorectal	Other	0.518516993045122	1	0.5185	ns	Wilcoxon
+93	MLH1_PMS2	No_Missense	Colorectal	Ovarian	0.181818181818182	1	0.1818	ns	Wilcoxon
+94	MLH1_PMS2	No_Missense	Biliary	Prostate	1	1	1.0000	ns	Wilcoxon
+95	MLH1_PMS2	No_Missense	Biliary	Small Bowel	0.383220631285644	1	0.3832	ns	Wilcoxon
+96	MLH1_PMS2	No_Missense	Biliary	Endometrial	0.376687545919353	1	0.3767	ns	Wilcoxon
+97	MLH1_PMS2	No_Missense	Biliary	Rectal	0.256550996828457	1	0.2566	ns	Wilcoxon
+98	MLH1_PMS2	No_Missense	Biliary	CUP	0.834035229790992	1	0.8340	ns	Wilcoxon
+99	MLH1_PMS2	No_Missense	Biliary	Other	0.857142857142857	1	0.8571	ns	Wilcoxon
+100	MLH1_PMS2	No_Missense	Biliary	Ovarian	0.333333333333333	1	0.3333	ns	Wilcoxon
+101	MLH1_PMS2	No_Missense	Prostate	Small Bowel	0.716800516994495	1	0.7168	ns	Wilcoxon
+102	MLH1_PMS2	No_Missense	Prostate	Endometrial	0.639659966588389	1	0.6397	ns	Wilcoxon
+103	MLH1_PMS2	No_Missense	Prostate	Rectal	0.600401848096969	1	0.6004	ns	Wilcoxon
+104	MLH1_PMS2	No_Missense	Prostate	CUP	1	1	1.0000	ns	Wilcoxon
+105	MLH1_PMS2	No_Missense	Prostate	Other	1	1	1.0000	ns	Wilcoxon
+106	MLH1_PMS2	No_Missense	Prostate	Ovarian	1	1	1.0000	ns	Wilcoxon
+107	MLH1_PMS2	No_Missense	Small Bowel	Endometrial	1	1	1.0000	ns	Wilcoxon
+108	MLH1_PMS2	No_Missense	Small Bowel	Rectal	0.246509965303189	1	0.2465	ns	Wilcoxon
+109	MLH1_PMS2	No_Missense	Small Bowel	CUP	0.536878456307933	1	0.5369	ns	Wilcoxon
+110	MLH1_PMS2	No_Missense	Small Bowel	Other	0.814337492632143	1	0.8143	ns	Wilcoxon
+111	MLH1_PMS2	No_Missense	Small Bowel	Ovarian	0.276500480083433	1	0.2765	ns	Wilcoxon
+112	MLH1_PMS2	No_Missense	Endometrial	Rectal	0.0194993049111432	1	0.0195	*	Wilcoxon
+113	MLH1_PMS2	No_Missense	Endometrial	CUP	0.526588249802012	1	0.5266	ns	Wilcoxon
+114	MLH1_PMS2	No_Missense	Endometrial	Other	0.801675555748322	1	0.8017	ns	Wilcoxon
+115	MLH1_PMS2	No_Missense	Endometrial	Ovarian	0.236348642623693	1	0.2363	ns	Wilcoxon
+116	MLH1_PMS2	No_Missense	Rectal	CUP	0.20427713351046	1	0.2043	ns	Wilcoxon
+117	MLH1_PMS2	No_Missense	Rectal	Other	0.327272727272727	1	0.3273	ns	Wilcoxon
+118	MLH1_PMS2	No_Missense	Rectal	Ovarian	0.2	1	0.2000	ns	Wilcoxon
+119	MLH1_PMS2	No_Missense	CUP	Other	1	1	1.0000	ns	Wilcoxon
+120	MLH1_PMS2	No_Missense	CUP	Ovarian	0.234763662827669	1	0.2348	ns	Wilcoxon
+121	MLH1_PMS2	No_Missense	Other	Ovarian	1	1	1.0000	ns	Wilcoxon
+122	Complex	No_Missense	Colon	Esophagogastric	0.220199981906589	1	0.2202	ns	Wilcoxon
+123	Complex	No_Missense	Colon	Endometrial	0.162455497268607	1	0.1625	ns	Wilcoxon
+124	Complex	No_Missense	Esophagogastric	Endometrial	1	1	1.0000	ns	Wilcoxon
+125	NORMAL	No_Missense	Colon	Esophagogastric	0.888888888888889	1	0.8889	ns	Wilcoxon
+126	NORMAL	No_Missense	Colon	Colorectal	0.296411686566428	1	0.2964	ns	Wilcoxon
+127	NORMAL	No_Missense	Colon	Small Bowel	0.5	1	0.5000	ns	Wilcoxon
+128	NORMAL	No_Missense	Colon	Endometrial	0.109090909090909	1	0.1091	ns	Wilcoxon
+129	NORMAL	No_Missense	Colon	CUP	0.25	1	0.2500	ns	Wilcoxon
+130	NORMAL	No_Missense	Esophagogastric	Colorectal	0.8	1	0.8000	ns	Wilcoxon
+131	NORMAL	No_Missense	Esophagogastric	Small Bowel	0.666666666666667	1	0.6667	ns	Wilcoxon
+132	NORMAL	No_Missense	Esophagogastric	Endometrial	0.8	1	0.8000	ns	Wilcoxon
+133	NORMAL	No_Missense	Esophagogastric	CUP	0.666666666666667	1	0.6667	ns	Wilcoxon
+134	NORMAL	No_Missense	Colorectal	Small Bowel	0.8	1	0.8000	ns	Wilcoxon
+135	NORMAL	No_Missense	Colorectal	Endometrial	1	1	1.0000	ns	Wilcoxon
+136	NORMAL	No_Missense	Colorectal	CUP	0.4	1	0.4000	ns	Wilcoxon
+137	NORMAL	No_Missense	Small Bowel	Endometrial	0.8	1	0.8000	ns	Wilcoxon
+138	NORMAL	No_Missense	Small Bowel	CUP	1	1	1.0000	ns	Wilcoxon
+139	NORMAL	No_Missense	Endometrial	CUP	0.4	1	0.4000	ns	Wilcoxon
+140	MSH6	No_Missense	Bladder	Colon	0.266666666666667	1	0.2667	ns	Wilcoxon
+141	MSH6	No_Missense	Bladder	Pancreas	0.666666666666667	1	0.6667	ns	Wilcoxon
+142	MSH6	No_Missense	Bladder	Colorectal	0.4	1	0.4000	ns	Wilcoxon
+143	MSH6	No_Missense	Bladder	Prostate	1	1	1.0000	ns	Wilcoxon
+144	MSH6	No_Missense	Bladder	Endometrial	1	1	1.0000	ns	Wilcoxon
+145	MSH6	No_Missense	Colon	Pancreas	0.4	1	0.4000	ns	Wilcoxon
+146	MSH6	No_Missense	Colon	Colorectal	1	1	1.0000	ns	Wilcoxon
+147	MSH6	No_Missense	Colon	Prostate	0.4	1	0.4000	ns	Wilcoxon
+148	MSH6	No_Missense	Colon	Endometrial	0.468159909854428	1	0.4682	ns	Wilcoxon
+149	MSH6	No_Missense	Pancreas	Colorectal	0.5	1	0.5000	ns	Wilcoxon
+150	MSH6	No_Missense	Pancreas	Prostate	1	1	1.0000	ns	Wilcoxon
+151	MSH6	No_Missense	Pancreas	Endometrial	1	1	1.0000	ns	Wilcoxon
+152	MSH6	No_Missense	Colorectal	Prostate	0.5	1	0.5000	ns	Wilcoxon
+153	MSH6	No_Missense	Colorectal	Endometrial	0.5	1	0.5000	ns	Wilcoxon
+154	MSH6	No_Missense	Prostate	Endometrial	1	1	1.0000	ns	Wilcoxon
+155	PMS2	No_Missense	Bladder	Colon	0.4	1	0.4000	ns	Wilcoxon
+156	PMS2	No_Missense	Bladder	Colorectal	1	1	1.0000	ns	Wilcoxon
+157	PMS2	No_Missense	Bladder	Biliary	1	1	1.0000	ns	Wilcoxon
+158	PMS2	No_Missense	Bladder	Small Bowel	0.276500480083433	1	0.2765	ns	Wilcoxon
+159	PMS2	No_Missense	Bladder	Rectal	1	1	1.0000	ns	Wilcoxon
+160	PMS2	No_Missense	Bladder	Ovarian	1	1	1.0000	ns	Wilcoxon
+161	PMS2	No_Missense	Colon	Colorectal	0.4	1	0.4000	ns	Wilcoxon
+162	PMS2	No_Missense	Colon	Biliary	1	1	1.0000	ns	Wilcoxon
+163	PMS2	No_Missense	Colon	Small Bowel	0.459597386183942	1	0.4596	ns	Wilcoxon
+164	PMS2	No_Missense	Colon	Rectal	1	1	1.0000	ns	Wilcoxon
+165	PMS2	No_Missense	Colon	Ovarian	0.8	1	0.8000	ns	Wilcoxon
+166	PMS2	No_Missense	Colorectal	Biliary	1	1	1.0000	ns	Wilcoxon
+167	PMS2	No_Missense	Colorectal	Small Bowel	0.276500480083433	1	0.2765	ns	Wilcoxon
+168	PMS2	No_Missense	Colorectal	Rectal	1	1	1.0000	ns	Wilcoxon
+169	PMS2	No_Missense	Colorectal	Ovarian	1	1	1.0000	ns	Wilcoxon
+170	PMS2	No_Missense	Biliary	Small Bowel	0.276500480083433	1	0.2765	ns	Wilcoxon
+171	PMS2	No_Missense	Biliary	Rectal	1	1	1.0000	ns	Wilcoxon
+172	PMS2	No_Missense	Biliary	Ovarian	1	1	1.0000	ns	Wilcoxon
+173	PMS2	No_Missense	Small Bowel	Rectal	0.276500480083433	1	0.2765	ns	Wilcoxon
+174	PMS2	No_Missense	Small Bowel	Ovarian	0.456056540250256	1	0.4561	ns	Wilcoxon
+175	PMS2	No_Missense	Rectal	Ovarian	1	1	1.0000	ns	Wilcoxon
+176	?	No_Missense	Bladder	Esophagogastric	0.666666666666667	1	0.6667	ns	Wilcoxon
+177	?	No_Missense	Bladder	Small Bowel	1	1	1.0000	ns	Wilcoxon
+178	?	No_Missense	Bladder	Endometrial	1	1	1.0000	ns	Wilcoxon
+179	?	No_Missense	Esophagogastric	Small Bowel	0.666666666666667	1	0.6667	ns	Wilcoxon
+180	?	No_Missense	Esophagogastric	Endometrial	0.666666666666667	1	0.6667	ns	Wilcoxon
+181	?	No_Missense	Small Bowel	Endometrial	1	1	1.0000	ns	Wilcoxon

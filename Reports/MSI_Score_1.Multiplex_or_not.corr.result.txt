@@ -1,4 +1,2 @@
 .y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	MSI_Score_1	Singleton	Multiplex	7.56068081514864e-05	0.00023	7.6e-05	****	Wilcoxon
-2	MSI_Score_1	Singleton	NORMAL	0.028217347036013	0.056	0.028	*	Wilcoxon
-3	MSI_Score_1	Multiplex	NORMAL	0.557206319389	0.56	0.557	ns	Wilcoxon
+1	MSI_Score_1	Singleton	Multiplex	7.56068081514864e-05	7.6e-05	7.6e-05	****	Wilcoxon

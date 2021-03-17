@@ -1,21 +1,11 @@
 Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
 1	Bladder	No_Missense	Singleton	Multiplex	0.764228217764177	1	0.764	ns	Wilcoxon
 2	Colon	No_Missense	Singleton	Multiplex	0.88987104115766	1	0.890	ns	Wilcoxon
-3	Colon	No_Missense	Singleton	NORMAL	0.643132205003642	1	0.643	ns	Wilcoxon
-4	Colon	No_Missense	Multiplex	NORMAL	0.271024818507313	1	0.271	ns	Wilcoxon
-5	Esophagogastric	No_Missense	Multiplex	NORMAL	0.43722872771885	1	0.437	ns	Wilcoxon
-6	Pancreas	No_Missense	Singleton	Multiplex	0.637351888233937	1	0.637	ns	Wilcoxon
-7	Colorectal	No_Missense	Singleton	Multiplex	0.0107377607100735	0.21	0.011	*	Wilcoxon
-8	Colorectal	No_Missense	Singleton	NORMAL	0.0571428571428571	1	0.057	ns	Wilcoxon
-9	Colorectal	No_Missense	Multiplex	NORMAL	0.367699712130556	1	0.368	ns	Wilcoxon
-10	Biliary	No_Missense	Singleton	Multiplex	0.333333333333333	1	0.333	ns	Wilcoxon
-11	Prostate	No_Missense	Singleton	Multiplex	0.5	1	0.500	ns	Wilcoxon
-12	Small Bowel	No_Missense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
-13	Small Bowel	No_Missense	Singleton	NORMAL	1	1	1.000	ns	Wilcoxon
-14	Small Bowel	No_Missense	Multiplex	NORMAL	1	1	1.000	ns	Wilcoxon
-15	Endometrial	No_Missense	Singleton	Multiplex	0.161407134964275	1	0.161	ns	Wilcoxon
-16	Endometrial	No_Missense	Singleton	NORMAL	0.4	1	0.400	ns	Wilcoxon
-17	Endometrial	No_Missense	Multiplex	NORMAL	0.973894900617161	1	0.974	ns	Wilcoxon
-18	Rectal	No_Missense	Singleton	Multiplex	0.165168163164623	1	0.165	ns	Wilcoxon
-19	CUP	No_Missense	Multiplex	NORMAL	0.234763662827669	1	0.235	ns	Wilcoxon
-20	Ovarian	No_Missense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
+3	Pancreas	No_Missense	Singleton	Multiplex	0.637351888233937	1	0.637	ns	Wilcoxon
+4	Colorectal	No_Missense	Singleton	Multiplex	0.0107377607100735	0.11	0.011	*	Wilcoxon
+5	Biliary	No_Missense	Singleton	Multiplex	0.333333333333333	1	0.333	ns	Wilcoxon
+6	Prostate	No_Missense	Singleton	Multiplex	0.5	1	0.500	ns	Wilcoxon
+7	Small Bowel	No_Missense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
+8	Endometrial	No_Missense	Singleton	Multiplex	0.161407134964275	1	0.161	ns	Wilcoxon
+9	Rectal	No_Missense	Singleton	Multiplex	0.165168163164623	1	0.165	ns	Wilcoxon
+10	Ovarian	No_Missense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon

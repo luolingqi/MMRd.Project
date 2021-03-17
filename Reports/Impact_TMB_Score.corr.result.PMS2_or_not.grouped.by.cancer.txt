@@ -1,13 +1,12 @@
 Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	Bladder	Impact_TMB_Score	PMS2	Not_PMS2	0.25	1	0.25000	ns	Wilcoxon
-2	Colon	Impact_TMB_Score	PMS2	Not_PMS2	0.000756927457379348	0.0091	0.00076	***	Wilcoxon
-3	Esophagogastric	Impact_TMB_Score	PMS2	Not_PMS2	0.708511514360606	1	0.70851	ns	Wilcoxon
-4	Pancreas	Impact_TMB_Score	PMS2	Not_PMS2	1	1	1.00000	ns	Wilcoxon
-5	Colorectal	Impact_TMB_Score	PMS2	Not_PMS2	0.206836681216132	1	0.20684	ns	Wilcoxon
-6	Prostate	Impact_TMB_Score	PMS2	Not_PMS2	0.5	1	0.50000	ns	Wilcoxon
-7	Small Bowel	Impact_TMB_Score	PMS2	Not_PMS2	0.375757575757576	1	0.37576	ns	Wilcoxon
-8	Endometrial	Impact_TMB_Score	PMS2	Not_PMS2	0.0283128636960661	0.31	0.02831	*	Wilcoxon
-9	Rectal	Impact_TMB_Score	PMS2	Not_PMS2	0.123005477494642	1	0.12301	ns	Wilcoxon
-10	CUP	Impact_TMB_Score	PMS2	Not_PMS2	0.333333333333333	1	0.33333	ns	Wilcoxon
-11	Other	Impact_TMB_Score	PMS2	Not_PMS2	0.857142857142857	1	0.85714	ns	Wilcoxon
-12	Ovarian	Impact_TMB_Score	PMS2	Not_PMS2	0.333333333333333	1	0.33333	ns	Wilcoxon
+1	Bladder	Impact_TMB_Score	PMS2	Not_PMS2	0.25	1	0.2500	ns	Wilcoxon
+2	Colon	Impact_TMB_Score	PMS2	Not_PMS2	0.00127155737031928	0.014	0.0013	**	Wilcoxon
+3	Esophagogastric	Impact_TMB_Score	PMS2	Not_PMS2	0.650135391932983	1	0.6501	ns	Wilcoxon
+4	Pancreas	Impact_TMB_Score	PMS2	Not_PMS2	1	1	1.0000	ns	Wilcoxon
+5	Colorectal	Impact_TMB_Score	PMS2	Not_PMS2	0.0317279323460616	0.29	0.0317	*	Wilcoxon
+6	Prostate	Impact_TMB_Score	PMS2	Not_PMS2	0.5	1	0.5000	ns	Wilcoxon
+7	Small Bowel	Impact_TMB_Score	PMS2	Not_PMS2	0.177777777777778	1	0.1778	ns	Wilcoxon
+8	Endometrial	Impact_TMB_Score	PMS2	Not_PMS2	0.0137533374117387	0.14	0.0138	*	Wilcoxon
+9	Rectal	Impact_TMB_Score	PMS2	Not_PMS2	0.123005477494642	0.98	0.1230	ns	Wilcoxon
+10	Other	Impact_TMB_Score	PMS2	Not_PMS2	0.857142857142857	1	0.8571	ns	Wilcoxon
+11	Ovarian	Impact_TMB_Score	PMS2	Not_PMS2	0.333333333333333	1	0.3333	ns	Wilcoxon

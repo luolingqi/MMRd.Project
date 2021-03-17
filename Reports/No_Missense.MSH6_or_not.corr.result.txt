@@ -1,2 +1,2 @@
 .y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	No_Missense	MSH6	Not_MSH6	6.10884458116346e-11	6.1e-11	6.1e-11	****	Wilcoxon
+1	No_Missense	MSH6	Not_MSH6	1.90625412804429e-11	1.9e-11	1.9e-11	****	Wilcoxon

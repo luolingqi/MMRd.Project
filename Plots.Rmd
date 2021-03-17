@@ -56,9 +56,9 @@ row.names(df_1) <- df_1$Row.names
 df_1 <- df_1[,-which(names(df_1) %in% c("Row.names","Sample_ID"))]
 
 
-plotCorr.MMRd <- function(x, y) {
+plotCorr.MMRd <- function(x, y, z) {
   my_comparisons <- list()
-  df_corr <- compare_means(as.formula(paste0(y," ~ ", "CLASSIFICATION_PLOT")),  data = x[-which(x$CLASSIFICATION_PLOT=="Delete"),])
+  df_corr <- compare_means(as.formula(paste0(y," ~ ", "CLASSIFICATION_PLOT")),  data = x)
   idx <- 1
   for(sig in which(df_corr$p.signif != "ns")){
     #print(as.character(df_corr[sig,c("group1")]))
@@ -72,12 +72,13 @@ plotCorr.MMRd <- function(x, y) {
               quote = FALSE, 
               sep = "\t")
   
-  ylabel <- y
+  ylabel <- gsub("No_","",y)
+  ylabel <- gsub("_1","",ylabel)
   
   if (y == "Fraction_Genome_Altered") {
     max_y <- max(x[,y])
     min_y <- min(x[,y])
-    assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+    assign(paste0("p_",y), ggboxplot(x, 
               x = "CLASSIFICATION_PLOT", y = y,
               #color = "Cancer_Type_NEW", 
               palette = "category20", size = 0.5,
@@ -89,6 +90,7 @@ plotCorr.MMRd <- function(x, y) {
               xlab("MMRd Type") +
               stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.02*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
               stat_compare_means(label.y = 1.8*max_y) + 
+              scale_x_discrete(labels=z) + 
               theme(axis.text = element_text(size = 10)) + 
               theme(axis.title = element_text(face = "bold")) + 
               theme(legend.text = element_text(size = 7)) + 
@@ -98,7 +100,7 @@ plotCorr.MMRd <- function(x, y) {
   }else {
     max_y <- log10(max(x[,y]))
     min_y <- log10(min(x[,y]))
-    assign(paste0("p_",y), ggboxplot(x[-which(x$CLASSIFICATION_PLOT=="Delete"),], 
+    assign(paste0("p_",y), ggboxplot(x, 
               x = "CLASSIFICATION_PLOT", y = y,
               #color = "Cancer_Type_NEW", 
               palette = "category20", size = 0.5,
@@ -110,6 +112,7 @@ plotCorr.MMRd <- function(x, y) {
               xlab("MMRd Type") +
               stat_compare_means(aes(label = ..p.signif..), comparisons = my_comparisons, label.y = 1.6*max_y*(1-0.03*(1:n)), vjust = 0.8, bracket.size = 0.1) + 
               stat_compare_means(label.y = 2*max_y) + 
+              scale_x_discrete(labels=z) + 
               scale_y_log10() +
               theme(axis.text = element_text(size = 10)) + 
               theme(axis.title = element_text(face = "bold")) + 
@@ -122,23 +125,33 @@ plotCorr.MMRd <- function(x, y) {
 }
 
 # c(max_y*0.7, max_y*0.8, max_y*0.9)
-metrics <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", "No_Missense", "No_Frameshift", "No_Splice","No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del" )
+#"No_Splice"
+metrics <- c("MSI_Score_1", "Impact_TMB_Score", "Fraction_Genome_Altered", "No_Missense", "No_Frameshift" ,"No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del" )
 
-df_1_pls_1 <- cbind(df_1[,! names(df_1) %in% c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Row.names","Sample_ID","Tumor_Purity","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")]+1, df_1[,c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Tumor_Purity","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")])
+df_1_MMRd.types.only <- df_1[-which(df_1$CLASSIFICATION_PLOT %in% c("Delete","NORMAL","?")),]
+
+df_1_pls_1 <- cbind(df_1_MMRd.types.only[,!names(df_1_MMRd.types.only) %in% c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Row.names","Sample_ID","Tumor_Purity","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")]+1,
+                    df_1_MMRd.types.only[,c("Fraction_Genome_Altered","Cancer_Type_NEW","CLASSIFICATION_PLOT","Tumor_Purity","Primary_Site","Metastatic_Site","Sample_Type","Race","Ethnicity")])
+
+# case freq # by MMRd type
+caseNo <- c("Complex\n11","MLH1_PMS2\n251","MSH2_MSH6\n70","MSH6\n12","PMS2\n13") 
+#c(11,251,70,12,13)
+Types <- c("Complex","MLH1_PMS2","MSH2_MSH6","MSH6","PMS2")
+names(caseNo) <- Types
 
 for(i in metrics) {
   # compare means between MMRd groups, grouped by cancer types
-  corr_tmp <- compare_means(as.formula(paste0(i," ~ CLASSIFICATION_PLOT")), data = df_1[-which(df_1$CLASSIFICATION_PLOT=="Delete")], group.by = "Cancer_Type_NEW")
+  corr_tmp <- compare_means(as.formula(paste0(i," ~ CLASSIFICATION_PLOT")), data = df_1_MMRd.types.only, group.by = "Cancer_Type_NEW")
   write.table(corr_tmp,
               file = file.path(getwd(),paste0(i,".corr.result.MMRd.grouped.by.cancer.txt")),
               quote = FALSE,
               sep = "\t")
 
-  # plot and test without grouping by cancer types
-  assign(paste0("p_",i), plotCorr.MMRd(df_1_pls_1,i))
-  print(get(paste0("p_",i)))
   
-  ## Build a linear model for each genomic feature using predictors 1) MMRd type; 2) Cancer type; 3) Tumor purity
+    # plot and test without grouping by cancer types
+  assign(paste0("p_",i), plotCorr.MMRd(df_1_pls_1,i,caseNo))
+  print(get(paste0("p_",i)))
+    ## Build a linear model for each genomic feature using predictors 1) MMRd type; 2) Cancer type; 3) Tumor purity
   sink(paste0("summary_lm_for_",i,"_w.MMRd.Cancer.Purity.txt"))
   model <- lm(reformulate(termlabels = c('CLASSIFICATION_PLOT', 'Cancer_Type_NEW', 'Tumor_Purity'), response = i), df_1)
   
@@ -154,8 +167,7 @@ for(i in metrics) {
   sink(paste0("summary_annova_for_",i,"_w.MMRd.Cancer.Purity.txt"))
   print(anova(model))
   sink()
-  
-  #print(summ(model))
+
 }
 
 
@@ -185,7 +197,8 @@ plotCorr.Cancer <- function(x, y) {
               quote = FALSE, 
               sep = "\t")
   
-  ylabel <- y
+  ylabel <- gsub("No_","",y)
+  ylabel <- gsub("_1","",ylabel)
   
   if (y == "Fraction_Genome_Altered") {
     max_y <- max(x[,y])
@@ -500,8 +513,8 @@ You can also embed plots, for example:
 d_cmp <- expand.grid(x = c(1:7), y = c(1:7), stringsAsFactors = F) 
 d_cmp <- d_cmp[d_cmp$x < d_cmp$y,]
 
-#MMRd_lvls_1 <- c("?" , "Complex" , "MLH1_PMS2" ,"MSH2_MSH6" ,"MSH6"  , "NORMAL" , "PMS2")
-
+#MMRd_lvls_1 <- c("?" , "Complex" , "MLH1_PMS2" ,"MSH2_MSH6" ,"MSH6"  , "NORMAL" , "PMS2"
+  
 for (i in 1:nrow(d_cmp)) {
   df_pair <- df_surv_MMRd.CancerType.GeneMut[df_surv_MMRd.CancerType.GeneMut$MMRd %in% as.numeric(d_cmp[i,]),]
   fit <- survfit(Surv(time = df_pair$time, event =  df_pair$status) ~ MMRd, data = df_pair)

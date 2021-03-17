@@ -1,21 +1,11 @@
 Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
 1	Bladder	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
 2	Colon	No_INSERT	Singleton	Multiplex	0.980349477798272	1	0.980	ns	Wilcoxon
-3	Colon	No_INSERT	Singleton	NORMAL	0.550097317230397	1	0.550	ns	Wilcoxon
-4	Colon	No_INSERT	Multiplex	NORMAL	0.236071852136239	1	0.236	ns	Wilcoxon
-5	Esophagogastric	No_INSERT	Multiplex	NORMAL	0.731040778945416	1	0.731	ns	Wilcoxon
-6	Pancreas	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
-7	Colorectal	No_INSERT	Singleton	Multiplex	0.333264964966876	1	0.333	ns	Wilcoxon
-8	Colorectal	No_INSERT	Singleton	NORMAL	0.663117245320382	1	0.663	ns	Wilcoxon
-9	Colorectal	No_INSERT	Multiplex	NORMAL	0.541140322971231	1	0.541	ns	Wilcoxon
-10	Biliary	No_INSERT	Singleton	Multiplex	0.234763662827669	1	0.235	ns	Wilcoxon
-11	Prostate	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
-12	Small Bowel	No_INSERT	Singleton	Multiplex	0.065723620945415	1	0.066	ns	Wilcoxon
-13	Small Bowel	No_INSERT	Singleton	NORMAL	0.4	1	0.400	ns	Wilcoxon
-14	Small Bowel	No_INSERT	Multiplex	NORMAL	0.190249264433315	1	0.190	ns	Wilcoxon
-15	Endometrial	No_INSERT	Singleton	Multiplex	0.472966297468534	1	0.473	ns	Wilcoxon
-16	Endometrial	No_INSERT	Singleton	NORMAL	0.456056540250256	1	0.456	ns	Wilcoxon
-17	Endometrial	No_INSERT	Multiplex	NORMAL	0.71653646544052	1	0.717	ns	Wilcoxon
-18	Rectal	No_INSERT	Singleton	Multiplex	0.131273148579744	1	0.131	ns	Wilcoxon
-19	CUP	No_INSERT	Multiplex	NORMAL	0.227799993988229	1	0.228	ns	Wilcoxon
-20	Ovarian	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
+3	Pancreas	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
+4	Colorectal	No_INSERT	Singleton	Multiplex	0.333264964966876	1	0.333	ns	Wilcoxon
+5	Biliary	No_INSERT	Singleton	Multiplex	0.234763662827669	1	0.235	ns	Wilcoxon
+6	Prostate	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
+7	Small Bowel	No_INSERT	Singleton	Multiplex	0.065723620945415	0.66	0.066	ns	Wilcoxon
+8	Endometrial	No_INSERT	Singleton	Multiplex	0.472966297468534	1	0.473	ns	Wilcoxon
+9	Rectal	No_INSERT	Singleton	Multiplex	0.131273148579744	1	0.131	ns	Wilcoxon
+10	Ovarian	No_INSERT	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon

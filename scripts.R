@@ -40,6 +40,92 @@ plotCaseFreq <- function(x, y, z) {
 # plot survival plots by MMRd and Cancer types and key oncogenic gene mutaions
 ###########################################################################
 
+drawPairwiseSurvivalPlotCovariate <- function(data, group, ...) {
+  #subset by cancer type if available
+  args <- list(...)
+  cancerType = ""
+  
+  if(length(args) == 1){
+    cancerType = args[[length(args)]]
+    #print(cancerType)
+    data <- data[data$Cancer_Type == cancerType,]
+  }
+  
+  # factorize the status
+  data[,"status"] <- as.numeric(as.factor(data[,"status"]))
+  
+  # factorize the group
+  data[,group] <- as.factor(data[,group])
+  
+  assign(paste0(group,"_lvls"), levels(data[,group]))
+  data[,group] <- as.numeric(data[,group])
+  
+  assign("CancerType_lvls", levels(data[,"Cancer_Type"]))
+  data[,"Cancer_Type"] <- as.numeric(data[,"Cancer_Type"])
+  
+  #print(data[,group])
+  # create pairs from all the levels
+  #print(unique(data[,group]))
+  d_cmp <- expand.grid(x = unique(data[,group]), y = unique(data[,group]), stringsAsFactors = F) 
+  d_cmp <- d_cmp[d_cmp$x < d_cmp$y,]
+  
+  #print(d_cmp[1,2])
+  # generate survial plots in pairwise mode
+  for (i in 1:nrow(d_cmp)) {
+    
+    subset <- which(data[,group] %in% as.numeric(d_cmp[i,]))
+    
+    df_pair <- data[subset,] 
+    df_pair[,group] <- factor(df_pair[,group])
+    df_pair[,"Cancer_Type"] <- factor(df_pair[,"Cancer_Type"])
+    print(df_pair$MMRd)
+    print(df_pair$Cancer_Type)
+    modform <- as.formula(paste0("Surv(time = time, event =  status) ~ ", paste(group,"Cancer_Type", sep = " + ")))
+    #modform <- as.formula(paste0("Surv(time = time, event =  status) ~ ", group))
+    
+    fit <- eval(substitute(survfit(modform, data = df_pair), list(modform = modform)))
+    sdf <- eval(substitute(survdiff(modform, data = df_pair), list(modform = modform)))
+    p.Val <- 1 - pchisq(sdf$chisq, length(sdf$n) - 1)
+    #print(p.Val)
+    
+    #if(p.Val < 0.1) {
+    # Estimate hazard ratio pairwisely
+    res.cox <- eval(substitute(coxph(formula = modform, data = df_pair), list(modform = modform)))
+    #print(summary(res.cox))
+    #summary(res.cox) # summarize the result
+    # collect the following values: HR, lower 95%, upper 95%
+    estimate = exp(res.cox$coefficients)
+    conf.low = exp(confint(res.cox)[1,1])
+    conf.high = exp(confint(res.cox)[1,2])
+    
+    # Drawing curves
+    # create dummy data
+    MMRd_df <- data.frame(MMRd=df_pair$MMRd,
+                          Cancer_Type=c(1,1))
+    
+    # Survival curves
+    fit <- survfit(res.cox, newdata = MMRd_df)
+    ggsurvplot(fit, conf.int = TRUE, #legend.labs=c("Sex=1", "Sex=2"),
+               ggtheme = theme_minimal())
+    
+    # p <- ggsurvplot(fit, pval = T, pval.method = T, combine = T, legend.title = group,
+    #                 legend.labs = get(paste0(group,"_lvls"))[as.numeric(d_cmp[i,])],
+    #                 conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata",
+    #                 title = paste("All",cancerType,"Cancer Samples", sep = " "),
+    #                 risk.table.y.text.col = T, data = df_pair)
+    # p$plot <- p$plot +
+    #   annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1,
+    #            label = paste0("HR = ", round(estimate,2), " ( ",round(conf.low,2), " - ", round(conf.high,2), " ) "),
+    #            size = 4)
+    # print(p)
+    # 
+    
+    # }
+    
+  }
+  
+}
+
 
 drawPairwiseSurvivalPlot <- function(data, group, ...) {
   #subset by cancer type if available
@@ -51,28 +137,30 @@ drawPairwiseSurvivalPlot <- function(data, group, ...) {
     #print(cancerType)
     data <- data[data$Cancer_Type == cancerType,]
   }
-  #print(dim(data))
-  #print(cancerType)
+
   # factorize the status
   data[,"status"] <- as.numeric(as.factor(data[,"status"]))
-  
+
   # factorize the group
   data[,group] <- as.factor(data[,group])
+
   assign(paste0(group,"_lvls"), levels(data[,group]))
   data[,group] <- as.numeric(data[,group])
-    
+  #print(data[,group])
   # create pairs from all the levels
+  #print(unique(data[,group]))
   d_cmp <- expand.grid(x = unique(data[,group]), y = unique(data[,group]), stringsAsFactors = F) 
   d_cmp <- d_cmp[d_cmp$x < d_cmp$y,]
   
+  #print(d_cmp[1,2])
   # generate survial plots in pairwise mode
   for (i in 1:nrow(d_cmp)) {
 
     subset <- which(data[,group] %in% as.numeric(d_cmp[i,]))
 
     df_pair <- data[subset,] 
-    df_pair[,group] <- factor(df_pair[,group], levels = unique(df_pair[,group]))
-
+    df_pair[,group] <- factor(df_pair[,group])
+    #modform <- as.formula(paste0("Surv(time = time, event =  status) ~ ", paste(group,"Cancer_Type", sep = " + ")))
     modform <- as.formula(paste0("Surv(time = time, event =  status) ~ ", group))
 
     fit <- eval(substitute(survfit(modform, data = df_pair), list(modform = modform)))
@@ -80,10 +168,10 @@ drawPairwiseSurvivalPlot <- function(data, group, ...) {
     p.Val <- 1 - pchisq(sdf$chisq, length(sdf$n) - 1)
     #print(p.Val)
     
-    if(p.Val < 0.1) {
+    #if(p.Val < 0.1) {
       # Estimate hazard ratio pairwisely
       res.cox <- eval(substitute(coxph(formula = modform, data = df_pair), list(modform = modform)))
-      
+      #print(summary(res.cox))
       #summary(res.cox) # summarize the result
       # collect the following values: HR, lower 95%, upper 95%
       estimate = exp(res.cox$coefficients)
@@ -92,20 +180,20 @@ drawPairwiseSurvivalPlot <- function(data, group, ...) {
       
       # Drawing curves
       
-      #p <- ggsurvplot(fit, pval = T, pval.method = T, legend.labs = MMRd_lvls_1[as.numeric(d_cmp[i,])], 
-      #legend.labs = paste0(group,"_lvls")[as.numeric(d_cmp[i,])],
-      p <- ggsurvplot(fit, pval = T, pval.method = T, combine = T, legend.title = group, legend.labs = get(paste0(group,"_lvls"))[as.numeric(d_cmp[i,])],
-                      conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata", 
+      
+      p <- ggsurvplot(fit, pval = T, pval.method = T, combine = T, legend.title = group,
+                      legend.labs = get(paste0(group,"_lvls"))[as.numeric(d_cmp[i,])],
+                      conf.int = T,  risk.table = T, risk.table.height = 0.3, risk.table.col = "strata",
                       title = paste("All",cancerType,"Cancer Samples", sep = " "),
                       risk.table.y.text.col = T, data = df_pair)
-      p$plot <- p$plot + 
-        annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1, 
+      p$plot <- p$plot +
+        annotate("text", x = Inf, y = Inf, vjust = 1, hjust = 1,
                  label = paste0("HR = ", round(estimate,2), " ( ",round(conf.low,2), " - ", round(conf.high,2), " ) "),
                  size = 4)
       print(p)
-      #assign(paste0("p",i),  p$plot)
+
       
-    }
+   # }
     
   }
   

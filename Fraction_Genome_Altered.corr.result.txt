@@ -1,0 +1,11 @@
+.y.	group1	group2	p	p.adj	p.format	p.signif	method
+1	Fraction_Genome_Altered	MSH2_MSH6	MLH1_PMS2	0.178943409592753	1	0.18	ns	Wilcoxon
+2	Fraction_Genome_Altered	MSH2_MSH6	Complex	0.224625356894388	1	0.22	ns	Wilcoxon
+3	Fraction_Genome_Altered	MSH2_MSH6	MSH6	0.895549966056671	1	0.90	ns	Wilcoxon
+4	Fraction_Genome_Altered	MSH2_MSH6	PMS2	0.219080035522184	1	0.22	ns	Wilcoxon
+5	Fraction_Genome_Altered	MLH1_PMS2	Complex	0.53094318123443	1	0.53	ns	Wilcoxon
+6	Fraction_Genome_Altered	MLH1_PMS2	MSH6	0.708983193095421	1	0.71	ns	Wilcoxon
+7	Fraction_Genome_Altered	MLH1_PMS2	PMS2	0.467207186122407	1	0.47	ns	Wilcoxon
+8	Fraction_Genome_Altered	Complex	MSH6	0.441589459788131	1	0.44	ns	Wilcoxon
+9	Fraction_Genome_Altered	Complex	PMS2	1	1	1.00	ns	Wilcoxon
+10	Fraction_Genome_Altered	MSH6	PMS2	0.399088062014256	1	0.40	ns	Wilcoxon

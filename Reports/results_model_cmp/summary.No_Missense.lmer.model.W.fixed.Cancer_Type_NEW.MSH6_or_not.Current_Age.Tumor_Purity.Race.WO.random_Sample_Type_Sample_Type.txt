@@ -4,135 +4,135 @@ lm(formula = formula, data = data)
 
 Coefficients:
                                        (Intercept)  
-                                           53.1579  
-                            Cancer_Type_NEWBiliary  
-                                          -11.7271  
-                            Cancer_Type_NEWBladder  
-                                          -30.4875  
-                         Cancer_Type_NEWColorectal  
-                                          -11.9552  
-                                Cancer_Type_NEWCUP  
-                                           66.6114  
-                        Cancer_Type_NEWEndometrial  
-                                           -9.6346  
-                    Cancer_Type_NEWEsophagogastric  
-                                           -4.7666  
-                              Cancer_Type_NEWOther  
-                                          -50.2682  
-                            Cancer_Type_NEWOvarian  
-                                          -37.6260  
-                           Cancer_Type_NEWPancreas  
-                                          -29.1050  
-                           Cancer_Type_NEWProstate  
-                                          -46.9623  
-                             Cancer_Type_NEWRectal  
-                                          -14.0959  
-                        Cancer_Type_NEWSmall Bowel  
-                                          -19.5691  
+                                           54.4308  
                                MSH6_or_notNot_MSH6  
-                                          -35.4495  
+                                          -36.4047  
+                            Cancer_Type_NEWBiliary  
+                                          -11.6349  
+                            Cancer_Type_NEWBladder  
+                                          -30.2460  
+                         Cancer_Type_NEWColorectal  
+                                          -11.7419  
+                                Cancer_Type_NEWCUP  
+                                           -9.8555  
+                        Cancer_Type_NEWEndometrial  
+                                           -9.7029  
+                    Cancer_Type_NEWEsophagogastric  
+                                           -4.8617  
+                              Cancer_Type_NEWOther  
+                                          -50.3557  
+                            Cancer_Type_NEWOvarian  
+                                          -36.5574  
+                           Cancer_Type_NEWPancreas  
+                                          -30.1879  
+                           Cancer_Type_NEWProstate  
+                                          -45.6211  
+                             Cancer_Type_NEWRectal  
+                                          -14.3052  
+                        Cancer_Type_NEWSmall Bowel  
+                                          -19.7688  
                                        Current_Age  
-                                            0.1685  
+                                            0.2035  
                                       Tumor_Purity  
-                                            0.2768  
+                                            0.1930  
                      RaceBLACK OR AFRICAN AMERICAN  
-                                           -1.8296  
+                                            0.1414  
                  RaceNATIVE AMERICAN-AM IND/ALASKA  
-                                           -1.8374  
+                                           -1.2861  
                                          RaceOTHER  
-                                          -10.5601  
+                                           -9.6529  
                           RacePT REFUSED TO ANSWER  
-                                           -6.1239  
+                                           -3.5194  
                                          RaceWHITE  
-                                           -1.9706  
-        Cancer_Type_NEWBiliary:MSH6_or_notNot_MSH6  
+                                           -2.2272  
+        MSH6_or_notNot_MSH6:Cancer_Type_NEWBiliary  
                                                 NA  
-        Cancer_Type_NEWBladder:MSH6_or_notNot_MSH6  
-                                           15.8533  
-     Cancer_Type_NEWColorectal:MSH6_or_notNot_MSH6  
-                                           15.7898  
-            Cancer_Type_NEWCUP:MSH6_or_notNot_MSH6  
+        MSH6_or_notNot_MSH6:Cancer_Type_NEWBladder  
+                                           18.2337  
+     MSH6_or_notNot_MSH6:Cancer_Type_NEWColorectal  
+                                           21.1985  
+            MSH6_or_notNot_MSH6:Cancer_Type_NEWCUP  
                                                 NA  
-    Cancer_Type_NEWEndometrial:MSH6_or_notNot_MSH6  
-                                            0.5296  
-Cancer_Type_NEWEsophagogastric:MSH6_or_notNot_MSH6  
-                                            2.6251  
-          Cancer_Type_NEWOther:MSH6_or_notNot_MSH6  
-                                           32.9734  
-        Cancer_Type_NEWOvarian:MSH6_or_notNot_MSH6  
-                                            9.5913  
-       Cancer_Type_NEWPancreas:MSH6_or_notNot_MSH6  
-                                           29.8156  
-       Cancer_Type_NEWProstate:MSH6_or_notNot_MSH6  
-                                           29.9520  
-         Cancer_Type_NEWRectal:MSH6_or_notNot_MSH6  
-                                           16.0701  
-    Cancer_Type_NEWSmall Bowel:MSH6_or_notNot_MSH6  
-                                           13.5293  
+    MSH6_or_notNot_MSH6:Cancer_Type_NEWEndometrial  
+                                            1.7335  
+MSH6_or_notNot_MSH6:Cancer_Type_NEWEsophagogastric  
+                                            1.1768  
+          MSH6_or_notNot_MSH6:Cancer_Type_NEWOther  
+                                           33.4702  
+        MSH6_or_notNot_MSH6:Cancer_Type_NEWOvarian  
+                                           11.2488  
+       MSH6_or_notNot_MSH6:Cancer_Type_NEWPancreas  
+                                           31.3913  
+       MSH6_or_notNot_MSH6:Cancer_Type_NEWProstate  
+                                           29.4524  
+         MSH6_or_notNot_MSH6:Cancer_Type_NEWRectal  
+                                           16.9508  
+    MSH6_or_notNot_MSH6:Cancer_Type_NEWSmall Bowel  
+                                           15.0003  
 
                                        (Intercept) 
-                                        53.1578824 
-                            Cancer_Type_NEWBiliary 
-                                       -11.7270919 
-                            Cancer_Type_NEWBladder 
-                                       -30.4874907 
-                         Cancer_Type_NEWColorectal 
-                                       -11.9552295 
-                                Cancer_Type_NEWCUP 
-                                        66.6114066 
-                        Cancer_Type_NEWEndometrial 
-                                        -9.6346397 
-                    Cancer_Type_NEWEsophagogastric 
-                                        -4.7665648 
-                              Cancer_Type_NEWOther 
-                                       -50.2682226 
-                            Cancer_Type_NEWOvarian 
-                                       -37.6259561 
-                           Cancer_Type_NEWPancreas 
-                                       -29.1049634 
-                           Cancer_Type_NEWProstate 
-                                       -46.9622512 
-                             Cancer_Type_NEWRectal 
-                                       -14.0958959 
-                        Cancer_Type_NEWSmall Bowel 
-                                       -19.5691081 
+                                        54.4308197 
                                MSH6_or_notNot_MSH6 
-                                       -35.4495151 
+                                       -36.4046964 
+                            Cancer_Type_NEWBiliary 
+                                       -11.6349120 
+                            Cancer_Type_NEWBladder 
+                                       -30.2459741 
+                         Cancer_Type_NEWColorectal 
+                                       -11.7418666 
+                                Cancer_Type_NEWCUP 
+                                        -9.8554526 
+                        Cancer_Type_NEWEndometrial 
+                                        -9.7029304 
+                    Cancer_Type_NEWEsophagogastric 
+                                        -4.8617106 
+                              Cancer_Type_NEWOther 
+                                       -50.3557488 
+                            Cancer_Type_NEWOvarian 
+                                       -36.5573529 
+                           Cancer_Type_NEWPancreas 
+                                       -30.1879066 
+                           Cancer_Type_NEWProstate 
+                                       -45.6211113 
+                             Cancer_Type_NEWRectal 
+                                       -14.3052039 
+                        Cancer_Type_NEWSmall Bowel 
+                                       -19.7687666 
                                        Current_Age 
-                                         0.1685100 
+                                         0.2034573 
                                       Tumor_Purity 
-                                         0.2767707 
+                                         0.1930289 
                      RaceBLACK OR AFRICAN AMERICAN 
-                                        -1.8295879 
+                                         0.1414068 
                  RaceNATIVE AMERICAN-AM IND/ALASKA 
-                                        -1.8374313 
+                                        -1.2861126 
                                          RaceOTHER 
-                                       -10.5601379 
+                                        -9.6529498 
                           RacePT REFUSED TO ANSWER 
-                                        -6.1239036 
+                                        -3.5194419 
                                          RaceWHITE 
-                                        -1.9706033 
-        Cancer_Type_NEWBiliary:MSH6_or_notNot_MSH6 
+                                        -2.2272282 
+        MSH6_or_notNot_MSH6:Cancer_Type_NEWBiliary 
                                                 NA 
-        Cancer_Type_NEWBladder:MSH6_or_notNot_MSH6 
-                                        15.8533161 
-     Cancer_Type_NEWColorectal:MSH6_or_notNot_MSH6 
-                                        15.7897609 
-            Cancer_Type_NEWCUP:MSH6_or_notNot_MSH6 
+        MSH6_or_notNot_MSH6:Cancer_Type_NEWBladder 
+                                        18.2337101 
+     MSH6_or_notNot_MSH6:Cancer_Type_NEWColorectal 
+                                        21.1985485 
+            MSH6_or_notNot_MSH6:Cancer_Type_NEWCUP 
                                                 NA 
-    Cancer_Type_NEWEndometrial:MSH6_or_notNot_MSH6 
-                                         0.5295823 
-Cancer_Type_NEWEsophagogastric:MSH6_or_notNot_MSH6 
-                                         2.6251083 
-          Cancer_Type_NEWOther:MSH6_or_notNot_MSH6 
-                                        32.9733954 
-        Cancer_Type_NEWOvarian:MSH6_or_notNot_MSH6 
-                                         9.5913381 
-       Cancer_Type_NEWPancreas:MSH6_or_notNot_MSH6 
-                                        29.8155718 
-       Cancer_Type_NEWProstate:MSH6_or_notNot_MSH6 
-                                        29.9519862 
-         Cancer_Type_NEWRectal:MSH6_or_notNot_MSH6 
-                                        16.0700833 
-    Cancer_Type_NEWSmall Bowel:MSH6_or_notNot_MSH6 
-                                        13.5293488 
+    MSH6_or_notNot_MSH6:Cancer_Type_NEWEndometrial 
+                                         1.7334807 
+MSH6_or_notNot_MSH6:Cancer_Type_NEWEsophagogastric 
+                                         1.1767924 
+          MSH6_or_notNot_MSH6:Cancer_Type_NEWOther 
+                                        33.4701579 
+        MSH6_or_notNot_MSH6:Cancer_Type_NEWOvarian 
+                                        11.2488292 
+       MSH6_or_notNot_MSH6:Cancer_Type_NEWPancreas 
+                                        31.3912752 
+       MSH6_or_notNot_MSH6:Cancer_Type_NEWProstate 
+                                        29.4524211 
+         MSH6_or_notNot_MSH6:Cancer_Type_NEWRectal 
+                                        16.9507541 
+    MSH6_or_notNot_MSH6:Cancer_Type_NEWSmall Bowel 
+                                        15.0002611 

@@ -3,176 +3,292 @@ Call:
 lm(formula = formula, data = data)
 
 Coefficients:
-                                      (Intercept)                             Cancer_Type_NEWBiliary  
-                                         20.12510                                           -4.88256  
-                           Cancer_Type_NEWBladder                          Cancer_Type_NEWColorectal  
-                                         -8.04023                                            7.99476  
-                               Cancer_Type_NEWCUP                         Cancer_Type_NEWEndometrial  
-                                        -11.22469                                          -11.00205  
-                   Cancer_Type_NEWEsophagogastric                               Cancer_Type_NEWOther  
-                                         -6.43129                                          -19.27760  
-                           Cancer_Type_NEWOvarian                            Cancer_Type_NEWPancreas  
-                                         -9.28071                                            3.33691  
-                          Cancer_Type_NEWProstate                              Cancer_Type_NEWRectal  
-                                         -1.14312                                            3.67421  
-                       Cancer_Type_NEWSmall Bowel                                 MMRd_TypeMLH1_PMS2  
-                                          1.81282                                           -5.16426  
-                               MMRd_TypeMSH2_MSH6                                      MMRd_TypeMSH6  
-                                         -1.96651                                          -16.14932  
-                                  MMRd_TypeNORMAL                                      MMRd_TypePMS2  
-                                         -7.57583                                          -10.89697  
-                                      Current_Age                                       Tumor_Purity  
-                                          0.01796                                            0.00968  
-                    RaceBLACK OR AFRICAN AMERICAN                  RaceNATIVE AMERICAN-AM IND/ALASKA  
-                                          4.49755                                            3.64073  
-                                        RaceOTHER                           RacePT REFUSED TO ANSWER  
-                                          8.15984                                            6.80940  
-                                        RaceWHITE          Cancer_Type_NEWBiliary:MMRd_TypeMLH1_PMS2  
-                                          4.02799                                            1.38455  
-        Cancer_Type_NEWBladder:MMRd_TypeMLH1_PMS2       Cancer_Type_NEWColorectal:MMRd_TypeMLH1_PMS2  
-                                               NA                                          -11.38619  
-            Cancer_Type_NEWCUP:MMRd_TypeMLH1_PMS2      Cancer_Type_NEWEndometrial:MMRd_TypeMLH1_PMS2  
-                                          9.15390                                            5.57055  
-Cancer_Type_NEWEsophagogastric:MMRd_TypeMLH1_PMS2            Cancer_Type_NEWOther:MMRd_TypeMLH1_PMS2  
-                                          4.32869                                           12.99590  
-        Cancer_Type_NEWOvarian:MMRd_TypeMLH1_PMS2         Cancer_Type_NEWPancreas:MMRd_TypeMLH1_PMS2  
-                                          1.32817                                            1.85027  
-       Cancer_Type_NEWProstate:MMRd_TypeMLH1_PMS2           Cancer_Type_NEWRectal:MMRd_TypeMLH1_PMS2  
-                                         -0.75403                                           -2.32995  
-    Cancer_Type_NEWSmall Bowel:MMRd_TypeMLH1_PMS2          Cancer_Type_NEWBiliary:MMRd_TypeMSH2_MSH6  
-                                         -0.08603                                                 NA  
-        Cancer_Type_NEWBladder:MMRd_TypeMSH2_MSH6       Cancer_Type_NEWColorectal:MMRd_TypeMSH2_MSH6  
-                                         -3.16974                                          -12.42142  
-            Cancer_Type_NEWCUP:MMRd_TypeMSH2_MSH6      Cancer_Type_NEWEndometrial:MMRd_TypeMSH2_MSH6  
-                                               NA                                            4.73604  
-Cancer_Type_NEWEsophagogastric:MMRd_TypeMSH2_MSH6            Cancer_Type_NEWOther:MMRd_TypeMSH2_MSH6  
-                                          5.49125                                                 NA  
-        Cancer_Type_NEWOvarian:MMRd_TypeMSH2_MSH6         Cancer_Type_NEWPancreas:MMRd_TypeMSH2_MSH6  
-                                         11.37332                                          -14.30107  
-       Cancer_Type_NEWProstate:MMRd_TypeMSH2_MSH6           Cancer_Type_NEWRectal:MMRd_TypeMSH2_MSH6  
-                                         -6.54950                                           -4.84995  
-    Cancer_Type_NEWSmall Bowel:MMRd_TypeMSH2_MSH6               Cancer_Type_NEWBiliary:MMRd_TypeMSH6  
-                                         -7.42478                                                 NA  
-             Cancer_Type_NEWBladder:MMRd_TypeMSH6            Cancer_Type_NEWColorectal:MMRd_TypeMSH6  
-                                          4.47714                                           -9.38084  
-                 Cancer_Type_NEWCUP:MMRd_TypeMSH6           Cancer_Type_NEWEndometrial:MMRd_TypeMSH6  
-                                               NA                                            8.44455  
-     Cancer_Type_NEWEsophagogastric:MMRd_TypeMSH6                 Cancer_Type_NEWOther:MMRd_TypeMSH6  
-                                               NA                                                 NA  
-             Cancer_Type_NEWOvarian:MMRd_TypeMSH6              Cancer_Type_NEWPancreas:MMRd_TypeMSH6  
-                                               NA                                                 NA  
-            Cancer_Type_NEWProstate:MMRd_TypeMSH6                Cancer_Type_NEWRectal:MMRd_TypeMSH6  
-                                               NA                                                 NA  
-         Cancer_Type_NEWSmall Bowel:MMRd_TypeMSH6             Cancer_Type_NEWBiliary:MMRd_TypeNORMAL  
-                                               NA                                                 NA  
-           Cancer_Type_NEWBladder:MMRd_TypeNORMAL          Cancer_Type_NEWColorectal:MMRd_TypeNORMAL  
-                                               NA                                           -9.18859  
-               Cancer_Type_NEWCUP:MMRd_TypeNORMAL         Cancer_Type_NEWEndometrial:MMRd_TypeNORMAL  
-                                               NA                                            6.68404  
-   Cancer_Type_NEWEsophagogastric:MMRd_TypeNORMAL               Cancer_Type_NEWOther:MMRd_TypeNORMAL  
-                                          8.81358                                                 NA  
-           Cancer_Type_NEWOvarian:MMRd_TypeNORMAL            Cancer_Type_NEWPancreas:MMRd_TypeNORMAL  
-                                               NA                                                 NA  
-          Cancer_Type_NEWProstate:MMRd_TypeNORMAL              Cancer_Type_NEWRectal:MMRd_TypeNORMAL  
-                                               NA                                                 NA  
-       Cancer_Type_NEWSmall Bowel:MMRd_TypeNORMAL               Cancer_Type_NEWBiliary:MMRd_TypePMS2  
-                                        -10.02749                                                 NA  
-             Cancer_Type_NEWBladder:MMRd_TypePMS2            Cancer_Type_NEWColorectal:MMRd_TypePMS2  
-                                               NA                                                 NA  
-                 Cancer_Type_NEWCUP:MMRd_TypePMS2           Cancer_Type_NEWEndometrial:MMRd_TypePMS2  
-                                               NA                                                 NA  
-     Cancer_Type_NEWEsophagogastric:MMRd_TypePMS2                 Cancer_Type_NEWOther:MMRd_TypePMS2  
-                                               NA                                                 NA  
-             Cancer_Type_NEWOvarian:MMRd_TypePMS2              Cancer_Type_NEWPancreas:MMRd_TypePMS2  
-                                               NA                                                 NA  
-            Cancer_Type_NEWProstate:MMRd_TypePMS2                Cancer_Type_NEWRectal:MMRd_TypePMS2  
-                                               NA                                                 NA  
-         Cancer_Type_NEWSmall Bowel:MMRd_TypePMS2  
+                                      (Intercept)  
+                                        20.875059  
+                               MMRd_TypeMLH1_PMS2  
+                                        -5.196881  
+                               MMRd_TypeMSH2_MSH6  
+                                        -2.289612  
+                                    MMRd_TypeMSH6  
+                                       -16.369127  
+                                    MMRd_TypePMS2  
+                                       -11.040803  
+                           Cancer_Type_NEWBiliary  
+                                        -4.773536  
+                           Cancer_Type_NEWBladder  
+                                        -8.178821  
+                        Cancer_Type_NEWColorectal  
+                                         8.734411  
+                               Cancer_Type_NEWCUP  
+                                        -2.372573  
+                       Cancer_Type_NEWEndometrial  
+                                       -10.956527  
+                   Cancer_Type_NEWEsophagogastric  
+                                        -6.725050  
+                             Cancer_Type_NEWOther  
+                                       -19.301367  
+                           Cancer_Type_NEWOvarian  
+                                        -9.313451  
+                          Cancer_Type_NEWPancreas  
+                                         4.024950  
+                          Cancer_Type_NEWProstate  
+                                        -1.172657  
+                            Cancer_Type_NEWRectal  
+                                         2.992201  
+                       Cancer_Type_NEWSmall Bowel  
+                                         1.386797  
+                                      Current_Age  
+                                        -0.007557  
+                                     Tumor_Purity  
+                                         0.019509  
+                    RaceBLACK OR AFRICAN AMERICAN  
+                                         5.506756  
+                RaceNATIVE AMERICAN-AM IND/ALASKA  
+                                         4.084877  
+                                        RaceOTHER  
+                                         8.724357  
+                         RacePT REFUSED TO ANSWER  
+                                        10.750501  
+                                        RaceWHITE  
+                                         4.680362  
+        MMRd_TypeMLH1_PMS2:Cancer_Type_NEWBiliary  
+                                         0.629013  
+        MMRd_TypeMSH2_MSH6:Cancer_Type_NEWBiliary  
+                                               NA  
+             MMRd_TypeMSH6:Cancer_Type_NEWBiliary  
+                                               NA  
+             MMRd_TypePMS2:Cancer_Type_NEWBiliary  
+                                               NA  
+        MMRd_TypeMLH1_PMS2:Cancer_Type_NEWBladder  
+                                               NA  
+        MMRd_TypeMSH2_MSH6:Cancer_Type_NEWBladder  
+                                        -3.149245  
+             MMRd_TypeMSH6:Cancer_Type_NEWBladder  
+                                         5.000135  
+             MMRd_TypePMS2:Cancer_Type_NEWBladder  
+                                               NA  
+     MMRd_TypeMLH1_PMS2:Cancer_Type_NEWColorectal  
+                                       -12.272365  
+     MMRd_TypeMSH2_MSH6:Cancer_Type_NEWColorectal  
+                                       -13.251768  
+          MMRd_TypeMSH6:Cancer_Type_NEWColorectal  
+                                       -10.125135  
+          MMRd_TypePMS2:Cancer_Type_NEWColorectal  
+                                               NA  
+            MMRd_TypeMLH1_PMS2:Cancer_Type_NEWCUP  
+                                               NA  
+            MMRd_TypeMSH2_MSH6:Cancer_Type_NEWCUP  
+                                               NA  
+                 MMRd_TypeMSH6:Cancer_Type_NEWCUP  
+                                               NA  
+                 MMRd_TypePMS2:Cancer_Type_NEWCUP  
+                                               NA  
+    MMRd_TypeMLH1_PMS2:Cancer_Type_NEWEndometrial  
+                                         5.295923  
+    MMRd_TypeMSH2_MSH6:Cancer_Type_NEWEndometrial  
+                                         4.442241  
+         MMRd_TypeMSH6:Cancer_Type_NEWEndometrial  
+                                         8.617063  
+         MMRd_TypePMS2:Cancer_Type_NEWEndometrial  
+                                               NA  
+MMRd_TypeMLH1_PMS2:Cancer_Type_NEWEsophagogastric  
+                                         4.732104  
+MMRd_TypeMSH2_MSH6:Cancer_Type_NEWEsophagogastric  
+                                         5.957532  
+     MMRd_TypeMSH6:Cancer_Type_NEWEsophagogastric  
+                                               NA  
+     MMRd_TypePMS2:Cancer_Type_NEWEsophagogastric  
+                                               NA  
+          MMRd_TypeMLH1_PMS2:Cancer_Type_NEWOther  
+                                        12.624048  
+          MMRd_TypeMSH2_MSH6:Cancer_Type_NEWOther  
+                                               NA  
+               MMRd_TypeMSH6:Cancer_Type_NEWOther  
+                                               NA  
+               MMRd_TypePMS2:Cancer_Type_NEWOther  
+                                               NA  
+        MMRd_TypeMLH1_PMS2:Cancer_Type_NEWOvarian  
+                                         1.366276  
+        MMRd_TypeMSH2_MSH6:Cancer_Type_NEWOvarian  
+                                        11.346219  
+             MMRd_TypeMSH6:Cancer_Type_NEWOvarian  
+                                               NA  
+             MMRd_TypePMS2:Cancer_Type_NEWOvarian  
+                                               NA  
+       MMRd_TypeMLH1_PMS2:Cancer_Type_NEWPancreas  
+                                         1.440716  
+       MMRd_TypeMSH2_MSH6:Cancer_Type_NEWPancreas  
+                                       -14.132361  
+            MMRd_TypeMSH6:Cancer_Type_NEWPancreas  
+                                               NA  
+            MMRd_TypePMS2:Cancer_Type_NEWPancreas  
+                                               NA  
+       MMRd_TypeMLH1_PMS2:Cancer_Type_NEWProstate  
+                                        -0.444106  
+       MMRd_TypeMSH2_MSH6:Cancer_Type_NEWProstate  
+                                        -6.481333  
+            MMRd_TypeMSH6:Cancer_Type_NEWProstate  
+                                               NA  
+            MMRd_TypePMS2:Cancer_Type_NEWProstate  
+                                               NA  
+         MMRd_TypeMLH1_PMS2:Cancer_Type_NEWRectal  
+                                        -1.928372  
+         MMRd_TypeMSH2_MSH6:Cancer_Type_NEWRectal  
+                                        -4.213041  
+              MMRd_TypeMSH6:Cancer_Type_NEWRectal  
+                                               NA  
+              MMRd_TypePMS2:Cancer_Type_NEWRectal  
+                                               NA  
+    MMRd_TypeMLH1_PMS2:Cancer_Type_NEWSmall Bowel  
+                                         0.157118  
+    MMRd_TypeMSH2_MSH6:Cancer_Type_NEWSmall Bowel  
+                                        -6.878214  
+         MMRd_TypeMSH6:Cancer_Type_NEWSmall Bowel  
+                                               NA  
+         MMRd_TypePMS2:Cancer_Type_NEWSmall Bowel  
                                                NA  
 
-                                      (Intercept)                            Cancer_Type_NEWBiliary 
-                                     20.125096520                                      -4.882557793 
-                           Cancer_Type_NEWBladder                         Cancer_Type_NEWColorectal 
-                                     -8.040232547                                       7.994758156 
-                               Cancer_Type_NEWCUP                        Cancer_Type_NEWEndometrial 
-                                    -11.224690401                                     -11.002045337 
-                   Cancer_Type_NEWEsophagogastric                              Cancer_Type_NEWOther 
-                                     -6.431288254                                     -19.277596475 
-                           Cancer_Type_NEWOvarian                           Cancer_Type_NEWPancreas 
-                                     -9.280710835                                       3.336905721 
-                          Cancer_Type_NEWProstate                             Cancer_Type_NEWRectal 
-                                     -1.143121356                                       3.674205346 
-                       Cancer_Type_NEWSmall Bowel                                MMRd_TypeMLH1_PMS2 
-                                      1.812822697                                      -5.164260078 
-                               MMRd_TypeMSH2_MSH6                                     MMRd_TypeMSH6 
-                                     -1.966512597                                     -16.149316416 
-                                  MMRd_TypeNORMAL                                     MMRd_TypePMS2 
-                                     -7.575827665                                     -10.896969357 
-                                      Current_Age                                      Tumor_Purity 
-                                      0.017960101                                       0.009679748 
-                    RaceBLACK OR AFRICAN AMERICAN                 RaceNATIVE AMERICAN-AM IND/ALASKA 
-                                      4.497546058                                       3.640726410 
-                                        RaceOTHER                          RacePT REFUSED TO ANSWER 
-                                      8.159836859                                       6.809396120 
-                                        RaceWHITE         Cancer_Type_NEWBiliary:MMRd_TypeMLH1_PMS2 
-                                      4.027993730                                       1.384553123 
-        Cancer_Type_NEWBladder:MMRd_TypeMLH1_PMS2      Cancer_Type_NEWColorectal:MMRd_TypeMLH1_PMS2 
-                                               NA                                     -11.386192257 
-            Cancer_Type_NEWCUP:MMRd_TypeMLH1_PMS2     Cancer_Type_NEWEndometrial:MMRd_TypeMLH1_PMS2 
-                                      9.153897370                                       5.570549232 
-Cancer_Type_NEWEsophagogastric:MMRd_TypeMLH1_PMS2           Cancer_Type_NEWOther:MMRd_TypeMLH1_PMS2 
-                                      4.328689274                                      12.995895157 
-        Cancer_Type_NEWOvarian:MMRd_TypeMLH1_PMS2        Cancer_Type_NEWPancreas:MMRd_TypeMLH1_PMS2 
-                                      1.328167996                                       1.850266093 
-       Cancer_Type_NEWProstate:MMRd_TypeMLH1_PMS2          Cancer_Type_NEWRectal:MMRd_TypeMLH1_PMS2 
-                                     -0.754025772                                      -2.329951876 
-    Cancer_Type_NEWSmall Bowel:MMRd_TypeMLH1_PMS2         Cancer_Type_NEWBiliary:MMRd_TypeMSH2_MSH6 
-                                     -0.086027068                                                NA 
-        Cancer_Type_NEWBladder:MMRd_TypeMSH2_MSH6      Cancer_Type_NEWColorectal:MMRd_TypeMSH2_MSH6 
-                                     -3.169739328                                     -12.421418908 
-            Cancer_Type_NEWCUP:MMRd_TypeMSH2_MSH6     Cancer_Type_NEWEndometrial:MMRd_TypeMSH2_MSH6 
-                                               NA                                       4.736038608 
-Cancer_Type_NEWEsophagogastric:MMRd_TypeMSH2_MSH6           Cancer_Type_NEWOther:MMRd_TypeMSH2_MSH6 
-                                      5.491253628                                                NA 
-        Cancer_Type_NEWOvarian:MMRd_TypeMSH2_MSH6        Cancer_Type_NEWPancreas:MMRd_TypeMSH2_MSH6 
-                                     11.373316889                                     -14.301065727 
-       Cancer_Type_NEWProstate:MMRd_TypeMSH2_MSH6          Cancer_Type_NEWRectal:MMRd_TypeMSH2_MSH6 
-                                     -6.549498163                                      -4.849950910 
-    Cancer_Type_NEWSmall Bowel:MMRd_TypeMSH2_MSH6              Cancer_Type_NEWBiliary:MMRd_TypeMSH6 
-                                     -7.424777650                                                NA 
-             Cancer_Type_NEWBladder:MMRd_TypeMSH6           Cancer_Type_NEWColorectal:MMRd_TypeMSH6 
-                                      4.477138356                                      -9.380836225 
-                 Cancer_Type_NEWCUP:MMRd_TypeMSH6          Cancer_Type_NEWEndometrial:MMRd_TypeMSH6 
-                                               NA                                       8.444549560 
-     Cancer_Type_NEWEsophagogastric:MMRd_TypeMSH6                Cancer_Type_NEWOther:MMRd_TypeMSH6 
-                                               NA                                                NA 
-             Cancer_Type_NEWOvarian:MMRd_TypeMSH6             Cancer_Type_NEWPancreas:MMRd_TypeMSH6 
-                                               NA                                                NA 
-            Cancer_Type_NEWProstate:MMRd_TypeMSH6               Cancer_Type_NEWRectal:MMRd_TypeMSH6 
-                                               NA                                                NA 
-         Cancer_Type_NEWSmall Bowel:MMRd_TypeMSH6            Cancer_Type_NEWBiliary:MMRd_TypeNORMAL 
-                                               NA                                                NA 
-           Cancer_Type_NEWBladder:MMRd_TypeNORMAL         Cancer_Type_NEWColorectal:MMRd_TypeNORMAL 
-                                               NA                                      -9.188591813 
-               Cancer_Type_NEWCUP:MMRd_TypeNORMAL        Cancer_Type_NEWEndometrial:MMRd_TypeNORMAL 
-                                               NA                                       6.684038151 
-   Cancer_Type_NEWEsophagogastric:MMRd_TypeNORMAL              Cancer_Type_NEWOther:MMRd_TypeNORMAL 
-                                      8.813579009                                                NA 
-           Cancer_Type_NEWOvarian:MMRd_TypeNORMAL           Cancer_Type_NEWPancreas:MMRd_TypeNORMAL 
-                                               NA                                                NA 
-          Cancer_Type_NEWProstate:MMRd_TypeNORMAL             Cancer_Type_NEWRectal:MMRd_TypeNORMAL 
-                                               NA                                                NA 
-       Cancer_Type_NEWSmall Bowel:MMRd_TypeNORMAL              Cancer_Type_NEWBiliary:MMRd_TypePMS2 
-                                    -10.027485311                                                NA 
-             Cancer_Type_NEWBladder:MMRd_TypePMS2           Cancer_Type_NEWColorectal:MMRd_TypePMS2 
-                                               NA                                                NA 
-                 Cancer_Type_NEWCUP:MMRd_TypePMS2          Cancer_Type_NEWEndometrial:MMRd_TypePMS2 
-                                               NA                                                NA 
-     Cancer_Type_NEWEsophagogastric:MMRd_TypePMS2                Cancer_Type_NEWOther:MMRd_TypePMS2 
-                                               NA                                                NA 
-             Cancer_Type_NEWOvarian:MMRd_TypePMS2             Cancer_Type_NEWPancreas:MMRd_TypePMS2 
-                                               NA                                                NA 
-            Cancer_Type_NEWProstate:MMRd_TypePMS2               Cancer_Type_NEWRectal:MMRd_TypePMS2 
-                                               NA                                                NA 
-         Cancer_Type_NEWSmall Bowel:MMRd_TypePMS2 
+                                      (Intercept) 
+                                      20.87505908 
+                               MMRd_TypeMLH1_PMS2 
+                                      -5.19688066 
+                               MMRd_TypeMSH2_MSH6 
+                                      -2.28961232 
+                                    MMRd_TypeMSH6 
+                                     -16.36912689 
+                                    MMRd_TypePMS2 
+                                     -11.04080348 
+                           Cancer_Type_NEWBiliary 
+                                      -4.77353618 
+                           Cancer_Type_NEWBladder 
+                                      -8.17882082 
+                        Cancer_Type_NEWColorectal 
+                                       8.73441102 
+                               Cancer_Type_NEWCUP 
+                                      -2.37257315 
+                       Cancer_Type_NEWEndometrial 
+                                     -10.95652709 
+                   Cancer_Type_NEWEsophagogastric 
+                                      -6.72505023 
+                             Cancer_Type_NEWOther 
+                                     -19.30136657 
+                           Cancer_Type_NEWOvarian 
+                                      -9.31345140 
+                          Cancer_Type_NEWPancreas 
+                                       4.02495014 
+                          Cancer_Type_NEWProstate 
+                                      -1.17265658 
+                            Cancer_Type_NEWRectal 
+                                       2.99220116 
+                       Cancer_Type_NEWSmall Bowel 
+                                       1.38679654 
+                                      Current_Age 
+                                      -0.00755686 
+                                     Tumor_Purity 
+                                       0.01950855 
+                    RaceBLACK OR AFRICAN AMERICAN 
+                                       5.50675600 
+                RaceNATIVE AMERICAN-AM IND/ALASKA 
+                                       4.08487722 
+                                        RaceOTHER 
+                                       8.72435730 
+                         RacePT REFUSED TO ANSWER 
+                                      10.75050069 
+                                        RaceWHITE 
+                                       4.68036208 
+        MMRd_TypeMLH1_PMS2:Cancer_Type_NEWBiliary 
+                                       0.62901259 
+        MMRd_TypeMSH2_MSH6:Cancer_Type_NEWBiliary 
+                                               NA 
+             MMRd_TypeMSH6:Cancer_Type_NEWBiliary 
+                                               NA 
+             MMRd_TypePMS2:Cancer_Type_NEWBiliary 
+                                               NA 
+        MMRd_TypeMLH1_PMS2:Cancer_Type_NEWBladder 
+                                               NA 
+        MMRd_TypeMSH2_MSH6:Cancer_Type_NEWBladder 
+                                      -3.14924528 
+             MMRd_TypeMSH6:Cancer_Type_NEWBladder 
+                                       5.00013546 
+             MMRd_TypePMS2:Cancer_Type_NEWBladder 
+                                               NA 
+     MMRd_TypeMLH1_PMS2:Cancer_Type_NEWColorectal 
+                                     -12.27236480 
+     MMRd_TypeMSH2_MSH6:Cancer_Type_NEWColorectal 
+                                     -13.25176762 
+          MMRd_TypeMSH6:Cancer_Type_NEWColorectal 
+                                     -10.12513542 
+          MMRd_TypePMS2:Cancer_Type_NEWColorectal 
+                                               NA 
+            MMRd_TypeMLH1_PMS2:Cancer_Type_NEWCUP 
+                                               NA 
+            MMRd_TypeMSH2_MSH6:Cancer_Type_NEWCUP 
+                                               NA 
+                 MMRd_TypeMSH6:Cancer_Type_NEWCUP 
+                                               NA 
+                 MMRd_TypePMS2:Cancer_Type_NEWCUP 
+                                               NA 
+    MMRd_TypeMLH1_PMS2:Cancer_Type_NEWEndometrial 
+                                       5.29592321 
+    MMRd_TypeMSH2_MSH6:Cancer_Type_NEWEndometrial 
+                                       4.44224122 
+         MMRd_TypeMSH6:Cancer_Type_NEWEndometrial 
+                                       8.61706341 
+         MMRd_TypePMS2:Cancer_Type_NEWEndometrial 
+                                               NA 
+MMRd_TypeMLH1_PMS2:Cancer_Type_NEWEsophagogastric 
+                                       4.73210440 
+MMRd_TypeMSH2_MSH6:Cancer_Type_NEWEsophagogastric 
+                                       5.95753154 
+     MMRd_TypeMSH6:Cancer_Type_NEWEsophagogastric 
+                                               NA 
+     MMRd_TypePMS2:Cancer_Type_NEWEsophagogastric 
+                                               NA 
+          MMRd_TypeMLH1_PMS2:Cancer_Type_NEWOther 
+                                      12.62404830 
+          MMRd_TypeMSH2_MSH6:Cancer_Type_NEWOther 
+                                               NA 
+               MMRd_TypeMSH6:Cancer_Type_NEWOther 
+                                               NA 
+               MMRd_TypePMS2:Cancer_Type_NEWOther 
+                                               NA 
+        MMRd_TypeMLH1_PMS2:Cancer_Type_NEWOvarian 
+                                       1.36627636 
+        MMRd_TypeMSH2_MSH6:Cancer_Type_NEWOvarian 
+                                      11.34621931 
+             MMRd_TypeMSH6:Cancer_Type_NEWOvarian 
+                                               NA 
+             MMRd_TypePMS2:Cancer_Type_NEWOvarian 
+                                               NA 
+       MMRd_TypeMLH1_PMS2:Cancer_Type_NEWPancreas 
+                                       1.44071633 
+       MMRd_TypeMSH2_MSH6:Cancer_Type_NEWPancreas 
+                                     -14.13236108 
+            MMRd_TypeMSH6:Cancer_Type_NEWPancreas 
+                                               NA 
+            MMRd_TypePMS2:Cancer_Type_NEWPancreas 
+                                               NA 
+       MMRd_TypeMLH1_PMS2:Cancer_Type_NEWProstate 
+                                      -0.44410596 
+       MMRd_TypeMSH2_MSH6:Cancer_Type_NEWProstate 
+                                      -6.48133254 
+            MMRd_TypeMSH6:Cancer_Type_NEWProstate 
+                                               NA 
+            MMRd_TypePMS2:Cancer_Type_NEWProstate 
+                                               NA 
+         MMRd_TypeMLH1_PMS2:Cancer_Type_NEWRectal 
+                                      -1.92837170 
+         MMRd_TypeMSH2_MSH6:Cancer_Type_NEWRectal 
+                                      -4.21304135 
+              MMRd_TypeMSH6:Cancer_Type_NEWRectal 
+                                               NA 
+              MMRd_TypePMS2:Cancer_Type_NEWRectal 
+                                               NA 
+    MMRd_TypeMLH1_PMS2:Cancer_Type_NEWSmall Bowel 
+                                       0.15711796 
+    MMRd_TypeMSH2_MSH6:Cancer_Type_NEWSmall Bowel 
+                                      -6.87821444 
+         MMRd_TypeMSH6:Cancer_Type_NEWSmall Bowel 
+                                               NA 
+         MMRd_TypePMS2:Cancer_Type_NEWSmall Bowel 
                                                NA 

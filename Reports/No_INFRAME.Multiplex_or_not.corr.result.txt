@@ -1,4 +1,2 @@
 .y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	No_INFRAME	Singleton	Multiplex	5.50178116053516e-05	0.00017	5.5e-05	****	Wilcoxon
-2	No_INFRAME	Singleton	NORMAL	0.0852166893160747	0.17	0.085	ns	Wilcoxon
-3	No_INFRAME	Multiplex	NORMAL	0.171840573945376	0.17	0.172	ns	Wilcoxon
+1	No_INFRAME	Singleton	Multiplex	5.50178116053516e-05	5.5e-05	5.5e-05	****	Wilcoxon

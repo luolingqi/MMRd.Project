@@ -1,21 +1,11 @@
 Cancer_Type_NEW	.y.	group1	group2	p	p.adj	p.format	p.signif	method
-1	Bladder	No_Nonsense	Singleton	Multiplex	0.64880708498622	1	0.649	ns	Wilcoxon
-2	Colon	No_Nonsense	Singleton	Multiplex	0.116497700843328	1	0.116	ns	Wilcoxon
-3	Colon	No_Nonsense	Singleton	NORMAL	0.815334594355228	1	0.815	ns	Wilcoxon
-4	Colon	No_Nonsense	Multiplex	NORMAL	0.173674589168066	1	0.174	ns	Wilcoxon
-5	Esophagogastric	No_Nonsense	Multiplex	NORMAL	0.657168095344843	1	0.657	ns	Wilcoxon
-6	Pancreas	No_Nonsense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
-7	Colorectal	No_Nonsense	Singleton	Multiplex	0.104132341324564	1	0.104	ns	Wilcoxon
-8	Colorectal	No_Nonsense	Singleton	NORMAL	0.0265187219594307	0.5	0.027	*	Wilcoxon
-9	Colorectal	No_Nonsense	Multiplex	NORMAL	0.0244557407108135	0.49	0.024	*	Wilcoxon
-10	Biliary	No_Nonsense	Singleton	Multiplex	0.234763662827669	1	0.235	ns	Wilcoxon
-11	Prostate	No_Nonsense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
-12	Small Bowel	No_Nonsense	Singleton	Multiplex	1	1	1.000	ns	Wilcoxon
-13	Small Bowel	No_Nonsense	Singleton	NORMAL	1	1	1.000	ns	Wilcoxon
-14	Small Bowel	No_Nonsense	Multiplex	NORMAL	0.793345792424411	1	0.793	ns	Wilcoxon
-15	Endometrial	No_Nonsense	Singleton	Multiplex	0.113356735533973	1	0.113	ns	Wilcoxon
-16	Endometrial	No_Nonsense	Singleton	NORMAL	0.263552477282973	1	0.264	ns	Wilcoxon
-17	Endometrial	No_Nonsense	Multiplex	NORMAL	0.68081617150065	1	0.681	ns	Wilcoxon
-18	Rectal	No_Nonsense	Singleton	Multiplex	0.930110508123606	1	0.930	ns	Wilcoxon
-19	CUP	No_Nonsense	Multiplex	NORMAL	0.234763662827669	1	0.235	ns	Wilcoxon
-20	Ovarian	No_Nonsense	Singleton	Multiplex	0.617075077451974	1	0.617	ns	Wilcoxon
+1	Bladder	No_Nonsense	Singleton	Multiplex	0.64880708498622	1	0.65	ns	Wilcoxon
+2	Colon	No_Nonsense	Singleton	Multiplex	0.116497700843328	1	0.12	ns	Wilcoxon
+3	Pancreas	No_Nonsense	Singleton	Multiplex	1	1	1.00	ns	Wilcoxon
+4	Colorectal	No_Nonsense	Singleton	Multiplex	0.104132341324564	1	0.10	ns	Wilcoxon
+5	Biliary	No_Nonsense	Singleton	Multiplex	0.234763662827669	1	0.23	ns	Wilcoxon
+6	Prostate	No_Nonsense	Singleton	Multiplex	1	1	1.00	ns	Wilcoxon
+7	Small Bowel	No_Nonsense	Singleton	Multiplex	1	1	1.00	ns	Wilcoxon
+8	Endometrial	No_Nonsense	Singleton	Multiplex	0.113356735533973	1	0.11	ns	Wilcoxon
+9	Rectal	No_Nonsense	Singleton	Multiplex	0.930110508123606	1	0.93	ns	Wilcoxon
+10	Ovarian	No_Nonsense	Singleton	Multiplex	0.617075077451974	1	0.62	ns	Wilcoxon

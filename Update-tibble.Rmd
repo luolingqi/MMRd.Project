@@ -1,0 +1,932 @@
+---
+title: "MMRd Project Update, tibble version"
+author: "Lingqi Luo"
+date: "12/29/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(render = 'normal_print')
+knitr::opts_chunk$set(results='asis')
+
+# load all the required packages
+library(tidyverse)
+library(table1)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+library(ggsci)
+library(jtools)
+library(RColorBrewer)
+library(scales)
+library(lmerTest)
+library(lme4)
+library(sjPlot)
+library("survminer")
+require("survival")
+library(sjlabelled)
+library(sjmisc)
+library(reshape2)
+library(hrbrthemes)
+library(viridis)
+theme_set(theme_sjplot())
+#options(knitr.duplicate.label = "allow")
+
+##############################################################################################
+# Load all the data: genomic features, sample meta info, tumor purity, etc. 
+# generate a grand dataframe to contain all the above information and collapsed the MMRd types
+##############################################################################################
+path <- "/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/IMPACT_GITHUB"
+setwd("/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/IMPACT_GITHUB")
+source(paste0(path,"/plotCorrByMMRd.R"))
+source(paste0(path,"/buildLMEModel.R"))
+source(paste0(path,"/scripts.R"))
+
+tb <- read_tsv(file = file.path(path,"R_Input_2.txt"))
+
+tb.tp <- read_tsv(file = file.path(path,"Tumor_purity.txt"))
+
+tb.ca <- read_tsv(file = file.path(path,"Cancer_type.txt"))
+
+# merge tibbles using reduce
+tables <- list(tb,tb.tp,tb.ca)
+tb_1 <- tables %>% reduce(full_join) 
+
+# Add the collapsed columns "Multiplex_or_not", "MSH6_or_not", "PMS2_or_not" and "Cancer_Type"
+tb_2 <- tb_1 %>% mutate(Multiplex_or_not =
+                        ifelse(tb_1$CLASSIFICATION_PLOT %in% c("MSH2_MSH6","MLH1_PMS2","Complex"),
+                               "Multiplex", 
+                               ifelse(tb_1$CLASSIFICATION_PLOT %in% c("MSH6","PMS2"),
+                                      "Singleton", 
+                                      tb_1$CLASSIFICATION_PLOT
+                                      )
+                              )
+                        ) %>% mutate(Multiplex_or_not = 
+                                       relevel(as.factor(Multiplex_or_not), ref = "Singleton")
+                                     ) %>% 
+  
+                  mutate(MSH6_or_not = 
+                        ifelse(str_detect(tb_1$CLASSIFICATION_PLOT,"MSH6"), 
+                               #grepl("MSH6", tb_1$CLASSIFICATION_PLOT),
+                               "MSH6",
+                               "Not_MSH6"
+                               )
+                         ) %>% mutate(MSH6_or_not = 
+                                        relevel(as.factor(MSH6_or_not), ref = "MSH6")
+                                      ) %>%
+  
+                  mutate(PMS2_or_not = 
+                         ifelse(str_detect(tb_1$CLASSIFICATION_PLOT,"PMS2"),
+                           #grepl("PMS2",tb_1$CLASSIFICATION_PLOT),
+                                "PMS2",
+                                "Not_PMS2"
+                                )
+                         ) %>% mutate(PMS2_or_not = 
+                                        relevel(as.factor(PMS2_or_not), ref = "PMS2")
+                                      )
+
+tb_1 %<>% rename(MMRd_Type = CLASSIFICATION_PLOT) %>% filter(MMRd_Type != "Delete")
+tb_2 %<>% rename(MMRd_Type = CLASSIFICATION_PLOT) %>% filter(MMRd_Type != "Delete") %>%
+  mutate(Cancer_Type_NEW = relevel(as.factor(Cancer_Type_NEW), ref = "Colon")
+         )
+
+# add 1 to all the variables of non-character types
+df_2_pls_1 <- cbind(df_2[,unlist(lapply(df_2, is.numeric))]+1,df_2[,!unlist(lapply(df_2, is.numeric))])
+
+```
+
+# 1. Baseline Characteristics
+
+```{r, include=FALSE}
+# Customize the labels and units
+label(tb_1$Current_Age) <- "Age"
+units(tb_1$Current_Age) <- "years"
+
+label(tb_2$Current_Age) <- "Age"
+units(tb_2$Current_Age) <- "years"
+
+label(tb_1$Tumor_Purity) <- "Tumor Purity"
+units(tb_1$Tumor_Purity) <- "%"
+
+label(tb_2$Tumor_Purity) <- "Tumor Purity"
+units(tb_2$Tumor_Purity) <- "%"
+
+label(tb_1$Cancer_Type_NEW) <- "Cancer Type"
+label(tb_2$Cancer_Type_NEW) <- "Cancer Type"
+
+label(tb_1$Sample_Type) <- "Sample Type"
+label(tb_2$Sample_Type) <- "Sample Type"
+```
+
+::::{style="display: flex;"}
+:::{}
+### 1.1 `With original MMRd types`
+```{r warning = FALSE, message = FALSE}
+###################################################################
+# table baseline characteristics with original MMRd types
+###################################################################
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | MMRd_Type, data=tb_1, overall="Total")
+
+```
+:::
+:::{}
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, figures-side, fig.show="hold", out.width="50%"}
+plotCaseFreq(tb_1, "Cancer_Type_NEW", "MMRd_Type")
+```
+:::
+::::
+
+::::{style="display: flex;"}
+:::{}
+### 1.2 `With MMRd types collapsed by Multiplex or not`
+```{r warning = FALSE, message = FALSE}
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | Multiplex_or_not, data=df_2, overall="Total")
+plotCaseFreq(df_2, "Cancer_Type_NEW", "Multiplex_or_not")
+```
+
+:::
+
+::: {.col data-latex="{0.05\textwidth}"}
+<!-- an empty Div (with a white space), serving as
+a column separator -->
+:::
+
+:::{}
+### 1.3 `With MMRd types collapsed by MSH6 or not`
+```{r warning = FALSE, message = FALSE}
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | MSH6_or_not, data=df_2, overall="Total")
+plotCaseFreq(df_2, "Cancer_Type_NEW", "MSH6_or_not")
+```
+
+:::
+
+::: {.col data-latex="{0.05\textwidth}"}
+<!-- an empty Div (with a white space), serving as
+a column separator -->
+:::
+
+:::{}
+### 1.4`With MMRd types collapsed by PMS2 or not`
+```{r warning = FALSE, message = FALSE}
+table1(~ Current_Age + Race + Ethnicity + Tumor_Purity + Cancer_Type_NEW + Sample_Type | PMS2_or_not, data=df_2, overall="Total")
+plotCaseFreq(df_2, "Cancer_Type_NEW", "PMS2_or_not")
+```
+:::
+::::
+
+::::{}
+# 2. Linear Mixed Effect Regression Model to predict the genomic features with **original MMRd types**
+####   Apply a statistical model to predict genomic features with multiple fixed effects,
+#### **MMRd Types, Cancer Types, Age, Tumor purity, Race** and more, adjusting for random effects like **Metastatic status**
+
+:::{}
+#####Groups: **Complex, MSH2_MSH6, MLH1_PMS2, MSH6, PMS2, Normal**
+
+#####Formula: Feautre ~ **MMRd.Type** +/* Cancer.Type + Age + Tumor.purity + Race + (1 + **MMRd.Type** | Metastatic.status)
+
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, fig.show="hold", out.width="30%"}
+# create a directory to hold result files
+dir.create(file.path(getwd(),"results_model_cmp"), showWarnings = F)
+metrics <- c("MSI_Score_1", "Impact_TMB_Score", "No_Missense", "No_Frameshift","No_INSERT", "No_DELETION","No_INDEL","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del" )
+#metrics <- c("MSI_Score_1","No_Missense","No_INSERT","No_DELETION","No_INFRAME","No_INDEL","No_INFRAME_Del","No_Nonsense","No_Frameshift_Del")
+
+#metrics <- c("MSI_Score_1")
+fix_effects <- c("MMRd_Type")
+random_effects <- c("Cancer_Type_NEW")
+
+# Plot pairwise comparisons by collapsed MMRd types
+for(j in fix_effects){
+  for(i in metrics) {
+    for(k in random_effects) {
+   # compare means between MMRd groups, grouped by cancer types
+    corr_tmp <- compare_means(as.formula(paste0(i," ~ ",j)), data = df_2[!df_2$MMRd_Type %in% c("?","Delete"),], group.by = "Cancer_Type_NEW")
+    write.table(corr_tmp,
+                file = file.path(getwd(),paste0(i,".corr.result.",j,".grouped.by.cancer.txt")),
+                quote = FALSE,
+                sep = "\t")
+
+    # plot and test without grouping by cancer types
+    assign(paste0("p_",i), plotCorr.MMRd(df_2_pls_1[!df_2_pls_1$MMRd_Type %in% c("?","Delete"),],i,j))
+    print(get(paste0("p_",i)))
+
+    #################################################################
+    # linear mixed effect model
+    ##################################################################
+    fe <- c(k,j,"Current_Age", "Tumor_Purity", "Race")
+    #re <- c(k,"Sample_Type")
+    re <- c("Sample_Type")
+    fits <- buildLmeModel(i,fe,re,df_2[!df_2$MMRd_Type %in% c("?","Delete"),])
+      # make HTML report
+      #conditional F-tests with Kenward-Roger approximation
+      #cat(tab_model(r)$knitr,"\n--------\n")
+      tab <- tab_model(fits[[1]],fits[[2]],
+            #p.val = "kr",
+            show.df = TRUE
+            )
+      #cat(tab$knitr,"\n--------\n")
+      cat(tab$knitr,"\n--------\n", file = file.path(getwd(),"results_model_cmp",
+                             paste0("summary.",i,".lmer.model.W.fixed_effect",paste0(j,collapse = "."),".W.vs.WO.random_effects_", paste0(k,collapse = "."),".html")
+                             )
+          )
+    }
+  }
+}
+
+```
+
+:::
+::::
+
+::::{}
+# 3. Linear Mixed Effect Regression Model to predict the genomic features with **collapsed MMRd types**
+####   Apply a statistical model to predict genomic features with multiple fixed effects,
+#### **MMRd Types(collapsed), Cancer Types, Age, Tumor purity, Race** and more, adjusting for random effects like **Metastatic status**
+
+:::{}
+### 3.1 Significances By collapsed Multiplex or not
+#####Groups:
+            1) **Singleton**: MSH6, PMS2;
+            2) **Multiplex**: MSH2_MSH6, MLH1_PMS2, Complex;
+            3) **Normal**;
+
+#####Formula: Feautre ~ **Multiplex_or_not** +/* Cancer.Type + Age + Tumor.purity + Race + (1 + **Multiplex_or_not** | Metastatic.status)
+
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, fig.show="hold", out.width="30%"}
+# create a directory to hold result files
+dir.create(file.path(getwd(),"results_model_cmp"), showWarnings = F)
+#metrics <- c("MSI_Score_1", "Impact_TMB_Score", "No_Missense", "No_Frameshift","No_INSERT", "No_DELETION", "No_INFRAME","No_INDEL","No_INFRAME_Ins","No_INFRAME_Del","No_Nonsense","No_Frameshift_Ins","No_Frameshift_Del" )
+metrics <- c("MSI_Score_1","No_Missense","No_INSERT","No_DELETION","No_INFRAME","No_INDEL","No_INFRAME_Del","No_Nonsense","No_Frameshift_Del")
+
+fix_effects <- c("Multiplex_or_not")
+random_effects <- c("Cancer_Type_NEW")
+
+# Plot pairwise comparisons by collapsed MMRd types
+for(j in fix_effects){
+  for(i in metrics) {
+    for(k in random_effects) {
+   # compare means between MMRd groups, grouped by cancer types
+    corr_tmp <- compare_means(as.formula(paste0(i," ~ ",j)), data = df_2[!df_2$MMRd_Type %in% c("?","Delete"),], group.by = "Cancer_Type_NEW")
+    write.table(corr_tmp,
+                file = file.path(getwd(),paste0(i,".corr.result.",j,".grouped.by.cancer.txt")),
+                quote = FALSE,
+                sep = "\t")
+
+    # plot and test without grouping by cancer types
+    assign(paste0("p_",i), plotCorr.MMRd(df_2_pls_1[!df_2_pls_1$MMRd_Type %in% c("?","Delete"),],i,j))
+    print(get(paste0("p_",i)))
+
+    #################################################################
+    # linear mixed effect model
+    ##################################################################
+    fe <- c(k,j,"Current_Age", "Tumor_Purity", "Race")
+    #re <- c(k,"Sample_Type")
+    re <- c("Sample_Type")
+    fits <- buildLmeModel(i,fe,re,df_2[!df_2$MMRd_Type %in% c("?","Delete"),])
+      # make HTML report
+      #conditional F-tests with Kenward-Roger approximation
+      #cat(tab_model(r)$knitr,"\n--------\n")
+      tab <- tab_model(fits[[1]],fits[[2]],
+            #p.val = "kr",
+            show.df = TRUE
+            )
+      #cat(tab$knitr,"\n--------\n")
+      cat(tab$knitr,"\n--------\n", file = file.path(getwd(),"results_model_cmp",
+                             paste0("summary.",i,".lmer.model.W.fixed_effect",paste0(j,collapse = "."),".W.vs.WO.random_effects_", paste0(k,collapse = "."),".html")
+                             )
+          )
+    }
+  }
+}
+
+
+```
+:::
+
+:::{}
+### 3.2 Significances By collapsed MSH6 or not
+#####Groups:
+            1) **MSH6**: MSH2_MSH6, MSH6;
+            2) **Not_MSH6**: MLH1_PMS2, PMS2, Normal
+
+#####Formula: Feautre ~ **MSH6_or_not** +/* Cancer.Type + Age + Tumor.purity + Race + (1 + **MSH6_or_not** | Metastatic.status)
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, fig.show="hold", out.width="30%"}
+# create a directory to hold result files
+dir.create(file.path(getwd(),"results_model_cmp"), showWarnings = F)
+
+metrics <- c("Impact_TMB_Score","No_Missense","No_Nonsense")
+fix_effects <- c("MSH6_or_not")
+random_effects <- c("Cancer_Type_NEW")
+
+# Plot pairwise comparisons by collapsed MMRd types
+for(j in fix_effects){
+  for(i in metrics) {
+    for(k in random_effects) {
+   # compare means between MMRd groups, grouped by cancer types
+    corr_tmp <- compare_means(as.formula(paste0(i," ~ ",j)), data = df_2[!df_2$MMRd_Type %in% c("?","Delete"),], group.by = "Cancer_Type_NEW")
+    write.table(corr_tmp,
+                file = file.path(getwd(),paste0(i,".corr.result.",j,".grouped.by.cancer.txt")),
+                quote = FALSE,
+                sep = "\t")
+
+    # plot and test without grouping by cancer types
+    assign(paste0("p_",i), plotCorr.MMRd(df_2_pls_1[!df_2_pls_1$MMRd_Type %in% c("?","Delete"),],i,j))
+    print(get(paste0("p_",i)))
+
+    #################################################################
+    # linear mixed effect model
+    ##################################################################
+    fe <- c(k,j,"Current_Age", "Tumor_Purity", "Race")
+    #re <- c(k,"Sample_Type")
+    re <- c("Sample_Type")
+    fits <- buildLmeModel(i,fe,re,df_2[!df_2$MMRd_Type %in% c("?","Delete"),])
+      # make HTML report
+      #conditional F-tests with Kenward-Roger approximation
+      #cat(tab_model(r)$knitr,"\n--------\n")
+      tab <- tab_model(fits[[1]],fits[[2]],
+            #p.val = "kr",
+            show.df = TRUE
+            )
+      #cat(tab$knitr,"\n--------\n")
+      cat(tab$knitr,"\n--------\n", file = file.path(getwd(),"results_model_cmp",
+                             paste0("summary.",i,".lmer.model.W.fixed_effect",paste0(j,collapse = "."),".W.vs.WO.random_effects_", paste0(k,collapse = "."),".html")
+                             )
+          )
+    }
+  }
+}
+
+```
+
+:::
+:::{}
+
+### 3.3 Significances By collapsed PMS2 or not
+#####Groups:
+            1) **PMS2**: MLH1_PMS2, PMS2;
+            2) **Not_PMS2**: MSH2_MSH6, MSH6, Normal
+
+Feautre ~ **PMS2_or_not** +/* Cancer.Type + Age + Tumor.purity + Race +
+          (1 + **PMS2_or_not** | Metastatic.status)
+
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, fig.show="hold", out.width="30%"}
+# create a directory to hold result files
+dir.create(file.path(getwd(),"results_model_cmp"), showWarnings = F)
+
+metrics <- c("Impact_TMB_Score", "No_Missense", "No_Nonsense" )
+fix_effects <- c("PMS2_or_not")
+random_effects <- c("Cancer_Type_NEW")
+
+# Plot pairwise comparisons by collapsed MMRd types
+for(j in fix_effects){
+  for(i in metrics) {
+    for(k in random_effects) {
+   # compare means between MMRd groups, grouped by cancer types
+    corr_tmp <- compare_means(as.formula(paste0(i," ~ ",j)), data = df_2[!df_2$MMRd_Type %in% c("?","Delete"),], group.by = "Cancer_Type_NEW")
+    write.table(corr_tmp,
+                file = file.path(getwd(),paste0(i,".corr.result.",j,".grouped.by.cancer.txt")),
+                quote = FALSE,
+                sep = "\t")
+
+    # plot and test without grouping by cancer types
+    assign(paste0("p_",i), plotCorr.MMRd(df_2_pls_1[!df_2_pls_1$MMRd_Type %in% c("?","Delete"),],i,j))
+    print(get(paste0("p_",i)))
+
+    #################################################################
+    # linear mixed effect model
+    ##################################################################
+    fe <- c(k,j,"Current_Age", "Tumor_Purity", "Race")
+    #re <- c(k,"Sample_Type")
+    re <- c("Sample_Type")
+    fits <- buildLmeModel(i,fe,re,df_2[!df_2$MMRd_Type %in% c("?","Delete"),])
+      # make HTML report
+      #conditional F-tests with Kenward-Roger approximation
+      #cat(tab_model(r)$knitr,"\n--------\n")
+      tab <- tab_model(fits[[1]],fits[[2]],
+            #p.val = "kr",
+            show.df = TRUE
+            )
+      #cat(tab$knitr,"\n--------\n")
+      cat(tab$knitr,"\n--------\n", file = file.path(getwd(),"results_model_cmp",
+                             paste0("summary.",i,".lmer.model.W.fixed_effect",paste0(j,collapse = "."),".W.vs.WO.random_effects_", paste0(k,collapse = "."),".html")
+                             )
+          )
+    }
+  }
+}
+```
+:::
+::::
+
+# 4. Survival Plots with all MMRd and Cancer types
+::::{style="display: flex;"}
+```{r include=F}
+###########################################################################
+# Survival Plot
+###########################################################################
+
+df_surv <- read.table(file = file.path(path, "R_input_survival.txt"), header = T, sep = "\t", quote = "", fill = T)
+# the one recording only oncogenic mutations
+df_key_gene_mut <- read.table(file = file.path(path, "oncogenic_mutations_in_key_genes_Y_N_1.txt"), sep = "\t",  header = T, quote = "", fill = T)
+#df_key_gene_mut <- read.table(file = file.path(getwd(), "sample_mutations_in_key_genes_Y_N.txt"), sep = "\t",  header = T, quote = "", fill = T)
+
+row.names(df_surv) <- df_surv$Sample_ID
+row.names(df_key_gene_mut) <- df_key_gene_mut$Sample_ID
+
+df_surv_MMRd <- merge(df_surv, df, by = 0, all.x = T)
+row.names(df_surv_MMRd) <- df_surv_MMRd$Row.names
+df_surv_MMRd <- df_surv_MMRd[,-which(names(df_surv_MMRd) %in% c("Row.names","Sample_ID"))]
+
+df_surv_MMRd.CancerType.GeneMut <- merge(df_surv_MMRd, df_key_gene_mut, by = 0, all = T)
+row.names(df_surv_MMRd.CancerType.GeneMut) <- df_surv_MMRd.CancerType.GeneMut$Row.names
+df_surv_MMRd.CancerType.GeneMut <- df_surv_MMRd.CancerType.GeneMut[,-which(names(df_surv_MMRd.CancerType.GeneMut) %in% c("Row.names","Sample_ID"))]
+
+df_surv_MMRd.CancerType.GeneMut.collapsedType <- merge(df_surv_MMRd.CancerType.GeneMut, df_2, by = 0, all = T)
+row.names(df_surv_MMRd.CancerType.GeneMut.collapsedType) <- df_surv_MMRd.CancerType.GeneMut.collapsedType$Row.names
+df_surv_MMRd.CancerType.GeneMut.collapsedType <- df_surv_MMRd.CancerType.GeneMut.collapsedType[,-which(names(df_surv_MMRd.CancerType.GeneMut.collapsedType) %in% c("Row.names","Sample_ID"))]
+
+# remove NA rows
+df_surv_MMRd.CancerType.GeneMut.collapsedType <- df_surv_MMRd.CancerType.GeneMut.collapsedType[
+  !is.na(df_surv_MMRd.CancerType.GeneMut.collapsedType$Overall_Survival_Months) & !df_surv_MMRd.CancerType.GeneMut.collapsedType$CLASSIFICATION_PLOT %in% c("Delete","Complex","?"),
+  c("Overall_Survival_Status","Overall_Survival_Months","MMRd_Type", "Cancer_Type_NEW.y","BRAF_Mut", "KRAS_Mut",  "RNF43_Mut", "TP53_Mut","Multiplex_or_not","MSH6_or_not","PMS2_or_not")]
+
+colnames(df_surv_MMRd.CancerType.GeneMut.collapsedType) <- c("status", "time", "MMRd", "Cancer_Type","BRAF_Mut", "KRAS_Mut",  "RNF43_Mut", "TP53_Mut","Multiplex_or_not","MSH6_or_not","PMS2_or_not")
+df_surv_backup <- df_surv_MMRd.CancerType.GeneMut.collapsedType
+
+```
+
+:::{}
+ * 4.1 Plot OS difference between original/collapsed MMRd types (e.g.: Multiplex vs Singleton; MSH6 vs Non_MSH6; PMS2 vs Non_PMS2), across all or most populated cancer types (e.g. "Colon", "Endometrial", "Esophagogastric")
+ * 4.2 Plot OS difference between Y/N  of oncogenic mutations in the genes (e.g.: TP53, KRAS, BRAF, RNF43)
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, fig.show="hold", out.width="33%"}
+############################################################################################
+groups <- c("MMRd", "Multiplex_or_not", "MSH6_or_not", "PMS2_or_not", "BRAF_Mut", "KRAS_Mut", "RNF43_Mut", "TP53_Mut")
+#groups <- c("Multiplex_or_not", "MSH6_or_not", "PMS2_or_not", "BRAF_Mut", "KRAS_Mut", "RNF43_Mut", "TP53_Mut")
+#drawPairwiseSurvivalPlot(df_surv_MMRd.CancerType.GeneMut.collapsedType, "Multiplex_or_not")
+#levels(df_surv_MMRd.CancerType.GeneMut.collapsedType$Cancer_Type)
+for (group in groups) {
+  drawPairwiseSurvivalPlot(df_surv_MMRd.CancerType.GeneMut.collapsedType, group)
+  for (cancer in c("Colon", "Endometrial", "Esophagogastric")) {
+    drawPairwiseSurvivalPlot(df_surv_MMRd.CancerType.GeneMut.collapsedType, group, cancer)
+  }
+
+}
+
+```
+
+:::
+::::
+
+# 5 Aneuploidy Analysis
+![Aneuploidy Score Background 1](/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/IMPACT_GITHUB/Aneuploidy.TC.Score.1.jpg)
+![Aneuploidy Score Background 2](/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/IMPACT_GITHUB/Aneuploidy.TC.Score.2.jpg)
+
+::::{}
+```{r results='hide', error = FALSE, warning = FALSE, message = FALSE, fig.show="hold", out.width="48%"}
+###########################################################################
+# Aneuploidy Score estimation
+###########################################################################
+df_aneuploidy <- read.table(file = file.path(path,"CNA","R_input_1.txt"), header = T, quote = "")
+# calculate the aneuploidy scores for samples
+# I use the Steve's method for aneuploidy score calculation. Since we don't have any normal samples as reference, the formula here is: for each sample, we calculate mean(each tumor copy*segment)/STD(all tumor copy*segment)
+
+samples <- unique(df_aneuploidy$ID)
+df_aneuScore <- as.data.frame(matrix(nrow = 0, ncol = 2))
+
+df_means <- aggregate(df_aneuploidy, by = list(sample = df_aneuploidy$ID), formula = Copy.Segment ~ ID, FUN =  mean)
+Copy.Segment.sd <- sd(df_aneuploidy$Copy.Segment)
+
+df_aneuScore  <- as.data.frame(cbind(df_means$sample,df_means$Copy.Segment/Copy.Segment.sd))
+colnames(df_aneuScore) <- c("sample", "Aneuploidy.Score")
+row.names(df_aneuScore) <- df_aneuScore$sample
+# merge to add MMR.Type and Cancer_Type_New
+df_aneuScore_MMR <- merge(df_aneuScore, df_2, by = 0, all.x = T)
+row.names(df_aneuScore_MMR) <- df_aneuScore_MMR$sample
+df_aneuScore_MMR <- df_aneuScore_MMR[,!names(df_aneuScore_MMR) %in% c("Row.names","sample")]
+
+df_aneuScore_MMR$Aneuploidy.Score <- as.numeric(df_aneuScore_MMR$Aneuploidy.Score)
+df_aneuScore_MMR$log.Aneuploidy.Score <- log10(as.numeric(df_aneuScore_MMR$Aneuploidy.Score))
+
+
+ggplot(df_aneuScore_MMR[! df_aneuScore_MMR$MMRd_Type %in% c("?","Delete"),], aes(x = MMRd_Type, y = log10(Aneuploidy.Score))) +
+  geom_boxplot()
+
+ggplot(df_aneuScore_MMR[! df_aneuScore_MMR$MMRd_Type %in% c("?","Delete"),], aes(x = Multiplex_or_not, y = log10(Aneuploidy.Score))) +
+  geom_boxplot()
+
+ggplot(df_aneuScore_MMR[! df_aneuScore_MMR$MMRd_Type %in% c("?","Delete"),], aes(x = MSH6_or_not, y = log10(Aneuploidy.Score))) +
+  geom_boxplot()
+
+ggplot(df_aneuScore_MMR[! df_aneuScore_MMR$MMRd_Type %in% c("?","Delete"),], aes(x = PMS2_or_not, y = log10(Aneuploidy.Score))) +
+  geom_boxplot()
+
+# p_aneuScore.MMRd <- plotCorr.MMRd(df_aneuScore_MMR[! df_aneuScore_MMR$MMRd_Type %in% c("?","Delete"),],"log.Aneuploidy.Score","MMRd_Type")
+# p_aneuScore.MMRd
+#
+# p_aneuScore.Cancer <- plotCorr.Cancer(df_aneuScore_MMR[! df_aneuScore_MMR$MMRd_Type %in% c("?","Delete"),],"log.Aneuploidy.Score")
+# p_aneuScore.Cancer
+```
+
+::::
+::::{}
+# 6. Luiz permbro-treated WES Data
+### 6.1 Baseline Characteristics
+
+```{r include=FALSE}
+path <- "/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/Other data/Steve Lu"
+setwd("/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/Other data/Steve Lu")
+df <- read.table(file = file.path(path,"R_Input_1.txt"),
+                 header = TRUE,
+                 na.strings = c("NA","N/A"),
+                 quote = "",
+                 sep = "\t",
+                 row.names = 1)
+
+df$MMR.CATEGORY <- factor(df$MMR.CATEGORY, levels = c("MSH2_MSH6","MLH1_PMS2","PMS2","MSH6","?"))
+df$TumorType <- factor(df$TumorType)
+df$Liver.Mets <- factor(df$Liver.Mets)
+df$Lynch.Clinical <- factor(df$Lynch.Clinical)
+df$Best.Response.cutoff.4.2.18 <- factor(df$Best.Response.cutoff.4.2.18, levels = c("NE","PD","SD","PR","CR"))
+df$Patients <- row.names(df)
+
+
+df_clean_MMRd <- df[df$MMR.CATEGORY != "?",]
+df_clean_MMRd$MMR.CATEGORY <- factor(df_clean_MMRd$MMR.CATEGORY, levels = c("MSH2_MSH6","MLH1_PMS2","PMS2","MSH6"))
+# add 1 to all the count variables
+df_pls_1 <- cbind(df[,1:9]+1, df[,10:dim(df)[2]])
+
+```
+
+```{r warning = FALSE, message = FALSE}
+###################################################################
+# table baseline characteristics with original MMRd types
+###################################################################
+table1(~ Age + Gender + Race + Ethnicity + Lynch.Clinical + TumorType + Assembly | MMR.CATEGORY, data=df, overall="Total")
+```
+
+### 6.2 Genomic Feature Exploration
+
+```{r warning = FALSE, message = FALSE, fig.show="hold", out.width="48%"}
+
+############################################################################
+# explore the difference of genomic features among clinical response
+############################################################################
+drawFreqByResponse <- function(x,y) {
+
+  p<- ggboxplot(x,
+                x= "Best.Response.cutoff.4.2.18",
+                y=y,
+                facet.by = "MMR.CATEGORY",
+                color = "Best.Response.cutoff.4.2.18",
+                palette = "jco",
+                add = "jitter",
+                ggtheme = theme_pubclean())
+  print(p)
+  # p <- ggbarplot(x, x = "Patients", y = y,
+  #         fill = "Best.Response.cutoff.4.2.18",
+  #         facet.by = "MMR.CATEGORY",
+  #         palette = "jco",
+  #         sort.val = "asc",
+  #         sort.by.groups = T,
+  #         x.text.angle = 90,
+  #         ggtheme = theme_pubclean()) +
+  # font("x.text", vjust = 0.5)
+  # print(p)
+}
+
+
+# create a directory to hold result files
+dir.create(file.path(getwd(),"results_model_cmp"), showWarnings = F)
+
+metrics <- c("Overall.Survival.cutoff.4.2.18","Progression.Free.Survival.Cutoff.4.2.18", "TMB",names(df)[1:9])
+#metrics <- "TMB"
+fix_effects <- c("MMR.CATEGORY")
+# random_effects <- c("TumorType")    # TumorType is not suitable with too many elements , no of obs (28) not enough
+random_effects <- c("Liver.Mets")
+
+# Plot pairwise comparisons by collapsed MMRd types
+for(j in fix_effects){
+  for(i in metrics) {
+    for(k in random_effects) {
+   # compare means between MMRd groups, grouped by cancer types
+    corr_tmp <- compare_means(as.formula(paste0(i," ~ ",j)), data = df[!df$MMR.CATEGORY %in% c("?"),], group.by = "TumorType")
+    write.table(corr_tmp,
+                file = file.path(getwd(),paste0(i,".corr.result.",j,".grouped.by.cancer.txt")),
+                quote = FALSE,
+                sep = "\t")
+
+    # plot and test without grouping by cancer types
+    assign(paste0("p_",i), plotCorr.MMRd(df_pls_1,i,j))
+    print(get(paste0("p_",i)))
+
+
+    drawFreqByResponse(df_clean_MMRd,i)
+
+    }
+  }
+}
+
+# metrics <- names(df_clean_MMRd)[1:9]
+# for(i in metrics){
+#   drawFreqByResponse(df_clean_MMRd,i)
+# }
+
+
+```
+
+:::
+:::{}
+```{r warning = FALSE, message = FALSE}
+table1(as.formula(paste0("~ ",paste0(names(df_clean_MMRd)[1:9],collapse = " + "), " | MMR.CATEGORY*Best.Response.cutoff.4.2.18")), data = df_clean_MMRd)
+
+table1(as.formula(paste0("~ ",paste0(names(df_clean_MMRd)[1:9],collapse = " + "), " | Best.Response.cutoff.4.2.18*MMR.CATEGORY")), data = df_clean_MMRd)
+```
+:::
+
+### 6.3 Mutation Signatures
+:::{}
+```{r warning = FALSE, message = FALSE, fig.show="hold", out.width="48%"}
+path <- "/Users/luol2/Dropbox/MSK/Projects/Mitesh_Project/MMR/MMR_BR_MP/MSI/Other data/Steve Lu/SigMutations"
+setwd(path)
+#SBS
+
+files <- list.files(path = path, pattern = 'Decomposed_Solution_Activities_SBS96.txt', full.names = TRUE, recursive = TRUE)
+
+#sigs <- c("SBS1","SBS10a","SBS10b","SBS13","SBS14","SBS15","SBS17a","SBS17b","SBS2","SBS20","SBS21","SBS23","SBS24","SBS26","SBS28","SBS33","SBS42","SBS44","SBS45","SBS46","SBS5","SBS53","SBS54","SBS59","SBS6","SBS8")
+
+#sigs <- c("SBS1","SBS2","SBS4","SBS5","SBS6","SBS10a","SBS10b","SBS13","SBS14","SBS15","SBS17a","SBS17b","SBS20","SBS21","SBS24","SBS26","SBS33","SBS42","SBS44","SBS45","SBS46","SBS53","SBS54","SBS59")
+
+sigs <- c("SBS1","SBS5","SBS6","SBS15","SBS20","SBS21","SBS30","SBS42","SBS45","SBS54","SBS58")
+#sigs_desc <- c("Deamination of 5-methylcytosine","APOBEC activity","","Defective DNA mismatch repair")
+df.samples <- data.frame()
+
+for (file in files) {
+  df <- read.delim2(file = file, quote = "", stringsAsFactors = FALSE)
+  row.names(df) <- df$Samples
+  # remove the "Samples" column
+  df <- df[,! names(df) %in% c("Samples","X96A")]
+
+  #df_pad <- data.frame()
+  for (sig in sigs[! sigs %in% colnames(df)]) {
+    df <- cbind(df, new = 0)
+    names(df)[dim(df)[2]] <- sig
+  }
+  #tmp <- cbind(df, df_pad)
+  df <- df[,order(colnames(df))]
+  # concatenate to the final data frame
+  df.samples <- rbind(df.samples, df)
+}
+
+
+# MSK-IMPACT target size : ~ 1.5 Mb in human genome
+df_MMRd <- read.table(file = "MMRd_type.txt", header = T, sep = "\t")
+row.names(df_MMRd) <- df_MMRd$caseID
+df_MMRd <- df_MMRd[, ! names(df_MMRd) %in% c("X")]
+
+tumor.number <- as.data.frame(as.matrix(table(df_MMRd$MMRd_type)))
+colnames(tumor.number) <- c("Tumor.number")
+
+df.samples.MMRd <- merge(df.samples, df_MMRd, by = 0)
+row.names(df.samples.MMRd) <- df.samples.MMRd$Row.names
+df.samples.MMRd <- df.samples.MMRd[,! names(df.samples.MMRd) %in% c("Row.names","caseID")]
+
+# write to file
+write.table(df.samples.MMRd, file = file.path(path,"SBS_mut_No_in_sample_by_MMRd.txt"), quote = F, sep = "\t", col.names = NA, row.names = T)
+
+# estimate the number of samples relevant to any Cosmic signature
+df.samples.MMRd$SUM <- apply(df.samples.MMRd[,!names(df.samples.MMRd) %in% c("MMRd_type")],1,sum)
+
+sig.tumor.count <- df.samples.MMRd %>% group_by(MMRd_type) %>% summarise(count = sum(SUM>0, na.rm = TRUE))
+# aggregate median # of mutation due to the SBS signatures by MMRd types
+median_mut <- aggregate(.~MMRd_type,
+                        df.samples.MMRd[,!names(df.samples.MMRd) %in% c("SUM")],
+                        FUN=(function(x){
+                          ifelse(sum(x==0)>0 & sum(x !=0) >0, median(x[x>0]), median(x))
+                        })
+                        )
+row.names(median_mut) <- median_mut$MMRd_type
+#median_mut <- median_mut[,!names(median_mut) %in% c("MMRd_type")]
+#colnames(median_mut) <- paste0(names(median_mut),".median")
+# normalize by the size of MSK-IMPACT-468genes size 1.5Mb
+median_mut <- log2(median_mut[,!names(median_mut) %in% c("MMRd_type")]/30)
+median_mut$MMRd_type <- row.names(median_mut)
+
+median_mut_melt <- melt(median_mut,
+                      variable.name = "SBS",
+                      value.name = "Median_mut",
+                      id.vars = c("MMRd_type"))
+
+
+# dplyr way
+median_mut_dplyr <- df.samples.MMRd %>%
+                group_by(MMRd_type) %>%
+                summarise_each(funs(median))
+
+# aggregate mean # of mutation due to the SBS signatures by MMRd types
+mean_mut <- aggregate(.~MMRd_type,
+                      df.samples.MMRd[,!names(df.samples.MMRd) %in% c("SUM")],
+                      FUN=(function(x){
+                        ifelse(sum(x==0)>0 & sum(x !=0) >0, mean(x[x>0]), mean(x))
+                        })
+                      )
+
+row.names(mean_mut) <- mean_mut$MMRd_type
+#mean_mut <- mean_mut[,!names(mean_mut) %in% c("MMRd_type")]
+#colnames(mean_mut) <- paste0(names(mean_mut),".mean")
+mean_mut <- log2(mean_mut[,!names(mean_mut) %in% c("MMRd_type")]/30)
+mean_mut$MMRd_type <- row.names(mean_mut)
+
+
+mean_mut_melt <- melt(mean_mut,
+                      variable.name = "SBS",
+                      value.name = "Mean_mut",
+                      id.vars = c("MMRd_type"))
+# function count portion of tumors with a signature
+portion <- function(x) {
+  result <- sum(x>0)/length(x)
+  return(result)
+}
+
+portion_tumor <- aggregate(.~MMRd_type,
+                           df.samples.MMRd[,!names(df.samples.MMRd) %in% c("SUM")],
+                           portion)
+row.names(portion_tumor) <- portion_tumor$MMRd_type
+
+portion_tumor_melt <- melt(portion_tumor,
+                      variable.name = "SBS",
+                      value.name = "Tumor_portion",
+                      id.vars = c("MMRd_type"))
+
+
+##############################################################################
+# Combine all the summary data, mean/meadian of Mut #/Mb, portion.tumor, tumor.number
+##############################################################################
+#df_plot <- expand.grid(as.factor(row.names(portion_tumor)), as.factor(sigs))
+
+df_plot <- merge(mean_mut_melt, median_mut_melt, by = c("MMRd_type","SBS"))
+df_plot <- merge(df_plot, portion_tumor_melt, by = c("MMRd_type","SBS"))
+#levels(df_plot$MMRd_type) <- sigs # reorder the levels
+#df_plot <- df_plot[order(df_plot$SBS),]
+
+options(repr.plot.width = 14, repr.plot.height = 8)
+
+df_plot %>% mutate(SBS = factor(SBS, levels=sigs)) %>%
+ggplot(aes(x=MMRd_type, y=SBS, size = Tumor_portion, color = Median_mut)) +
+  geom_point(alpha=0.7) +
+  scale_size(range = c(.1, 10), name="Proportion of tumours \nwith the signature") +
+  scale_fill_viridis(discrete=TRUE, guide=FALSE, option="B") +
+  scale_colour_viridis_c("log2 Median mutations \n per Mb due to signature \n(among tumours with \nthe signature)") +
+  theme(plot.margin = margin(16,16,16,16)) +
+  theme(legend.position="bottom", legend.justification = "left", legend.margin = margin(6,6,6,6)) +
+  scale_x_discrete(labels=c("Complex" = "Complex\n8/11", "MLH1_PMS2" = "MLH1_PMS2\n164/246","MSH2_MSH6" = "MSH2_MSH6\n68/69",
+                            "MSH6_only" = "MSH6_only\n12/12", "NORMAL_only" = "NORMAL_only\n17/19", "PMS2_only" = "PMS2_only\n3/13", "UNK" = "UNK\n9/11")) +
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(legend.title = element_text(size = 8, face = "bold"),
+        legend.text = element_text(size = 8)) +
+  ylab("SBS") +
+  xlab("MMRd Types") +
+  theme(axis.title = element_text(size = 15, face = "bold"))
+
+
+# ID
+files <- list.files(path = getwd(), pattern = 'Decomposed_Solution_Activities_SBSINDEL.txt', full.names = TRUE, recursive = TRUE)
+
+#sigs <- c("ID1","ID2","ID4","ID5","ID6","ID7","ID8","ID9","ID10","ID11","ID14","ID15","ID16")
+sigs <- c("ID1","ID2","ID4","ID7","ID12","ID17")
+df.samples <- data.frame()
+
+for (file in files) {
+  df <- read.delim2(file = file, quote = "", stringsAsFactors = FALSE)
+  row.names(df) <- df$Samples
+  # remove the "Samples" column
+  df <- df[,! names(df) %in% c("Samples","IDA")]
+
+  #df_pad <- data.frame()
+  for (sig in sigs[! sigs %in% colnames(df)]) {
+    df <- cbind(df, new = 0)
+    names(df)[dim(df)[2]] <- sig
+  }
+  #tmp <- cbind(df, df_pad)
+  df <- df[,order(colnames(df))]
+  # concatenate to the final data frame
+  df.samples <- rbind(df.samples, df)
+}
+
+
+# MSK-IMPACT target size : ~ 1.5 Mb in human genome
+df_MMRd <- read.table(file = "MMRd_type.txt", header = T, sep = "\t")
+row.names(df_MMRd) <- df_MMRd$caseID
+df_MMRd <- df_MMRd[, ! names(df_MMRd) %in% c("X")]
+
+tumor.number <- as.data.frame(as.matrix(table(df_MMRd$MMRd_type)))
+colnames(tumor.number) <- c("Tumor.number")
+
+df.samples.MMRd <- merge(df.samples, df_MMRd, by = 0)
+row.names(df.samples.MMRd) <- df.samples.MMRd$Row.names
+df.samples.MMRd <- df.samples.MMRd[,! names(df.samples.MMRd) %in% c("Row.names","caseID")]
+# write to file
+write.table(df.samples.MMRd, file = file.path(getwd(),"ID_mut_No_in_sample_by_MMRd.txt"), quote = F, sep = "\t", col.names = NA, row.names = T)
+
+
+
+# estimate the number of samples relevant to any Cosmic signature
+df.samples.MMRd$SUM <- apply(df.samples.MMRd[,!names(df.samples.MMRd) %in% c("MMRd_type")],1,sum)
+
+sig.tumor.count <- df.samples.MMRd %>% group_by(MMRd_type) %>% summarise(count = sum(SUM>0, na.rm = TRUE))
+# aggregate median # of mutation due to the SBS signatures by MMRd types
+median_mut <- aggregate(.~MMRd_type,
+                        df.samples.MMRd[,!names(df.samples.MMRd) %in% c("SUM")],
+                        FUN=(function(x){
+                          ifelse(sum(x==0)>0 & sum(x !=0) >0, median(x[x>0]), median(x))
+                        })
+                        )
+
+
+row.names(median_mut) <- median_mut$MMRd_type
+#median_mut <- median_mut[,!names(median_mut) %in% c("MMRd_type")]
+#colnames(median_mut) <- paste0(names(median_mut),".median")
+# normalize by the size of MSK-IMPACT-468genes size 1.5Mb
+# normalize by the size of human exome 30Mb
+median_mut <- log2(median_mut[,!names(median_mut) %in% c("MMRd_type")]/30)
+median_mut$MMRd_type <- row.names(median_mut)
+
+median_mut_melt <- melt(median_mut,
+                      variable.name = "Indel",
+                      value.name = "Median_mut",
+                      id.vars = c("MMRd_type"))
+
+
+# dplyr way
+median_mut_dplyr <- df.samples.MMRd %>%
+                group_by(MMRd_type) %>%
+                summarise_each(funs(median))
+
+# aggregate mean # of mutation due to the SBS sgnatures by MMRd types
+mean_mut <- aggregate(.~MMRd_type,
+                      df.samples.MMRd[,!names(df.samples.MMRd) %in% c("SUM")],
+                      FUN=(function(x){
+                        ifelse(sum(x==0)>0 & sum(x !=0) >0, mean(x[x>0]), mean(x))
+                        })
+                      )
+
+row.names(mean_mut) <- mean_mut$MMRd_type
+#mean_mut <- mean_mut[,!names(mean_mut) %in% c("MMRd_type")]
+#colnames(mean_mut) <- paste0(names(mean_mut),".mean")
+mean_mut <- log2(mean_mut[,!names(mean_mut) %in% c("MMRd_type")]/30)
+mean_mut$MMRd_type <- row.names(mean_mut)
+
+
+mean_mut_melt <- melt(mean_mut,
+                      variable.name = "Indel",
+                      value.name = "Mean_mut",
+                      id.vars = c("MMRd_type"))
+# function count portion of tumors with a signature
+portion <- function(x) {
+  result <- sum(x>0)/length(x)
+  return(result)
+}
+
+portion_tumor <- aggregate(.~MMRd_type,
+                           df.samples.MMRd[,!names(df.samples.MMRd) %in% c("SUM")],
+                           portion)
+row.names(portion_tumor) <- portion_tumor$MMRd_type
+
+portion_tumor_melt <- melt(portion_tumor,
+                      variable.name = "Indel",
+                      value.name = "Tumor_portion",
+                      id.vars = c("MMRd_type"))
+
+
+##############################################################################
+# Combine all the summary data, mean/meadian of Mut #/Mb, portion.tumor, tumor.number
+##############################################################################
+#df_plot <- expand.grid(as.factor(row.names(portion_tumor)), as.factor(sigs))
+
+df_plot <- merge(mean_mut_melt, median_mut_melt, by = c("MMRd_type","Indel"))
+df_plot <- merge(df_plot, portion_tumor_melt, by = c("MMRd_type","Indel"))
+#levels(df_plot$MMRd_type) <- sigs # reorder the levels
+#df_plot <- df_plot[order(df_plot$SBS),]
+
+options(repr.plot.width = 14, repr.plot.height = 8)
+
+df_plot %>% mutate(Indel = factor(Indel, levels=sigs)) %>%
+ggplot(aes(x=MMRd_type, y=Indel, size = Tumor_portion, color = Median_mut)) +
+  geom_point(alpha=0.7) +
+  scale_size(range = c(.1, 10), name="Proportion of tumours \nwith the signature") +
+  scale_fill_viridis(discrete=TRUE, guide=FALSE, option="B") +
+  scale_colour_viridis_c("log2 Median mutations \n per Mb due to signature \n(among tumours with \nthe signature)") +
+  theme(plot.margin = margin(16,16,16,16)) +
+  theme(legend.position="bottom", legend.justification = "left", legend.margin = margin(6,6,6,6)) +
+  scale_x_discrete(labels=c("Complex" = "Complex\n6/11", "MLH1_PMS2" = "MLH1_PMS2\n151/246","MSH2_MSH6" = "MSH2_MSH6\n44/69",
+                            "MSH6_only" = "MSH6_only\n4/12", "NORMAL_only" = "NORMAL_only\n8/19", "PMS2_only" = "PMS2_only\n5/13", "UNK" = "UNK\n10/11")) +
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(legend.title = element_text(size = 8, face = "bold"),
+        legend.text = element_text(size = 8)) +
+  ylab("Indel") +
+  xlab("MMRd Types") +
+  theme(axis.title = element_text(size = 15, face = "bold"))
+
+```
+:::
+::::
+
